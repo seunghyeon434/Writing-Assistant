@@ -1,0 +1,2 @@
+{"saved_at": "2026-05-11T10:37:57", "feature_name": "tone", "db_sync_enabled": false, "feature_type": 4, "input_text": "ㅊㅁㅁㄹㄴㄹㄴㄹㄴㄹㄴㅇㄹㄴㄹㄴㄹㄴㄹㄴㄹㄴㄹㄴㅇㄹㄴㄹㄴㄹㄹㄴㅇㄹ", "output_text": "ㅊㅁㅁㄹㄴㄹㄴㄹㄴㄹㄴㅇㄹㄴㄹㄴㄹㄴㄹㄴㄹㄴㄹㄴㅇㄹㄴㄹㄴㄹㄹㄴㅇㄹ [문체/말투 기능 사용 됨]", "title": "", "score": null, "tone": ""}
+{"saved_at": "2026-05-13T22:15:41", "feature_name": "tone", "db_sync_enabled": true, "feature_type": 4, "input_text": "안녕하세요", "output_text": "안녕하세요 [문체/말투 기능 사용 됨]", "title": "", "score": null, "tone": "fsdfdsf", "spelling_feedback": null}

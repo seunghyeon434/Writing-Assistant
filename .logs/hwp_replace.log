@@ -1,0 +1,290 @@
+2026-05-13 22:56:20 COM apply failed: com_error: (-2147221021, '작업을 사용할 수 없습니다.', None, None)
+2026-05-13 22:56:20 UIA apply failed: RuntimeError: The HWP text control does not expose a writable UIA value pattern.
+2026-05-13 22:58:17 COM apply failed: com_error: (-2147221021, '작업을 사용할 수 없습니다.', None, None)
+2026-05-13 22:58:18 UIA apply failed: RuntimeError: The HWP text control does not expose a writable UIA value pattern.
+2026-05-13 22:58:19 applied via one-shot keyboard length=43 read_method='uia'
+2026-05-13 23:08:22 COM apply failed: AttributeError: 'PyIUnknown' object has no attribute 'MovePos'
+2026-05-13 23:08:22 UIA apply failed: RuntimeError: The HWP text control does not expose a writable UIA value pattern.
+2026-05-13 23:08:23 applied via one-shot keyboard length=62 read_method='uia'
+2026-05-13 23:18:20 applied via COM length=48 read_method='com'
+2026-05-13 23:18:41 applied via COM length=74 read_method='com'
+2026-05-13 23:23:42 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'font_size', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:28:08 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:28:08 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:28:44 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:28:44 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:38:15 HWP segment styles applied count=1 total=1
+2026-05-13 23:38:15 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'segments', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:38:56 HWP segment styles applied count=1 total=1
+2026-05-13 23:38:56 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'segments', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:42:31 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:42:31 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:42:39 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:42:39 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:43:03 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:43:03 applied via COM length=27 read_method='com' style_keys=['bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:45:28 HWP segment capture not useful count=1
+2026-05-13 23:45:28 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:45:28 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:47:10 HWP segment capture not useful count=1
+2026-05-13 23:47:10 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:47:10 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:50:59 HWP GetTextFile format='HTML' option='' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:50:59 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:50:59 HWP GetTextFile format='HTML' option='selection' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:50:59 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-13 23:50:59 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:50:59 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X' option='' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X' option='selection' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:51:00 HWP segment capture not useful count=1
+2026-05-13 23:51:00 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:51:00 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:52:17 HWP GetTextFile format='HTML' option='' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:52:17 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_default.txt'
+2026-05-13 23:52:17 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HTML' option='selection' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:52:18 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_selection.txt'
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X' option='' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:52:18 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X' option='selection' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:52:18 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:52:18 HWP segment capture not useful count=1
+2026-05-13 23:52:18 HWP style skipped scope='mixed_or_unknown'
+2026-05-13 23:52:18 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:55:07 HWP GetTextFile format='HTML' option='' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:55:07 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_default.txt'
+2026-05-13 23:55:07 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HTML' option='selection' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:55:07 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_selection.txt'
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X' option='' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:55:07 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X' option='selection' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:55:07 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:55:07 HWPML2X segment capture count=12 option='selection'
+2026-05-13 23:55:07 HWP segment styles applied count=12 total=12
+2026-05-13 23:55:07 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:57:54 HWP GetTextFile format='HTML' option='' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:57:54 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_default.txt'
+2026-05-13 23:57:54 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HTML' option='selection' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:57:54 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_selection.txt'
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X' option='' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:57:54 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X' option='selection' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:57:54 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:57:54 HWPML2X segment capture count=12 option='selection'
+2026-05-13 23:57:54 HWP segment style try range=(0,2) pos=(0, 0)->(0, 2) text='가 ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:57:54 HWP segment style try range=(2,3) pos=(0, 2)->(0, 3) text='나' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': True, 'italic': False}
+2026-05-13 23:57:54 HWP segment style try range=(3,4) pos=(0, 3)->(0, 4) text=' ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:57:54 HWP segment style try range=(4,5) pos=(0, 4)->(0, 5) text='다' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': True}
+2026-05-13 23:57:54 HWP segment style try range=(5,6) pos=(0, 5)->(0, 6) text=' ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:57:54 HWP segment style try range=(6,7) pos=(0, 6)->(0, 7) text='라' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_color': 0, 'underline_type': 1, 'underline_shape': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:57:54 HWP segment style try range=(7,8) pos=(0, 7)->(0, 8) text=' ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:57:54 HWP segment style try range=(8,9) pos=(0, 8)->(0, 9) text='마' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 1, 'strikeout_shape': 0, 'strikeout_color': 0, 'bold': False, 'italic': False}
+2026-05-13 23:57:54 HWP segment styles applied count=12 total=12
+2026-05-13 23:57:54 HWPML2X body summary after_segment_apply: [{'shape': '0', 'text': '가 나 다 라 마 바 사 [맞춤법 기'}]
+2026-05-13 23:57:54 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-13 23:59:47 HWP GetTextFile format='HTML' option='' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:59:47 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_default.txt'
+2026-05-13 23:59:47 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HTML' option='selection' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-13 23:59:47 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_selection.txt'
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X' option='' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:59:47 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X' option='selection' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-13 23:59:47 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-13 23:59:47 HWPML2X segment capture count=12 option='selection'
+2026-05-13 23:59:47 HWP segment style try range=(0,2) pos=(0, 0)->(0, 2) text='가 ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 0)->(0, 2) length=2
+2026-05-13 23:59:47 HWP segment style try range=(2,3) pos=(0, 2)->(0, 3) text='나' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': True, 'italic': False}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 2)->(0, 3) length=1
+2026-05-13 23:59:47 HWP segment style try range=(3,4) pos=(0, 3)->(0, 4) text=' ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 3)->(0, 4) length=1
+2026-05-13 23:59:47 HWP segment style try range=(4,5) pos=(0, 4)->(0, 5) text='다' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': True}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 4)->(0, 5) length=1
+2026-05-13 23:59:47 HWP segment style try range=(5,6) pos=(0, 5)->(0, 6) text=' ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 5)->(0, 6) length=1
+2026-05-13 23:59:47 HWP segment style try range=(6,7) pos=(0, 6)->(0, 7) text='라' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_color': 0, 'underline_type': 1, 'underline_shape': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 6)->(0, 7) length=1
+2026-05-13 23:59:47 HWP segment style try range=(7,8) pos=(0, 7)->(0, 8) text=' ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 7)->(0, 8) length=1
+2026-05-13 23:59:47 HWP segment style try range=(8,9) pos=(0, 8)->(0, 9) text='마' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 1, 'strikeout_shape': 0, 'strikeout_color': 0, 'bold': False, 'italic': False}
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 8)->(0, 9) length=1
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 9)->(0, 10) length=1
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 10)->(0, 11) length=1
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 11)->(0, 12) length=1
+2026-05-13 23:59:47 HWP range selected via cursor pos=(0, 12)->(0, 13) length=1
+2026-05-13 23:59:47 HWP segment styles applied count=12 total=12
+2026-05-13 23:59:47 HWPML2X body summary after_segment_apply: [{'shape': '0', 'text': '가 나 다 라 마 바 사 [맞춤법 기'}]
+2026-05-13 23:59:47 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-14 00:02:32 HWPML2X replacement built length=32575 text_length=27
+2026-05-14 00:03:03 HWP GetTextFile format='HTML' option='' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 00:03:03 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_default.txt'
+2026-05-14 00:03:03 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HTML' option='selection' length=9422 hints=['underline'] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 00:03:04 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\html_selection.txt'
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X' option='' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 00:03:04 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X' option='selection' length=32480 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 00:03:04 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-14 00:03:04 HWPML2X segment capture count=12 option='selection'
+2026-05-14 00:03:04 HWPML2X replacement built length=32575 text_length=27
+2026-05-14 00:03:04 HWPML2X SetTextFile option='insertfile' result=1 summary=[{'shape': '0', 'text': '가 '}, {'shape': '7', 'text': '나'}, {'shape': '0', 'text': ' '}, {'shape': '8', 'text': '다'}, {'shape': '0', 'text': ' '}, {'shape': '9', 'text': '라'}, {'shape': '0', 'text': ' '}, {'shape': '10', 'text': '마'}, {'shape': '0', 'text': ' '}, {'shape': '11', 'text': '바'}, {'shape': '0', 'text': ' '}, {'shape': '12', 'text': '사 [맞춤법 기능 사용 됨]'}]
+2026-05-14 00:03:04 applied via COM length=27 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-14 11:39:38 HWP GetTextFile format='HTML' option='' length=9107 hints=[] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 11:39:38 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HTML' option='selection' length=9107 hints=[] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X' option='' length=28362 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 11:39:38 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X' option='selection' length=28362 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 11:39:38 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:39:38 HWPML2X segment capture count=2 option='selection'
+2026-05-14 11:39:38 HWPML2X replacement built length=28423 text_length=38
+2026-05-14 11:39:38 HWPML2X SetTextFile option='insertfile' result=1 summary=[{'shape': '0', 'text': '안녕하세요 반가워요'}, {'shape': '0', 'text': '잘 있어요 다시 만나요 [맞춤법 기능'}]
+2026-05-14 11:39:38 HWPML2X SetTextFile option='' result=1 summary=[{'shape': '0', 'text': '안녕하세요 반가워요'}, {'shape': '0', 'text': '잘 있어요 다시 만나요 [맞춤법 기능'}]
+2026-05-14 11:39:38 HWP segment style try range=(0,11) pos=(0, 0)->(1, 0) text='안녕하세요 반가워요\n' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-14 11:39:39 HWP segment style try range=(13,25) pos=(2, 1)->(2, 13) text=' 있어요 다시 만나요 ' style={'font_name': '함초롬바탕', 'font_size': 10.0, 'color': 0, 'underline_type': 0, 'strikeout_type': 0, 'bold': False, 'italic': False}
+2026-05-14 11:39:39 HWP segment styles applied count=2 total=2
+2026-05-14 11:39:39 HWPML2X body summary after_segment_apply: [{'shape': '0', 'text': '안녕하세요 반가워요잘 있어요 다시 만'}]
+2026-05-14 11:39:39 applied via COM length=38 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-14 11:43:28 HWPML2X replacement built linewise length=28421 text_length=38 text_nodes=3 lines=3
+2026-05-14 11:43:57 HWPML2X replacement built linewise length=28421 text_length=38 text_nodes=3 lines=3
+2026-05-14 11:44:34 HWP GetTextFile format='HTML' option='' length=9114 hints=[] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 11:44:34 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HTML' option='selection' length=9114 hints=[] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X' option='' length=28369 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 11:44:34 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X' option='selection' length=28369 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 11:44:34 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-14 11:44:34 HWPML2X segment capture count=2 option='selection'
+2026-05-14 11:44:34 HWPML2X replacement built linewise length=28429 text_length=47 text_nodes=3 lines=3
+2026-05-14 11:44:34 HWPML2X SetTextFile option='insertfile' result=1 summary=[{'shape': '0', 'text': '안녕하세요 반가워요'}, {'shape': '0', 'text': '잘 있어요 다시 만나요 흐헤헤 흐헤헤'}]
+2026-05-14 11:44:34 applied via COM length=47 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']
+2026-05-14 12:00:06 HWP NativeOM exception hwnd=134428: OSError: [WinError -2147467259] 지정되지 않은 오류입니다
+2026-05-14 12:00:06 HWP COM object resolved via ROT entry='!HwpObject.120.1'
+2026-05-14 12:00:06 HWP GetTextFile format='HTML' option='' length=9114 hints=[] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 12:00:06 HWP GetTextFile format='HTML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HTML' option='selection' length=9114 hints=[] preview='<!DOCTYPE html>\\r\\n<html lang="ko">\\r\\n<html>\\r\\n<head>\\r\\n<meta name="Generator" content="Hancom HWP 12.0.0.4426">\\r\\n<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>\\r\\n<style type="text/css">\\r\\n*{\\r\\n\tmargin:0;\\r\\n\tpadding:0;\\r\\n}\\r\\n.HStyle0 {\\r\\n\tstyle-'
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML' option='' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML' option='selection' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X' option='' length=28369 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 12:00:06 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_default.txt'
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X' option='selection' length=28369 hints=['charshape', 'textcolor', 'underline', 'facename'] preview='<?xml version="1.0" encoding="UTF-16" standalone="no" ?><HWPML Style="embed" SubVersion="10.0.0.0" Version="2.91"><HEAD SecCnt="1"><DOCSUMMARY><TITLE>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </TITLE><AUTHOR>USER</AUTHOR><DATE>2026년 5월 13일 수요일 오후 10:44:52</DATE></DOCSUMMARY><DOCSETTING><BEGINNUMBER Endnote="1" '
+2026-05-14 12:00:06 HWP GetTextFile snapshot saved path='C:\\Users\\USER\\Desktop\\writing-assistant(0.3.0)\\.logs\\hwp_textfile_snapshots\\hwpml2x_selection.txt'
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_S' option='' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_S' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_S' option='selection' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_P' option='' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_P' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_P' option='selection' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_STYLE' option='' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_STYLE' option='saveblock' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWP GetTextFile format='HWPML2X_STYLE' option='selection' length=0 hints=[] preview=''
+2026-05-14 12:00:06 HWPML2X segment capture count=2 option='selection'
+2026-05-14 12:00:06 HWPML2X replacement built linewise length=28429 text_length=47 text_nodes=3 lines=3
+2026-05-14 12:00:06 HWPML2X SetTextFile option='insertfile' result=1 summary=[{'shape': '0', 'text': '안녕하세요 반가워요'}, {'shape': '0', 'text': '잘 있어요 다시 만나요 흐헤헤 흐헤헤'}]
+2026-05-14 12:00:06 applied via COM length=47 read_method='com' style_keys=['_source_text', 'bold', 'color', 'hwp_style_scope', 'italic', 'read_method', 'uia_source', 'underline_color', 'underline_shape', 'underline_type']

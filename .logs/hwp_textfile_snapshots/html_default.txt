@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html>
+<head>
+<meta name="Generator" content="Hancom HWP 12.0.0.4426">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><title>안녕하세요 감사해요 잘 있어요 다시 만나요 감사합니다 </title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+.HStyle0 {
+	style-name:"바탕글";
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle1 {
+	style-name:"본문";
+	margin-left:15.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle2 {
+	style-name:"개요 1";
+	margin-left:10.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle3 {
+	style-name:"개요 2";
+	margin-left:20.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle4 {
+	style-name:"개요 3";
+	margin-left:30.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle5 {
+	style-name:"개요 4";
+	margin-left:40.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle6 {
+	style-name:"개요 5";
+	margin-left:50.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle7 {
+	style-name:"개요 6";
+	margin-left:60.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle8 {
+	style-name:"개요 7";
+	margin-left:70.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle9 {
+	style-name:"개요 8";
+	margin-left:80.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle10 {
+	style-name:"개요 9";
+	margin-left:90.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle11 {
+	style-name:"개요 10";
+	margin-left:100.0pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle12 {
+	style-name:"쪽 번호";
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:10.0pt;
+	font-family:함초롬돋움;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle13 {
+	style-name:"머리말";
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:150%;
+	font-size:9.0pt;
+	font-family:함초롬돋움;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle14 {
+	style-name:"각주";
+	margin-left:13.1pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:-13.1pt;
+	line-height:130%;
+	font-size:9.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle15 {
+	style-name:"미주";
+	margin-left:13.1pt;
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:justify;
+	text-indent:-13.1pt;
+	line-height:130%;
+	font-size:9.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle16 {
+	style-name:"메모";
+	margin-top:0.0pt;
+	margin-bottom:0.0pt;
+	text-align:left;
+	text-indent:0.0pt;
+	line-height:130%;
+	font-size:9.0pt;
+	font-family:함초롬돋움;
+	letter-spacing:-5%;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle17 {
+	style-name:"차례 제목";
+	margin-top:12.0pt;
+	margin-bottom:3.0pt;
+	text-align:left;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:16.0pt;
+	font-family:함초롬돋움;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#2e74b5;
+}
+.HStyle18 {
+	style-name:"차례 1";
+	margin-top:0.0pt;
+	margin-bottom:7.0pt;
+	text-align:left;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:11.0pt;
+	font-family:함초롬돋움;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle19 {
+	style-name:"차례 2";
+	margin-left:11.0pt;
+	margin-top:0.0pt;
+	margin-bottom:7.0pt;
+	text-align:left;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:11.0pt;
+	font-family:함초롬돋움;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle20 {
+	style-name:"차례 3";
+	margin-left:22.0pt;
+	margin-top:0.0pt;
+	margin-bottom:7.0pt;
+	text-align:left;
+	text-indent:0.0pt;
+	line-height:160%;
+	font-size:11.0pt;
+	font-family:함초롬돋움;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+.HStyle21 {
+	style-name:"캡션";
+	margin-top:0.0pt;
+	margin-bottom:8.0pt;
+	text-align:justify;
+	text-indent:0.0pt;
+	line-height:150%;
+	font-size:10.0pt;
+	font-family:함초롬바탕;
+	letter-spacing:0;
+	font-weight:normal;
+	font-style:normal;
+	color:#000000;
+}
+</style>
+<script type="text/javascript">
+		var adjustStyle = function(borderWidth) {
+ 		var value = borderWidth.match(/([\d\.]+)(%|px|cm|em|in|mm|pc|pt|)/) || [0, 0, ''];
+ 		var width = parseFloat(value[1]);
+ 		var unit = value[2];
+ 		if (unit == 'cm') {
+ 			if (width > 0.0 && width < 0.03) {
+ 				width = 0.03;
+ 			}
+ 		} else if (unit == 'in') {
+ 			if (width > 0.0 && width < 0.02) {
+ 				width = 0.02;
+ 			}
+ 		} else if (unit == 'mm') {
+ 			if (width > 0.0 && width < 0.3) {
+ 				width = 0.3;
+ 			}
+ 		} else if (unit == 'pc') {
+ 			if (width > 0.0 && width < 0.07) {
+ 				width = 0.07;
+ 			}
+ 		} else if (unit == 'px') {
+ 			if (width > 0.0 && width < 1.0) {
+ 				width = 1.0;
+ 			}
+ 		} else if (unit == 'pt') {
+ 			if (width > 0.0 && width < 0.8) {
+ 				width = 0.8;
+ 			}
+ 		} else if (unit == 'em') {
+ 			/* do not support */
+ 		} else if (unit == '%') {
+ 			/* do not support */
+ 		}
+ 		borderWidth = width + unit;
+ 		return borderWidth; 	};
+ 	(function() {
+ 		if (navigator.userAgent.match(/AppleWebKit/g) != null) {
+ 			for (var shIndex = 0; shIndex< document.styleSheets.length; shIndex++) {
+ 				var styleSheet = document.styleSheets[shIndex];
+ 				var rules = styleSheet.rules;
+ 				for (var rlIndex = 0; rlIndex < rules.length; rlIndex++) {
+ 					var rule = rules[rlIndex];
+ 					rule.style.borderLeftWidth=adjustStyle(rule.style.borderLeftWidth);
+ 					rule.style.borderRightWidth=adjustStyle(rule.style.borderRightWidth);
+ 					rule.style.borderTopWidth=adjustStyle(rule.style.borderTopWidth);
+ 					rule.style.borderBottomWidth=adjustStyle(rule.style.borderBottomWidth);
+ 				}
+ 			}
+ 		}
+ 	})();
+ 	window.onload = function(){
+ 		if (navigator.userAgent.match(/AppleWebKit/g) != null) {
+ 			var styledElms = document.querySelectorAll('*[style]');
+ 			for (var loop = 0; loop < styledElms.length; loop++) {
+ 				var elm = styledElms[loop];
+ 				elm.style.borderLeftWidth=adjustStyle(elm.style.borderLeftWidth);
+ 				elm.style.borderRightWidth=adjustStyle(elm.style.borderRightWidth);
+ 				elm.style.borderTopWidth=adjustStyle(elm.style.borderTopWidth);
+ 				elm.style.borderBottomWidth=adjustStyle(elm.style.borderBottomWidth);
+ 			}
+ 		}
+ 	};
+</script>
+</head>
+<body>
+
+<p class=HStyle0><span style='position:relative'>가 </span><span style='position:relative;font-weight:bold'>나</span><span style='position:relative'> </span><span style='position:relative;font-style:italic'>다</span><span style='position:relative'> </span><span style='position:relative;text-decoration:underline'>라</span><span style='position:relative'> </span><span style='position:relative;text-decoration:line-through'>마</span><span style='position:relative'> </span><span style='position:relative;color:#42c7f1'>바</span><span style='position:relative'> </span><span style='position:relative;font-weight:bold;text-decoration:underline;color:#ff0000'>사</span><span class="hnc_page_break" style="display:relative;word-spacing:-0.5em;">&nbsp;</span></p>
+
+</body>
+
+</html>
