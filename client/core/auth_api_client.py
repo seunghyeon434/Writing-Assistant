@@ -115,6 +115,15 @@ class AuthAPIClient:
     def update_settings(self, settings):
         return self._authorized_request("put", "/settings", json=settings)
 
+    def list_tone_favorites(self):
+        return self._authorized_request("get", "/tone-favorites")
+
+    def create_tone_favorite(self, tone):
+        return self._authorized_request("post", "/tone-favorites", json={"tone": tone})
+
+    def delete_tone_favorite(self, favorite_id):
+        return self._authorized_request("delete", f"/tone-favorites/{int(favorite_id)}")
+
     def _authorized_request(self, method, path, **kwargs):
         if not self.access_token:
             raise UnauthorizedError("로그인이 필요합니다.")

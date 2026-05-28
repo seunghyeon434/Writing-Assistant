@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import ctypes
 import os
@@ -489,7 +489,9 @@ class ActiveWordReader(BasePollingReader):
             text = self._read_paragraph_text(document)
             if text != self._last_word_text or not self._last_word_style_info:
                 self._last_word_text = text
-                self._last_word_style_info = self._read_style_info_from_document(document)
+                style_info = self._read_style_info_from_document(document)
+                if self._style_info_has_details(style_info) or not self._last_word_style_info:
+                    self._last_word_style_info = style_info
             return text
         except Exception as exc:
             self._debug(f"word read failed: {exc}")
@@ -524,6 +526,11 @@ class ActiveWordReader(BasePollingReader):
 
     def read_style_info(self) -> dict:
         return dict(self._last_word_style_info)
+
+    def _style_info_has_details(self, style_info: dict | None) -> bool:
+        if not style_info:
+            return False
+        return bool(style_info.get("line_styles") or style_info.get("segments"))
 
     def _read_style_info_from_document(self, document) -> dict:
         try:
@@ -572,6 +579,9 @@ class ActiveWordReader(BasePollingReader):
                 "is_blank": is_blank,
                 "style": clean_style,
             }
+            paragraph_alignment = clean_style.pop("paragraph_alignment", None)
+            if paragraph_alignment is not None:
+                item["paragraph_alignment"] = paragraph_alignment
             if not is_blank:
                 item["content_line"] = content_line
                 content_line += 1
@@ -594,6 +604,10 @@ class ActiveWordReader(BasePollingReader):
                     continue
                 if line_style is None and character.strip():
                     line_style = self._style_from_range(char_range)
+                    try:
+                        line_style["paragraph_alignment"] = int(char_range.ParagraphFormat.Alignment)
+                    except Exception:
+                        pass
                 line_chars.append(character)
 
         if line_chars or not line_styles:
@@ -888,37 +902,21 @@ class ActiveWordReader(BasePollingReader):
         paragraphs = body.findall("w:p", namespace) if body is not None else root.findall(".//w:body/w:p", namespace)
         segments: list[dict] = []
         text_index = 0
-        line_chunks: list[tuple[int, int, dict]] = []
-
-        def flush_line():
-            nonlocal line_chunks
-            signatures = {
-                tuple(sorted((style or {}).items()))
-                for start, end, style in line_chunks
-                if end > start
-            }
-            if len(signatures) > 1:
-                for start, end, style in line_chunks:
-                    self._append_openxml_style_segment(segments, start, end, style)
-            line_chunks = []
 
         for paragraph in paragraphs:
             for run in paragraph.findall("w:r", namespace):
                 style = self._word_openxml_run_style(run, namespace)
                 for part_text, is_break in self._word_openxml_run_text_parts(run, namespace):
                     if is_break:
-                        flush_line()
                         text_index += 1
                         continue
                     if not part_text:
                         continue
                     start = text_index
                     text_index += len(part_text)
-                    line_chunks.append((start, text_index, style))
+                    self._append_openxml_style_segment(segments, start, text_index, style)
                     if text_index > self.MAX_STYLE_CHARACTERS:
-                        flush_line()
                         return segments
-            flush_line()
             text_index += 1
             if text_index > self.MAX_STYLE_CHARACTERS:
                 return segments
@@ -1087,6 +1085,8 @@ class ActiveWordReader(BasePollingReader):
                 style = item.get("style") or {}
                 line_preview.append({
                     "line": item.get("line"),
+                    "content_line": item.get("content_line"),
+                    "is_blank": item.get("is_blank"),
                     "underline": style.get("underline"),
                     "underline_color": style.get("underline_color"),
                     "underline_color_hex": style.get("underline_color_hex"),

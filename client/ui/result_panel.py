@@ -1,4 +1,6 @@
 from pathlib import Path
+from datetime import datetime
+from difflib import SequenceMatcher
 
 from PyQt5.QtCore import QPoint, QRectF, QSize, Qt, QVariantAnimation, QTimer
 from PyQt5.QtGui import QColor, QIcon, QPainter, QPainterPath, QPen, QPixmap
@@ -14,6 +16,7 @@ from PyQt5.QtWidgets import (
     QLineEdit,
     QPushButton,
     QScrollArea,
+    QSizeGrip,
     QSizePolicy,
     QStackedLayout,
     QTabWidget,
@@ -98,13 +101,20 @@ class ResultPanel(QWidget):
         self.saved_history_enabled = False
         self.drag_active = False
         self.drag_position = QPoint()
+        self.resize_active = False
+        self.resize_edge = ""
+        self.resize_start_pos = QPoint()
+        self.resize_start_geometry = None
+        self.resize_margin = 10
         self._centered_once = False
         self._theme_mix = 1.0 if initial_dark_mode else 0.0
 
         self.setWindowTitle("Writing Assistant")
-        self.setFixedSize(760, 560)
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        self.resize(760, 560)
+        self.setMinimumSize(705, 480)
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setMouseTracking(True)
 
         self.theme_animation = QVariantAnimation(self)
         self.theme_animation.setDuration(280)
@@ -135,6 +145,7 @@ class ResultPanel(QWidget):
 
         self.card = QFrame()
         self.card.setObjectName("panelCard")
+        self.card.setMouseTracking(True)
         self.card_layout = QVBoxLayout(self.card)
         self.card_layout.setContentsMargins(24, 20, 24, 24)
         self.card_layout.setSpacing(18)
@@ -232,6 +243,10 @@ class ResultPanel(QWidget):
 
         self.evaluate_btn = QPushButton("평가")
         self.evaluate_btn.setObjectName("secondaryButton")
+        self.evaluation_reason_btn = QPushButton("\uc774\uc720")
+        self.evaluation_reason_btn.setObjectName("scoreReasonButton")
+        self.evaluation_reason_btn.setEnabled(False)
+        self.evaluation_reason_btn.hide()
         self.text_history_btn = self._create_history_button()
         self.recommend_title_btn = QPushButton("추천")
         self.recommend_title_btn.setObjectName("secondaryButton")
@@ -323,7 +338,14 @@ class ResultPanel(QWidget):
         self.score_label = QLabel("점수")
         self.score_label.setObjectName("scoreLabel")
         self.score_label.setAlignment(Qt.AlignCenter)
-        self.score_label.setMinimumWidth(92)
+        self.score_label.setMinimumWidth(78)
+        self.score_widget = QFrame()
+        self.score_widget.setObjectName("scoreWidget")
+        score_layout = QHBoxLayout(self.score_widget)
+        score_layout.setContentsMargins(0, 0, 0, 0)
+        score_layout.setSpacing(4)
+        score_layout.addWidget(self.score_label)
+        score_layout.addWidget(self.evaluation_reason_btn)
 
         self.title_label_box = QLabel("제목")
         self.title_label_box.setObjectName("titleValueLabel")
@@ -333,21 +355,26 @@ class ResultPanel(QWidget):
 
         self.tone_input = QLineEdit()
         self.tone_input.setObjectName("toneInput")
-        self.tone_input.setPlaceholderText("원하는 문체/말투")
+        self.tone_input.setPlaceholderText("원하는 문체")
 
         self.default_dark_mode_checkbox = QCheckBox("기본 다크 모드")
         self.default_dark_mode_checkbox.setObjectName("settingsCheck")
         self.clipboard_mode_checkbox = QCheckBox("클립보드 인식 사용")
         self.clipboard_mode_checkbox.setObjectName("settingsCheck")
+        self.drag_mode_checkbox = QCheckBox("드래그 인식 사용")
+        self.drag_mode_checkbox.setObjectName("settingsCheck")
         self.realtime_mode_checkbox = QCheckBox("실시간 인식 사용")
         self.realtime_mode_checkbox.setObjectName("settingsCheck")
         self.replace_mode_checkbox = QCheckBox("수정 방식 사용")
         self.replace_mode_checkbox.setObjectName("settingsSubCheck")
+        self.replace_mode_checkbox.setText("\ub9de\ucda4\ubc95 \uc218\uc815 \ubc29\uc2dd \uc0ac\uc6a9")
         self.history_enabled_checkbox = QCheckBox("기록 사용")
         self.history_enabled_checkbox.setObjectName("settingsCheck")
         self.clipboard_mode_checkbox.toggled.connect(self._sync_input_mode_checks)
+        self.drag_mode_checkbox.toggled.connect(self._sync_input_mode_checks)
         self.realtime_mode_checkbox.toggled.connect(self._sync_input_mode_checks)
         self.clipboard_mode_checkbox.toggled.connect(self._update_replace_mode_availability)
+        self.drag_mode_checkbox.toggled.connect(self._update_replace_mode_availability)
         self.realtime_mode_checkbox.toggled.connect(self._update_replace_mode_availability)
 
         self.settings_notice_label = QLabel("저장되었습니다.")
@@ -358,9 +385,9 @@ class ResultPanel(QWidget):
         self.settings_notice_label.setGraphicsEffect(self.settings_notice_effect)
 
         self.tabs.addTab(self._create_text_tab(), "텍스트")
-        self.tabs.addTab(self._create_spell_tab(), "맞춤법")
+        self.tabs.addTab(self._create_spell_tab(), "교정")
         self.tabs.addTab(self._create_action_tab(self.summary_box, self.run_summary_btn), "요약")
-        self.tabs.addTab(self._create_tone_tab(), "문체/말투")
+        self.tabs.addTab(self._create_tone_tab(), "문체")
         self.tabs.currentChanged.connect(self.update_copy_button_label)
 
         self.settings_page = self._create_settings_tab()
@@ -382,6 +409,7 @@ class ResultPanel(QWidget):
         self.content_stack.setCurrentIndex(0)
 
         button_layout = QHBoxLayout()
+        button_layout.setContentsMargins(0, 0, 0, 0)
         button_layout.setSpacing(10)
 
         self.copy_btn = QPushButton("원본 복사")
@@ -390,11 +418,18 @@ class ResultPanel(QWidget):
         self.quit_btn = QPushButton("종료")
         self.quit_btn.setObjectName("secondaryButton")
 
+        self.resize_grip = QSizeGrip(self.card)
+        self.resize_grip.setObjectName("resizeGrip")
+        self.resize_grip.setFixedSize(18, 18)
+        self.resize_grip.setToolTip("? ?? ??")
+
         button_layout.addWidget(self.copy_btn)
         button_layout.addStretch()
         button_layout.addWidget(self.bottom_status_widget, 0, Qt.AlignCenter)
         button_layout.addStretch()
         button_layout.addWidget(self.quit_btn)
+        button_layout.addSpacing(-27)
+        button_layout.addWidget(self.resize_grip, 0, Qt.AlignRight | Qt.AlignBottom)
 
         self.card_layout.addLayout(header_layout)
         self.card_layout.addWidget(self.content_container)
@@ -453,7 +488,7 @@ class ResultPanel(QWidget):
         action_row.setContentsMargins(0, 0, 8, 0)
         action_row.setSpacing(10)
         action_row.addStretch()
-        action_row.addWidget(self.score_label)
+        action_row.addWidget(self.score_widget)
         action_row.addWidget(self.evaluate_btn)
         action_row.addWidget(self.text_history_btn)
         layout.addLayout(action_row)
@@ -758,6 +793,8 @@ class ResultPanel(QWidget):
         section.addSpacing(4)
         section.addWidget(self.clipboard_mode_checkbox)
         section.addSpacing(4)
+        section.addWidget(self.drag_mode_checkbox)
+        section.addSpacing(4)
         section.addWidget(self.realtime_mode_checkbox)
         sub_option_row = QHBoxLayout()
         sub_option_row.setContentsMargins(28, 0, 0, 0)
@@ -959,10 +996,37 @@ class ResultPanel(QWidget):
         layout.setSpacing(8)
 
         if not logs:
-            empty_label = QLabel("저장된 기록이 없습니다.")
+            empty_label = QLabel("\uc800\uc7a5\ub41c \uae30\ub85d\uc774 \uc5c6\uc2b5\ub2c8\ub2e4.")
             empty_label.setObjectName("historyEmptyLabel")
             layout.addWidget(empty_label)
-        for log in logs:
+        for entry in self._group_history_logs(logs):
+            if entry.get("kind") == "group":
+                button = QPushButton(self._history_group_label(entry))
+                button.setObjectName("historyListButton")
+                button.setMinimumHeight(64)
+                button.clicked.connect(lambda checked=False, item=entry: self.show_history_group(feature_type, item))
+            else:
+                log = entry.get("log", {})
+                button = QPushButton(self._history_list_label(log))
+                button.setObjectName("historyListButton")
+                button.setMinimumHeight(58)
+                button.clicked.connect(lambda checked=False, item=log: self.show_history_detail(feature_type, item))
+            layout.addWidget(button)
+        layout.addStretch()
+        self.history_scroll.setWidget(content)
+        self.content_stack.setCurrentIndex(2)
+        self.settings_btn.setChecked(False)
+
+    def show_history_group(self, feature_type, group):
+        self.history_title_label.setText(self._history_group_title(group))
+        self._disconnect_history_back()
+        self.history_back_btn.clicked.connect(lambda: self.show_history_list(feature_type, getattr(self, "_last_history_logs", [])))
+        content = QWidget()
+        content.setObjectName("settingsScrollContent")
+        layout = QVBoxLayout(content)
+        layout.setContentsMargins(4, 4, 6, 4)
+        layout.setSpacing(8)
+        for log in group.get("logs", []):
             button = QPushButton(self._history_list_label(log))
             button.setObjectName("historyListButton")
             button.setMinimumHeight(58)
@@ -970,8 +1034,6 @@ class ResultPanel(QWidget):
             layout.addWidget(button)
         layout.addStretch()
         self.history_scroll.setWidget(content)
-        self.content_stack.setCurrentIndex(2)
-        self.settings_btn.setChecked(False)
 
     def show_history_detail(self, feature_type, log):
         self.history_title_label.setText("기록 상세")
@@ -986,10 +1048,20 @@ class ResultPanel(QWidget):
             row_label = QLabel(label)
             row_label.setObjectName("historyFieldLabel")
             layout.addWidget(row_label)
-            value_label = QLabel(str(value or ""))
-            value_label.setWordWrap(True)
-            value_label.setObjectName("historyLongValue" if long_text else "historyShortValue")
-            layout.addWidget(value_label)
+            if long_text:
+                value_box = QTextEdit()
+                value_box.setObjectName("historyLongTextBox")
+                value_box.setReadOnly(True)
+                value_box.setLineWrapMode(QTextEdit.WidgetWidth)
+                value_box.setPlainText(str(value or ""))
+                value_box.setMinimumHeight(96)
+                value_box.setMaximumHeight(170)
+                layout.addWidget(value_box)
+            else:
+                value_label = QLabel(str(value or ""))
+                value_label.setWordWrap(True)
+                value_label.setObjectName("historyShortValue")
+                layout.addWidget(value_label)
         layout.addStretch()
         self.history_scroll.setWidget(content)
 
@@ -1078,55 +1150,143 @@ class ResultPanel(QWidget):
 
     def _history_title(self, feature_type):
         return {
-            1: "텍스트 기능 기록",
-            2: "맞춤법 기능 기록",
-            3: "요약 기능 기록",
-            4: "문체/말투 기능 기록",
-        }.get(feature_type, "기록")
+            1: "\ud14d\uc2a4\ud2b8 \uae30\ub85d",
+            2: "\uad50\uc815 \uae30\ub85d",
+            3: "\uc694\uc57d \uae30\ub85d",
+            4: "\ubb38\uccb4 \ubcc0\uacbd \uae30\ub85d",
+        }.get(feature_type, "\uae30\ub85d")
+
+    def _history_kind_label(self, feature_type, feature_label=None):
+        label = str(feature_label or "").strip()
+        if label:
+            return label
+        return self._history_title(feature_type)
+
+    def _first_meaningful_line(self, text):
+        for line in str(text or "").splitlines():
+            line = line.strip()
+            if line:
+                return line
+        return ""
+
+    def _history_display_source(self, log):
+        title = (log.get("title") or "").strip()
+        if title:
+            return title
+        return (
+            self._first_meaningful_line(log.get("input_text"))
+            or self._first_meaningful_line(log.get("output_text"))
+            or "\uc81c\ubaa9 \uc5c6\uc74c"
+        )
+
+    def _history_preview(self, log):
+        source = self._history_display_source(log).strip()
+        if not source:
+            return "\uc81c\ubaa9 \uc5c6\uc74c..."
+        return source[:5] + "..."
+
+    def _format_history_time(self, value):
+        raw = str(value or "").strip()
+        if not raw:
+            return ""
+        try:
+            normalized = raw.replace("Z", "+00:00")
+            dt = datetime.fromisoformat(normalized)
+            return dt.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception:
+            return raw.replace("T", " ")[:19]
+
+    def _history_group_key(self, log):
+        return " ".join(self._history_display_source(log).lower().split())
+
+    def _group_history_logs(self, logs):
+        groups = []
+        for log in list(logs or []):
+            key = self._history_group_key(log)
+            if not key:
+                groups.append({"key": "", "title_key": "", "logs": [log]})
+                continue
+            title_key = key if (log.get("title") or "").strip() else ""
+            matched = None
+            for group in groups:
+                group_key = group.get("key", "")
+                group_title_key = group.get("title_key", "")
+                if title_key and group_title_key and title_key == group_title_key:
+                    matched = group
+                    break
+                if group_key and SequenceMatcher(None, key, group_key).ratio() >= 0.60:
+                    matched = group
+                    break
+            if matched is None:
+                groups.append({"key": key, "title_key": title_key, "logs": [log]})
+            else:
+                matched["logs"].append(log)
+                if title_key and not matched.get("title_key"):
+                    matched["title_key"] = title_key
+                    matched["key"] = key
+        entries = []
+        for group in groups:
+            if len(group.get("logs", [])) >= 2:
+                entries.append({"kind": "group", **group})
+            else:
+                entries.append({"kind": "single", "log": group.get("logs", [{}])[0]})
+        return entries
+
+    def _history_group_title(self, group):
+        logs = group.get("logs", [])
+        if not logs:
+            return "\uae30\ub85d \ubb36\uc74c"
+        return self._history_preview(logs[0]) + " \uae30\ub85d"
+
+    def _history_group_label(self, group):
+        logs = group.get("logs", [])
+        first = logs[0] if logs else {}
+        title = self._history_preview(first)
+        created_at = self._format_history_time(first.get("created_at", ""))
+        return f"{title} \uae30\ub85d\n{len(logs)}\uac1c \uae30\ub85d  {created_at}"
 
     def _history_list_label(self, log):
-        title = (log.get("title") or "").strip()
-        output_text = (log.get("output_text") or "").strip()
-        input_text = (log.get("input_text") or "").strip()
-        source = title or output_text or input_text
-        preview = source[:5] + "..." if len(source) > 5 else source or "제목 없음"
-        created_at = str(log.get("created_at", "")).replace("T", " ")[:19]
-        return f"{preview} {self._history_title(log.get('feature_type'))}\n{created_at}"
+        preview = self._history_preview(log)
+        kind = self._history_kind_label(log.get("feature_type"), log.get("feature_label"))
+        created_at = self._format_history_time(log.get("created_at", ""))
+        return f"{preview} {kind}\n{created_at}"
 
     def _history_detail_fields(self, feature_type, log):
-        created_at = str(log.get("created_at", "")).replace("T", " ")[:19]
+        created_at = self._format_history_time(log.get("created_at", ""))
+        kind_label = self._history_kind_label(log.get("feature_type"), log.get("feature_label"))
         if feature_type == 1:
             return [
-                ("원본", log.get("input_text"), True),
-                ("원본 점수", log.get("score"), False),
-                ("추천 제목", log.get("title"), False),
-                ("종류", log.get("feature_type"), False),
-                ("저장 시간", created_at, False),
+                ("\uc6d0\ubcf8", log.get("input_text"), True),
+                ("\uc6d0\ubcf8 \uc810\uc218", log.get("score"), False),
+                ("\ud3c9\uac00 \uc774\uc720", log.get("evaluation_reason"), True),
+                ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+                ("\uc885\ub958", kind_label, False),
+                ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
             ]
         if feature_type == 2:
             return [
-                ("원본 글", log.get("input_text"), True),
-                ("맞춤법 검사 결과", log.get("spelling_feedback"), True),
-                ("맞춤법 수정된 글", log.get("output_text"), True),
-                ("추천 제목", log.get("title"), False),
-                ("종류", log.get("feature_type"), False),
-                ("저장 시간", created_at, False),
+                ("\uc6d0\ubcf8 \uae00", log.get("input_text"), True),
+                ("\uad50\uc815 \ud3c9\uac00", log.get("spelling_feedback"), True),
+                ("\uad50\uc815\ub41c \uae00", log.get("output_text"), True),
+                ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+                ("\uc885\ub958", kind_label, False),
+                ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
             ]
         if feature_type == 3:
             return [
-                ("원본 글", log.get("input_text"), True),
-                ("요약글", log.get("output_text"), True),
-                ("추천 제목", log.get("title"), False),
-                ("종류", log.get("feature_type"), False),
-                ("저장 시간", created_at, False),
+                ("\uc6d0\ubcf8 \uae00", log.get("input_text"), True),
+                ("\uc694\uc57d\uae00", log.get("output_text"), True),
+                ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+                ("\uc885\ub958", kind_label, False),
+                ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
             ]
         return [
-            ("원본 글", log.get("input_text"), True),
-            ("제시한 어투/말투", log.get("tone"), False),
-            ("어투/말투 수정된 글", log.get("output_text"), True),
-            ("추천 제목", log.get("title"), False),
-            ("종류", log.get("feature_type"), False),
-            ("저장 시간", created_at, False),
+            ("\uc6d0\ubcf8 \uae00", log.get("input_text"), True),
+            ("\uc81c\uc2dc\ud55c \ubb38\uccb4", log.get("tone"), False),
+            ("\ubb38\uccb4 \ubcc0\uacbd\ub41c \uae00", log.get("output_text"), True),
+            ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+            ("\uc885\ub958", kind_label, False),
+            ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
         ]
 
     def apply_shadow(self):
@@ -1405,6 +1565,21 @@ class ResultPanel(QWidget):
             QPushButton#authSubmitButton:hover {{
                 background: {colors["accent_hover"]};
             }}
+            QPushButton#scoreReasonButton {{
+                background: {colors["button_bg"]};
+                color: {colors["button_text"]};
+                border-radius: 12px;
+                padding: 6px 10px;
+                font-size: 12px;
+                font-weight: 700;
+            }}
+            QPushButton#scoreReasonButton:hover {{
+                background: {colors["button_hover"]};
+            }}
+            QPushButton#scoreReasonButton:disabled {{
+                background: #e1e1e1;
+                color: #8a8a8a;
+            }}
             QPushButton#secondaryButton {{
                 background: {colors["button_bg"]};
                 color: {colors["button_text"]};
@@ -1502,6 +1677,37 @@ class ResultPanel(QWidget):
                 border-radius: 10px;
                 padding: 9px 11px;
             }}
+            QTextEdit#historyLongTextBox {{
+                color: {colors["text"]};
+                background: {colors["input_bg"]};
+                border: 1px solid {colors["editor_border"]};
+                border-radius: 10px;
+                padding: 8px 10px;
+                font-size: 13px;
+            }}
+            QTextEdit#historyLongTextBox QScrollBar:vertical {{
+                background: transparent;
+                width: 10px;
+                margin: 7px 3px 7px 0;
+            }}
+            QTextEdit#historyLongTextBox QScrollBar::handle:vertical {{
+                background: {colors["button_bg"]};
+                border-radius: 4px;
+                min-height: 28px;
+            }}
+            QTextEdit#historyLongTextBox QScrollBar::handle:vertical:hover {{
+                background: {colors["accent"]};
+            }}
+            QTextEdit#historyLongTextBox QScrollBar::add-line:vertical,
+            QTextEdit#historyLongTextBox QScrollBar::sub-line:vertical {{
+                height: 0px;
+                border: none;
+                background: transparent;
+            }}
+            QTextEdit#historyLongTextBox QScrollBar::add-page:vertical,
+            QTextEdit#historyLongTextBox QScrollBar::sub-page:vertical {{
+                background: transparent;
+            }}
             QLabel#historyFieldLabel {{
                 color: {colors["settings_text"]};
                 font-size: 12px;
@@ -1570,23 +1776,101 @@ class ResultPanel(QWidget):
             self._centered_once = True
 
     def mousePressEvent(self, event):
-        if event.button() == Qt.LeftButton and event.pos().y() <= 90:
-            self.drag_active = True
-            self.drag_position = event.globalPos() - self.frameGeometry().topLeft()
-            event.accept()
-            return
+        if event.button() == Qt.LeftButton:
+            edge = self._resize_edge_at(event.pos())
+            if edge:
+                self.resize_active = True
+                self.resize_edge = edge
+                self.resize_start_pos = event.globalPos()
+                self.resize_start_geometry = self.geometry()
+                event.accept()
+                return
+            if event.pos().y() <= 90:
+                self.drag_active = True
+                self.drag_position = event.globalPos() - self.frameGeometry().topLeft()
+                event.accept()
+                return
         super().mousePressEvent(event)
 
     def mouseMoveEvent(self, event):
+        if self.resize_active and event.buttons() & Qt.LeftButton:
+            self._resize_from_mouse(event.globalPos())
+            event.accept()
+            return
         if self.drag_active and event.buttons() & Qt.LeftButton:
             self.move(event.globalPos() - self.drag_position)
             event.accept()
             return
+        self._update_resize_cursor(event.pos())
         super().mouseMoveEvent(event)
 
     def mouseReleaseEvent(self, event):
         self.drag_active = False
+        self.resize_active = False
+        self.resize_edge = ""
+        self.resize_start_geometry = None
+        self.unsetCursor()
         super().mouseReleaseEvent(event)
+
+    def _resize_edge_at(self, pos):
+        margin = self.resize_margin
+        left = pos.x() <= margin
+        right = pos.x() >= self.width() - margin
+        top = pos.y() <= margin
+        bottom = pos.y() >= self.height() - margin
+        if top and left:
+            return "top_left"
+        if top and right:
+            return "top_right"
+        if bottom and left:
+            return "bottom_left"
+        if bottom and right:
+            return "bottom_right"
+        if left:
+            return "left"
+        if right:
+            return "right"
+        if top:
+            return "top"
+        if bottom:
+            return "bottom"
+        return ""
+
+    def _update_resize_cursor(self, pos):
+        edge = self._resize_edge_at(pos)
+        if edge in {"left", "right"}:
+            self.setCursor(Qt.SizeHorCursor)
+        elif edge in {"top", "bottom"}:
+            self.setCursor(Qt.SizeVerCursor)
+        elif edge in {"top_left", "bottom_right"}:
+            self.setCursor(Qt.SizeFDiagCursor)
+        elif edge in {"top_right", "bottom_left"}:
+            self.setCursor(Qt.SizeBDiagCursor)
+        else:
+            self.unsetCursor()
+
+    def _resize_from_mouse(self, global_pos):
+        if self.resize_start_geometry is None:
+            return
+        delta = global_pos - self.resize_start_pos
+        geometry = self.resize_start_geometry
+        x, y = geometry.x(), geometry.y()
+        width, height = geometry.width(), geometry.height()
+        min_width, min_height = self.minimumWidth(), self.minimumHeight()
+
+        if "right" in self.resize_edge:
+            width = max(min_width, width + delta.x())
+        if "bottom" in self.resize_edge:
+            height = max(min_height, height + delta.y())
+        if "left" in self.resize_edge:
+            new_width = max(min_width, width - delta.x())
+            x = x + (width - new_width)
+            width = new_width
+        if "top" in self.resize_edge:
+            new_height = max(min_height, height - delta.y())
+            y = y + (height - new_height)
+            height = new_height
+        self.setGeometry(x, y, width, height)
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -1738,26 +2022,37 @@ class ResultPanel(QWidget):
         self.account_save_btn.setEnabled(bool(self.get_account_payload()))
 
     def set_input_mode(self, mode):
-        normalized = "clipboard" if mode == "clipboard" else "realtime"
+        normalized = mode if mode in {"clipboard", "drag", "realtime"} else "clipboard"
         self.saved_input_mode = normalized
         self.clipboard_mode_checkbox.blockSignals(True)
+        self.drag_mode_checkbox.blockSignals(True)
         self.realtime_mode_checkbox.blockSignals(True)
         self.clipboard_mode_checkbox.setChecked(normalized == "clipboard")
+        self.drag_mode_checkbox.setChecked(normalized == "drag")
         self.realtime_mode_checkbox.setChecked(normalized == "realtime")
         self.clipboard_mode_checkbox.blockSignals(False)
+        self.drag_mode_checkbox.blockSignals(False)
         self.realtime_mode_checkbox.blockSignals(False)
-        mode_text = "클립보드 모드" if normalized == "clipboard" else "실시간 모드"
-        self.input_mode_status_label.setText(f"{mode_text} 인식 사용중")
+        mode_names = {
+            "clipboard": "클립보드 모드",
+            "drag": "드래그 모드",
+            "realtime": "실시간 모드",
+        }
+        self.input_mode_status_label.setText(f"{mode_names[normalized]} 인식 사용중")
         self._update_replace_mode_availability()
 
     def get_input_mode(self):
-        return "clipboard" if self.clipboard_mode_checkbox.isChecked() else "realtime"
+        if self.drag_mode_checkbox.isChecked():
+            return "drag"
+        if self.realtime_mode_checkbox.isChecked():
+            return "realtime"
+        return "clipboard"
 
     def set_replace_mode_checked(self, enabled):
         checked = bool(enabled)
         self.saved_replace_mode = checked
         self.replace_mode_checkbox.setChecked(checked)
-        self.apply_correction_btn.setVisible(checked)
+        self.apply_correction_btn.setVisible(checked or self.saved_input_mode == "drag")
 
     def get_replace_mode_checked(self):
         return self.replace_mode_checkbox.isChecked()
@@ -1768,31 +2063,32 @@ class ResultPanel(QWidget):
 
     def _sync_input_mode_checks(self):
         sender = self.sender()
-        if sender is self.clipboard_mode_checkbox and self.clipboard_mode_checkbox.isChecked():
-            self.realtime_mode_checkbox.blockSignals(True)
-            self.realtime_mode_checkbox.setChecked(False)
-            self.realtime_mode_checkbox.blockSignals(False)
-        elif sender is self.realtime_mode_checkbox and self.realtime_mode_checkbox.isChecked():
-            self.clipboard_mode_checkbox.blockSignals(True)
-            self.clipboard_mode_checkbox.setChecked(False)
-            self.clipboard_mode_checkbox.blockSignals(False)
+        checkboxes = (
+            self.clipboard_mode_checkbox,
+            self.drag_mode_checkbox,
+            self.realtime_mode_checkbox,
+        )
+        if sender in checkboxes and sender.isChecked():
+            for checkbox in checkboxes:
+                if checkbox is sender:
+                    continue
+                checkbox.blockSignals(True)
+                checkbox.setChecked(False)
+                checkbox.blockSignals(False)
 
-        if not self.clipboard_mode_checkbox.isChecked() and not self.realtime_mode_checkbox.isChecked():
-            fallback_checkbox = (
-                self.realtime_mode_checkbox
-                if sender is self.clipboard_mode_checkbox
-                else self.clipboard_mode_checkbox
-            )
+        if not any(checkbox.isChecked() for checkbox in checkboxes):
+            fallback_checkbox = self.clipboard_mode_checkbox
+            if sender is self.clipboard_mode_checkbox:
+                fallback_checkbox = self.drag_mode_checkbox
             fallback_checkbox.blockSignals(True)
             fallback_checkbox.setChecked(True)
             fallback_checkbox.blockSignals(False)
         self._update_replace_mode_availability()
 
     def _update_replace_mode_availability(self):
-        is_realtime = self.realtime_mode_checkbox.isChecked()
-        self.replace_mode_checkbox.setEnabled(is_realtime)
-        if not is_realtime:
-            self.replace_mode_checkbox.setChecked(False)
+        is_drag = self.drag_mode_checkbox.isChecked()
+        self.replace_mode_checkbox.setEnabled(True)
+        self.apply_correction_btn.setVisible(is_drag or self.replace_mode_checkbox.isChecked())
 
     def reset_text_tab(self):
         self._showing_placeholder = True
@@ -1853,10 +2149,14 @@ class ResultPanel(QWidget):
             scrollbar.setValue(round(scrollbar.maximum() * ratio))
 
     def clear_evaluation_score(self):
-        self.score_label.setText("점수")
+        self.score_label.setText("\uc810\uc218")
+        self.evaluation_reason_btn.setEnabled(False)
+        self.evaluation_reason_btn.hide()
 
     def set_evaluation_score(self, score_text):
         self.score_label.setText(score_text)
+        self.evaluation_reason_btn.setEnabled(True)
+        self.evaluation_reason_btn.show()
 
     def clear_title_recommendation(self):
         self.title_label_box.setText("제목")
@@ -1868,7 +2168,7 @@ class ResultPanel(QWidget):
         self.spell_box.clear()
         self.spell_box.setHtml(
             '<div style="color: #9b8a7f;">'
-            '<div>맞춤법 검사한 게 여기에 뜹니다.</div>'
+            '<div>교정 결과가 여기에 뜹니다.</div>'
             "</div>"
         )
 
@@ -1884,7 +2184,7 @@ class ResultPanel(QWidget):
         self.tone_box.clear()
         self.tone_box.setHtml(
             '<div style="color: #9b8a7f;">'
-            '<div>문체/말투 변경 결과가 여기에 뜹니다.</div>'
+            '<div>문체 변경 결과가 여기에 뜹니다.</div>'
             "</div>"
         )
 

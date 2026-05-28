@@ -48,23 +48,27 @@ class CorrectResponse(BaseModel):
 
 class UsageLogCreateRequest(BaseModel):
     feature_type: int
+    feature_label: str | None = None
     input_text: str
     output_text: str = ""
     title: str | None = None
     score: int | None = None
     tone: str | None = None
     spelling_feedback: str | None = None
+    evaluation_reason: str | None = None
 
 
 class UsageLogResponse(BaseModel):
     id: int
     feature_type: int
+    feature_label: str | None = None
     input_text: str
     output_text: str
     title: str | None = None
     score: int | None = None
     tone: str | None = None
     spelling_feedback: str | None = None
+    evaluation_reason: str | None = None
     created_at: datetime
 
     class Config:
@@ -81,6 +85,19 @@ class UserSettingsRequest(BaseModel):
 class UserSettingsResponse(UserSettingsRequest):
     has_settings: bool = True
     updated_at: datetime | None = None
+
+    class Config:
+        from_attributes = True
+
+
+class ToneFavoriteCreateRequest(BaseModel):
+    tone: str
+
+
+class ToneFavoriteResponse(BaseModel):
+    id: int
+    tone: str
+    created_at: datetime
 
     class Config:
         from_attributes = True

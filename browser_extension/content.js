@@ -20,27 +20,42 @@
   function isEditableElement(node) {
     if (!node || node.nodeType !== Node.ELEMENT_NODE) return false;
     const tag = node.tagName.toLowerCase();
-    return tag === "textarea" || tag === "input" || node.isContentEditable;
+    return tag === "textarea" || node.isContentEditable;
+  }
+
+  function closestEditableFromNode(node) {
+    if (!node) return null;
+    const element = node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
+    if (!element || !element.closest) return null;
+    if (isEditorChromeNode(element)) return null;
+    return element.closest("textarea,[contenteditable=''],[contenteditable='true']");
   }
 
   function activeEditable() {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const editableFromSelection = closestEditableFromNode(selection.anchorNode);
+      if (isCaptureReadyEditable(editableFromSelection)) {
+        lastEditable = editableFromSelection;
+        observeEditable(editableFromSelection);
+        return editableFromSelection;
+      }
+    }
+
     const active = document.activeElement;
-    if (isEditableElement(active)) {
+    if (isCaptureReadyEditable(active)) {
       lastEditable = active;
       observeEditable(active);
       return active;
     }
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0) return fallbackEditable();
-    let node = selection.anchorNode;
-    if (node && node.nodeType === Node.TEXT_NODE) node = node.parentElement;
-    const editable = node && node.closest ? node.closest("[contenteditable=''],[contenteditable='true'],textarea,input") : null;
-    if (editable) {
-      lastEditable = editable;
-      observeEditable(editable);
+
+    const fallback = bestEditableCandidate();
+    if (fallback) {
+      lastEditable = fallback;
+      observeEditable(fallback);
+      return fallback;
     }
-    if (editable) return editable;
-    return fallbackEditable();
+    return null;
   }
 
   function fallbackEditable() {
@@ -59,27 +74,69 @@
   }
 
   function bestEditableCandidate() {
-    const candidates = Array.from(document.querySelectorAll("textarea,input,[contenteditable=''],[contenteditable='true']"))
-      .filter((element) => isVisibleEditable(element) && editableCandidateText(element).trim());
+    const candidates = Array.from(document.querySelectorAll("textarea,[contenteditable=''],[contenteditable='true']"))
+      .filter((element) => isCaptureReadyEditable(element) && editableCandidateText(element).trim());
     if (!candidates.length) return null;
     if (candidates.length === 1) return candidates[0];
     return candidates.sort((left, right) => {
-      const leftScore = editableCandidateText(left).length + visibleArea(left) / 100;
-      const rightScore = editableCandidateText(right).length + visibleArea(right) / 100;
+      const leftScore = editableCandidateText(left).length + visibleArea(left) / 100 + editorLikeScore(left);
+      const rightScore = editableCandidateText(right).length + visibleArea(right) / 100 + editorLikeScore(right);
       return rightScore - leftScore;
     })[0];
   }
 
   function isVisibleEditable(element) {
+    if (!element) return false;
     const rect = element.getBoundingClientRect();
     const style = window.getComputedStyle(element);
     return rect.width > 0 && rect.height > 0 && style.visibility !== "hidden" && style.display !== "none";
   }
 
+  function isCaptureReadyEditable(element) {
+    return Boolean(isEditableElement(element) && isVisibleEditable(element) && !isTransientInputBuffer(element));
+  }
+
+  function isTransientInputBuffer(element) {
+    if (!element || !element.matches) return true;
+    if (element.matches("[data-input-buffer]")) return true;
+    const style = window.getComputedStyle(element);
+    const inlineStyle = element.getAttribute("style") || "";
+    const transformText = `${style.transform || ""} ${inlineStyle}`.toLowerCase();
+    if (transformText.includes("rotatex(90deg)")) return true;
+    if (!element.querySelector("[data-input-buffer]")) return false;
+    return !editorContentText(element).trim();
+  }
+
+  function editorContentText(element) {
+    if (!element) return "";
+    if (element.matches && element.matches("textarea")) return element.value || "";
+    const chunks = [];
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return isEditorContentNode(node, element) && (node.nodeValue || "").trim()
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+    while (walker.nextNode()) {
+      chunks.push(walker.currentNode.nodeValue || "");
+    }
+    return chunks.join("");
+  }
+
+  function editorLikeScore(element) {
+    const attrs = `${element.id || ""} ${element.className || ""} ${element.getAttribute("role") || ""} ${element.getAttribute("aria-label") || ""}`.toLowerCase();
+    let score = 0;
+    if (/editor|write|content|article|post|se-|prosemirror|textbox/.test(attrs)) score += 500;
+    if (element.getAttribute("role") === "textbox") score += 300;
+    if (element.matches("textarea")) score += 200;
+    return score;
+  }
+
   function editableCandidateText(element) {
     if (!element) return "";
-    if (element.matches("textarea,input")) return element.value || "";
-    return element.innerText || element.textContent || "";
+    if (element.matches("textarea")) return element.value || "";
+    return editorContentText(element);
   }
 
   function visibleArea(element) {
@@ -134,16 +191,15 @@
   function leafTextBlocks(element, blockSelector) {
     const allBlocks = Array.from(element.querySelectorAll(blockSelector));
     return allBlocks.filter((block) => {
+      if (!isEditorContentNode(block, element) || !blockHasEditorText(block, element)) return false;
       const nestedBlocks = Array.from(block.querySelectorAll(blockSelector));
-      return !nestedBlocks.some((nested) => nested !== block);
+      return !nestedBlocks.some((nested) => nested !== block && isEditorContentNode(nested, element) && blockHasEditorText(nested, element));
     });
   }
 
   function blockPlainText(block) {
     if (isEmptyBlock(block)) return "";
-    const raw = block.innerText != null && block.innerText !== "" ? block.innerText : block.textContent || "";
-    const value = String(raw).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-    return value.replace(/\n+$/g, "");
+    return inlinePlainText(block);
   }
 
   function isEmptyBlock(block) {
@@ -152,11 +208,12 @@
 
   function inlinePlainText(element) {
     const chunks = [];
-    walkInlineText(element, chunks);
+    walkInlineText(element, chunks, element);
     return chunks.join("").replace(/\r\n/g, "\n").replace(/\r/g, "\n").replace(/\n+$/g, "");
   }
 
-  function walkInlineText(node, chunks) {
+  function walkInlineText(node, chunks, root) {
+    if (!isEditorContentNode(node, root)) return;
     if (node.nodeType === Node.TEXT_NODE) {
       chunks.push(node.nodeValue || "");
       return;
@@ -166,14 +223,42 @@
       chunks.push("\n");
       return;
     }
-    Array.from(node.childNodes).forEach((child) => walkInlineText(child, chunks));
+    Array.from(node.childNodes).forEach((child) => walkInlineText(child, chunks, root || node));
+  }
+
+  function isEditorContentNode(node, root) {
+    if (!node) return false;
+    const element = node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
+    if (!element) return false;
+    if (root && element !== root && !root.contains(element)) return false;
+    if (element === root) return true;
+    return !isEditorChromeNode(element);
+  }
+
+  function isEditorChromeNode(element) {
+    if (!element || !element.closest) return false;
+    return Boolean(element.closest(
+      "[data-input-buffer],[contenteditable='false'],[aria-hidden='true'],button,input,select,textarea,script,style,noscript," +
+      "[role='button'],[role='toolbar'],[role='menu'],[role='menubar'],[role='menuitem'],[role='tab'],[role='switch']"
+    ));
+  }
+
+  function blockHasEditorText(block, root) {
+    const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return isEditorContentNode(node, root) && (node.nodeValue || "").trim()
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+    return Boolean(walker.nextNode()) || isEmptyBlock(block);
   }
 
   function domDebug(element, range) {
     const textNodes = [];
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
-        return (node.nodeValue || "").trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+        return isEditorContentNode(node, element) && (node.nodeValue || "").trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
       }
     });
     while (walker.nextNode() && textNodes.length < 8) {
@@ -225,7 +310,7 @@
 
     const walker = document.createTreeWalker(walkerRoot, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
-        return range.intersectsNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        return isEditorContentNode(node, fallbackElement) && range.intersectsNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
     });
 
@@ -248,50 +333,149 @@
 
   function styleSegmentsFromElement(element, text) {
     if (!text) return [];
-    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+    const blockSelector = "p,div,li,h1,h2,h3,h4,h5,h6,blockquote,pre";
+    const blocks = leafTextBlocks(element, blockSelector);
+    if (blocks.length) {
+      const segments = [];
+      let cursor = 0;
+      blocks.forEach((block, index) => {
+        const blockText = blockPlainText(block);
+        appendSegmentsForContainer(segments, block, blockText, cursor, styleFromElement(block));
+        cursor += blockText.length;
+        if (index < blocks.length - 1) cursor += 1;
+      });
+      return completeSegments(segments, text, styleFromElement(element));
+    }
+
+    const segments = [];
+    appendSegmentsForContainer(segments, element, text, 0, styleFromElement(element));
+    return completeSegments(segments, text, styleFromElement(element));
+  }
+
+  function appendSegmentsForContainer(segments, container, containerText, offset, fallbackStyle) {
+    if (!containerText) return;
+    const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
-        return (node.nodeValue || "").length ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+        return isEditorContentNode(node, container) && (node.nodeValue || "").length ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
       }
     });
 
-    const segments = [];
     let position = 0;
     while (walker.nextNode()) {
       const node = walker.currentNode;
       const chunk = node.nodeValue || "";
       if (!chunk) continue;
-      const foundAt = text.indexOf(chunk, position);
-      const start = foundAt >= 0 ? foundAt : position;
-      const end = Math.min(text.length, start + chunk.length);
-      if (end <= start) continue;
-      appendSegment(segments, start, end, styleFromElement(node.parentElement || element));
-      position = end;
+      const foundAt = containerText.indexOf(chunk, position);
+      const localStart = foundAt >= 0 ? foundAt : position;
+      const localEnd = Math.min(containerText.length, localStart + chunk.length);
+      if (localEnd <= localStart) continue;
+      appendSegment(segments, offset + localStart, offset + localEnd, styleFromNode(node, fallbackStyle));
+      position = localEnd;
     }
+  }
 
+  function completeSegments(segments, text, fallbackStyle) {
     if (!segments.length) {
-      return [{ start: 0, end: text.length, style: styleFromElement(element) }];
+      return [{ start: 0, end: text.length, style: fallbackStyle }];
     }
     if (segments[0].start > 0) {
-      segments.unshift({ start: 0, end: segments[0].start, style: styleFromElement(element) });
+      segments.unshift({ start: 0, end: segments[0].start, style: fallbackStyle });
     }
     const last = segments[segments.length - 1];
     if (last.end < text.length) {
-      appendSegment(segments, last.end, text.length, styleFromElement(element));
+      appendSegment(segments, last.end, text.length, fallbackStyle);
     }
     return segments;
   }
 
+  function styleFromNode(node, fallbackStyle) {
+    const parent = node && node.parentElement;
+    if (!parent) return fallbackStyle || {};
+    return styleFromElement(parent);
+  }
+
   function styleFromElement(element) {
     const computed = window.getComputedStyle(element);
+    const decoration = effectiveTextDecoration(element, computed);
+    const textColor = effectiveTextColor(element, computed);
     return {
       fontFamily: computed.fontFamily,
       fontSize: computed.fontSize,
       fontWeight: computed.fontWeight,
       fontStyle: computed.fontStyle,
-      color: computed.color,
-      textDecorationLine: computed.textDecorationLine,
-      backgroundColor: computed.backgroundColor
+      color: textColor,
+      webkitTextFillColor: textColor,
+      verticalAlign: effectiveVerticalAlign(element, computed),
+      textDecorationLine: decoration.line,
+      textDecorationColor: decoration.color,
+      textDecorationStyle: decoration.style,
+      textDecorationThickness: decoration.thickness,
+      backgroundColor: effectiveBackgroundColor(element, computed)
     };
+  }
+
+  function effectiveTextDecoration(element, computed) {
+    const lines = [];
+    let color = computed.textDecorationColor;
+    let style = computed.textDecorationStyle;
+    let thickness = computed.textDecorationThickness;
+    let current = element;
+    while (current && current.nodeType === Node.ELEMENT_NODE) {
+      const currentStyle = current === element ? computed : window.getComputedStyle(current);
+      const line = currentStyle.textDecorationLine || "none";
+      if (line && line !== "none") {
+        line.split(/\s+/).forEach((part) => {
+          if (part && part !== "none" && !lines.includes(part)) lines.push(part);
+        });
+        color = currentStyle.textDecorationColor || color;
+        style = currentStyle.textDecorationStyle || style;
+        thickness = currentStyle.textDecorationThickness || thickness;
+      }
+      current = current.parentElement;
+    }
+    return {
+      line: lines.length ? lines.join(" ") : "none",
+      color,
+      style,
+      thickness
+    };
+  }
+
+  function effectiveTextColor(element, computed) {
+    const fill = computed.webkitTextFillColor;
+    if (fill && fill !== "transparent" && fill !== "rgba(0, 0, 0, 0)") {
+      return fill;
+    }
+    return computed.color;
+  }
+
+  function effectiveVerticalAlign(element, computed) {
+    let current = element;
+    while (current && current.nodeType === Node.ELEMENT_NODE) {
+      const tag = current.tagName ? current.tagName.toLowerCase() : "";
+      if (tag === "sup") return "super";
+      if (tag === "sub") return "sub";
+      const style = current === element ? computed : window.getComputedStyle(current);
+      const align = style.verticalAlign || "baseline";
+      if (align && align !== "baseline" && align !== "normal" && align !== "0px") {
+        return align;
+      }
+      current = current.parentElement;
+    }
+    return computed.verticalAlign;
+  }
+
+  function effectiveBackgroundColor(element, computed) {
+    let current = element;
+    while (current && current.nodeType === Node.ELEMENT_NODE) {
+      const style = current === element ? computed : window.getComputedStyle(current);
+      const color = style.backgroundColor;
+      if (color && color !== "transparent" && color !== "rgba(0, 0, 0, 0)") {
+        return color;
+      }
+      current = current.parentElement;
+    }
+    return computed.backgroundColor;
   }
 
   function appendSegment(segments, start, end, style) {
@@ -319,7 +503,7 @@
   }
 
   function observeEditable(element) {
-    if (!element || element.matches("textarea,input") || observedEditable === element) return;
+    if (!element || element.matches("textarea") || observedEditable === element) return;
     if (editableObserver) editableObserver.disconnect();
     observedEditable = element;
     editableObserver = new MutationObserver(() => scheduleCapture());
@@ -330,10 +514,18 @@
     });
   }
 
+  function shouldCaptureDocument() {
+    if (document.visibilityState && document.visibilityState !== "visible") return false;
+    if (!document.hasFocus()) return false;
+    return true;
+  }
+
   async function captureNow() {
+    if (!shouldCaptureDocument()) return;
     const element = activeEditable();
     if (!element) return;
-    const payload = element.matches("textarea,input") ? captureInput(element) : captureContentEditable(element);
+    if (!shouldCaptureDocument()) return;
+    const payload = element.matches("textarea") ? captureInput(element) : captureContentEditable(element);
     if (!payload.text.trim()) return;
     payload.segments = cleanSegments(payload.segments || []);
     payload.session_id = SESSION_ID;
@@ -377,7 +569,7 @@
   function applyReplacement(text, styleInfo) {
     const element = activeEditable();
     if (!element) return;
-    if (element.matches("textarea,input")) {
+    if (element.matches("textarea")) {
       const start = element.selectionStart || 0;
       const end = element.selectionEnd || start;
       element.setRangeText(text, start, end, "end");
@@ -459,7 +651,7 @@
     const root = element;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
-        return range.intersectsNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        return isEditorContentNode(node, element) && range.intersectsNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
     });
 
@@ -496,13 +688,22 @@
     }
 
     const normalized = normalizedSegmentsForText(segments, text);
+    let cursor = 0;
     for (const segment of normalized) {
+      if (segment.start > cursor) {
+        appendTextWithBreaks(fragment, text.slice(cursor, segment.start));
+      }
       const chunk = text.slice(segment.start, segment.end);
-      if (!chunk) continue;
-      const span = document.createElement("span");
-      applyInlineStyle(span, segment.style || {});
-      appendTextWithBreaks(span, chunk);
-      fragment.appendChild(span);
+      if (chunk) {
+        const span = document.createElement("span");
+        applyInlineStyle(span, segment.style || {});
+        appendTextWithBreaks(span, chunk);
+        fragment.appendChild(span);
+      }
+      cursor = Math.max(cursor, segment.end);
+    }
+    if (cursor < String(text || "").length) {
+      appendTextWithBreaks(fragment, text.slice(cursor));
     }
     return fragment;
   }
@@ -560,25 +761,42 @@
   }
 
   function normalizedSegmentsForText(segments, text) {
+    const length = String(text || "").length;
     const result = [];
-    let cursor = 0;
-    for (let index = 0; index < segments.length; index += 1) {
-      const source = segments[index] || {};
-      const originalStart = Number.isFinite(source.start) ? source.start : parseInt(source.start || "0", 10);
-      const originalEnd = Number.isFinite(source.end) ? source.end : parseInt(source.end || "0", 10);
-      const sourceLength = Math.max(0, (originalEnd || 0) - (originalStart || 0));
-      const start = cursor;
-      const end = index === segments.length - 1 ? text.length : Math.min(text.length, cursor + sourceLength);
-      cursor = end;
-      if (end > start) {
-        result.push({ start, end, style: source.style || {} });
-      }
-      if (cursor >= text.length) break;
+    const sorted = (Array.isArray(segments) ? segments : [])
+      .map((source) => {
+        const start = Number.isFinite(source.start) ? source.start : parseInt(source.start || "0", 10);
+        const end = Number.isFinite(source.end) ? source.end : parseInt(source.end || "0", 10);
+        return {
+          start: Math.max(0, Math.min(length, start || 0)),
+          end: Math.max(0, Math.min(length, end || 0)),
+          style: source.style || {}
+        };
+      })
+      .filter((segment) => segment.end > segment.start)
+      .sort((left, right) => left.start - right.start || left.end - right.end);
+
+    for (const segment of sorted) {
+      const previous = result[result.length - 1];
+      const start = previous ? Math.max(segment.start, previous.end) : segment.start;
+      if (segment.end <= start) continue;
+      splitSegmentByLine(result, text, start, segment.end, segment.style);
     }
-    if (!result.length && text) {
-      result.push({ start: 0, end: text.length, style: segments[0] ? segments[0].style || {} : {} });
-    }
+
     return result;
+  }
+
+  function splitSegmentByLine(result, text, start, end, style) {
+    let cursor = start;
+    while (cursor < end) {
+      const newline = String(text || "").indexOf("\n", cursor);
+      const segmentEnd = newline >= 0 && newline < end ? newline : end;
+      if (segmentEnd > cursor) {
+        result.push({ start: cursor, end: segmentEnd, style });
+      }
+      if (newline < 0 || newline >= end) break;
+      cursor = newline + 1;
+    }
   }
 
   function appendTextWithBreaks(parent, text) {
@@ -597,7 +815,12 @@
       fontStyle: "fontStyle",
       color: "color",
       backgroundColor: "backgroundColor",
-      textDecorationLine: "textDecorationLine"
+      webkitTextFillColor: "webkitTextFillColor",
+      verticalAlign: "verticalAlign",
+      textDecorationLine: "textDecorationLine",
+      textDecorationColor: "textDecorationColor",
+      textDecorationStyle: "textDecorationStyle",
+      textDecorationThickness: "textDecorationThickness"
     };
     for (const [source, target] of Object.entries(assignments)) {
       const value = style[source];
@@ -612,9 +835,6 @@
   document.addEventListener("keyup", scheduleSettledCaptures, true);
   document.addEventListener("mouseup", scheduleSettledCaptures, true);
   document.addEventListener("focusin", scheduleSettledCaptures, true);
-  window.addEventListener("load", scheduleSettledCaptures, true);
-  window.setTimeout(scheduleSettledCaptures, 500);
-  window.setTimeout(scheduleSettledCaptures, 1500);
-  window.setInterval(scheduleSettledCaptures, 3000);
+  window.addEventListener("load", scheduleCapture, true);
   pollCommand();
 })();

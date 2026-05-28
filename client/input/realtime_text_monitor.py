@@ -8,7 +8,9 @@ from client.input.ai_grammary_text_reader import (
     get_process_name,
 )
 from client.input.browser_extension_bridge import get_browser_extension_bridge
+from client.input.input_mode_state import is_input_mode_active
 from client.input.keyboard_monitor import monitor_typed_text
+from client.input.realtime_reading_pause import is_realtime_reading_paused
 
 try:
     import win32api
@@ -44,6 +46,10 @@ def monitor_realtime_text(callback, poll_interval=0.25, debug=False):
 
     while True:
         try:
+            if not is_input_mode_active("realtime") or is_realtime_reading_paused():
+                time.sleep(poll_interval)
+                continue
+
             browser_event = browser_bridge.poll_event()
             if browser_event is not None:
                 callback(browser_event)

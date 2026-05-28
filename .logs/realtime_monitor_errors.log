@@ -1,2 +1,3 @@
 2026-05-09 19:46:12 [reader_poll] RuntimeError: wrapped C/C++ object of type SignalBridge has been deleted
 2026-05-12 08:28:49 [reader_poll] RuntimeError: wrapped C/C++ object of type SignalBridge has been deleted
+2026-05-25 11:52:31 [reader_poll] RuntimeError: wrapped C/C++ object of type SignalBridge has been deleted

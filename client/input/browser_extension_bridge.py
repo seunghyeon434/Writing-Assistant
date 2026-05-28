@@ -111,6 +111,14 @@ class BrowserExtensionBridge:
         text = str(payload.get("text") or "")
         if not text.strip():
             return None
+        target_kind = str(payload.get("target_kind") or "")
+        if target_kind not in {"contenteditable", "textarea"}:
+            self._log(
+                "capture_rejected "
+                f"kind={target_kind!r} title={str(payload.get('title') or '')[:80]!r} "
+                f"text_len={len(text)}"
+            )
+            return None
         session_id = str(payload.get("session_id") or "")
         dom_debug = payload.get("dom_debug") or {}
         if dom_debug.get("hasRange") and self._session_text_memory.get(session_id):
@@ -275,7 +283,10 @@ class BrowserExtensionBridge:
                     "fontWeight": style.get("fontWeight"),
                     "fontStyle": style.get("fontStyle"),
                     "color": style.get("color"),
+                    "webkitTextFillColor": style.get("webkitTextFillColor"),
+                    "verticalAlign": style.get("verticalAlign"),
                     "textDecorationLine": style.get("textDecorationLine"),
+                    "backgroundColor": style.get("backgroundColor"),
                 }
             )
         return sample
@@ -293,7 +304,10 @@ class BrowserExtensionBridge:
                     "fontWeight": style.get("fontWeight"),
                     "fontStyle": style.get("fontStyle"),
                     "color": style.get("color"),
+                    "webkitTextFillColor": style.get("webkitTextFillColor"),
+                    "verticalAlign": style.get("verticalAlign"),
                     "textDecorationLine": style.get("textDecorationLine"),
+                    "backgroundColor": style.get("backgroundColor"),
                 }
             )
         return {
