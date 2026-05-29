@@ -6,7 +6,7 @@ import time
 
 from PyQt5.QtCore import QSize, Qt, QTimer, pyqtSignal
 from PyQt5.QtGui import QColor, QCursor, QIcon, QPainter
-from PyQt5.QtWidgets import QApplication, QButtonGroup, QFrame, QHBoxLayout, QLabel, QPushButton, QRadioButton, QTextEdit, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QButtonGroup, QCheckBox, QFrame, QHBoxLayout, QLabel, QPushButton, QRadioButton, QTextEdit, QVBoxLayout, QWidget
 
 try:
     import win32gui
@@ -450,7 +450,7 @@ class TitleConfirmOverlay(QWidget):
 
 
 class MainOverlay(QWidget):
-    settings_save_requested = pyqtSignal(str)
+    settings_save_requested = pyqtSignal(str, bool)
     open_panel_requested = pyqtSignal()
     evaluate_requested = pyqtSignal()
     evaluation_reason_requested = pyqtSignal()
@@ -480,6 +480,7 @@ class MainOverlay(QWidget):
         self._last_reader_name = ""
         self._overlay_state = None
         self._active_mode = "clipboard"
+        self._spelling_replace_mode = False
         self._pending_hide_reason = "direct"
         self._status_timer = QTimer(self)
         self._status_timer.setSingleShot(True)
@@ -620,6 +621,15 @@ class MainOverlay(QWidget):
                 font-size: 11px;
                 font-weight: 800;
             }
+            QRadioButton:disabled, QCheckBox:disabled {
+                color: #9a8a7e;
+            }
+            QCheckBox#settingsSubCheck {
+                color: #3f2f26;
+                font-size: 9px;
+                font-weight: 750;
+                spacing: 4px;
+            }
             QRadioButton::indicator {
                 width: 13px;
                 height: 13px;
@@ -628,6 +638,21 @@ class MainOverlay(QWidget):
                 background: #fffaf4;
             }
             QRadioButton::indicator:checked { background: #b86a3c; }
+            QCheckBox#settingsSubCheck::indicator {
+                width: 11px;
+                height: 11px;
+                border: 1px solid #cdb8a5;
+                border-radius: 4px;
+                background: #fffaf4;
+            }
+            QCheckBox#settingsSubCheck::indicator:disabled {
+                border: 1px solid #ddd4ca;
+                background: #eee8e1;
+            }
+            QCheckBox#settingsSubCheck::indicator:checked {
+                background: #b86a3c;
+                border: 1px solid #b86a3c;
+            }
             """
         )
 
@@ -794,13 +819,30 @@ class MainOverlay(QWidget):
         controls_row.setSpacing(10)
         self.mode_group = QButtonGroup(self.settings_cover)
         self.mode_group.setExclusive(True)
-        self.clipboard_radio = QRadioButton("\ud074\ub9bd\ubcf4\ub4dc \ubaa8\ub4dc")
         self.drag_radio = QRadioButton("\ub4dc\ub798\uadf8 \ubaa8\ub4dc")
         self.realtime_radio = QRadioButton("\uc2e4\uc2dc\uac04 \ubaa8\ub4dc")
-        for radio, mode in ((self.clipboard_radio, "clipboard"), (self.drag_radio, "drag"), (self.realtime_radio, "realtime")):
+        self.drag_replace_check = QCheckBox("\ub9de\ucda4\ubc95 \uc218\uc815 \ubc29\uc2dd \uc0ac\uc6a9")
+        self.drag_replace_check.setObjectName("settingsSubCheck")
+        self.realtime_replace_check = QCheckBox("\ub9de\ucda4\ubc95 \uc218\uc815 \ubc29\uc2dd \uc0ac\uc6a9")
+        self.realtime_replace_check.setObjectName("settingsSubCheck")
+        self.drag_replace_check.toggled.connect(lambda checked: self._sync_replace_checks("drag", checked))
+        self.realtime_replace_check.toggled.connect(lambda checked: self._sync_replace_checks("realtime", checked))
+        for radio, mode in ((self.drag_radio, "drag"), (self.realtime_radio, "realtime")):
             self.mode_group.addButton(radio)
             radio.setProperty("mode", mode)
-            controls_row.addWidget(radio)
+            radio.toggled.connect(self._update_settings_replace_availability)
+            replace_check = self.drag_replace_check if mode == "drag" else self.realtime_replace_check
+            mode_layout = QVBoxLayout()
+            mode_layout.setContentsMargins(0, 0, 0, 0)
+            mode_layout.setSpacing(1)
+            mode_layout.addWidget(radio)
+            sub_row = QHBoxLayout()
+            sub_row.setContentsMargins(13, 0, 0, 0)
+            sub_row.setSpacing(0)
+            sub_row.addWidget(replace_check)
+            sub_row.addStretch(1)
+            mode_layout.addLayout(sub_row)
+            controls_row.addLayout(mode_layout)
         controls_row.addStretch(1)
         save_btn = self._button("\uc800\uc7a5", self._emit_mode_save, width=64)
         save_btn.setFixedHeight(30)
@@ -861,8 +903,24 @@ class MainOverlay(QWidget):
     def _emit_mode_save(self):
         checked = self.mode_group.checkedButton()
         mode = checked.property("mode") if checked is not None else self._active_mode
+        replace_enabled = self.drag_replace_check.isChecked() if mode == "drag" else self.realtime_replace_check.isChecked()
         self.close_settings_cover()
-        self.settings_save_requested.emit(str(mode or self._active_mode))
+        self.settings_save_requested.emit(str(mode or self._active_mode), bool(replace_enabled))
+
+    def _sync_replace_checks(self, source_mode, checked):
+        self._spelling_replace_mode = bool(checked)
+        other = self.realtime_replace_check if source_mode == "drag" else self.drag_replace_check
+        other.blockSignals(True)
+        other.setChecked(bool(checked))
+        other.blockSignals(False)
+
+    def set_spelling_replace_mode(self, enabled):
+        self._spelling_replace_mode = bool(enabled)
+        for checkbox in (self.drag_replace_check, self.realtime_replace_check):
+            checkbox.blockSignals(True)
+            checkbox.setChecked(self._spelling_replace_mode)
+            checkbox.blockSignals(False)
+        self._update_settings_replace_availability()
 
     def set_correction_enabled(self, enabled):
         if hasattr(self, "correction_btn"):
@@ -873,11 +931,25 @@ class MainOverlay(QWidget):
         for mode_name, dot in self._mode_indicators.items():
             dot.setText("\u25cf" if mode_name == self._active_mode else "\u25cb")
         radio = {
-            "clipboard": self.clipboard_radio,
             "drag": self.drag_radio,
             "realtime": self.realtime_radio,
-        }[self._active_mode]
-        radio.setChecked(True)
+        }.get(self._active_mode)
+        if radio is not None:
+            radio.setChecked(True)
+        else:
+            for button in (self.drag_radio, self.realtime_radio):
+                button.setAutoExclusive(False)
+                button.setChecked(False)
+                button.setAutoExclusive(True)
+        self._update_settings_replace_availability()
+
+    def _update_settings_replace_availability(self):
+        drag_selected = self.drag_radio.isChecked()
+        realtime_selected = self.realtime_radio.isChecked()
+        self.drag_replace_check.setVisible(drag_selected)
+        self.realtime_replace_check.setVisible(realtime_selected)
+        self.drag_replace_check.setEnabled(drag_selected)
+        self.realtime_replace_check.setEnabled(realtime_selected)
 
     def open_settings_cover(self):
         self.settings_cover.setGeometry(self.card.rect())

@@ -368,6 +368,9 @@ class ResultPanel(QWidget):
         self.replace_mode_checkbox = QCheckBox("수정 방식 사용")
         self.replace_mode_checkbox.setObjectName("settingsSubCheck")
         self.replace_mode_checkbox.setText("\ub9de\ucda4\ubc95 \uc218\uc815 \ubc29\uc2dd \uc0ac\uc6a9")
+        self.realtime_replace_mode_checkbox = self.replace_mode_checkbox
+        self.drag_replace_mode_checkbox = QCheckBox("\ub9de\ucda4\ubc95 \uc218\uc815 \ubc29\uc2dd \uc0ac\uc6a9")
+        self.drag_replace_mode_checkbox.setObjectName("settingsSubCheck")
         self.history_enabled_checkbox = QCheckBox("기록 사용")
         self.history_enabled_checkbox.setObjectName("settingsCheck")
         self.clipboard_mode_checkbox.toggled.connect(self._sync_input_mode_checks)
@@ -376,6 +379,8 @@ class ResultPanel(QWidget):
         self.clipboard_mode_checkbox.toggled.connect(self._update_replace_mode_availability)
         self.drag_mode_checkbox.toggled.connect(self._update_replace_mode_availability)
         self.realtime_mode_checkbox.toggled.connect(self._update_replace_mode_availability)
+        self.drag_replace_mode_checkbox.toggled.connect(lambda checked: self._sync_replace_mode_checks("drag", checked))
+        self.realtime_replace_mode_checkbox.toggled.connect(lambda checked: self._sync_replace_mode_checks("realtime", checked))
 
         self.settings_notice_label = QLabel("저장되었습니다.")
         self.settings_notice_label.setObjectName("settingsNotice")
@@ -794,13 +799,22 @@ class ResultPanel(QWidget):
         section.addWidget(self.clipboard_mode_checkbox)
         section.addSpacing(4)
         section.addWidget(self.drag_mode_checkbox)
+        self.drag_replace_mode_container = QWidget()
+        drag_sub_option_row = QHBoxLayout(self.drag_replace_mode_container)
+        drag_sub_option_row.setContentsMargins(34, 0, 0, 0)
+        drag_sub_option_row.setSpacing(0)
+        drag_sub_option_row.addWidget(self.drag_replace_mode_checkbox)
+        drag_sub_option_row.addStretch()
+        section.addWidget(self.drag_replace_mode_container)
         section.addSpacing(4)
         section.addWidget(self.realtime_mode_checkbox)
-        sub_option_row = QHBoxLayout()
-        sub_option_row.setContentsMargins(28, 0, 0, 0)
-        sub_option_row.addWidget(self.replace_mode_checkbox)
-        sub_option_row.addStretch()
-        section.addLayout(sub_option_row)
+        self.realtime_replace_mode_container = QWidget()
+        realtime_sub_option_row = QHBoxLayout(self.realtime_replace_mode_container)
+        realtime_sub_option_row.setContentsMargins(34, 0, 0, 0)
+        realtime_sub_option_row.setSpacing(0)
+        realtime_sub_option_row.addWidget(self.realtime_replace_mode_checkbox)
+        realtime_sub_option_row.addStretch()
+        section.addWidget(self.realtime_replace_mode_container)
         section.addStretch()
 
         scroll_content.setLayout(section)
@@ -1417,7 +1431,7 @@ class ResultPanel(QWidget):
             QCheckBox#settingsSubCheck {{
                 color: {colors["settings_text"]};
                 spacing: 8px;
-                font-size: 12px;
+                font-size: 11px;
             }}
             QCheckBox#settingsSubCheck:disabled {{
                 color: {colors["muted"]};
@@ -1889,7 +1903,7 @@ class ResultPanel(QWidget):
             self.default_dark_mode_checkbox.setChecked(self.saved_default_dark_mode)
             self.history_enabled_checkbox.setChecked(self.saved_history_enabled)
             self.set_input_mode(self.saved_input_mode)
-            self.replace_mode_checkbox.setChecked(getattr(self, "saved_replace_mode", False))
+            self.set_replace_mode_checked(getattr(self, "saved_replace_mode", False))
             self._sync_history_setting_access()
             self.settings_scroll_area.verticalScrollBar().setValue(0)
         self.content_stack.setCurrentIndex(0 if showing_settings else 1)
@@ -1899,7 +1913,7 @@ class ResultPanel(QWidget):
         self.default_dark_mode_checkbox.setChecked(self.saved_default_dark_mode)
         self.history_enabled_checkbox.setChecked(self.saved_history_enabled)
         self.set_input_mode(self.saved_input_mode)
-        self.replace_mode_checkbox.setChecked(getattr(self, "saved_replace_mode", False))
+        self.set_replace_mode_checked(getattr(self, "saved_replace_mode", False))
         self._sync_history_setting_access()
         self.content_stack.setCurrentIndex(0)
         self.settings_btn.setChecked(False)
@@ -2051,11 +2065,25 @@ class ResultPanel(QWidget):
     def set_replace_mode_checked(self, enabled):
         checked = bool(enabled)
         self.saved_replace_mode = checked
-        self.replace_mode_checkbox.setChecked(checked)
+        for checkbox in (self.drag_replace_mode_checkbox, self.realtime_replace_mode_checkbox):
+            checkbox.blockSignals(True)
+            checkbox.setChecked(checked)
+            checkbox.blockSignals(False)
         self.apply_correction_btn.setVisible(checked or self.saved_input_mode == "drag")
+        self._update_replace_mode_availability()
 
     def get_replace_mode_checked(self):
-        return self.replace_mode_checkbox.isChecked()
+        if self.drag_mode_checkbox.isChecked():
+            return self.drag_replace_mode_checkbox.isChecked()
+        if self.realtime_mode_checkbox.isChecked():
+            return self.realtime_replace_mode_checkbox.isChecked()
+        return self.drag_replace_mode_checkbox.isChecked() or self.realtime_replace_mode_checkbox.isChecked()
+
+    def _sync_replace_mode_checks(self, source_mode, checked):
+        other = self.realtime_replace_mode_checkbox if source_mode == "drag" else self.drag_replace_mode_checkbox
+        other.blockSignals(True)
+        other.setChecked(bool(checked))
+        other.blockSignals(False)
 
     def set_active_window_title(self, title):
         normalized = str(title).strip()
@@ -2087,8 +2115,16 @@ class ResultPanel(QWidget):
 
     def _update_replace_mode_availability(self):
         is_drag = self.drag_mode_checkbox.isChecked()
-        self.replace_mode_checkbox.setEnabled(True)
-        self.apply_correction_btn.setVisible(is_drag or self.replace_mode_checkbox.isChecked())
+        is_realtime = self.realtime_mode_checkbox.isChecked()
+        if hasattr(self, "drag_replace_mode_container"):
+            self.drag_replace_mode_container.setVisible(is_drag)
+        if hasattr(self, "realtime_replace_mode_container"):
+            self.realtime_replace_mode_container.setVisible(is_realtime)
+        self.drag_replace_mode_checkbox.setVisible(is_drag)
+        self.realtime_replace_mode_checkbox.setVisible(is_realtime)
+        self.drag_replace_mode_checkbox.setEnabled(is_drag)
+        self.realtime_replace_mode_checkbox.setEnabled(is_realtime)
+        self.apply_correction_btn.setVisible(is_drag or self.get_replace_mode_checked())
 
     def reset_text_tab(self):
         self._showing_placeholder = True

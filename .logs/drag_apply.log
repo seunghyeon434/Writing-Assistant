@@ -1756,3 +1756,17 @@
 2026-05-29 08:29:26 tone_apply_success reader='word_selection' hwnd=329656 text_len=28
 2026-05-29 08:29:26 selection_ready reader='word_selection' hwnd=329656 text_len=14
 2026-05-29 08:29:26 tone_favorite_prompt_skipped tone='부드럽게' logged_in=True already_favorite=True
+2026-05-29 08:41:23 tone_favorite_refresh_success count=1
+2026-05-29 09:05:14 selection_ready reader='word_selection' hwnd=329656 text_len=14
+2026-05-29 09:05:15 main_correction_word_focus_nudge focused=True had_selection=True hwnd=329656
+2026-05-29 09:05:15 selection_ready reader='word_selection' hwnd=329656 text_len=14
+2026-05-29 09:05:18 apply_pressed has_target=True input_len=14 retry=False snapshot=True
+2026-05-29 09:05:18 immediate_selection_capture_success reader='word_selection' hwnd=329656 text_len=14
+2026-05-29 09:05:18 selection_ready reader='word_selection' hwnd=329656 text_len=14
+2026-05-29 09:05:18 apply_preflight_word_capture captured=True
+2026-05-29 09:05:34 selection_ready reader='word_selection' hwnd=329656 text_len=14
+2026-05-29 09:05:34 apply_pressed has_target=True input_len=14 retry=False snapshot=True
+2026-05-29 09:05:34 immediate_selection_capture_success reader='word_selection' hwnd=329656 text_len=14
+2026-05-29 09:05:34 apply_preflight_word_capture captured=True
+2026-05-29 09:05:34 inspect_result can_replace=True reason=''
+2026-05-29 09:05:46 apply_success reader='word_selection' hwnd=329656 text_len=27

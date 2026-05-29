@@ -2577,3 +2577,17 @@
 2026-05-29 08:29:26 last-line overlay applied range=(13,27) doc=(73,87) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
 2026-05-29 08:29:26 UndoRecord ended
 2026-05-29 08:29:30 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=329656
+2026-05-29 09:05:37 UndoRecord started name='Writing Assistant correction'
+2026-05-29 09:05:37 selection write start=50 end=64 text_len=27 segments=9 sample='김자원\n\n김자원\n\n김자원 [교정 기능 사용 됨]\n'
+2026-05-29 09:05:39 apply segment start=0 end=1 style={'bold': False, 'italic': True, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-05-29 09:05:39 apply segment start=1 end=2 style={'bold': False, 'italic': True, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 09:05:40 apply segment start=2 end=3 style={'bold': False, 'italic': True, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 09:05:41 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 09:05:42 apply segment start=6 end=7 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': True, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 09:05:42 apply segment start=7 end=8 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-05-29 09:05:43 apply segment start=10 end=11 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 09:05:44 apply segment start=11 end=12 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 09:05:45 segments applied=9 failed=0
+2026-05-29 09:05:46 last-line overlay applied range=(13,26) doc=(63,76) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-05-29 09:05:46 UndoRecord ended
+2026-05-29 09:05:48 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=329656

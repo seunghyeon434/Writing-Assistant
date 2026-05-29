@@ -59,6 +59,7 @@ class App:
         self.mini_overlay.set_avoidance_rect_provider(self._correction_overlay_avoidance_rects)
         self.realtime_overlay.set_avoidance_rect_provider(self._correction_overlay_avoidance_rects)
         self.main_overlay.set_active_mode(self.settings.get("input_mode", "clipboard"))
+        self.main_overlay.set_spelling_replace_mode(self.settings.get("replace_mode", False))
         self.panel.set_default_dark_mode_checked(
             self.settings.get("default_dark_mode", False)
         )
@@ -448,6 +449,7 @@ class App:
         self.main_overlay_pending_target_at = 0.0
         self.main_overlay_anchor = target
         self.main_overlay.set_active_mode(self.active_input_mode)
+        self.main_overlay.set_spelling_replace_mode(self.settings.get("replace_mode", False))
         self._sync_main_overlay_correction_enabled()
         self.main_overlay.show_for_target(reader_name, hwnd)
         if self._main_overlay_overlaps_mini_overlay():
@@ -502,9 +504,10 @@ class App:
         except Exception:
             return False
 
-    def handle_main_overlay_mode_save(self, mode):
+    def handle_main_overlay_mode_save(self, mode, replace_mode=False):
         settings = self.collect_settings_from_panel()
         settings["input_mode"] = mode if mode in {"clipboard", "drag", "realtime"} else self.active_input_mode
+        settings["replace_mode"] = bool(replace_mode)
         self.apply_settings_state(settings)
         if self.is_logged_in():
             try:
@@ -2800,6 +2803,7 @@ class App:
             self._hide_realtime_overlay("main_window_hide_call")
         if hasattr(self, "main_overlay"):
             self.main_overlay.set_active_mode(self.active_input_mode)
+            self.main_overlay.set_spelling_replace_mode(self.settings["replace_mode"])
         if self.active_input_mode != "realtime":
             self.panel.set_active_window_title("")
         if mode_changed:
