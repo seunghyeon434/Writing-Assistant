@@ -21,6 +21,7 @@ from client.input.realtime_reading_pause import pause_realtime_reading
 from client.ui.mini_overlay import MiniOverlay, RealtimeOverlay
 from client.ui.main_overlay import MainOverlay
 from client.ui.result_panel import ResultPanel
+from client.ui.spelling_inspection_overlay import SpellingInspectionOverlayManager
 
 
 _LOG_DIR = Path(__file__).resolve().parents[2] / ".logs"
@@ -56,6 +57,7 @@ class App:
         self.mini_overlay = MiniOverlay()
         self.realtime_overlay = RealtimeOverlay()
         self.main_overlay = MainOverlay()
+        self.spelling_inspection_overlay = SpellingInspectionOverlayManager(self.replace_spelling_guide_issue)
         self.mini_overlay.set_avoidance_rect_provider(self._correction_overlay_avoidance_rects)
         self.realtime_overlay.set_avoidance_rect_provider(self._correction_overlay_avoidance_rects)
         self.main_overlay.set_active_mode(self.settings.get("input_mode", "clipboard"))
@@ -1814,6 +1816,13 @@ class App:
         if self._is_replacement_echo(text):
             return
 
+        incoming_output_target = self._build_output_target(event) if source in {"realtime", "drag"} else None
+        if (
+            not self.spelling_inspection_overlay.sync_for_target(incoming_output_target, text)
+            and not self.spelling_inspection_overlay.has_markers()
+        ):
+            self.spelling_inspection_overlay.clear()
+
         if source == "drag" and event.get("window_handle"):
             style_info = event.get("style_info") or {}
             drag_signature = (
@@ -1836,7 +1845,7 @@ class App:
             self.last_browser_extension_event_at = time.monotonic()
         self.last_input = text
         self.last_corrected_text = ""
-        self.last_output_target = self._build_output_target(event) if source in {"realtime", "drag"} else None
+        self.last_output_target = incoming_output_target
         self.panel.set_original_text(text)
         self.run_spell_check()
         if source == "drag" and self.last_output_target is not None:
@@ -1852,6 +1861,7 @@ class App:
                 self._set_drag_overlay_undo_state(reader_name, event.get("window_handle"))
 
     def reset_session_state(self):
+        self.spelling_inspection_overlay.clear()
         self.last_input = ""
         self.last_corrected_text = ""
         self.last_correction_source_text = ""
@@ -1947,12 +1957,7 @@ class App:
                     return
             self.pending_drag_apply_retry = False
         if not self._can_apply_spelling_source_replacement():
-            if self.active_input_mode == "drag":
-                self.mini_overlay.show_status("\uc544\uc9c1 \uad6c\ud604 \uc911", auto_hide_ms=1200)
-            elif self.active_input_mode == "realtime":
-                self.realtime_overlay.show_status("\uc544\uc9c1 \uad6c\ud604 \uc911", auto_hide_ms=1200)
-            else:
-                self.panel.show_notice("\uc544\uc9c1 \uad6c\ud604 \uc911", "\ub9de\ucda4\ubc95 \uac80\uc0ac\ub9cc \ubcf4\ub294 \ubaa8\ub4dc\ub294 \ub2e4\uc74c \ub2e8\uacc4\uc5d0\uc11c \uc5f0\uacb0\ud569\ub2c8\ub2e4.")
+            self.show_spelling_inspection_guides()
             return
         text = self.last_corrected_text or self._extract_corrected_text(self.panel.spell_box.toPlainText())
         if not text:
@@ -2043,7 +2048,110 @@ class App:
                 active_overlay = self.realtime_overlay if self.active_input_mode == "realtime" else self.mini_overlay
                 active_overlay.hide_busy()
 
+    def show_spelling_inspection_guides(self):
+        if self.active_input_mode == "realtime":
+            if self.realtime_overlay_anchor and self.last_output_target is None:
+                self.last_output_target = self._output_target_from_anchor(self.realtime_overlay_anchor)
+            self._refresh_realtime_overlay_input()
+        if not self.last_input:
+            if self.active_input_mode == "drag":
+                self.mini_overlay.show_status("\ub4dc\ub798\uadf8\ub97c \ud574\uc8fc\uc138\uc694!", auto_hide_ms=1000)
+            elif self.active_input_mode == "realtime":
+                self.realtime_overlay.show_status("\ud14d\uc2a4\ud2b8 \uc5c6\uc74c", auto_hide_ms=1000)
+            else:
+                self.panel.show_notice("\ud14d\uc2a4\ud2b8 \uc5c6\uc74c", "\ub9de\ucda4\ubc95\uc744 \uac80\uc0ac\ud560 \ud14d\uc2a4\ud2b8\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.")
+            return
+        if self.last_output_target is None:
+            self.last_output_target = self._output_target_from_anchor(
+                self.realtime_overlay_anchor or self.main_overlay_anchor or self.drag_overlay_anchor
+            )
+        if self.last_output_target is None:
+            self.panel.show_notice("\uac80\uc0ac \uc704\uce58 \uc5c6\uc74c", "\ud604\uc7ac \ubb38\uc11c \uc704\uce58\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.")
+            return
 
+        inspection_scope = "selection" if str(getattr(self.last_output_target, "mode", "") or "") in {"word_selection", "notepad_selection"} else "full"
+        self._log_drag_apply(
+            "spelling_inspection_scope",
+            active_mode=self.active_input_mode,
+            target_mode=str(getattr(self.last_output_target, "mode", "") or ""),
+            scope=inspection_scope,
+            text_len=len(self.last_input or ""),
+        )
+        self.run_spell_check()
+        count = self.spelling_inspection_overlay.show_for_target(self.last_output_target, self.last_input)
+        message = "\ub9de\ucda4\ubc95 \uc548\ub0b4 \ud45c\uc2dc" if count > 0 else "\ud14c\uc2a4\ud2b8 \ub300\uc0c1 \ub2e8\uc5b4 \uc5c6\uc74c"
+        if self.active_input_mode == "drag":
+            self.mini_overlay.show_status(message, auto_hide_ms=1200)
+            self._schedule_editor_focus_restore(self.drag_overlay_anchor or self.main_overlay_anchor)
+        elif self.active_input_mode == "realtime":
+            self.realtime_overlay.show_status(message, auto_hide_ms=1200)
+            self._schedule_editor_focus_restore(self.realtime_overlay_anchor or self.main_overlay_anchor)
+        else:
+            self.panel.show_notice(message, "\ube68\uac04 \ubc11\uc904\uc5d0 \ub9c8\uc6b0\uc2a4\ub97c \uc62c\ub9ac\uba74 \uc548\ub0b4\uac00 \ud45c\uc2dc\ub429\ub2c8\ub2e4.")
+
+    def replace_spelling_guide_issue(self, issue):
+        if issue is None or self.last_output_target is None:
+            return
+        source_text = self.spelling_inspection_overlay.live_text_for_target(
+            self.last_output_target,
+            self.last_input or self.last_correction_source_text or "",
+        )
+        original = str(getattr(issue, "original", "") or "")
+        replacement = str(getattr(issue, "replacement", "") or "")
+        if not source_text or not original or not replacement:
+            return
+        start = int(getattr(issue, "start", -1))
+        end = int(getattr(issue, "end", -1))
+        if 0 <= start < end <= len(source_text) and source_text[start:end] == original:
+            live_start = start
+            live_end = end
+        else:
+            live_start = source_text.find(original)
+            if live_start < 0:
+                self.spelling_inspection_overlay.remove_issue(issue)
+                self.last_input = source_text
+                self.panel.set_original_text(source_text)
+                self.run_spell_check()
+                if self.active_input_mode == "drag":
+                    self.mini_overlay.show_status("\uc774\ubbf8 \uc218\uc815\ub428", auto_hide_ms=1000)
+                elif self.active_input_mode == "realtime":
+                    self.realtime_overlay.show_status("\uc774\ubbf8 \uc218\uc815\ub428", auto_hide_ms=1000)
+                return
+            live_end = live_start + len(original)
+        replacement_text = source_text[:live_start] + replacement + source_text[live_end:]
+        if replacement_text == source_text:
+            return
+
+        output_applier = self.get_output_applier()
+        can_replace, reason = output_applier.inspect_replace_availability(self.last_output_target)
+        if not can_replace:
+            self.panel.show_notice("\uad50\uccb4 \uc2e4\ud328", reason or "\uc218\uc815\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.")
+            return
+        try:
+            with pause_realtime_reading():
+                if str(getattr(self.last_output_target, "mode", "") or "") == "word_selection":
+                    output_applier.apply_to_word_selection_subrange(self.last_output_target, live_start, live_end, replacement)
+                else:
+                    output_applier.apply(self.last_output_target, replacement_text)
+            self.spelling_inspection_overlay.remove_issue(issue)
+            self.last_input = replacement_text
+            self.last_corrected_text = replacement_text
+            self.suppress_replacement_echo_text = replacement_text
+            self.suppress_replacement_echo_until = time.monotonic() + 4.0
+            self.panel.set_original_text(replacement_text)
+            self.run_spell_check()
+            target_reader = self.last_output_target.mode if self.last_output_target else ""
+            target_handle = self.last_output_target.window_handle if self.last_output_target else None
+            if target_reader in {"word", "word_selection"} and target_handle:
+                self.word_undo_available_by_hwnd[int(target_handle)] = True
+            elif target_reader in {"notepad", "notepad_selection"} and target_handle:
+                self.notepad_undo_available_by_hwnd[int(target_handle)] = True
+            if self.active_input_mode == "drag":
+                self.mini_overlay.show_status("\uad50\uccb4 \uc644\ub8cc", auto_hide_ms=1000)
+            elif self.active_input_mode == "realtime":
+                self.realtime_overlay.show_status("\uad50\uccb4 \uc644\ub8cc", auto_hide_ms=1000)
+        except Exception as exc:
+            self.panel.show_notice("\uad50\uccb4 \uc2e4\ud328", str(exc))
 
     def handle_realtime_tone_button(self):
         if self.active_input_mode != "realtime":

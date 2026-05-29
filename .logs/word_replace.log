@@ -2591,3 +2591,88 @@
 2026-05-29 09:05:46 last-line overlay applied range=(13,26) doc=(63,76) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
 2026-05-29 09:05:46 UndoRecord ended
 2026-05-29 09:05:48 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=329656
+2026-05-29 11:10:24 UndoRecord started name='Writing Assistant correction'
+2026-05-29 11:10:24 selection write start=19 end=44 text_len=25 segments=9 sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:10:25 apply segment start=0 end=3 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:25 apply segment start=3 end=4 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:26 apply segment start=4 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:26 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:26 apply segment start=6 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:27 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:27 apply segment start=13 end=22 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:27 apply segment start=22 end=23 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:10:27 segments applied=9 failed=0
+2026-05-29 11:10:27 last-line overlay skipped: covered by segments
+2026-05-29 11:10:27 UndoRecord ended
+2026-05-29 11:13:58 UndoRecord started name='Writing Assistant correction'
+2026-05-29 11:13:58 selection write start=19 end=44 text_len=25 segments=9 sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:13:59 apply segment start=0 end=3 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:13:59 apply segment start=3 end=4 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:13:59 apply segment start=4 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:00 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:00 apply segment start=6 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:00 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:01 apply segment start=13 end=22 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:01 apply segment start=22 end=23 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:01 segments applied=9 failed=0
+2026-05-29 11:14:01 last-line overlay skipped: covered by segments
+2026-05-29 11:14:01 UndoRecord ended
+2026-05-29 11:14:30 UndoRecord started name='Writing Assistant correction'
+2026-05-29 11:14:30 selection write start=19 end=44 text_len=25 segments=9 sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:14:30 apply segment start=0 end=3 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:31 apply segment start=3 end=4 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:31 apply segment start=4 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:31 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:32 apply segment start=6 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:32 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:32 apply segment start=13 end=22 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:33 apply segment start=22 end=23 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:14:33 segments applied=9 failed=0
+2026-05-29 11:14:33 last-line overlay skipped: covered by segments
+2026-05-29 11:14:33 UndoRecord ended
+2026-05-29 11:14:59 UndoRecord started name='Writing Assistant correction'
+2026-05-29 11:14:59 selection write start=19 end=44 text_len=25 segments=9 sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:15:00 apply segment start=0 end=3 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:00 apply segment start=3 end=4 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:00 apply segment start=4 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:01 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:01 apply segment start=6 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:01 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:02 apply segment start=13 end=22 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:02 apply segment start=22 end=23 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:15:03 segments applied=9 failed=0
+2026-05-29 11:15:03 last-line overlay skipped: covered by segments
+2026-05-29 11:15:03 UndoRecord ended
+2026-05-29 11:22:44 UndoRecord started name='Writing Assistant correction'
+2026-05-29 11:22:44 selection write start=19 end=44 text_len=25 segments=6 sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:22:44 apply segment start=0 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:22:45 apply segment start=5 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:22:45 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:22:46 apply segment start=13 end=22 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:22:46 apply segment start=22 end=23 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:22:46 apply segment start=23 end=24 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:22:46 segments applied=6 failed=0
+2026-05-29 11:22:46 last-line overlay skipped: covered by segments
+2026-05-29 11:22:46 UndoRecord ended
+2026-05-29 11:30:48 UndoRecord started name='Writing Assistant correction'
+2026-05-29 11:30:48 selection write start=19 end=44 text_len=25 segments=8 sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:30:48 apply segment start=0 end=3 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:49 apply segment start=3 end=4 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:49 apply segment start=4 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:49 apply segment start=5 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:50 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:50 apply segment start=13 end=22 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:50 apply segment start=22 end=23 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:51 apply segment start=23 end=24 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-29 11:30:51 segments applied=8 failed=0
+2026-05-29 11:30:51 last-line overlay skipped: covered by segments
+2026-05-29 11:30:51 UndoRecord ended
+2026-05-29 11:35:00 UndoRecord started name='Writing Assistant marker correction'
+2026-05-29 11:35:00 marker subrange write selection=(19,44) relative=(18,24) absolute=(37,43) text_len=6 sample='다시 만나요'
+2026-05-29 11:35:00 UndoRecord ended
+2026-05-29 11:35:08 UndoRecord started name='Writing Assistant marker correction'
+2026-05-29 11:35:08 marker subrange write selection=(19,44) relative=(6,10) absolute=(25,29) text_len=4 sample='반가워요'
+2026-05-29 11:35:08 UndoRecord ended
+2026-05-29 11:45:11 UndoRecord started name='Writing Assistant marker correction'
+2026-05-29 11:45:11 marker subrange write selection=(19,44) relative=(6,10) absolute=(25,29) text_len=4 sample='반가워요'
+2026-05-29 11:45:12 UndoRecord ended

@@ -1,0 +1,1754 @@
+2026-05-29 10:17:24 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:17:24 word_get_point_failed original='안녕하서요' error="AttributeError: module 'pythoncom' has no attribute 'VARIANT'"
+2026-05-29 10:17:24 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:17:24 word_get_point_failed original='다시 만너요' error="AttributeError: module 'pythoncom' has no attribute 'VARIANT'"
+2026-05-29 10:17:24 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:17:24 word_get_point_failed original='싫어해요' error="AttributeError: module 'pythoncom' has no attribute 'VARIANT'"
+2026-05-29 10:19:23 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:19:23 word_get_point_failed original='안녕하서요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:19:23 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:19:23 word_get_point_failed original='다시 만너요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:19:23 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:19:23 word_get_point_failed original='싫어해요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:20:40 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:20:40 word_get_point_failed original='안녕하서요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:20:40 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:20:40 word_get_point_failed original='다시 만너요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:20:40 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:20:40 word_get_point_failed original='싫어해요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:22:31 show_start version='variant_unwrap_v2' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:22:31 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:22:31 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:22:31 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:22:31 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:22:31 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:22:31 word_get_point_failed original='안녕하서요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:22:31 issue_skipped_no_rect original='안녕하서요' start=0 end=5
+2026-05-29 10:22:31 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:22:31 word_get_point_failed original='다시 만너요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:22:31 issue_skipped_no_rect original='다시 만너요' start=18 end=24
+2026-05-29 10:22:31 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:22:31 word_get_point_failed original='싫어해요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:22:31 issue_skipped_no_rect original='싫어해요' start=6 end=10
+2026-05-29 10:22:31 show_done underline_count=0
+2026-05-29 10:22:36 show_start version='variant_unwrap_v2' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:22:36 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:22:36 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:22:36 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:22:36 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:22:36 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:22:36 word_get_point_failed original='안녕하서요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:22:36 issue_skipped_no_rect original='안녕하서요' start=0 end=5
+2026-05-29 10:22:36 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:22:36 word_get_point_failed original='다시 만너요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:22:36 issue_skipped_no_rect original='다시 만너요' start=18 end=24
+2026-05-29 10:22:36 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:22:36 word_get_point_failed original='싫어해요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:22:36 issue_skipped_no_rect original='싫어해요' start=6 end=10
+2026-05-29 10:22:36 show_done underline_count=0
+2026-05-29 10:24:29 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:24:29 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:24:29 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:24:29 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:24:29 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:24:29 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:24:29 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:24:29 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 353, 83, 8)
+2026-05-29 10:24:29 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:24:29 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:24:29 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:24:29 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 411, 92, 8)
+2026-05-29 10:24:29 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:24:29 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:24:29 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:24:29 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 353, 66, 8)
+2026-05-29 10:24:29 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:24:29 show_done underline_count=3
+2026-05-29 10:25:39 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:25:39 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:25:39 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:25:39 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:25:39 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:25:39 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:25:39 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:25:39 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 353, 83, 8)
+2026-05-29 10:25:39 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:25:39 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:25:39 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:25:39 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 411, 92, 8)
+2026-05-29 10:25:39 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:25:39 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:25:39 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:25:39 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 353, 66, 8)
+2026-05-29 10:25:39 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:25:39 show_done underline_count=3
+2026-05-29 10:29:01 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:29:01 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:29:01 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:29:01 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:29:01 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:29:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:29:01 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:29:01 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 359, 83, 8)
+2026-05-29 10:29:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:29:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:29:01 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:29:01 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 417, 92, 8)
+2026-05-29 10:29:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:29:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:29:01 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:29:01 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 359, 66, 8)
+2026-05-29 10:29:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:29:01 show_done underline_count=3
+2026-05-29 10:31:08 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:31:08 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:31:08 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:31:08 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:31:08 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:31:08 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:31:08 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:31:08 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 354, 83, 8)
+2026-05-29 10:31:08 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:31:08 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:31:08 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:31:08 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 412, 92, 8)
+2026-05-29 10:31:08 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:31:08 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:31:08 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:31:08 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 354, 66, 8)
+2026-05-29 10:31:08 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:31:08 show_done underline_count=3
+2026-05-29 10:32:06 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:32:06 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:32:06 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:32:06 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:32:06 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:32:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:32:06 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:32:06 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 354, 83, 8)
+2026-05-29 10:32:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:32:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:32:06 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:32:06 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 412, 92, 8)
+2026-05-29 10:32:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:32:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:32:06 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:32:06 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 354, 66, 8)
+2026-05-29 10:32:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:32:06 show_done underline_count=3
+2026-05-29 10:33:03 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:33:03 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:33:03 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:33:03 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:33:03 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:33:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:03 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:33:03 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 352, 83, 8)
+2026-05-29 10:33:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:03 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:33:03 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 410, 92, 8)
+2026-05-29 10:33:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:03 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:33:03 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 352, 66, 8)
+2026-05-29 10:33:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:03 show_done underline_count=3
+2026-05-29 10:33:26 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:33:26 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:33:26 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:33:26 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:33:26 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:33:26 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:26 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:33:26 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 350, 83, 8)
+2026-05-29 10:33:26 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:26 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:26 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:33:26 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 408, 92, 8)
+2026-05-29 10:33:26 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:26 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:26 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:33:26 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 350, 66, 8)
+2026-05-29 10:33:26 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:33:26 show_done underline_count=3
+2026-05-29 10:34:48 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:34:48 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:34:48 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:34:48 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:34:48 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:34:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:34:48 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:34:48 word_get_point_direct_failed original='안녕하서요' error="TypeError: arguments did not match any overloaded call:\n  QRect(): too many arguments\n  QRect(aleft: int, atop: int, awidth: int, aheight: int): argument 2 has unexpected type 'float'\n  QRect(atopLeft: QPoint, abottomRight: QPoint): argument 1 has unexpected type 'int'\n  QRect(atopLeft: QPoint, asize: QSize): argument 1 has unexpected type 'int'\n  QRect(a0: QRect): argument 1 has unexpected type 'int'"
+2026-05-29 10:34:48 word_get_point_failed original='안녕하서요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:34:48 issue_skipped_no_rect original='안녕하서요' start=0 end=5
+2026-05-29 10:34:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:34:48 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:34:48 word_get_point_direct_failed original='다시 만너요' error="TypeError: arguments did not match any overloaded call:\n  QRect(): too many arguments\n  QRect(aleft: int, atop: int, awidth: int, aheight: int): argument 2 has unexpected type 'float'\n  QRect(atopLeft: QPoint, abottomRight: QPoint): argument 1 has unexpected type 'int'\n  QRect(atopLeft: QPoint, asize: QSize): argument 1 has unexpected type 'int'\n  QRect(a0: QRect): argument 1 has unexpected type 'int'"
+2026-05-29 10:34:48 word_get_point_failed original='다시 만너요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:34:48 issue_skipped_no_rect original='다시 만너요' start=18 end=24
+2026-05-29 10:34:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:34:48 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:34:48 word_get_point_direct_failed original='싫어해요' error="TypeError: arguments did not match any overloaded call:\n  QRect(): too many arguments\n  QRect(aleft: int, atop: int, awidth: int, aheight: int): argument 2 has unexpected type 'float'\n  QRect(atopLeft: QPoint, abottomRight: QPoint): argument 1 has unexpected type 'int'\n  QRect(atopLeft: QPoint, asize: QSize): argument 1 has unexpected type 'int'\n  QRect(a0: QRect): argument 1 has unexpected type 'int'"
+2026-05-29 10:34:48 word_get_point_failed original='싫어해요' error="TypeError: int() argument must be a string, a bytes-like object or a real number, not 'VARIANT'"
+2026-05-29 10:34:48 issue_skipped_no_rect original='싫어해요' start=6 end=10
+2026-05-29 10:34:48 show_done underline_count=0
+2026-05-29 10:35:17 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:35:17 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:35:17 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:35:17 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:35:17 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:35:17 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:35:17 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:35:17 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 350, 83, 8)
+2026-05-29 10:35:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:35:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:35:18 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:35:18 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 408, 92, 8)
+2026-05-29 10:35:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:35:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:35:18 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:35:18 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 350, 66, 8)
+2026-05-29 10:35:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:35:18 show_done underline_count=3
+2026-05-29 10:37:35 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:37:35 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:37:35 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:37:35 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:37:35 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:37:35 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:37:35 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:37:35 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 312, 83, 8)
+2026-05-29 10:37:35 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:37:35 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:37:35 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:37:35 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 370, 92, 8)
+2026-05-29 10:37:35 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:37:36 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:37:36 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:37:36 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 312, 66, 8)
+2026-05-29 10:37:36 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:37:36 show_done underline_count=3
+2026-05-29 10:38:14 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:38:14 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:38:14 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:38:14 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:38:14 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:38:14 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:14 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:38:14 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 308, 83, 8)
+2026-05-29 10:38:14 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:14 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:14 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:38:14 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 366, 92, 8)
+2026-05-29 10:38:14 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:14 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:14 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:38:14 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 308, 66, 8)
+2026-05-29 10:38:14 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:14 show_done underline_count=3
+2026-05-29 10:38:52 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:38:52 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:38:52 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:38:52 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:38:52 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:38:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:52 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:38:52 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 306, 83, 8)
+2026-05-29 10:38:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:52 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:38:52 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 364, 92, 8)
+2026-05-29 10:38:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:52 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:38:52 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 306, 66, 8)
+2026-05-29 10:38:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:38:52 show_done underline_count=3
+2026-05-29 10:39:15 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:39:15 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:39:15 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:39:15 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:39:15 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:39:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:15 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:39:15 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 305, 83, 8)
+2026-05-29 10:39:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:15 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:39:15 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 363, 92, 8)
+2026-05-29 10:39:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:15 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:39:15 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 305, 66, 8)
+2026-05-29 10:39:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:15 show_done underline_count=3
+2026-05-29 10:39:37 show_start version='getpoint_tuple_v3' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:39:37 issue_matched word='안녕하서요' start=0 replacement='안녕하세요'
+2026-05-29 10:39:37 issue_matched word='다시 만너요' start=18 replacement='다시 만나요'
+2026-05-29 10:39:37 issue_matched word='싫어해요' start=6 replacement='반가워요'
+2026-05-29 10:39:37 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:39:37 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:37 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:39:37 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 304, 83, 8)
+2026-05-29 10:39:37 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:37 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:37 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:39:37 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 362, 92, 8)
+2026-05-29 10:39:37 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:37 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:37 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:39:37 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 304, 66, 8)
+2026-05-29 10:39:37 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:39:37 show_done underline_count=3
+2026-05-29 10:58:13 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:58:13 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 10:58:13 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 10:58:13 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 10:58:13 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:58:13 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:58:13 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:58:13 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 304, 83, 8)
+2026-05-29 10:58:13 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:58:13 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:58:13 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:58:13 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 362, 92, 8)
+2026-05-29 10:58:13 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:58:13 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:58:13 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:58:13 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 304, 66, 8)
+2026-05-29 10:58:13 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:58:13 show_done underline_count=3
+2026-05-29 10:59:27 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 10:59:27 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 10:59:27 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 10:59:27 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 10:59:27 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 10:59:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:59:27 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 10:59:27 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 304, 83, 8)
+2026-05-29 10:59:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:59:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:59:27 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 10:59:27 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 362, 92, 8)
+2026-05-29 10:59:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:59:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:59:27 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 10:59:27 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 304, 66, 8)
+2026-05-29 10:59:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 10:59:27 show_done underline_count=3
+2026-05-29 11:00:28 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:00:28 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:00:28 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:00:28 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:00:28 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:00:28 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:28 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:00:28 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 302, 83, 8)
+2026-05-29 11:00:28 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:28 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:28 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:00:28 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 360, 92, 8)
+2026-05-29 11:00:28 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:28 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:28 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:00:28 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 302, 66, 8)
+2026-05-29 11:00:28 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:28 show_done underline_count=3
+2026-05-29 11:00:46 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:00:46 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:00:46 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:00:46 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:00:46 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:00:46 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:46 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:00:46 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 300, 83, 8)
+2026-05-29 11:00:46 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:46 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:46 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:00:46 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 358, 92, 8)
+2026-05-29 11:00:46 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:46 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:46 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:00:46 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 300, 66, 8)
+2026-05-29 11:00:46 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:00:46 show_done underline_count=3
+2026-05-29 11:01:09 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:01:09 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:01:09 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:01:09 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:01:09 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:01:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:09 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:01:09 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 298, 83, 8)
+2026-05-29 11:01:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:09 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:01:09 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 356, 92, 8)
+2026-05-29 11:01:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:09 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:01:09 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 298, 66, 8)
+2026-05-29 11:01:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:09 show_done underline_count=3
+2026-05-29 11:01:27 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:01:27 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:01:27 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:01:27 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:01:27 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:01:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:27 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:01:27 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:01:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:27 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:01:27 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:01:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:27 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:01:27 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:01:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:01:27 show_done underline_count=3
+2026-05-29 11:02:34 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:02:34 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:02:34 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:02:34 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:02:34 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:02:34 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:02:34 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:02:34 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:02:34 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:02:34 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:02:34 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:02:34 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:02:34 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:02:34 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:02:34 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:02:34 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:02:34 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:02:34 show_done underline_count=3
+2026-05-29 11:03:42 show_start version='type_label_v4' mode='word_selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:03:42 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:03:42 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:03:42 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:03:42 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:03:42 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:03:42 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:03:42 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:03:42 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:03:42 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:03:42 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:03:42 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:03:42 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:03:42 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:03:42 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:03:42 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:03:42 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:03:42 show_done underline_count=3
+2026-05-29 11:08:09 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:08:09 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:08:09 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:08:09 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:08:09 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:08:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:09 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:08:09 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:08:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:09 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:08:09 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:08:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:09 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:08:09 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:08:09 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:09 show_done underline_count=3
+2026-05-29 11:08:14 markers_hidden_for_target hwnd=329656 foreground=5636872 target_visible=False
+2026-05-29 11:08:15 markers_restored hwnd=329656
+2026-05-29 11:08:32 markers_hidden_for_target hwnd=329656 foreground=5507680 target_visible=True
+2026-05-29 11:08:41 show_start version='type_label_v4' mode='word' scope='full' hwnd=329656 text_len=88 text_sample='Writing Assistant\n\n안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n\n김자원\n\n김자원\n\n김자원\n\n김자원\n\n김자원\n\n김자원\n\n김자원\n\n'
+2026-05-29 11:08:41 issue_matched word='안녕하서요' start=19 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:08:41 issue_matched word='다시 만너요' start=37 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:08:41 issue_matched word='싫어해요' start=25 replacement='반가워요' category='문맥'
+2026-05-29 11:08:41 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:08:41 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:41 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:08:41 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=19 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:08:41 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:41 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:41 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:08:41 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=37 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:08:41 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:41 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:41 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:08:41 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=25 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:08:41 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:08:41 show_done underline_count=3
+2026-05-29 11:09:16 markers_hidden_for_target hwnd=329656 foreground=5507680 target_visible=True
+2026-05-29 11:09:19 markers_restored hwnd=329656
+2026-05-29 11:09:21 markers_hidden_for_target hwnd=329656 foreground=5507680 target_visible=True
+2026-05-29 11:09:25 markers_restored hwnd=329656
+2026-05-29 11:09:35 markers_hidden_for_target hwnd=329656 foreground=5507680 target_visible=True
+2026-05-29 11:10:15 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:10:15 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:10:15 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:10:15 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:10:15 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:10:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:10:15 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:10:15 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:10:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:10:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:10:15 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:10:15 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:10:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:10:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:10:15 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:10:15 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:10:15 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:10:15 show_done underline_count=3
+2026-05-29 11:11:02 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:11:02 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:11:02 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:11:02 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:11:02 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:11:02 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:11:02 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:11:02 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:11:02 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:11:02 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:11:02 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:11:02 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:11:02 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:11:02 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:11:02 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:11:02 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:11:02 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:11:02 show_done underline_count=3
+2026-05-29 11:11:20 markers_hidden_for_target hwnd=329656 foreground=13173964 target_visible=False
+2026-05-29 11:13:45 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:13:45 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:13:45 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:13:45 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:13:45 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:13:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:13:45 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:13:45 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:13:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:13:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:13:45 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:13:45 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:13:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:13:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:13:45 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:13:45 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:13:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:13:45 show_done underline_count=3
+2026-05-29 11:13:52 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:13:55 markers_restored hwnd=329656
+2026-05-29 11:14:01 issue_removed original='안녕하서요' start=0 removed=1
+2026-05-29 11:14:33 issue_removed original='싫어해요' start=6 removed=1
+2026-05-29 11:14:49 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:14:49 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:14:49 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:14:49 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:14:49 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:14:49 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:14:49 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:14:49 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:14:49 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:14:49 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:14:49 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:14:49 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:14:49 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:14:49 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:14:49 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:14:49 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:14:49 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:14:49 show_done underline_count=3
+2026-05-29 11:14:54 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:14:57 markers_restored hwnd=329656
+2026-05-29 11:15:03 issue_removed original='다시 만너요' start=18 removed=1
+2026-05-29 11:15:49 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:21:17 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:21:17 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:21:17 issue_not_found candidates=['다시 만너요'] text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:21:17 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:21:17 issues_built count=2 originals=['안녕하서요', '싫어해요']
+2026-05-29 11:21:17 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:17 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:21:17 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:21:17 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:17 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:17 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:21:17 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:21:17 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:17 show_done underline_count=2
+2026-05-29 11:21:28 markers_hidden_for_target hwnd=329656 foreground=9898806 target_visible=True
+2026-05-29 11:21:31 markers_restored hwnd=329656
+2026-05-29 11:21:33 markers_hidden_for_target hwnd=329656 foreground=8980698 target_visible=True
+2026-05-29 11:21:33 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:21:33 issue_not_found candidates=['다시 만너요'] text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:21:33 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:21:33 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:21:33 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 sync_done hwnd=329656 scope='selection' desired=2 removed=0 updated=2 added=0 underline_count=2
+2026-05-29 11:21:33 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:21:33 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:21:33 issue_not_found candidates=['다시 만너요'] text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:21:33 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:21:33 issues_built count=2 originals=['안녕하서요', '싫어해요']
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:21:33 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:21:33 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:21:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:21:33 show_done underline_count=2
+2026-05-29 11:21:35 markers_hidden_for_target hwnd=329656 foreground=5636872 target_visible=False
+2026-05-29 11:22:33 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:22:33 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:22:33 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:22:33 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:22:33 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:22:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:22:33 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:22:33 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:22:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:22:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:22:33 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:22:33 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:22:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:22:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:22:33 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:22:33 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:22:33 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:22:33 show_done underline_count=3
+2026-05-29 11:22:39 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:22:41 markers_restored hwnd=329656
+2026-05-29 11:22:46 issue_removed original='다시 만너요' start=18 removed=1
+2026-05-29 11:23:28 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:23:32 markers_restored hwnd=329656
+2026-05-29 11:23:40 markers_hidden_for_target hwnd=329656 foreground=5636872 target_visible=True
+2026-05-29 11:27:52 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:27:52 issue_not_found candidates=['안녕하요', '안녕하서요', '안녕하소요'] text_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:27:52 issue_not_found candidates=['다시 만너요'] text_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:27:52 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:27:52 issues_built count=1 originals=['싫어해요']
+2026-05-29 11:27:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:27:52 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:27:52 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:27:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:27:52 show_done underline_count=1
+2026-05-29 11:28:07 issue_not_found candidates=['안녕하요', '안녕하서요', '안녕하소요'] text_sample='\n잘 있어요 다시 만너요\n'
+2026-05-29 11:28:07 issue_matched word='다시 만너요' start=7 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:28:07 issue_not_found candidates=['싫어해요'] text_sample='\n잘 있어요 다시 만너요\n'
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:28:07 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=7 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 sync_done hwnd=329656 scope='selection' desired=1 removed=1 updated=0 added=1 underline_count=1
+2026-05-29 11:28:07 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:28:07 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:28:07 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:28:07 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:28:07 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:28:07 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:28:07 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:28:07 sync_done hwnd=329656 scope='selection' desired=3 removed=1 updated=0 added=3 underline_count=3
+2026-05-29 11:28:29 markers_hidden_for_target hwnd=329656 foreground=5636872 target_visible=True
+2026-05-29 11:28:31 markers_restored hwnd=329656
+2026-05-29 11:28:44 markers_hidden_for_target hwnd=329656 foreground=8915912 target_visible=True
+2026-05-29 11:28:46 markers_restored hwnd=329656
+2026-05-29 11:28:47 markers_hidden_for_target hwnd=329656 foreground=9439952 target_visible=False
+2026-05-29 11:28:57 markers_restored hwnd=329656
+2026-05-29 11:29:01 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:29:02 markers_restored hwnd=329656
+2026-05-29 11:29:03 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:30:27 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:30:27 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:30:27 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:30:27 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:30:27 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:30:27 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:30:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:30:27 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:30:27 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:30:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:30:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:30:27 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:30:27 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:30:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:30:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:30:27 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:30:27 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:30:27 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:30:27 show_done underline_count=3
+2026-05-29 11:30:41 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:30:43 markers_restored hwnd=329656
+2026-05-29 11:30:51 issue_removed original='다시 만너요' start=18 removed=1
+2026-05-29 11:31:02 markers_hidden_for_target hwnd=329656 foreground=6753012 target_visible=False
+2026-05-29 11:34:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:45 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:45 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:34:45 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:34:45 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:34:45 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:34:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:45 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:34:45 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:34:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:45 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:34:45 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:34:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:45 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:34:45 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:34:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:45 show_done underline_count=3
+2026-05-29 11:34:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:46 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:48 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:49 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:50 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:52 live_text_poll_changed previous_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:52 issue_not_found candidates=['안녕하요', '안녕하서요', '안녕하소요'] text_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:52 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:34:52 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:34:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:52 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:34:52 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:34:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:52 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:34:52 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:34:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:34:52 sync_done hwnd=329656 scope='selection' desired=2 removed=1 updated=2 added=0 underline_count=2
+2026-05-29 11:34:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:34:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:35:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:35:00 issue_removed original='다시 만너요' start=18 removed=1
+2026-05-29 11:35:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:00 live_text_poll_changed previous_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:00 issue_not_found candidates=['안녕하요', '안녕하서요', '안녕하소요'] text_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:00 issue_not_found candidates=['다시 만너요'] text_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:00 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:35:00 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:35:00 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:35:00 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:35:00 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:35:00 sync_done hwnd=329656 scope='selection' desired=1 removed=0 updated=1 added=0 underline_count=1
+2026-05-29 11:35:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:04 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:35:06 markers_restored hwnd=329656
+2026-05-29 11:35:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n'
+2026-05-29 11:35:08 issue_removed original='싫어해요' start=6 removed=1
+2026-05-29 11:36:27 show_start version='type_label_v4' mode='notepad_selection' scope='selection' hwnd=2558086 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:36:27 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:36:27 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:36:27 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:36:27 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:36:27 show_done underline_count=3
+2026-05-29 11:36:45 markers_hidden_for_target hwnd=2558086 foreground=329656 target_visible=True
+2026-05-29 11:36:46 markers_restored hwnd=2558086
+2026-05-29 11:36:48 markers_hidden_for_target hwnd=2558086 foreground=5636872 target_visible=True
+2026-05-29 11:37:02 markers_restored hwnd=2558086
+2026-05-29 11:37:03 markers_hidden_for_target hwnd=2558086 foreground=0 target_visible=True
+2026-05-29 11:37:26 markers_restored hwnd=2558086
+2026-05-29 11:37:29 markers_hidden_for_target hwnd=2558086 foreground=6949570 target_visible=True
+2026-05-29 11:37:32 markers_restored hwnd=2558086
+2026-05-29 11:37:38 markers_hidden_for_target hwnd=2558086 foreground=0 target_visible=True
+2026-05-29 11:37:40 markers_restored hwnd=2558086
+2026-05-29 11:37:41 markers_hidden_for_target hwnd=2558086 foreground=329656 target_visible=True
+2026-05-29 11:37:43 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:43 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:43 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:37:43 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:37:43 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:37:43 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:37:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:43 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:37:43 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:37:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:43 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:37:43 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:37:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:43 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:37:43 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:37:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:43 show_done underline_count=3
+2026-05-29 11:37:43 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:44 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:45 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:37:45 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:37:45 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:37:45 word_document_rect hwnd=329656 rect=(119, 235, 1797, 675)
+2026-05-29 11:37:45 word_get_point_direct_result original='안녕하서요' result='(631, 332, 83, 29)' result_type='tuple'
+2026-05-29 11:37:45 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(631, 308, 83, 8)
+2026-05-29 11:37:45 word_document_rect hwnd=329656 rect=(119, 235, 1797, 675)
+2026-05-29 11:37:45 word_document_rect hwnd=329656 rect=(119, 235, 1797, 675)
+2026-05-29 11:37:45 word_get_point_direct_result original='다시 만너요' result='(714, 390, 92, 29)' result_type='tuple'
+2026-05-29 11:37:45 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(714, 366, 92, 8)
+2026-05-29 11:37:45 word_document_rect hwnd=329656 rect=(119, 235, 1797, 675)
+2026-05-29 11:37:45 word_document_rect hwnd=329656 rect=(119, 235, 1797, 675)
+2026-05-29 11:37:45 word_get_point_direct_result original='싫어해요' result='(723, 332, 66, 29)' result_type='tuple'
+2026-05-29 11:37:45 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(723, 308, 66, 8)
+2026-05-29 11:37:45 word_document_rect hwnd=329656 rect=(119, 235, 1797, 675)
+2026-05-29 11:37:45 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:37:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:46 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:48 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:49 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:49 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:49 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:37:49 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:37:49 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:37:49 word_document_rect hwnd=329656 rect=(362, 235, 1554, 675)
+2026-05-29 11:37:49 word_get_point_direct_result original='안녕하서요' result='(752, 332, 83, 29)' result_type='tuple'
+2026-05-29 11:37:49 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(752, 308, 83, 8)
+2026-05-29 11:37:49 word_document_rect hwnd=329656 rect=(362, 235, 1554, 675)
+2026-05-29 11:37:49 word_document_rect hwnd=329656 rect=(362, 235, 1554, 675)
+2026-05-29 11:37:49 word_get_point_direct_result original='다시 만너요' result='(835, 390, 92, 29)' result_type='tuple'
+2026-05-29 11:37:49 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(835, 366, 92, 8)
+2026-05-29 11:37:49 word_document_rect hwnd=329656 rect=(362, 235, 1554, 675)
+2026-05-29 11:37:49 word_document_rect hwnd=329656 rect=(362, 235, 1554, 675)
+2026-05-29 11:37:49 word_get_point_direct_result original='싫어해요' result='(844, 332, 66, 29)' result_type='tuple'
+2026-05-29 11:37:49 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(844, 308, 66, 8)
+2026-05-29 11:37:49 word_document_rect hwnd=329656 rect=(362, 235, 1554, 675)
+2026-05-29 11:37:49 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:37:50 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:51 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:37:51 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:37:51 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:37:51 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:51 word_get_point_direct_result original='안녕하서요' result='(672, 332, 83, 29)' result_type='tuple'
+2026-05-29 11:37:51 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(672, 308, 83, 8)
+2026-05-29 11:37:51 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:51 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:51 word_get_point_direct_result original='다시 만너요' result='(755, 390, 92, 29)' result_type='tuple'
+2026-05-29 11:37:51 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(755, 366, 92, 8)
+2026-05-29 11:37:51 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:51 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:51 word_get_point_direct_result original='싫어해요' result='(764, 332, 66, 29)' result_type='tuple'
+2026-05-29 11:37:51 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(764, 308, 66, 8)
+2026-05-29 11:37:51 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:51 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:37:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:56 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:37:56 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:37:56 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:37:56 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:56 word_get_point_direct_result original='안녕하서요' result='(573, 320, 83, 29)' result_type='tuple'
+2026-05-29 11:37:56 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 296, 83, 8)
+2026-05-29 11:37:56 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:56 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:56 word_get_point_direct_result original='다시 만너요' result='(656, 378, 92, 29)' result_type='tuple'
+2026-05-29 11:37:56 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 354, 92, 8)
+2026-05-29 11:37:56 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:56 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:56 word_get_point_direct_result original='싫어해요' result='(665, 320, 66, 29)' result_type='tuple'
+2026-05-29 11:37:56 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 296, 66, 8)
+2026-05-29 11:37:56 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:37:56 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:37:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:57 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:37:57 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:37:57 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:37:57 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:57 word_get_point_direct_result original='안녕하서요' result='(672, 332, 83, 29)' result_type='tuple'
+2026-05-29 11:37:57 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(672, 308, 83, 8)
+2026-05-29 11:37:57 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:57 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:57 word_get_point_direct_result original='다시 만너요' result='(755, 390, 92, 29)' result_type='tuple'
+2026-05-29 11:37:57 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(755, 366, 92, 8)
+2026-05-29 11:37:57 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:57 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:57 word_get_point_direct_result original='싫어해요' result='(764, 332, 66, 29)' result_type='tuple'
+2026-05-29 11:37:57 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(764, 308, 66, 8)
+2026-05-29 11:37:57 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:37:57 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:37:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:37:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:06 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:06 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:06 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:06 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:38:06 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:38:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:06 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:38:06 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:38:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:06 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:38:06 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:38:06 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:06 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:08 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:08 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:08 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:08 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:08 word_get_point_direct_result original='안녕하서요' result='(672, 455, 83, 29)' result_type='tuple'
+2026-05-29 11:38:08 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(672, 431, 83, 8)
+2026-05-29 11:38:08 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:08 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:08 word_get_point_direct_result original='다시 만너요' result='(755, 513, 92, 29)' result_type='tuple'
+2026-05-29 11:38:08 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(755, 489, 92, 8)
+2026-05-29 11:38:08 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:08 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:08 word_get_point_direct_result original='싫어해요' result='(764, 455, 66, 29)' result_type='tuple'
+2026-05-29 11:38:08 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(764, 431, 66, 8)
+2026-05-29 11:38:08 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:08 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:09 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:10 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:11 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:12 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:14 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:16 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:16 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:16 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:16 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:16 word_get_point_direct_result original='안녕하서요' result='(573, 263, 83, 29)' result_type='tuple'
+2026-05-29 11:38:16 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 239, 83, 8)
+2026-05-29 11:38:16 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:16 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:16 word_get_point_direct_result original='다시 만너요' result='(656, 321, 92, 29)' result_type='tuple'
+2026-05-29 11:38:16 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 297, 92, 8)
+2026-05-29 11:38:16 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:16 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:16 word_get_point_direct_result original='싫어해요' result='(665, 263, 66, 29)' result_type='tuple'
+2026-05-29 11:38:16 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 239, 66, 8)
+2026-05-29 11:38:16 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:16 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:18 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:19 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:20 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:20 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:20 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:20 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:20 word_get_point_direct_result original='안녕하서요' result='(672, 455, 83, 29)' result_type='tuple'
+2026-05-29 11:38:20 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(672, 431, 83, 8)
+2026-05-29 11:38:20 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:20 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:20 word_get_point_direct_result original='다시 만너요' result='(755, 513, 92, 29)' result_type='tuple'
+2026-05-29 11:38:20 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(755, 489, 92, 8)
+2026-05-29 11:38:20 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:20 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:20 word_get_point_direct_result original='싫어해요' result='(764, 455, 66, 29)' result_type='tuple'
+2026-05-29 11:38:20 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(764, 431, 66, 8)
+2026-05-29 11:38:20 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:20 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:22 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:22 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:22 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:22 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:22 word_get_point_direct_result original='안녕하서요' result='(672, 455, 83, 29)' result_type='tuple'
+2026-05-29 11:38:22 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(672, 431, 83, 8)
+2026-05-29 11:38:22 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:22 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:22 word_get_point_direct_result original='다시 만너요' result='(755, 513, 92, 29)' result_type='tuple'
+2026-05-29 11:38:22 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(755, 489, 92, 8)
+2026-05-29 11:38:22 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:22 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:22 word_get_point_direct_result original='싫어해요' result='(764, 455, 66, 29)' result_type='tuple'
+2026-05-29 11:38:22 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(764, 431, 66, 8)
+2026-05-29 11:38:22 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:22 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:23 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:24 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:24 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:24 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:24 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:24 word_get_point_direct_result original='안녕하서요' result='(672, 455, 83, 29)' result_type='tuple'
+2026-05-29 11:38:24 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(672, 431, 83, 8)
+2026-05-29 11:38:24 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:24 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:24 word_get_point_direct_result original='다시 만너요' result='(755, 513, 92, 29)' result_type='tuple'
+2026-05-29 11:38:24 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(755, 489, 92, 8)
+2026-05-29 11:38:24 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:24 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:24 word_get_point_direct_result original='싫어해요' result='(764, 455, 66, 29)' result_type='tuple'
+2026-05-29 11:38:24 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(764, 431, 66, 8)
+2026-05-29 11:38:24 word_document_rect hwnd=329656 rect=(201, 235, 1715, 675)
+2026-05-29 11:38:24 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:25 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:25 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:25 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:25 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:25 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:25 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:38:25 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:38:25 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:25 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:25 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:38:25 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:38:25 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:25 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:25 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:38:25 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:38:25 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:25 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:25 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:26 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:27 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:38:58 markers_restored hwnd=329656
+2026-05-29 11:38:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:38:59 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:38:59 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:38:59 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:38:59 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:59 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:38:59 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:38:59 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:59 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:59 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:38:59 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:38:59 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:59 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:59 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:38:59 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:38:59 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:38:59 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:38:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:09 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:10 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:11 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:12 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:14 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:18 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:19 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:23 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:25 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:26 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:27 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:28 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:29 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:30 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:31 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:32 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:33 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:34 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:35 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:36 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:37 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:37 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:38 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:39 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:40 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:41 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:42 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:43 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:44 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:46 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:48 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:49 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:50 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:39:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:09 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:10 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:11 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:12 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:14 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:18 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:19 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:23 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:25 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:26 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:27 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:28 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:29 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:30 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:31 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:32 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:33 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:34 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:35 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:36 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:37 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:40:37 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:41:03 markers_restored hwnd=329656
+2026-05-29 11:41:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:03 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:41:03 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:41:03 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:41:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:03 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:41:03 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:41:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:03 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:41:03 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:41:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:03 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:41:03 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:41:03 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:03 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:41:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:05 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:41:12 markers_restored hwnd=329656
+2026-05-29 11:41:12 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:14 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:16 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:41:21 markers_restored hwnd=329656
+2026-05-29 11:41:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:21 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:41:21 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:41:21 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:41:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:21 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:41:21 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:41:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:21 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:41:21 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:41:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:21 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:41:21 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:41:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:21 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:41:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:23 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:41:38 markers_restored hwnd=329656
+2026-05-29 11:41:38 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:38 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:38 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:41:38 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:41:38 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:41:38 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:38 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:41:38 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:41:38 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:38 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:38 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:41:38 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:41:38 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:38 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:38 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:41:38 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:41:38 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:38 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:41:39 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:41:39 markers_restored hwnd=329656
+2026-05-29 11:41:39 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:40 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:41 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:42 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:43 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:43 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:43 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:41:43 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:41:43 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:41:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:43 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:41:43 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:41:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:43 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:41:43 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:41:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:43 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:41:43 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:41:43 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:43 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:41:44 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:44 markers_hidden_for_target hwnd=329656 foreground=13503470 target_visible=True
+2026-05-29 11:41:51 markers_restored hwnd=329656
+2026-05-29 11:41:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:51 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:41:51 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:41:51 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:41:51 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:51 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:41:51 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:41:51 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:51 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:51 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:41:51 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:41:51 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:51 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:51 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:41:51 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:41:51 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:41:51 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:41:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:41:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:09 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:10 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:11 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:12 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:14 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:18 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:19 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:23 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:25 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:26 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:27 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:28 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:29 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:30 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:31 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:32 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:33 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:34 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:35 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:36 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:37 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:38 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:39 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:39 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:40 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:41 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:42 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:43 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:44 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:46 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:48 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:49 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:50 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:42:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:00 markers_hidden_for_target hwnd=329656 foreground=13503470 target_visible=True
+2026-05-29 11:43:01 markers_restored hwnd=329656
+2026-05-29 11:43:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:01 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:43:01 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:43:01 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:43:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:01 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:43:01 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:43:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:01 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:43:01 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:43:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:01 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:02 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:43:02 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:43:02 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:02 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:43:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:07 markers_hidden_for_target hwnd=329656 foreground=13503470 target_visible=True
+2026-05-29 11:43:13 markers_restored hwnd=329656
+2026-05-29 11:43:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:14 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:18 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:19 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:20 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:43:30 markers_restored hwnd=329656
+2026-05-29 11:43:30 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:31 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:32 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:33 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:34 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:35 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:43:44 markers_restored hwnd=329656
+2026-05-29 11:43:44 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:45 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:43:45 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:43:45 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:43:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:45 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:43:45 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:43:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:45 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:43:45 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:43:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:46 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:43:46 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:43:46 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:46 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:43:46 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:48 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:49 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:49 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:43:50 markers_restored hwnd=329656
+2026-05-29 11:43:50 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:50 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:50 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:43:50 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:43:50 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:43:50 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:50 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:43:50 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:43:50 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:50 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:50 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:43:50 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:43:50 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:50 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:50 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:43:50 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:43:50 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:50 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:43:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:54 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:43:54 markers_restored hwnd=329656
+2026-05-29 11:43:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:55 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:43:55 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:43:55 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:43:55 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:55 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:43:55 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:43:55 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:55 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:55 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:43:55 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:43:55 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:55 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:55 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:43:55 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:43:55 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:43:55 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:43:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:43:58 markers_hidden_for_target hwnd=329656 foreground=8391848 target_visible=True
+2026-05-29 11:44:17 markers_restored hwnd=329656
+2026-05-29 11:44:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:17 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:44:17 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:44:17 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:44:17 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:18 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:44:18 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:44:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:18 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:44:18 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:44:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:18 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:44:18 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:44:18 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:18 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:44:18 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:19 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:20 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:44:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:21 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:44:21 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:44:21 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:44:21 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:44:21 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:44:21 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:44:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:21 show_start version='type_label_v4' mode='word_selection' scope='selection' hwnd=329656 text_len=25 text_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:21 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:44:21 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:44:21 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:44:21 issues_built count=3 originals=['안녕하서요', '다시 만너요', '싫어해요']
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:44:21 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:21 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:22 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:44:22 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:44:22 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:22 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:22 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:44:22 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:44:22 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:22 show_done underline_count=3
+2026-05-29 11:44:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:23 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:25 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:26 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:27 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:28 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:29 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:29 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:30 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:31 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:32 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:33 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:34 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:35 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:36 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:37 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:38 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:39 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:40 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:41 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:42 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:42 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:44:44 markers_restored hwnd=329656
+2026-05-29 11:44:44 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:45 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:44:45 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:44:45 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:44:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:45 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:44:45 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:44:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:45 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:44:45 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:44:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:45 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:44:45 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:44:45 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:45 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:44:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:45 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:44:47 markers_restored hwnd=329656
+2026-05-29 11:44:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:47 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:44:47 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:44:48 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:44:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:48 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:44:48 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:44:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:48 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:44:48 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:44:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:48 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:44:48 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:44:48 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:48 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:44:48 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:49 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:44:51 markers_restored hwnd=329656
+2026-05-29 11:44:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:52 issue_matched word='안녕하서요' start=0 replacement='안녕하세요' category='맞춤법'
+2026-05-29 11:44:52 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:44:52 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:44:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:52 word_get_point_direct_result original='안녕하서요' result='(573, 443, 83, 29)' result_type='tuple'
+2026-05-29 11:44:52 word_rect_get_point hwnd=329656 original='안녕하서요' issue_start=0 range_start=19 rect=(573, 419, 83, 8)
+2026-05-29 11:44:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:52 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:44:52 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:44:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:52 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:44:52 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:44:52 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:44:52 sync_done hwnd=329656 scope='selection' desired=3 removed=0 updated=3 added=0 underline_count=3
+2026-05-29 11:44:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:55 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:44:57 markers_restored hwnd=329656
+2026-05-29 11:44:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:44:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:00 word_live_selection_text fallback_len=25 live_len=26 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n\n'
+2026-05-29 11:45:00 live_text_poll_changed previous_len=25 live_len=26 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n\n'
+2026-05-29 11:45:00 word_live_selection_text fallback_len=26 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:00 issue_not_found candidates=['안녕하요', '안녕하서요', '안녕하소요'] text_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:00 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:45:00 issue_matched word='싫어해요' start=6 replacement='반가워요' category='문맥'
+2026-05-29 11:45:00 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:45:00 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:45:00 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:45:00 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:45:00 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:45:00 word_get_point_direct_result original='싫어해요' result='(665, 443, 66, 29)' result_type='tuple'
+2026-05-29 11:45:00 word_rect_get_point hwnd=329656 original='싫어해요' issue_start=6 range_start=25 rect=(665, 419, 66, 8)
+2026-05-29 11:45:00 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:45:00 sync_done hwnd=329656 scope='selection' desired=2 removed=1 updated=2 added=0 underline_count=2
+2026-05-29 11:45:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:06 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:45:08 markers_restored hwnd=329656
+2026-05-29 11:45:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:09 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:10 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:11 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:11 markers_hidden_for_target hwnd=329656 foreground=0 target_visible=True
+2026-05-29 11:45:11 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:12 issue_removed original='싫어해요' start=6 removed=1
+2026-05-29 11:45:12 markers_restored hwnd=329656
+2026-05-29 11:45:12 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:12 live_text_poll_changed previous_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:12 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:12 issue_not_found candidates=['안녕하요', '안녕하서요', '안녕하소요'] text_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:12 issue_matched word='다시 만너요' start=18 replacement='다시 만나요' category='맞춤법'
+2026-05-29 11:45:12 issue_not_found candidates=['싫어해요'] text_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:12 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:45:12 word_get_point_direct_result original='다시 만너요' result='(656, 501, 92, 29)' result_type='tuple'
+2026-05-29 11:45:12 word_rect_get_point hwnd=329656 original='다시 만너요' issue_start=18 range_start=37 rect=(656, 477, 92, 8)
+2026-05-29 11:45:12 word_document_rect hwnd=329656 rect=(0, 223, 1920, 780)
+2026-05-29 11:45:12 sync_done hwnd=329656 scope='selection' desired=1 removed=0 updated=1 added=0 underline_count=1
+2026-05-29 11:45:12 word_live_selection_text fallback_len=4 live_len=4 live_sample='반가워요'
+2026-05-29 11:45:12 issue_not_found candidates=['안녕하요', '안녕하서요', '안녕하소요'] text_sample='반가워요'
+2026-05-29 11:45:12 issue_not_found candidates=['다시 만너요'] text_sample='반가워요'
+2026-05-29 11:45:12 issue_not_found candidates=['싫어해요'] text_sample='반가워요'
+2026-05-29 11:45:12 sync_ignored_transient_text hwnd=329656 previous_len=25 current_len=4 current_sample='반가워요'
+2026-05-29 11:45:13 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:14 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:15 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:16 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:17 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:18 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:19 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:20 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:21 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:22 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:23 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:24 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:25 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:26 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:27 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:28 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:29 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:30 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:30 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:31 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:32 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:33 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:34 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:35 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:36 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:37 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:38 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:39 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:40 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:41 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:42 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:43 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:44 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:45 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:46 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:47 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:48 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:49 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:50 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:51 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:52 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:53 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:54 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:55 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:56 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:57 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:58 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:45:59 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:00 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:01 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:02 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:03 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:04 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:05 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:06 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:07 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:08 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:09 word_live_selection_text fallback_len=25 live_len=25 live_sample='안녕하세요 반가워요\n\n잘 있어요 다시 만너요\n'
+2026-05-29 11:46:09 markers_hidden_for_target hwnd=329656 foreground=5311384 target_visible=False

@@ -425,6 +425,64 @@ class OutputApplier:
     def _clean_word_selection_text(self, text: str) -> str:
         return str(text or "").replace("\x00", "").replace("\x07", "").replace("\r\n", "\n").replace("\r", "\n")
 
+    def apply_to_word_selection_subrange(self, target: OutputTarget | None, relative_start: int, relative_end: int, text: str):
+        if target is None or target.mode != "word_selection":
+            raise RuntimeError("Word selection subrange replacement requires a Word selection target.")
+        if pythoncom is None:
+            raise RuntimeError("pywin32 is required for Word selection replacement.")
+        pythoncom.CoInitialize()
+        self._focus_window(target.window_handle)
+        word = _get_active_word_application()
+        style_info = dict(target.style_info or {})
+        document = self._word_document_for_style_info(word, style_info)
+        if document is None:
+            raise RuntimeError("No active Word document is available.")
+        try:
+            selection_start = int(style_info.get("selection_start"))
+            selection_end = int(style_info.get("selection_end"))
+        except Exception as exc:
+            raise RuntimeError("The original Word selection range is unavailable.") from exc
+        if selection_end <= selection_start:
+            raise RuntimeError("The original Word selection range is empty.")
+
+        selection_text = str(document.Range(Start=selection_start, End=selection_end).Text or "")
+        raw_start = self._raw_index_from_normalized(selection_text, int(relative_start))
+        raw_end = self._raw_index_from_normalized(selection_text, int(relative_end))
+        absolute_start = selection_start + raw_start
+        absolute_end = selection_start + raw_end
+        if absolute_end <= absolute_start:
+            raise RuntimeError("The marker range is empty.")
+
+        undo_record_started = self._start_word_undo_record(word, "Writing Assistant marker correction")
+        try:
+            replacement_text = self._word_text_for_write(text)
+            target_range = document.Range(Start=absolute_start, End=absolute_end)
+            self._log_word_replace(
+                f"marker subrange write selection=({selection_start},{selection_end}) "
+                f"relative=({relative_start},{relative_end}) absolute=({absolute_start},{absolute_end}) "
+                f"text_len={len(str(text or ''))} sample={str(text or '')[:80]!r}"
+            )
+            target_range.Text = replacement_text
+            self._select_word_range(document, absolute_start, absolute_start + len(replacement_text))
+        finally:
+            if undo_record_started:
+                self._end_word_undo_record(word)
+
+    def _raw_index_from_normalized(self, raw_text: str, normalized_index: int) -> int:
+        raw_index = 0
+        normalized_count = 0
+        while raw_index < len(raw_text) and normalized_count < normalized_index:
+            if raw_text[raw_index] == "\r":
+                if raw_index + 1 < len(raw_text) and raw_text[raw_index + 1] == "\n":
+                    raw_index += 2
+                else:
+                    raw_index += 1
+                normalized_count += 1
+            else:
+                raw_index += 1
+                normalized_count += 1
+        return raw_index
+
     def _apply_to_word_selection(self, text: str, style_info: dict | None = None):
         if pythoncom is None:
             raise RuntimeError("pywin32 is required for Word selection replacement.")
