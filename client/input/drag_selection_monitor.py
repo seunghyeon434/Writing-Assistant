@@ -456,7 +456,7 @@ def _read_notepad_selection_event(hwnd: int):
         "window_title": get_window_title(hwnd),
         "window_handle": hwnd,
         "text": selected_text,
-        "style_info": {"selection_mode": "notepad"},
+        "style_info": {"selection_mode": "notepad", "selection_text": selected_text},
     }
 
 

@@ -1062,7 +1062,9 @@ class MiniOverlay(QWidget):
             widget.show()
         self.show_waiting(window_handle=self._last_window_handle)
 
-    def show_waiting(self, reader_name="", window_handle=None):
+    def show_waiting(self, reader_name="", window_title_or_handle=None, window_handle=None):
+        if window_handle is None:
+            window_handle = window_title_or_handle
         if reader_name:
             self._last_reader_name = reader_name
         if self._is_notepad_reader():
@@ -1403,6 +1405,8 @@ class MiniOverlay(QWidget):
     def _clamp_position(self, x, y, left, top, right, bottom, margin=8):
         overlay_width = self.width()
         overlay_height = self.height()
+        if self._is_notepad_reader():
+            bottom = max(top + overlay_height + margin * 2, bottom - 62)
         min_x = left + margin
         max_x = max(min_x, right - overlay_width - margin)
         min_y = top + margin
@@ -1784,7 +1788,9 @@ class RealtimeOverlay(MiniOverlay):
         self.apply_btn.setEnabled(True)
         self._show_near_cursor(window_handle or self._last_window_handle)
 
-    def show_waiting(self, reader_name="", window_handle=None):
+    def show_waiting(self, reader_name="", window_title_or_handle=None, window_handle=None):
+        if window_handle is None:
+            window_handle = window_title_or_handle
         self.show_realtime_for_target(reader_name, "", window_handle)
 
     def show_for_target(self, reader_name="", window_title="", window_handle=None):

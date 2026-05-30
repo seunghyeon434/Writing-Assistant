@@ -3,11 +3,12 @@ from __future__ import annotations
 import ctypes
 from ctypes import wintypes
 from dataclasses import dataclass
+import os
 from pathlib import Path
 import time
 from typing import Callable
 
-from PyQt5.QtCore import QEasingCurve, QPoint, QRect, Qt, QPropertyAnimation, QTimer
+from PyQt5.QtCore import QEasingCurve, QPoint, QRect, Qt, QPropertyAnimation, QTimer, pyqtProperty
 from PyQt5.QtGui import QColor, QPainter, QPen
 from PyQt5.QtWidgets import (
     QApplication,
@@ -26,19 +27,22 @@ try:
     import win32com.client as win32_client
     import win32com.client.dynamic as win32_dynamic
     import win32gui
+    import win32process
 except Exception:  # pragma: no cover - optional Windows dependency
     pythoncom = None
     win32_client = None
     win32_dynamic = None
     win32gui = None
+    win32process = None
 
 
 EM_POSFROMCHAR = 0x00D6
 WM_GETTEXT = 0x000D
 WM_GETTEXTLENGTH = 0x000E
-WORD_GUIDE_LINE_Y_OFFSET = -24
-NOTEPAD_GUIDE_LINE_Y_OFFSET = 5
+WORD_GUIDE_LINE_Y_OFFSET = -28
+NOTEPAD_GUIDE_LINE_Y_OFFSET = -18
 UNDERLINE_WINDOW_Y_OFFSET = 14
+NOTEPAD_UNDERLINE_WINDOW_Y_OFFSET = 0
 _LOG_DIR = Path(__file__).resolve().parents[2] / ".logs"
 _LOG_DIR.mkdir(parents=True, exist_ok=True)
 _SPELLING_OVERLAY_LOG_PATH = _LOG_DIR / "spelling_inspection_overlay.log"
@@ -64,6 +68,7 @@ class SpellingGuideIssue:
     end: int
     category: str = "맞춤법"
     rect: QRect | None = None
+    has_blank_line_above: bool = False
 
 
 class SpellingGuideCard(QWidget):
@@ -74,15 +79,20 @@ class SpellingGuideCard(QWidget):
         self.issue = issue
         self.on_replace = on_replace
         self.allowed_geometry: QRect | None = None
+        self.avoidance_rects: list[QRect] = []
+        self.linked_underline = None
         self._hide_timer = QTimer(self)
         self._hide_timer.setSingleShot(True)
         self._hide_timer.timeout.connect(self._fade_out)
+        self._topmost_timer = QTimer(self)
+        self._topmost_timer.setInterval(120)
+        self._topmost_timer.timeout.connect(self._force_topmost)
         self._anim = None
         self._opacity_anim = None
         self._opacity = QGraphicsOpacityEffect(self)
         self._opacity.setOpacity(0.0)
         self.setGraphicsEffect(self._opacity)
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint | Qt.WindowDoesNotAcceptFocus)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint)
         self.setAttribute(Qt.WA_TranslucentBackground, True)
         self.setAttribute(Qt.WA_ShowWithoutActivating, True)
         self.setMouseTracking(True)
@@ -169,9 +179,9 @@ class SpellingGuideCard(QWidget):
         available = self.allowed_geometry or (screen.availableGeometry() if screen else QRect(0, 0, 1920, 1080))
         self.adjustSize()
         x = rect.left()
-        y = rect.bottom() + 12
+        y = rect.bottom() + 22
         if y + self.height() > available.bottom():
-            y = rect.top() - self.height() - 12
+            y = rect.top() - self.height() - 22
         min_x = available.left() + 8
         min_y = available.top() + 8
         max_x = max(min_x, available.right() - self.width() - 8)
@@ -181,16 +191,35 @@ class SpellingGuideCard(QWidget):
         self.move(x, y + 8)
         self.show()
         self.raise_()
+        self._force_topmost()
+        self._topmost_timer.start()
+        QTimer.singleShot(50, self._force_topmost)
+        QTimer.singleShot(170, self._force_topmost)
         self._animate_to(QPoint(x, y), 1.0)
+
+    def _force_topmost(self):
+        if win32gui is None:
+            return
+        try:
+            hwnd = int(self.winId())
+            hwnd_topmost = -1
+            flags = 0x0001 | 0x0002 | 0x0010 | 0x0040  # NOSIZE, NOMOVE, NOACTIVATE, SHOWWINDOW
+            win32gui.SetWindowPos(hwnd, hwnd_topmost, 0, 0, 0, 0, flags)
+        except Exception:
+            pass
 
     def schedule_hide(self):
         self._hide_timer.start(450)
 
     def enterEvent(self, event):
         self._hide_timer.stop()
+        self.raise_()
+        self._force_topmost()
+        self._set_linked_label(True)
         super().enterEvent(event)
 
     def leaveEvent(self, event):
+        self._set_linked_label(False)
         self.schedule_hide()
         super().leaveEvent(event)
 
@@ -218,6 +247,8 @@ class SpellingGuideCard(QWidget):
         self._opacity_anim.start()
 
     def _fade_out(self):
+        self._set_linked_label(False)
+        self._topmost_timer.stop()
         self._opacity_anim = QPropertyAnimation(self._opacity, b"opacity", self)
         self._opacity_anim.setDuration(140)
         self._opacity_anim.setStartValue(self._opacity.opacity())
@@ -226,17 +257,37 @@ class SpellingGuideCard(QWidget):
         self._opacity_anim.finished.connect(self.hide)
         self._opacity_anim.start()
 
+    def _set_linked_label(self, visible: bool):
+        underline = getattr(self, "linked_underline", None)
+        if underline is None:
+            return
+        try:
+            underline._animate_label(bool(visible))
+        except Exception:
+            pass
+
 
 class SpellingUnderline(QWidget):
     def __init__(self, issue: SpellingGuideIssue, card: SpellingGuideCard):
         super().__init__(None)
         self.issue = issue
         self.card = card
+        self._label_reveal = 0.0
+        self._label_anim = None
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint | Qt.WindowDoesNotAcceptFocus)
         self.setAttribute(Qt.WA_TranslucentBackground, True)
         self.setAttribute(Qt.WA_ShowWithoutActivating, True)
         self.setMouseTracking(True)
         self.setFixedHeight(28)
+
+    def getLabelReveal(self) -> float:
+        return self._label_reveal
+
+    def setLabelReveal(self, value: float):
+        self._label_reveal = max(0.0, min(1.0, float(value)))
+        self.update()
+
+    labelReveal = pyqtProperty(float, fget=getLabelReveal, fset=setLabelReveal)
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -248,20 +299,26 @@ class SpellingUnderline(QWidget):
         painter.setFont(label_font)
         label_metrics = painter.fontMetrics()
         label_width = max(42, label_metrics.horizontalAdvance(label_text) + 16)
-        label_rect = QRect(1, 3, min(label_width, max(42, self.width() - 2)), 14)
-        painter.setPen(Qt.NoPen)
-        painter.setBrush(QColor("#d92828"))
-        painter.drawRoundedRect(label_rect, 8, 8)
-        painter.setPen(QColor("#ffffff"))
-        painter.drawText(label_rect, Qt.AlignCenter, label_text)
+        line_y = 18
+        reveal = self._label_reveal
+        label_y = int(line_y - 14 * reveal)
+        if reveal > 0.02:
+            label_rect = QRect(1, label_y, min(label_width, max(42, self.width() - 2)), 14)
+            painter.setOpacity(reveal)
+            painter.setPen(Qt.NoPen)
+            painter.setBrush(QColor("#d92828"))
+            painter.drawRoundedRect(label_rect, 8, 8)
+            painter.setPen(QColor("#ffffff"))
+            painter.drawText(label_rect, Qt.AlignCenter, label_text)
+            painter.setOpacity(1.0)
 
         pen = QPen(QColor("#d92828"), 2)
         pen.setCapStyle(Qt.RoundCap)
         painter.setPen(pen)
-        line_y = label_rect.bottom()
         painter.drawLine(1, line_y, self.width() - 1, line_y)
 
     def enterEvent(self, event):
+        self._animate_label(True)
         self.card.show_near(self.frameGeometry())
         super().enterEvent(event)
 
@@ -269,12 +326,21 @@ class SpellingUnderline(QWidget):
         self.card.schedule_hide()
         super().leaveEvent(event)
 
+    def _animate_label(self, visible: bool):
+        self._label_anim = QPropertyAnimation(self, b"labelReveal", self)
+        self._label_anim.setDuration(130)
+        self._label_anim.setStartValue(self._label_reveal)
+        self._label_anim.setEndValue(1.0 if visible else 0.0)
+        self._label_anim.setEasingCurve(QEasingCurve.OutCubic)
+        self._label_anim.start()
+
 
 class SpellingInspectionOverlayManager:
     def __init__(self, on_replace: Callable[[SpellingGuideIssue], None]):
         self.on_replace = on_replace
         self._underlines: list[SpellingUnderline] = []
         self._cards: list[SpellingGuideCard] = []
+        self._avoidance_rect_provider = None
         self._last_target = None
         self._last_text = ""
         self._target_hwnd = 0
@@ -283,6 +349,9 @@ class SpellingInspectionOverlayManager:
         self._focus_timer = QTimer()
         self._focus_timer.setInterval(180)
         self._focus_timer.timeout.connect(self._sync_target_visibility)
+
+    def set_avoidance_rect_provider(self, provider):
+        self._avoidance_rect_provider = provider if callable(provider) else None
 
     def clear(self):
         for widget in [*self._underlines, *self._cards]:
@@ -407,6 +476,18 @@ class SpellingInspectionOverlayManager:
             and str(getattr(left, "category", "")) == str(getattr(right, "category", ""))
         )
 
+    def current_target(self):
+        return self._last_target
+
+    def has_visible_guide_card(self) -> bool:
+        for card in self._cards:
+            try:
+                if card.isVisible():
+                    return True
+            except Exception:
+                continue
+        return False
+
     def show_for_target(self, target, text: str):
         self.clear()
         self._last_target = target
@@ -442,8 +523,15 @@ class SpellingInspectionOverlayManager:
             return False
         card = SpellingGuideCard(issue, self.on_replace)
         card.allowed_geometry = self._allowed_overlay_rect(target)
+        card.avoidance_rects = self._current_avoidance_rects()
         underline = SpellingUnderline(issue, card)
-        underline.setGeometry(issue.rect.left(), issue.rect.top() + UNDERLINE_WINDOW_Y_OFFSET, max(58, issue.rect.width()), 28)
+        card.linked_underline = underline
+        underline.setGeometry(
+            issue.rect.left(),
+            issue.rect.top() + self._underline_window_y_offset(target),
+            max(58, issue.rect.width()),
+            28,
+        )
         underline.show()
         underline.raise_()
         self._cards.append(card)
@@ -458,9 +546,21 @@ class SpellingInspectionOverlayManager:
         underline.issue = issue
         underline.card.issue = issue
         underline.card.allowed_geometry = self._allowed_overlay_rect(target)
-        underline.setGeometry(issue.rect.left(), issue.rect.top() + UNDERLINE_WINDOW_Y_OFFSET, max(58, issue.rect.width()), 28)
+        underline.card.avoidance_rects = self._current_avoidance_rects()
+        underline.setGeometry(
+            issue.rect.left(),
+            issue.rect.top() + self._underline_window_y_offset(target),
+            max(58, issue.rect.width()),
+            28,
+        )
         underline.update()
         return True
+
+    def _underline_window_y_offset(self, target) -> int:
+        mode = str(getattr(target, "mode", "") or "")
+        if mode in {"notepad", "notepad_selection"}:
+            return NOTEPAD_UNDERLINE_WINDOW_Y_OFFSET
+        return UNDERLINE_WINDOW_Y_OFFSET
 
     def _dispose_underline(self, underline: SpellingUnderline):
         try:
@@ -492,7 +592,7 @@ class SpellingInspectionOverlayManager:
 
     def _looks_like_transient_sync(self, target, previous_text: str, current_text: str, issues: list[SpellingGuideIssue]) -> bool:
         mode = str(getattr(target, "mode", "") or "")
-        if mode != "word_selection" or issues or not self._underlines:
+        if mode not in {"word_selection", "notepad_selection"} or issues or not self._underlines:
             return False
         previous_len = len(previous_text or "")
         current_len = len(current_text or "")
@@ -500,7 +600,7 @@ class SpellingInspectionOverlayManager:
             return False
         if current_len <= 2:
             return True
-        return current_len < max(3, previous_len // 4)
+        return current_len < max(8, previous_len // 2)
 
     def _inspection_scope(self, target) -> str:
         mode = str(getattr(target, "mode", "") or "")
@@ -513,6 +613,15 @@ class SpellingInspectionOverlayManager:
     def _live_text_for_target(self, target, fallback: str) -> str:
         text = str(fallback or "")
         mode = str(getattr(target, "mode", "") or "") if target is not None else ""
+        if mode in {"notepad", "notepad_selection"}:
+            hwnd = int(getattr(target, "window_handle", 0) or 0)
+            editor = self._best_notepad_editor(hwnd)
+            if editor:
+                live = self._window_text(editor)
+                if live:
+                    normalized = live.replace("\r\n", "\n").replace("\r", "\n")
+                    return normalized
+            return text
         if mode not in {"word", "word_selection"} or pythoncom is None or win32_dynamic is None:
             return text
         try:
@@ -549,7 +658,8 @@ class SpellingInspectionOverlayManager:
         try:
             foreground = int(win32gui.GetForegroundWindow() or 0)
             target_visible = bool(win32gui.IsWindow(self._target_hwnd)) and not bool(win32gui.IsIconic(self._target_hwnd))
-            should_show = bool(target_visible and foreground == self._target_hwnd)
+            own_foreground = self._is_own_overlay_window(foreground)
+            should_show = bool(target_visible and (foreground == self._target_hwnd or own_foreground))
             if should_show and self._hidden_for_target:
                 self._set_marker_visibility(True)
                 self._hidden_for_target = False
@@ -559,9 +669,37 @@ class SpellingInspectionOverlayManager:
                 self._hidden_for_target = True
                 _log_spelling_overlay("markers_hidden_for_target", hwnd=self._target_hwnd, foreground=foreground, target_visible=target_visible)
             if should_show:
+                self._refresh_marker_positions_if_needed()
                 self._poll_live_text_if_needed()
         except Exception:
             pass
+
+    def _is_own_overlay_window(self, hwnd: int) -> bool:
+        if not hwnd:
+            return False
+        for widget in [*self._underlines, *self._cards]:
+            try:
+                if int(widget.winId()) == int(hwnd):
+                    return True
+            except Exception:
+                continue
+        return False
+
+    def _refresh_marker_positions_if_needed(self):
+        if self._last_target is None or not self._underlines:
+            return
+        mode = str(getattr(self._last_target, "mode", "") or "")
+        if mode not in {"notepad", "notepad_selection"}:
+            return
+        live_underlines: list[SpellingUnderline] = []
+        for underline in list(self._underlines):
+            try:
+                if self._update_marker_geometry(self._last_target, underline, underline.issue):
+                    live_underlines.append(underline)
+            except Exception:
+                pass
+        self._underlines = live_underlines
+        self._cards = [underline.card for underline in self._underlines]
 
     def _poll_live_text_if_needed(self):
         if self._last_target is None or not self._underlines:
@@ -590,15 +728,28 @@ class SpellingInspectionOverlayManager:
         if not visible:
             for card in self._cards:
                 try:
+                    if hasattr(card, "_topmost_timer"):
+                        card._topmost_timer.stop()
                     card.hide()
                 except Exception:
                     pass
+
+    def _current_avoidance_rects(self) -> list[QRect]:
+        provider = self._avoidance_rect_provider
+        if provider is None:
+            return []
+        try:
+            return [rect for rect in provider() if isinstance(rect, QRect)]
+        except Exception:
+            return []
 
     def _allowed_overlay_rect(self, target) -> QRect | None:
         mode = str(getattr(target, "mode", "") or "")
         hwnd = int(getattr(target, "window_handle", 0) or 0)
         if mode in {"word", "word_selection"}:
             return self._word_document_rect(hwnd) or self._target_client_rect(hwnd)
+        if mode in {"notepad", "notepad_selection"}:
+            return self._notepad_editor_rect(hwnd) or self._target_client_rect(hwnd)
         return self._target_client_rect(hwnd)
 
     def _test_issues(self, text: str) -> list[SpellingGuideIssue]:
@@ -640,6 +791,7 @@ class SpellingInspectionOverlayManager:
                         start=start,
                         end=start + len(word),
                         category=category,
+                        has_blank_line_above=self._has_blank_line_above(text, start),
                     )
                 )
                 break
@@ -647,11 +799,18 @@ class SpellingInspectionOverlayManager:
                 _log_spelling_overlay("issue_not_found", candidates=list(words), text_sample=text[:120])
         return issues
 
+    def _has_blank_line_above(self, text: str, start: int) -> bool:
+        before = str(text or "")[: max(0, int(start or 0))]
+        if "\n" not in before:
+            return False
+        previous = before.rsplit("\n", 1)[0].rsplit("\n", 1)[-1]
+        return previous.strip() == ""
+
     def _issue_rect(self, target, issue: SpellingGuideIssue) -> QRect | None:
         mode = str(getattr(target, "mode", "") or "")
         hwnd = int(getattr(target, "window_handle", 0) or 0)
         if mode in {"notepad", "notepad_selection"}:
-            return self._clamp_to_target(hwnd, self._notepad_rect(hwnd, issue))
+            return self._clamp_notepad_marker_rect(hwnd, self._notepad_rect(hwnd, issue))
         if mode in {"word", "word_selection"}:
             return self._clamp_to_rect(self._word_document_rect(hwnd) or self._target_client_rect(hwnd), self._word_rect(hwnd, issue, target))
         return self._clamp_to_target(hwnd, self._fallback_rect(hwnd, issue))
@@ -663,23 +822,78 @@ class SpellingInspectionOverlayManager:
         if not editor:
             return self._fallback_rect(hwnd, issue)
         raw_text = self._window_text(editor)
-        start = raw_text.find(issue.original)
-        if start < 0:
-            start = self._notepad_index_from_normalized(raw_text, issue.start)
-        start_point = self._pos_from_char(editor, start)
-        end_point = self._pos_from_char(editor, start + len(issue.original))
+        normalized_text = self._normalize_editor_text(raw_text)
+        index_text = normalized_text or self._normalize_editor_text(self._last_text)
+        expected_start = max(0, min(int(getattr(issue, "start", 0) or 0), len(index_text)))
+        original = str(getattr(issue, "original", "") or "")
+        matched_start = expected_start
+        if original and index_text[expected_start : expected_start + len(original)] != original:
+            nearby_start = index_text.find(original, max(0, expected_start - 8), expected_start + len(original) + 8)
+            if nearby_start < 0:
+                nearby_start = index_text.find(original)
+            if nearby_start >= 0:
+                matched_start = nearby_start
+            else:
+                _log_spelling_overlay(
+                    "notepad_issue_text_mismatch",
+                    hwnd=hwnd,
+                    original=original,
+                    expected_start=expected_start,
+                    text_at_expected=index_text[expected_start : expected_start + len(original) + 8],
+                )
+        if raw_text:
+            start = self._notepad_index_from_normalized(raw_text, matched_start)
+            end = self._notepad_index_from_normalized(raw_text, matched_start + len(original))
+            position_start = self._notepad_position_index_from_normalized(raw_text, matched_start)
+            position_end = self._notepad_position_index_from_normalized(raw_text, matched_start + len(original))
+        else:
+            start = matched_start
+            end = matched_start + len(original)
+            position_start = self._notepad_position_index_from_normalized(index_text, matched_start)
+            position_end = self._notepad_position_index_from_normalized(index_text, matched_start + len(original))
+        start_point = self._pos_from_char(editor, position_start)
+        end_point = self._pos_from_char(editor, position_end)
         if start_point is None:
+            _log_spelling_overlay("notepad_rect_fallback_no_start_point", hwnd=hwnd, original=issue.original, start=start)
             return self._fallback_rect(hwnd, issue)
         x, y = start_point
         width = 14 * len(issue.original)
-        if end_point and end_point[0] > x:
+        width_source = "estimate"
+        if end_point and abs(end_point[1] - y) <= 3 and end_point[0] > x:
             width = max(28, end_point[0] - x)
-        return QRect(x, y + NOTEPAD_GUIDE_LINE_Y_OFFSET, width, 8)
+            width_source = "end_point"
+        else:
+            last_point = self._pos_from_char(editor, max(position_start, position_end - 1))
+            if last_point and abs(last_point[1] - y) <= 3 and last_point[0] >= x:
+                char_count = max(1, len(original))
+                average_width = max(12, min(24, round((last_point[0] - x) / max(1, char_count - 1))))
+                width = max(width, last_point[0] - x + average_width)
+                width_source = "last_char"
+        rect = QRect(x, y + NOTEPAD_GUIDE_LINE_Y_OFFSET, width, 8)
+        _log_spelling_overlay(
+            "notepad_rect",
+            hwnd=hwnd,
+            editor=editor,
+            original=issue.original,
+            raw_len=len(raw_text or ""),
+            index_len=len(index_text or ""),
+            start=start,
+            end=end,
+            matched_start=matched_start,
+            position_start=position_start,
+            position_end=position_end,
+            start_point=start_point,
+            end_point=end_point,
+            rect=(rect.left(), rect.top(), rect.width(), rect.height()),
+            width_source=width_source,
+            marker_line_y=rect.top() + 18,
+        )
+        return rect
 
     def _best_notepad_editor(self, hwnd: int) -> int | None:
         if win32gui is None:
             return None
-        candidates: list[tuple[int, int]] = []
+        candidates: list[tuple[int, int, int, int]] = []
 
         def add_if_text(handle):
             class_name = ""
@@ -688,7 +902,18 @@ class SpellingInspectionOverlayManager:
             except Exception:
                 pass
             if any(hint in class_name.lower() for hint in ("edit", "richedit")):
-                candidates.append((len(self._window_text(handle)), int(handle)))
+                try:
+                    if not win32gui.IsWindowVisible(handle):
+                        return
+                except Exception:
+                    pass
+                area = 0
+                try:
+                    left, top, right, bottom = win32gui.GetWindowRect(handle)
+                    area = max(0, int(right) - int(left)) * max(0, int(bottom) - int(top))
+                except Exception:
+                    pass
+                candidates.append((1 if area > 0 else 0, area, len(self._window_text(handle)), int(handle)))
 
         add_if_text(hwnd)
 
@@ -702,7 +927,7 @@ class SpellingInspectionOverlayManager:
             pass
         if not candidates:
             return None
-        return max(candidates)[1]
+        return max(candidates)[3]
 
     def _window_text(self, hwnd: int) -> str:
         if not hwnd:
@@ -719,6 +944,18 @@ class SpellingInspectionOverlayManager:
 
     def _pos_from_char(self, hwnd: int, index: int) -> tuple[int, int] | None:
         try:
+            class_name = ""
+            try:
+                class_name = win32gui.GetClassName(hwnd) or "" if win32gui is not None else ""
+            except Exception:
+                pass
+            if any(hint in class_name.lower() for hint in ("richedit", "d2d")):
+                point = wintypes.POINT(0, 0)
+                result = int(ctypes.windll.user32.SendMessageW(hwnd, EM_POSFROMCHAR, ctypes.addressof(point), int(index)))
+                if result >= 0:
+                    ctypes.windll.user32.ClientToScreen(hwnd, ctypes.byref(point))
+                    return int(point.x), int(point.y)
+
             result = int(ctypes.windll.user32.SendMessageW(hwnd, EM_POSFROMCHAR, int(index), 0))
             x = result & 0xFFFF
             y = (result >> 16) & 0xFFFF
@@ -726,10 +963,13 @@ class SpellingInspectionOverlayManager:
                 x -= 0x10000
             if y >= 0x8000:
                 y -= 0x10000
+            if x < -30000 or y < -30000:
+                return None
             point = wintypes.POINT(x, y)
             ctypes.windll.user32.ClientToScreen(hwnd, ctypes.byref(point))
             return int(point.x), int(point.y)
-        except Exception:
+        except Exception as exc:
+            _log_spelling_overlay("pos_from_char_failed", hwnd=hwnd, index=index, error=f"{type(exc).__name__}: {exc}")
             return None
 
     def _notepad_index_from_normalized(self, raw_text: str, normalized_index: int) -> int:
@@ -746,6 +986,25 @@ class SpellingInspectionOverlayManager:
                 raw_index += 1
                 normalized_count += 1
         return raw_index
+
+    def _notepad_position_index_from_normalized(self, raw_text: str, normalized_index: int) -> int:
+        raw_index = self._notepad_index_from_normalized(raw_text, normalized_index)
+        normalized_prefix = self._normalize_editor_text(raw_text)[: max(0, int(normalized_index or 0))]
+        line_breaks_before = normalized_prefix.count("\n")
+        position_index = raw_index
+        if line_breaks_before > 0 and raw_index == int(normalized_index or 0):
+            position_index = raw_index + line_breaks_before
+        _log_spelling_overlay(
+            "notepad_position_index_v2",
+            normalized_index=normalized_index,
+            raw_index=raw_index,
+            line_breaks_before=line_breaks_before,
+            position_index=position_index,
+        )
+        return position_index
+
+    def _normalize_editor_text(self, text: str) -> str:
+        return str(text or "").replace("\r\n", "\n").replace("\r", "\n")
 
     def _word_rect(self, hwnd: int, issue: SpellingGuideIssue, target) -> QRect | None:
         if pythoncom is None or win32_dynamic is None:
@@ -935,6 +1194,59 @@ class SpellingInspectionOverlayManager:
 
     def _clamp_to_target(self, hwnd: int, rect: QRect | None) -> QRect | None:
         return self._clamp_to_rect(self._target_client_rect(hwnd), rect)
+
+    def _clamp_notepad_marker_rect(self, hwnd: int, rect: QRect | None) -> QRect | None:
+        if rect is None:
+            return None
+        editor_rect = self._notepad_editor_rect(hwnd) or self._window_rect(hwnd)
+        if editor_rect is None:
+            return rect
+        marker_top_allowance = 32
+        allowed_rect = QRect(
+            editor_rect.left(),
+            editor_rect.top() - marker_top_allowance,
+            editor_rect.width(),
+            editor_rect.height() + marker_top_allowance,
+        )
+        window_rect = self._window_rect(hwnd)
+        if window_rect is not None:
+            allowed_rect = allowed_rect.intersected(window_rect)
+        margin = 6
+        if rect.bottom() < allowed_rect.top() or rect.top() > allowed_rect.bottom() or rect.right() < allowed_rect.left() or rect.left() > allowed_rect.right():
+            _log_spelling_overlay(
+                "notepad_rect_rejected_outside_window",
+                rect=(rect.left(), rect.top(), rect.width(), rect.height()),
+                target=(allowed_rect.left(), allowed_rect.top(), allowed_rect.width(), allowed_rect.height()),
+            )
+            return None
+        min_x = allowed_rect.left() + margin
+        max_x = allowed_rect.right() - rect.width() - margin
+        if max_x < min_x:
+            return rect
+        x = min(max(rect.left(), min_x), max_x)
+        min_y = allowed_rect.top() + margin
+        max_y = max(min_y, allowed_rect.bottom() - rect.height() - margin)
+        y = min(max(rect.top(), min_y), max_y)
+        return QRect(x, y, rect.width(), rect.height())
+
+    def _notepad_editor_rect(self, hwnd: int) -> QRect | None:
+        editor = self._best_notepad_editor(hwnd)
+        if not editor or win32gui is None:
+            return None
+        try:
+            left, top, right, bottom = win32gui.GetWindowRect(editor)
+            return QRect(left, top, max(1, right - left), max(1, bottom - top))
+        except Exception:
+            return None
+
+    def _window_rect(self, hwnd: int) -> QRect | None:
+        if win32gui is None or not hwnd:
+            return None
+        try:
+            left, top, right, bottom = win32gui.GetWindowRect(hwnd)
+            return QRect(left, top, max(1, right - left), max(1, bottom - top))
+        except Exception:
+            return None
 
     def _clamp_to_rect(self, target: QRect | None, rect: QRect | None) -> QRect | None:
         if rect is None:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ctypes
+from ctypes import wintypes
 from dataclasses import dataclass
 from pathlib import Path
 import shutil
@@ -72,6 +73,8 @@ _WORD_COM_CACHE_ERROR_MARKERS = (
     "CLSIDToPackageMap",
     "CLSIDToClassMap",
 )
+EM_GETSEL = 0x00B0
+EM_SETSEL = 0x00B1
 
 
 def _looks_like_broken_word_com_cache(exc: Exception) -> bool:
@@ -251,6 +254,72 @@ class OutputApplier:
                 time.sleep(0.08)
                 self._copy_clipboard_safely(original_clipboard)
 
+    def apply_to_notepad_subrange(self, target: OutputTarget | None, relative_start: int, relative_end: int, text: str):
+        if target is None or target.mode not in {"notepad", "notepad_selection"}:
+            raise RuntimeError("Notepad subrange replacement requires a Notepad target.")
+        if win32gui is None:
+            raise RuntimeError("pywin32 is required for Notepad selection replacement.")
+        if not self._is_live_window(target.window_handle):
+            raise RuntimeError("The original Notepad window is no longer available.")
+
+        editor = self._best_notepad_editor(target.window_handle)
+        if not editor:
+            raise RuntimeError("The Notepad editor control could not be found.")
+
+        style_info = dict(target.style_info or {})
+        selection_text = str(style_info.get("selection_text") or style_info.get("selected_text") or "")
+        if not selection_text:
+            selection_text = str(style_info.get("text") or "")
+
+        current_start, current_end = self._get_edit_selection(editor)
+        full_text = self._read_notepad_text_for_replace(target.window_handle)
+        base_start = current_start if target.mode == "notepad_selection" else 0
+        normalized_selection_start = 0
+        if target.mode == "notepad_selection" and selection_text:
+            expected_len = len(selection_text.replace("\r\n", "\n").replace("\r", "\n"))
+            selected_len = max(0, current_end - current_start)
+            if full_text:
+                normalized_full = full_text.replace("\r\n", "\n").replace("\r", "\n")
+                normalized_selection = selection_text.replace("\r\n", "\n").replace("\r", "\n")
+                found = normalized_full.find(normalized_selection)
+                if found >= 0:
+                    normalized_selection_start = found
+                    base_start = self._raw_index_from_normalized(full_text, found)
+                elif selected_len != expected_len:
+                    base_start = current_start
+            elif selected_len != expected_len:
+                base_start = current_start
+
+        if full_text:
+            absolute_start = self._raw_index_from_normalized(full_text, normalized_selection_start + int(relative_start))
+            absolute_end = self._raw_index_from_normalized(full_text, normalized_selection_start + int(relative_end))
+        else:
+            index_text = selection_text if target.mode == "notepad_selection" and selection_text else ""
+            absolute_start = base_start + self._raw_index_from_normalized(index_text, int(relative_start)) if index_text else base_start + int(relative_start)
+            absolute_end = base_start + self._raw_index_from_normalized(index_text, int(relative_end)) if index_text else base_start + int(relative_end)
+        if absolute_end <= absolute_start:
+            raise RuntimeError("The marker range is empty.")
+
+        original_clipboard = self._read_clipboard_safely()
+        try:
+            self._focus_window(target.window_handle)
+            time.sleep(0.05)
+            ctypes.windll.user32.SendMessageW(int(editor), EM_SETSEL, int(absolute_start), int(absolute_end))
+            time.sleep(0.03)
+            self._copy_clipboard_safely(text)
+            time.sleep(0.03)
+            self._send_ctrl_key("v")
+            self._log_word_replace(
+                f"notepad marker subrange write selection_base={base_start} "
+                f"normalized_selection_start={normalized_selection_start} "
+                f"relative=({relative_start},{relative_end}) absolute=({absolute_start},{absolute_end}) "
+                f"text_len={len(str(text or ''))} sample={str(text or '')[:80]!r}"
+            )
+        finally:
+            if original_clipboard is not None:
+                time.sleep(0.08)
+                self._copy_clipboard_safely(original_clipboard)
+
     def undo_last_notepad_action(self, window_handle: int | None = None):
         _Application, send_keys = self._load_pywinauto()
         if send_keys is None or win32gui is None:
@@ -322,6 +391,23 @@ class OutputApplier:
             return
         raise RuntimeError(f"Title insertion is not supported for {mode}.")
 
+    def insert_subtitle_for_selection(self, target: OutputTarget | None, title: str):
+        clean_title = str(title or "").strip()
+        if not clean_title:
+            raise ValueError("There is no subtitle to insert.")
+        can_replace, reason = self.inspect_replace_availability(target)
+        if not can_replace:
+            raise RuntimeError(reason or "Subtitle insertion is unavailable.")
+        mode = getattr(target, "mode", "")
+        if mode == "word_selection":
+            self._focus_window(target.window_handle)
+            self._apply_word_operation_with_cache_repair(lambda: self._insert_word_subtitle_for_selection(target, clean_title))
+            return
+        if mode == "notepad_selection":
+            self._insert_notepad_subtitle_for_selection(target, clean_title)
+            return
+        self.insert_title_at_top(target, clean_title)
+
     def _insert_notepad_title_at_top(self, window_handle: int | None, title: str):
         if not self._is_live_window(window_handle):
             raise RuntimeError("The original Notepad window is no longer available.")
@@ -332,6 +418,15 @@ class OutputApplier:
             current_text = ""
         combined = f"{title}\r\n\r\n{str(current_text or '').lstrip()}"
         self._apply_via_window_handle(window_handle, combined)
+
+    def _insert_notepad_subtitle_for_selection(self, target: OutputTarget | None, title: str):
+        selected_text = str((target.style_info or {}).get("selection_text") or "").strip()
+        if not selected_text:
+            selected_text = str((target.style_info or {}).get("selected_text") or "")
+        if not selected_text:
+            raise RuntimeError("The selected Notepad text is unavailable.")
+        replacement = f"{title}\r\n\r\n{selected_text}"
+        self._apply_to_notepad_selection(target.window_handle, replacement)
 
     def _insert_word_title_at_top(self, title: str):
         if pythoncom is None:
@@ -350,6 +445,13 @@ class OutputApplier:
             title_range.InsertBefore(insert_text)
             title_end = len(insert_text)
             inserted_range = document.Range(Start=0, End=title_end)
+            title_text_range = document.Range(Start=0, End=max(0, len(title)))
+            self._reset_inserted_title_style(inserted_range)
+            try:
+                title_text_range.Font.Bold = True
+                title_text_range.Font.Size = 14
+            except Exception:
+                pass
             try:
                 document.Paragraphs.Item(1).Range.ParagraphFormat.Alignment = 1
             except Exception:
@@ -366,6 +468,113 @@ class OutputApplier:
         finally:
             if undo_record_started:
                 self._end_word_undo_record(word)
+
+    def _insert_word_subtitle_for_selection(self, target: OutputTarget | None, title: str):
+        if pythoncom is None:
+            raise RuntimeError("pywin32 is required for Word subtitle insertion.")
+        pythoncom.CoInitialize()
+        word = _get_active_word_application()
+        style_info = dict((target.style_info if target is not None else None) or {})
+        document = self._word_document_for_style_info(word, style_info)
+        if document is None:
+            raise RuntimeError("No active Word document is available.")
+        try:
+            selection_start = int(style_info.get("selection_start"))
+            selection_end = int(style_info.get("selection_end"))
+        except Exception as exc:
+            raise RuntimeError("The original Word selection range is unavailable.") from exc
+        if selection_end <= selection_start:
+            raise RuntimeError("The original Word selection range is empty.")
+        word.Visible = True
+        document.Activate()
+
+        selection_range = document.Range(Start=selection_start, End=selection_end)
+        subtitle_font_size = self._subtitle_font_size_from_range(selection_range)
+        probe_range = document.Range(Start=selection_start, End=selection_start)
+        try:
+            insert_start = int(probe_range.Paragraphs.Item(1).Range.Start)
+        except Exception:
+            insert_start = selection_start
+
+        undo_record_started = self._start_word_undo_record(word, "Writing Assistant subtitle")
+        try:
+            insert_text = self._word_text_for_write(f"{title}\n\n")
+            insert_range = document.Range(Start=insert_start, End=insert_start)
+            insert_range.InsertBefore(insert_text)
+            insert_end = insert_start + len(insert_text)
+            inserted_range = document.Range(Start=insert_start, End=insert_end)
+            title_text_range = document.Range(Start=insert_start, End=insert_start + len(title))
+            self._reset_inserted_title_style(inserted_range)
+            try:
+                title_text_range.Font.Bold = False
+                title_text_range.Font.Size = subtitle_font_size
+            except Exception:
+                pass
+            try:
+                document.Range(Start=insert_start, End=insert_start + len(title)).ParagraphFormat.Alignment = 1
+            except Exception:
+                pass
+            try:
+                document.Range(Start=insert_start + len(title) + 1, End=insert_end).ParagraphFormat.Alignment = 0
+            except Exception:
+                pass
+            try:
+                document.Range(Start=insert_end, End=insert_end).Select()
+            except Exception:
+                pass
+            self._log_word_replace(
+                f"subtitle inserted selection=({selection_start},{selection_end}) "
+                f"insert_start={insert_start} font_size={subtitle_font_size!r} title={title[:80]!r}"
+            )
+        finally:
+            if undo_record_started:
+                self._end_word_undo_record(word)
+
+    def _subtitle_font_size_from_range(self, word_range) -> float:
+        sizes: list[float] = []
+        try:
+            size = float(getattr(word_range.Font, "Size", 0) or 0)
+            if size > 0:
+                sizes.append(size)
+        except Exception:
+            pass
+        try:
+            for run in word_range.Words:
+                try:
+                    size = float(getattr(run.Font, "Size", 0) or 0)
+                    if size > 0:
+                        sizes.append(size)
+                except Exception:
+                    continue
+        except Exception:
+            pass
+        base = min(sizes) if sizes else 10.0
+        return max(7.0, min(11.0, base - 1.0))
+
+    def _reset_inserted_title_style(self, word_range):
+        try:
+            font = word_range.Font
+            font.Bold = 0
+            font.Italic = 0
+            font.Underline = 0
+            font.StrikeThrough = 0
+            font.DoubleStrikeThrough = 0
+            font.Subscript = 0
+            font.Superscript = 0
+            try:
+                font.Color = -16777216
+            except Exception:
+                pass
+            try:
+                font.UnderlineColor = -16777216
+            except Exception:
+                pass
+            try:
+                word_range.HighlightColorIndex = 0
+            except Exception:
+                pass
+        except Exception:
+            pass
 
     def _current_word_selection_info(self, word):
         try:
@@ -425,6 +634,69 @@ class OutputApplier:
     def _clean_word_selection_text(self, text: str) -> str:
         return str(text or "").replace("\x00", "").replace("\x07", "").replace("\r\n", "\n").replace("\r", "\n")
 
+    def _best_notepad_editor(self, hwnd: int | None) -> int | None:
+        if win32gui is None or not hwnd:
+            return None
+        candidates: list[tuple[int, int, int, int]] = []
+
+        def add_candidate(handle):
+            try:
+                class_name = win32gui.GetClassName(handle) or ""
+            except Exception:
+                class_name = ""
+            if not any(hint in class_name.lower() for hint in ("edit", "richedit")):
+                return
+            try:
+                if not win32gui.IsWindowVisible(handle):
+                    return
+            except Exception:
+                pass
+            area = 0
+            try:
+                left, top, right, bottom = win32gui.GetWindowRect(handle)
+                area = max(0, int(right) - int(left)) * max(0, int(bottom) - int(top))
+            except Exception:
+                pass
+            text_len = 0
+            try:
+                text_len = int(ctypes.windll.user32.SendMessageW(int(handle), 0x000E, 0, 0))
+            except Exception:
+                pass
+            candidates.append((1 if area > 0 else 0, area, text_len, int(handle)))
+
+        add_candidate(hwnd)
+
+        def enum_proc(child, _):
+            add_candidate(child)
+            return True
+
+        try:
+            win32gui.EnumChildWindows(hwnd, enum_proc, None)
+        except Exception:
+            pass
+        if not candidates:
+            return None
+        return max(candidates)[3]
+
+    def _get_edit_selection(self, editor: int) -> tuple[int, int]:
+        start = wintypes.DWORD(0)
+        end = wintypes.DWORD(0)
+        try:
+            ctypes.windll.user32.SendMessageW(int(editor), EM_GETSEL, ctypes.byref(start), ctypes.byref(end))
+            return int(start.value), int(end.value)
+        except Exception:
+            selection = int(ctypes.windll.user32.SendMessageW(int(editor), EM_GETSEL, 0, 0))
+            return selection & 0xFFFF, (selection >> 16) & 0xFFFF
+
+    def _read_notepad_text_for_replace(self, hwnd: int | None) -> str:
+        try:
+            from client.input.notepad_monitor import _read_window_text
+
+            text, _details = _read_window_text(int(hwnd or 0))
+            return str(text or "")
+        except Exception:
+            return ""
+
     def apply_to_word_selection_subrange(self, target: OutputTarget | None, relative_start: int, relative_end: int, text: str):
         if target is None or target.mode != "word_selection":
             raise RuntimeError("Word selection subrange replacement requires a Word selection target.")
@@ -457,13 +729,16 @@ class OutputApplier:
         try:
             replacement_text = self._word_text_for_write(text)
             target_range = document.Range(Start=absolute_start, End=absolute_end)
+            character_styles = self._capture_word_character_styles(target_range)
             self._log_word_replace(
                 f"marker subrange write selection=({selection_start},{selection_end}) "
                 f"relative=({relative_start},{relative_end}) absolute=({absolute_start},{absolute_end}) "
-                f"text_len={len(str(text or ''))} sample={str(text or '')[:80]!r}"
+                f"text_len={len(str(text or ''))} char_styles={len(character_styles)} sample={str(text or '')[:80]!r}"
             )
             target_range.Text = replacement_text
-            self._select_word_range(document, absolute_start, absolute_start + len(replacement_text))
+            applied_end = absolute_start + len(replacement_text)
+            self._apply_word_character_styles(document, absolute_start, applied_end, character_styles)
+            self._select_word_range(document, absolute_start, applied_end)
         finally:
             if undo_record_started:
                 self._end_word_undo_record(word)
@@ -1114,6 +1389,88 @@ class OutputApplier:
                     )
         self._log_word_replace(f"segments applied={applied} failed={failed}")
 
+    def _capture_word_character_styles(self, word_range) -> list[dict]:
+        styles: list[dict] = []
+        try:
+            characters = word_range.Characters
+            count = int(getattr(characters, "Count", 0) or 0)
+        except Exception as exc:
+            self._log_word_replace(f"marker character style capture unavailable: {type(exc).__name__}: {exc}")
+            return styles
+        for index in range(1, count + 1):
+            try:
+                styles.append(self._read_word_range_style(characters.Item(index)))
+            except Exception as exc:
+                if len(styles) < 3:
+                    self._log_word_replace(f"marker character style capture failed index={index}: {type(exc).__name__}: {exc}")
+        return styles
+
+    def _read_word_range_style(self, word_range) -> dict:
+        style: dict = {}
+        try:
+            font = word_range.Font
+        except Exception:
+            return style
+        for key, attr in (
+            ("font_name", "Name"),
+            ("font_size", "Size"),
+            ("bold", "Bold"),
+            ("italic", "Italic"),
+            ("underline", "Underline"),
+            ("strike_through", "StrikeThrough"),
+            ("double_strike_through", "DoubleStrikeThrough"),
+            ("subscript", "Subscript"),
+            ("superscript", "Superscript"),
+        ):
+            try:
+                value = getattr(font, attr)
+            except Exception:
+                continue
+            if key in {"bold", "italic", "strike_through", "double_strike_through", "subscript", "superscript"}:
+                style[key] = bool(value)
+            else:
+                style[key] = value
+        try:
+            style["highlight_color_index"] = int(getattr(word_range, "HighlightColorIndex"))
+        except Exception:
+            pass
+        try:
+            color_hex = self._word_hex_from_color(getattr(font, "Color"))
+            if color_hex:
+                style["color_hex"] = color_hex
+        except Exception:
+            pass
+        try:
+            underline_color_hex = self._word_hex_from_color(getattr(font, "UnderlineColor"))
+            if underline_color_hex:
+                style["underline_color_hex"] = underline_color_hex
+        except Exception:
+            pass
+        return style
+
+    def _apply_word_character_styles(self, document, start: int, end: int, styles: list[dict]):
+        if not styles or end <= start:
+            return
+        applied = 0
+        failed = 0
+        last_style = styles[-1] if styles else {}
+        for offset in range(0, max(0, end - start)):
+            style = styles[offset] if offset < len(styles) else last_style
+            if not style:
+                continue
+            try:
+                char_range = document.Range(Start=start + offset, End=start + offset + 1)
+                self._reset_word_style_flags(char_range)
+                self._apply_word_style(char_range, style)
+                applied += 1
+            except Exception as exc:
+                failed += 1
+                if failed <= 3:
+                    self._log_word_replace(
+                        f"marker character style apply failed offset={offset}: {type(exc).__name__}: {exc}"
+                    )
+        self._log_word_replace(f"marker character styles applied={applied} failed={failed} source_styles={len(styles)}")
+
     def _apply_word_style(self, word_range, style_info: dict):
         if not style_info:
             return
@@ -1232,6 +1589,18 @@ class OutputApplier:
             return blue * 65536 + green * 256 + red
         except Exception:
             return None
+
+    def _word_hex_from_color(self, color):
+        try:
+            number = int(color)
+        except Exception:
+            return None
+        if number < 0 or number in (9999999, -9999999, 9999998, -9999998):
+            return None
+        red = number & 0xFF
+        green = (number >> 8) & 0xFF
+        blue = (number >> 16) & 0xFF
+        return f"#{red:02X}{green:02X}{blue:02X}"
 
     def _word_text_for_write(self, text: str) -> str:
         normalized = str(text or "").replace("\r\n", "\n").replace("\r", "\n")

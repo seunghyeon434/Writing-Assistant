@@ -2270,3 +2270,570 @@
 2026-05-29 11:44:48 selection_ready reader='word_selection' hwnd=329656 text_len=25
 2026-05-29 11:44:52 selection_ready reader='word_selection' hwnd=329656 text_len=25
 2026-05-29 11:45:12 selection_ready reader='word_selection' hwnd=329656 text_len=4
+2026-05-30 17:36:26 spelling_inspection_scope active_mode='realtime' target_mode='notepad' scope='full' text_len=24
+2026-05-30 17:36:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:36:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:36:27 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:42:21 spelling_inspection_scope active_mode='realtime' target_mode='notepad' scope='full' text_len=24
+2026-05-30 17:42:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:42:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:42:22 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:42:25 spelling_inspection_scope active_mode='realtime' target_mode='notepad' scope='full' text_len=24
+2026-05-30 17:42:25 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:42:25 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:42:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:43:50 spelling_inspection_scope active_mode='realtime' target_mode='notepad' scope='full' text_len=24
+2026-05-30 17:43:50 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:43:50 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:43:51 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:44:02 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-30 17:44:06 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-30 17:44:06 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-30 17:44:06 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-30 17:44:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:44:07 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:44:07 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:44:19 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-30 17:44:19 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-30 17:44:19 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-30 17:44:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:44:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:44:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:44:26 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-30 17:51:38 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-30 17:51:46 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-30 17:51:46 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-30 17:51:46 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:51:47 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:51:47 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:56:38 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-30 17:56:41 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-30 17:56:41 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-30 17:56:41 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:56:41 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-30 17:56:41 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:01:37 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:01:44 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:01:44 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:01:44 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:01:44 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:01:45 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:08:14 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:11:12 apply_pressed has_target=False input_len=23 retry=False snapshot=False
+2026-05-31 00:11:12 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:11:12 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:11:12 apply_immediate_capture_check captured=True
+2026-05-31 00:11:12 apply_restore_check restored=True
+2026-05-31 00:11:12 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=26
+2026-05-31 00:11:13 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:11:13 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:11:13 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:12:36 selection_ready reader='word_selection' hwnd=67736 text_len=5
+2026-05-31 00:13:36 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:13:37 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:13:37 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:13:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:13:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:13:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:23:32 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:23:37 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:23:37 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:23:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:23:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:23:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:24:50 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:24:51 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:24:51 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:24:51 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:24:51 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:24:51 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:28:02 selection_ready reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:28:03 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-05-31 00:28:03 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:28:03 apply_preflight_word_capture captured=True
+2026-05-31 00:28:03 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=25
+2026-05-31 00:28:04 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:28:04 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:28:05 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:28:16 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:28:17 apply_pressed has_target=True input_len=26 retry=False snapshot=True
+2026-05-31 00:28:17 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:28:17 apply_preflight_word_capture captured=True
+2026-05-31 00:28:17 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=26
+2026-05-31 00:28:18 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:28:19 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:28:19 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:28:20 selection_ready reader='word_selection' hwnd=67736 text_len=1
+2026-05-31 00:29:26 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:29:27 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:29:27 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:29:27 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:29:27 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:29:27 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:30:15 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:30:15 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:30:16 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:30:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:30:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:30:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:35:51 selection_ready reader='word_selection' hwnd=67736 text_len=1
+2026-05-31 00:35:53 selection_ready reader='word_selection' hwnd=67736 text_len=14
+2026-05-31 00:35:56 main_correction_word_focus_nudge focused=True had_selection=True hwnd=67736
+2026-05-31 00:35:56 selection_ready reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:35:57 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-05-31 00:35:57 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:35:57 selection_ready reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:35:57 apply_preflight_word_capture captured=True
+2026-05-31 00:35:57 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=25
+2026-05-31 00:35:58 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:35:59 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:35:59 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:37:45 selection_ready reader='word_selection' hwnd=67736 text_len=6
+2026-05-31 00:37:54 selection_ready reader='word_selection' hwnd=67736 text_len=6
+2026-05-31 00:39:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:39:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:39:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:39:30 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:39:31 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:39:31 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:39:31 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:39:31 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:39:32 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:45:33 selection_ready reader='word_selection' hwnd=67736 text_len=6
+2026-05-31 00:45:35 selection_ready reader='word_selection' hwnd=67736 text_len=14
+2026-05-31 00:45:39 selection_ready reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:45:40 main_correction_word_focus_nudge focused=True had_selection=True hwnd=67736
+2026-05-31 00:45:41 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-05-31 00:45:42 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:45:42 selection_ready reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 00:45:42 apply_preflight_word_capture captured=True
+2026-05-31 00:45:42 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=25
+2026-05-31 00:45:42 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:45:43 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:45:43 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:45:52 marker_replace_start mode='word_selection' start=0 end=5 source_len=25 original='안녕하서요' replacement='안녕하세요'
+2026-05-31 00:45:53 marker_replace_success live_start=0 live_end=5
+2026-05-31 00:46:02 marker_replace_start mode='word_selection' start=18 end=24 source_len=25 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 00:46:02 marker_replace_success live_start=18 live_end=24
+2026-05-31 00:46:02 selection_ready reader='word_selection' hwnd=67736 text_len=5
+2026-05-31 00:46:18 marker_replace_start mode='word_selection' start=0 end=5 source_len=5 original='안녕하서요' replacement='안녕하세요'
+2026-05-31 00:46:18 marker_replace_success live_start=0 live_end=5
+2026-05-31 00:46:29 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:46:32 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:46:33 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:46:33 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:46:33 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:46:33 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:46:33 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:46:33 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:47:13 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:47:13 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:47:13 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:48:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:48:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:48:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:56:27 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:56:28 main_correction_word_focus_nudge focused=True had_selection=True hwnd=67736
+2026-05-31 00:56:30 apply_pressed has_target=True input_len=26 retry=False snapshot=True
+2026-05-31 00:56:30 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:56:30 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:56:30 apply_preflight_word_capture captured=True
+2026-05-31 00:56:30 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=26
+2026-05-31 00:56:31 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:56:31 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:56:32 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 00:56:36 marker_replace_start mode='word_selection' start=1 end=6 source_len=26 original='안녕하서요' replacement='안녕하세요'
+2026-05-31 00:56:41 marker_replace_success live_start=1 live_end=6
+2026-05-31 00:56:41 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 00:57:03 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:57:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:57:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:57:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:57:05 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 00:57:05 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 00:57:05 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 00:57:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:57:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:57:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 00:59:03 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:05 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:07 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:11 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:11 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:12 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:12 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:12 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:12 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:12 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:12 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:12 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:13 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:13 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:13 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:13 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:16 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:18 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:19 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:19 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:19 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:19 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:19 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:19 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:20 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:20 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 00:59:20 marker_replace_skipped reason='missing_issue_or_target'
+2026-05-31 01:03:53 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:04:02 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:04:05 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:04:05 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:04:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:18 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:04:19 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:04:19 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:04:19 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:19 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:23 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:04:23 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:04:23 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:04:23 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:24 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:24 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:33 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:04:33 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:04:42 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:04:42 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:04:42 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:04:43 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:43 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:04:43 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:08:51 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:08:56 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:08:57 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:08:57 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:08:57 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:08:57 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:08:58 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:09:50 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:11:10 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:11:10 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:14:17 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:14:19 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:14:19 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:14:19 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:14:19 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:14:20 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:16:12 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:16:12 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:16:21 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:16:22 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:16:22 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:16:22 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:16:22 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:16:22 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:19:46 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:19:48 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:19:48 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:19:48 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:19:48 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:19:49 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:19:55 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:19:56 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:19:56 selection_ready reader='notepad_selection' hwnd=3344350 text_len=6
+2026-05-31 01:20:01 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:20:02 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:20:02 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:20:02 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:20:02 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:20:02 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:20:07 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:20:07 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:20:07 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:20:07 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:20:07 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:20:07 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:20:09 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:20:09 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:20:10 selection_ready reader='notepad_selection' hwnd=3344350 text_len=6
+2026-05-31 01:21:02 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:21:03 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:21:03 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:21:04 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:21:04 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:21:04 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:21:04 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:21:10 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:21:11 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:21:11 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:21:11 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:21:11 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:21:11 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:21:15 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:21:15 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:21:16 selection_ready reader='notepad_selection' hwnd=3344350 text_len=6
+2026-05-31 01:26:10 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:26:14 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:26:18 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:26:18 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:26:18 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:26:18 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:26:18 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:26:26 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:26:26 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:26:26 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:26:43 selection_ready reader='notepad_selection' hwnd=3344350 text_len=22
+2026-05-31 01:26:45 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:26:45 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:26:45 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:26:46 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:26:46 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:26:46 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:26:46 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:30:05 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:30:07 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:30:07 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:30:08 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:30:08 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:30:08 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:30:15 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:30:15 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:30:15 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:30:20 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:30:21 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:30:21 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:30:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:30:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:30:21 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:32:08 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:32:11 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:32:11 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:32:11 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:32:12 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:32:12 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:32:16 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:32:16 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:32:16 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:32:22 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:32:22 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:32:22 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:32:22 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:32:23 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:32:23 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:34:32 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:34:34 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:34:34 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:34:34 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:34:35 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:34:35 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:34:37 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:34:37 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:34:37 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:34:43 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:36:13 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:36:16 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:36:17 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:36:17 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:36:17 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:36:17 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:36:17 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:37:54 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:37:58 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:37:58 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:37:58 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:37:59 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:37:59 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:37:59 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:38:10 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:38:10 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:38:10 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:38:15 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:38:15 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:38:15 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:38:15 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:38:15 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:38:16 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:40:31 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:40:36 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:40:36 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:40:36 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:40:36 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:40:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:40:37 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:40:45 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:40:45 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:40:45 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:40:49 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:42:32 selection_ready reader='word_selection' hwnd=67736 text_len=14
+2026-05-31 01:42:33 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 01:42:33 apply_pressed has_target=True input_len=26 retry=False snapshot=True
+2026-05-31 01:42:33 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 01:42:33 apply_preflight_word_capture captured=True
+2026-05-31 01:42:33 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=26
+2026-05-31 01:42:34 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 01:42:34 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 01:42:34 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 01:42:43 marker_replace_start mode='word_selection' start=19 end=25 source_len=26 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:42:47 marker_replace_overlay_sync synced=True text_len=26
+2026-05-31 01:42:47 marker_replace_success live_start=19 live_end=25
+2026-05-31 01:44:00 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 01:44:00 selection_ready reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 01:44:00 main_correction_pre_show_capture captured=True reader='word_selection' hwnd=67736
+2026-05-31 01:44:00 main_correction_word_focus_nudge focused=True had_selection=True hwnd=67736
+2026-05-31 01:44:06 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-05-31 01:44:07 immediate_selection_capture_failed reader='word_selection' hwnd=67736
+2026-05-31 01:44:07 apply_preflight_word_capture captured=False
+2026-05-31 01:44:07 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=25
+2026-05-31 01:44:07 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 01:44:08 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 01:44:08 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 01:45:55 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:46:16 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=3344350
+2026-05-31 01:46:16 main_correction_pre_show_capture captured=False reader='notepad_selection' hwnd=3344350
+2026-05-31 01:47:07 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:47:11 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:47:11 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:47:11 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:47:11 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:47:12 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:47:12 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:47:25 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:47:25 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:47:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:47:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:47:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:20 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:50:24 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:24 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:24 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:26 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:50:26 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:50:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:26 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:45 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=3344350
+2026-05-31 01:50:45 main_correction_pre_show_capture captured=False reader='notepad_selection' hwnd=3344350
+2026-05-31 01:50:45 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:45 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:50:45 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:51:00 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:51:01 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:51:01 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:51:01 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:51:01 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:51:01 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:52:39 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:52:40 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:52:40 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:52:40 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:52:47 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:52:47 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:52:47 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:52:48 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:52:48 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:52:48 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:52:51 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:52:52 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:52:52 marker_replace_success live_start=17 live_end=23
+2026-05-31 01:52:52 selection_ready reader='notepad_selection' hwnd=3344350 text_len=897
+2026-05-31 01:53:31 selection_ready reader='word_selection' hwnd=67736 text_len=1
+2026-05-31 01:53:33 selection_ready reader='word_selection' hwnd=67736 text_len=1
+2026-05-31 01:53:38 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 01:53:39 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 01:53:39 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 01:53:39 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:53:39 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:53:39 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 01:53:42 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 01:53:42 marker_replace_overlay_sync synced=True text_len=23
+2026-05-31 01:53:42 marker_replace_success live_start=17 live_end=23
+2026-05-31 02:00:56 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=3344350
+2026-05-31 02:00:56 main_correction_pre_show_capture captured=False reader='notepad_selection' hwnd=3344350
+2026-05-31 02:00:56 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:00:56 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:00:56 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:00:57 apply_pressed has_target=False input_len=0 retry=False snapshot=False
+2026-05-31 02:00:57 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=3344350
+2026-05-31 02:00:57 apply_immediate_capture_check captured=False
+2026-05-31 02:00:57 apply_restore_check restored=False
+2026-05-31 02:00:57 apply_pressed has_target=False input_len=0 retry=True snapshot=False
+2026-05-31 02:00:57 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=3344350
+2026-05-31 02:00:57 apply_immediate_capture_check captured=False
+2026-05-31 02:00:57 apply_restore_check restored=False
+2026-05-31 02:01:02 apply_pressed has_target=False input_len=0 retry=False snapshot=False
+2026-05-31 02:01:02 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=3344350
+2026-05-31 02:01:02 apply_immediate_capture_check captured=False
+2026-05-31 02:01:02 apply_restore_check restored=False
+2026-05-31 02:01:03 apply_pressed has_target=False input_len=0 retry=True snapshot=False
+2026-05-31 02:01:03 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=3344350
+2026-05-31 02:01:03 apply_immediate_capture_check captured=False
+2026-05-31 02:01:03 apply_restore_check restored=False
+2026-05-31 02:01:05 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 02:01:05 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 02:01:05 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 02:01:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:06 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:15 apply_pressed has_target=True input_len=23 retry=False snapshot=True
+2026-05-31 02:01:15 spelling_inspection_scope active_mode='drag' target_mode='notepad_selection' scope='selection' text_len=23
+2026-05-31 02:01:15 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:15 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:15 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 02:01:15 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:24 spelling_inspection_scope active_mode='realtime' target_mode='notepad' scope='full' text_len=31
+2026-05-31 02:01:24 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:24 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:25 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:01:37 marker_replace_start mode='notepad' start=18 end=24 source_len=31 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 02:01:37 marker_replace_overlay_sync synced=True text_len=31
+2026-05-31 02:01:37 marker_replace_success live_start=18 live_end=24
+2026-05-31 02:01:47 marker_replace_start mode='notepad' start=17 end=23 source_len=28 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 02:01:47 marker_replace_overlay_sync synced=True text_len=28
+2026-05-31 02:01:47 marker_replace_success live_start=17 live_end=23
+2026-05-31 02:04:01 selection_ready reader='notepad_selection' hwnd=3344350 text_len=23
+2026-05-31 02:04:03 selection_ready reader='notepad_selection' hwnd=3344350 text_len=3
+2026-05-31 02:04:04 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:04:04 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:04:05 selection_ready reader='notepad_selection' hwnd=3344350 text_len=3
+2026-05-31 02:04:05 notepad_focus_restore_after_overlay hwnd=3344350 restored=True
+2026-05-31 02:04:05 apply_pressed has_target=True input_len=3 retry=False snapshot=True
+2026-05-31 02:04:05 inspect_result can_replace=True reason=''
+2026-05-31 02:04:06 apply_success reader='notepad_selection' hwnd=3344350 text_len=16
+2026-05-31 02:04:16 selection_ready reader='word_selection' hwnd=67736 text_len=1
+2026-05-31 02:04:17 selection_ready reader='word_selection' hwnd=67736 text_len=25
+2026-05-31 02:04:20 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 02:04:21 apply_pressed has_target=True input_len=26 retry=False snapshot=True
+2026-05-31 02:04:21 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 02:04:21 selection_ready reader='word_selection' hwnd=67736 text_len=26
+2026-05-31 02:04:21 apply_preflight_word_capture captured=True
+2026-05-31 02:04:21 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=26
+2026-05-31 02:04:22 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:22 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:22 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:25 marker_replace_start mode='word_selection' start=19 end=25 source_len=26 original='다시 만너요' replacement='다시 만나요'
+2026-05-31 02:04:29 marker_replace_overlay_sync synced=True text_len=26
+2026-05-31 02:04:29 marker_replace_success live_start=19 live_end=25
+2026-05-31 02:04:52 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:52 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:53 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:54 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:54 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:55 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:57 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:57 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:57 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:58 spelling_inspection_scope active_mode='realtime' target_mode='word' scope='full' text_len=120
+2026-05-31 02:04:58 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:58 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:04:58 word_focus_restore_after_overlay hwnd=67736 restored=True
+2026-05-31 02:05:10 selection_ready reader='word_selection' hwnd=67736 text_len=9
+2026-05-31 02:05:11 main_correction_word_focus_nudge focused=True had_selection=True hwnd=67736
+2026-05-31 02:05:12 selection_ready reader='word_selection' hwnd=67736 text_len=9
+2026-05-31 02:05:13 apply_pressed has_target=True input_len=9 retry=False snapshot=True
+2026-05-31 02:05:13 immediate_selection_capture_success reader='word_selection' hwnd=67736 text_len=9
+2026-05-31 02:05:13 selection_ready reader='word_selection' hwnd=67736 text_len=9
+2026-05-31 02:05:13 apply_preflight_word_capture captured=True
+2026-05-31 02:05:13 inspect_result can_replace=True reason=''
+2026-05-31 02:05:16 apply_success reader='word_selection' hwnd=67736 text_len=22
+2026-05-31 02:05:16 selection_ready reader='word_selection' hwnd=67736 text_len=9
