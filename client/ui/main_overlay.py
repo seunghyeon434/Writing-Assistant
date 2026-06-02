@@ -124,6 +124,8 @@ class EvaluationScoreOverlay(QWidget):
 
 
 class EvaluationReasonOverlay(QWidget):
+    close_requested = pyqtSignal()
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Writing Assistant Evaluation Reason")
@@ -178,7 +180,7 @@ class EvaluationReasonOverlay(QWidget):
         title.setObjectName("reasonTitle")
         close_btn = QPushButton("X")
         close_btn.setObjectName("closeOverlayButton")
-        close_btn.clicked.connect(self.hide)
+        close_btn.clicked.connect(self._request_close)
         top.addWidget(title, 1)
         top.addWidget(close_btn, 0, Qt.AlignRight)
         layout.addLayout(top)
@@ -206,6 +208,10 @@ class EvaluationReasonOverlay(QWidget):
         self.move(x, y)
         self.show()
         self.raise_()
+
+    def _request_close(self):
+        self.hide()
+        self.close_requested.emit()
 
     def _target_rect(self, window_handle):
         if win32gui is None or not window_handle:
@@ -460,6 +466,7 @@ class MainOverlay(QWidget):
     summary_requested = pyqtSignal()
     summary_copy_requested = pyqtSignal(str)
     tone_requested = pyqtSignal()
+    focus_restore_requested = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -490,6 +497,7 @@ class MainOverlay(QWidget):
         self.score_overlay = EvaluationScoreOverlay()
         self.score_overlay.reason_requested.connect(self._handle_score_reason_requested)
         self.reason_overlay = EvaluationReasonOverlay()
+        self.reason_overlay.close_requested.connect(self.focus_restore_requested.emit)
         self.summary_overlay = SummaryResultOverlay()
         self.title_overlay = TitleConfirmOverlay()
         self.summary_overlay.copy_requested.connect(self.summary_copy_requested.emit)
@@ -958,6 +966,7 @@ class MainOverlay(QWidget):
 
     def close_settings_cover(self):
         self.settings_cover.hide()
+        self.focus_restore_requested.emit()
 
     def toggle_settings(self):
         if self.settings_cover.isVisible():

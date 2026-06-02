@@ -727,6 +727,8 @@ class MiniOverlay(QWidget):
         self._movable_mode = False
         self._manual_position = None
         self._manual_offset = None
+        self._manual_active_key = None
+        self._manual_offsets_by_target = {}
         self._avoidance_rect_provider = None
         self._dragging_overlay = False
         self._drag_offset = QPoint()
@@ -1021,6 +1023,7 @@ class MiniOverlay(QWidget):
         self.apply_clicked.emit()
 
     def remember_target(self, window_handle=None, reader_name=""):
+        self._switch_manual_target(reader_name or self._last_reader_name, window_handle or self._last_window_handle)
         if window_handle:
             self._last_window_handle = window_handle
         if reader_name:
@@ -1043,6 +1046,7 @@ class MiniOverlay(QWidget):
             widget.hide()
         self.collapsed_btn.show()
         self._show_near_cursor(self._last_window_handle)
+        self.overlay_moved.emit(self._last_reader_name, self._last_window_handle)
 
     def _handle_collapsed_clicked(self):
         if time.monotonic() < self._suppress_collapsed_expand_until:
@@ -1061,6 +1065,7 @@ class MiniOverlay(QWidget):
         for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.apply_btn, self.tone_btn, self.open_btn, self.close_btn):
             widget.show()
         self.show_waiting(window_handle=self._last_window_handle)
+        self.overlay_moved.emit(self._last_reader_name, self._last_window_handle)
 
     def show_waiting(self, reader_name="", window_title_or_handle=None, window_handle=None):
         if window_handle is None:
@@ -1317,6 +1322,7 @@ class MiniOverlay(QWidget):
 
     def _show_near_cursor(self, window_handle=None):
         self._hide_timer.stop()
+        self._switch_manual_target(self._last_reader_name, window_handle or self._last_window_handle)
         self._log_overlay(
             "show_near_cursor",
             window_handle=window_handle,
@@ -1374,6 +1380,37 @@ class MiniOverlay(QWidget):
         if width < center_threshold and not self._is_target_maximized_or_fullscreen_like(left, top, right, bottom):
             x = left + max(margin, (width - self.width()) // 2)
         return self._clamp_position(x, y, left, top, right, bottom, margin=8)
+
+    def _manual_target_key(self, reader_name=None, window_handle=None):
+        reader_name = str(reader_name or self._last_reader_name or "")
+        try:
+            hwnd = int(window_handle or self._last_window_handle or 0)
+        except Exception:
+            hwnd = 0
+        if not reader_name or not hwnd:
+            return None
+        family = "word" if reader_name in {"word", "word_selection"} else "notepad" if reader_name in {"notepad", "notepad_selection"} else reader_name
+        return (family, hwnd)
+
+    def _save_manual_position_for_current_target(self):
+        key = self._manual_active_key or self._manual_target_key()
+        if key is None or self._manual_offset is None:
+            return
+        self._manual_offsets_by_target[key] = QPoint(self._manual_offset)
+
+    def _switch_manual_target(self, reader_name=None, window_handle=None):
+        new_key = self._manual_target_key(reader_name, window_handle)
+        if new_key is None:
+            return
+        old_key = self._manual_active_key or self._manual_target_key()
+        if new_key == old_key:
+            self._manual_active_key = new_key
+            return
+        self._save_manual_position_for_current_target()
+        saved = self._manual_offsets_by_target.get(new_key)
+        self._manual_offset = QPoint(saved) if saved is not None else None
+        self._manual_position = None
+        self._manual_active_key = new_key
 
     def _is_target_maximized_or_fullscreen_like(self, left=None, top=None, right=None, bottom=None):
         if win32gui is None or not self._last_window_handle:
@@ -1605,6 +1642,7 @@ class MiniOverlay(QWidget):
             if moved:
                 self._suppress_collapsed_expand_until = time.monotonic() + 0.35
                 self._suppress_action_until = time.monotonic() + 0.35
+                self._save_manual_position_for_current_target()
                 self.overlay_moved.emit(self._last_reader_name, self._last_window_handle)
                 event.accept()
                 return True
@@ -1654,6 +1692,7 @@ class MiniOverlay(QWidget):
             self._dragging_overlay = False
             if self._drag_moved:
                 self._suppress_action_until = time.monotonic() + 0.35
+                self._save_manual_position_for_current_target()
                 self.overlay_moved.emit(self._last_reader_name, self._last_window_handle)
             self._drag_moved = False
             event.accept()
@@ -1703,7 +1742,17 @@ class MiniOverlay(QWidget):
                 return False
             title = win32gui.GetWindowText(hwnd) or ""
             class_name = win32gui.GetClassName(hwnd) or ""
-            if title not in {"Writing Assistant Mini", "Writing Assistant Tone", "Writing Assistant Correction Choice"}:
+            if title not in {
+                "Writing Assistant Mini",
+                "Writing Assistant Tone",
+                "Writing Assistant Correction Choice",
+                "Writing Assistant Main Overlay",
+                "Writing Assistant Score",
+                "Writing Assistant Evaluation Reason",
+                "Writing Assistant Summary",
+                "Writing Assistant Title",
+                "Writing Assistant Spelling Guide",
+            }:
                 return False
             return class_name.startswith("Qt") or "QWindow" in class_name
         except Exception:

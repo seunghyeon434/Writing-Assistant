@@ -73,6 +73,7 @@ _WORD_COM_CACHE_ERROR_MARKERS = (
     "CLSIDToPackageMap",
     "CLSIDToClassMap",
 )
+EM_REPLACESEL = 0x00C2
 EM_GETSEL = 0x00B0
 EM_SETSEL = 0x00B1
 
@@ -238,10 +239,14 @@ class OutputApplier:
 
     def _apply_to_notepad_selection(self, window_handle: int | None, text: str):
         _Application, send_keys = self._load_pywinauto()
-        if send_keys is None or win32gui is None:
-            raise RuntimeError("pywinauto and pywin32 are required for selection replacement.")
+        if win32gui is None:
+            raise RuntimeError("pywin32 is required for selection replacement.")
         if not self._is_live_window(window_handle):
             raise RuntimeError("The original selection window is no longer available.")
+        if send_keys is None:
+            if self._apply_to_notepad_selection_direct(window_handle, text):
+                return
+            raise RuntimeError("pywinauto and pywin32 are required for selection replacement.")
 
         original_clipboard = self._read_clipboard_safely()
         try:
@@ -253,6 +258,21 @@ class OutputApplier:
             if original_clipboard is not None:
                 time.sleep(0.08)
                 self._copy_clipboard_safely(original_clipboard)
+
+    def _apply_to_notepad_selection_direct(self, window_handle: int | None, text: str) -> bool:
+        editor = self._best_notepad_editor(window_handle)
+        if not editor:
+            return False
+        try:
+            self._focus_window(window_handle)
+            time.sleep(0.05)
+            buffer = ctypes.c_wchar_p(str(text or ""))
+            ctypes.windll.user32.SendMessageW(int(editor), EM_REPLACESEL, True, buffer)
+            self._log_word_replace(f"notepad direct selection replace text_len={len(str(text or ''))} sample={str(text or '')[:80]!r}")
+            return True
+        except Exception as exc:
+            self._log_word_replace(f"notepad direct selection replace failed: {type(exc).__name__}: {exc}")
+            return False
 
     def apply_to_notepad_subrange(self, target: OutputTarget | None, relative_start: int, relative_end: int, text: str):
         if target is None or target.mode not in {"notepad", "notepad_selection"}:
@@ -743,6 +763,45 @@ class OutputApplier:
             if undo_record_started:
                 self._end_word_undo_record(word)
 
+    def apply_to_word_document_subrange(self, target: OutputTarget | None, relative_start: int, relative_end: int, text: str):
+        if target is None or target.mode != "word":
+            raise RuntimeError("Word document subrange replacement requires a Word target.")
+        if pythoncom is None:
+            raise RuntimeError("pywin32 is required for Word replacement.")
+        pythoncom.CoInitialize()
+        self._focus_window(target.window_handle)
+        word = _get_active_word_application()
+        document = self._word_document_for_style_info(word, dict(target.style_info or {}))
+        if document is None:
+            raise RuntimeError("No active Word document is available.")
+        content_range = document.Content
+        content_start = int(getattr(content_range, "Start", 0) or 0)
+        content_text = str(getattr(content_range, "Text", "") or "")
+        raw_start = self._raw_index_from_normalized(content_text, int(relative_start))
+        raw_end = self._raw_index_from_normalized(content_text, int(relative_end))
+        absolute_start = content_start + raw_start
+        absolute_end = content_start + raw_end
+        if absolute_end <= absolute_start:
+            raise RuntimeError("The marker range is empty.")
+
+        undo_record_started = self._start_word_undo_record(word, "Writing Assistant marker correction")
+        try:
+            replacement_text = self._word_text_for_write(text)
+            target_range = document.Range(Start=absolute_start, End=absolute_end)
+            character_styles = self._capture_word_character_styles(target_range)
+            self._log_word_replace(
+                f"marker document subrange write relative=({relative_start},{relative_end}) "
+                f"absolute=({absolute_start},{absolute_end}) text_len={len(str(text or ''))} "
+                f"char_styles={len(character_styles)} sample={str(text or '')[:80]!r}"
+            )
+            target_range.Text = replacement_text
+            applied_end = absolute_start + len(replacement_text)
+            self._apply_word_character_styles(document, absolute_start, applied_end, character_styles)
+            self._select_word_range(document, absolute_start, applied_end)
+        finally:
+            if undo_record_started:
+                self._end_word_undo_record(word)
+
     def _raw_index_from_normalized(self, raw_text: str, normalized_index: int) -> int:
         raw_index = 0
         normalized_count = 0
@@ -818,6 +877,7 @@ class OutputApplier:
                 f"segments={len(style_info.get('segments') or [])} sample={str(text or '')[:80]!r}"
             )
             selection_range = document.Range(Start=start, End=end)
+            character_styles = self._capture_word_character_styles(selection_range)
             selection_range.Text = replacement_text
             applied_end = start + len(replacement_text)
             applied_range = document.Range(Start=start, End=applied_end)
@@ -829,6 +889,7 @@ class OutputApplier:
                 self._reset_word_style_flags(applied_range)
                 self._apply_word_style(applied_range, style_info)
             self._apply_word_last_line_style_overlay(document, start, applied_end, text, style_info)
+            self._apply_word_character_styles(document, start, applied_end, character_styles)
             self._select_word_range(document, start, applied_end)
         finally:
             if undo_record_started:

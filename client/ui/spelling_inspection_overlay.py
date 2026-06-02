@@ -81,6 +81,7 @@ class SpellingGuideCard(QWidget):
         self.allowed_geometry: QRect | None = None
         self.avoidance_rects: list[QRect] = []
         self.linked_underline = None
+        self.overlay_manager = None
         self._hide_timer = QTimer(self)
         self._hide_timer.setSingleShot(True)
         self._hide_timer.timeout.connect(self._fade_out)
@@ -193,8 +194,12 @@ class SpellingGuideCard(QWidget):
         self.raise_()
         self._force_topmost()
         self._topmost_timer.start()
+        self._refresh_underline_occlusion()
         QTimer.singleShot(50, self._force_topmost)
         QTimer.singleShot(170, self._force_topmost)
+        QTimer.singleShot(280, self._force_topmost)
+        QTimer.singleShot(80, self._refresh_underline_occlusion)
+        QTimer.singleShot(180, self._refresh_underline_occlusion)
         self._animate_to(QPoint(x, y), 1.0)
 
     def _force_topmost(self):
@@ -249,13 +254,19 @@ class SpellingGuideCard(QWidget):
     def _fade_out(self):
         self._set_linked_label(False)
         self._topmost_timer.stop()
+        self.show()
+        self.raise_()
         self._opacity_anim = QPropertyAnimation(self._opacity, b"opacity", self)
         self._opacity_anim.setDuration(140)
         self._opacity_anim.setStartValue(self._opacity.opacity())
         self._opacity_anim.setEndValue(0.0)
         self._opacity_anim.setEasingCurve(QEasingCurve.OutCubic)
-        self._opacity_anim.finished.connect(self.hide)
+        self._opacity_anim.finished.connect(self._finish_fade_out)
         self._opacity_anim.start()
+
+    def _finish_fade_out(self):
+        self.hide()
+        self._refresh_underline_occlusion()
 
     def _set_linked_label(self, visible: bool):
         underline = getattr(self, "linked_underline", None)
@@ -263,6 +274,15 @@ class SpellingGuideCard(QWidget):
             return
         try:
             underline._animate_label(bool(visible))
+        except Exception:
+            pass
+
+    def _refresh_underline_occlusion(self):
+        manager = getattr(self, "overlay_manager", None)
+        if manager is None:
+            return
+        try:
+            manager.refresh_underline_occlusion()
         except Exception:
             pass
 
@@ -373,7 +393,7 @@ class SpellingInspectionOverlayManager:
     def live_text_for_target(self, target, fallback: str) -> str:
         return self._live_text_for_target(target, fallback)
 
-    def sync_for_target(self, target, text: str) -> bool:
+    def sync_for_target(self, target, text: str, use_live: bool = True) -> bool:
         """Refresh visible markers against the current document text.
 
         This keeps marker state tied to the editor contents instead of to the
@@ -385,10 +405,10 @@ class SpellingInspectionOverlayManager:
             return False
 
         previous_text = self._last_text
-        current_text = self._live_text_for_target(target, text)
+        current_text = self._live_text_for_target(target, text) if use_live else str(text or "")
         self._target_hwnd = int(getattr(target, "window_handle", 0) or 0) if target is not None else 0
         issues = self._test_issues(current_text)
-        if self._looks_like_transient_sync(target, previous_text, current_text, issues):
+        if use_live and self._looks_like_transient_sync(target, previous_text, current_text, issues):
             _log_spelling_overlay(
                 "sync_ignored_transient_text",
                 hwnd=self._target_hwnd,
@@ -442,6 +462,7 @@ class SpellingInspectionOverlayManager:
             "sync_done",
             hwnd=self._target_hwnd,
             scope=self._inspection_scope(target),
+            use_live=use_live,
             desired=len(desired),
             removed=removed,
             updated=updated,
@@ -524,6 +545,7 @@ class SpellingInspectionOverlayManager:
         card = SpellingGuideCard(issue, self.on_replace)
         card.allowed_geometry = self._allowed_overlay_rect(target)
         card.avoidance_rects = self._current_avoidance_rects()
+        card.overlay_manager = self
         underline = SpellingUnderline(issue, card)
         card.linked_underline = underline
         underline.setGeometry(
@@ -541,8 +563,13 @@ class SpellingInspectionOverlayManager:
     def _update_marker_geometry(self, target, underline: SpellingUnderline, issue: SpellingGuideIssue) -> bool:
         issue.rect = self._issue_rect(target, issue)
         if issue.rect is None:
-            self._dispose_underline(underline)
-            return False
+            try:
+                underline.hide()
+                underline.card.hide()
+            except Exception:
+                pass
+            _log_spelling_overlay("marker_temporarily_hidden_no_rect", original=issue.original, start=issue.start, end=issue.end)
+            return True
         underline.issue = issue
         underline.card.issue = issue
         underline.card.allowed_geometry = self._allowed_overlay_rect(target)
@@ -553,8 +580,45 @@ class SpellingInspectionOverlayManager:
             max(58, issue.rect.width()),
             28,
         )
+        if self._underline_occluded_by_visible_card(underline):
+            underline.hide()
+        else:
+            underline.show()
+            underline.raise_()
+        try:
+            if underline.card.isVisible():
+                underline.card.raise_()
+                underline.card._force_topmost()
+        except Exception:
+            pass
         underline.update()
         return True
+
+    def refresh_underline_occlusion(self):
+        for underline in list(self._underlines):
+            try:
+                if self._underline_occluded_by_visible_card(underline):
+                    underline.hide()
+                elif getattr(underline.issue, "rect", None) is not None:
+                    underline.show()
+                    underline.raise_()
+            except Exception:
+                continue
+
+    def _underline_occluded_by_visible_card(self, underline: SpellingUnderline) -> bool:
+        try:
+            underline_rect = underline.frameGeometry().adjusted(-3, -3, 3, 3)
+            for card in self._cards:
+                if not card.isVisible():
+                    continue
+                if getattr(card, "linked_underline", None) is underline:
+                    continue
+                card_rect = card.frameGeometry().adjusted(-8, -8, 8, 8)
+                if card_rect.intersects(underline_rect):
+                    return True
+        except Exception:
+            return False
+        return False
 
     def _underline_window_y_offset(self, target) -> int:
         mode = str(getattr(target, "mode", "") or "")
@@ -563,16 +627,38 @@ class SpellingInspectionOverlayManager:
         return UNDERLINE_WINDOW_Y_OFFSET
 
     def _dispose_underline(self, underline: SpellingUnderline):
+        self._fade_dispose_widget(getattr(underline, "card", None))
+        self._fade_dispose_widget(underline)
+
+    def _fade_dispose_widget(self, widget):
+        if widget is None:
+            return
         try:
-            underline.card.hide()
-            underline.card.deleteLater()
+            effect = QGraphicsOpacityEffect(widget)
+            widget.setGraphicsEffect(effect)
+            effect.setOpacity(1.0)
+            anim = QPropertyAnimation(effect, b"opacity", widget)
+            anim.setDuration(160)
+            anim.setStartValue(1.0)
+            anim.setEndValue(0.0)
+            anim.setEasingCurve(QEasingCurve.OutCubic)
+
+            def finish():
+                try:
+                    widget.hide()
+                    widget.deleteLater()
+                except Exception:
+                    pass
+
+            anim.finished.connect(finish)
+            widget._dispose_opacity_anim = anim
+            anim.start()
         except Exception:
-            pass
-        try:
-            underline.hide()
-            underline.deleteLater()
-        except Exception:
-            pass
+            try:
+                widget.hide()
+                widget.deleteLater()
+            except Exception:
+                pass
 
     def _issue_key(self, issue: SpellingGuideIssue) -> tuple[str, str, int, int]:
         return (
@@ -621,6 +707,11 @@ class SpellingInspectionOverlayManager:
                 if live:
                     normalized = live.replace("\r\n", "\n").replace("\r", "\n")
                     return normalized
+            live = self._read_notepad_document_text(hwnd)
+            if live:
+                normalized = live.replace("\r\n", "\n").replace("\r", "\n")
+                _log_spelling_overlay("notepad_live_document_text", fallback_len=len(text), live_len=len(normalized), live_sample=normalized[:80])
+                return normalized
             return text
         if mode not in {"word", "word_selection"} or pythoncom is None or win32_dynamic is None:
             return text
@@ -683,13 +774,26 @@ class SpellingInspectionOverlayManager:
                     return True
             except Exception:
                 continue
+        try:
+            if win32gui is not None:
+                title = win32gui.GetWindowText(hwnd) or ""
+                class_name = win32gui.GetClassName(hwnd) or ""
+                if title in {
+                    "Writing Assistant Main Overlay",
+                    "Writing Assistant Mini",
+                    "Writing Assistant Score",
+                    "Writing Assistant Evaluation Reason",
+                    "Writing Assistant Summary",
+                    "Writing Assistant Title",
+                    "Writing Assistant Correction Choice",
+                }:
+                    return class_name.startswith("Qt") or "QWindow" in class_name
+        except Exception:
+            pass
         return False
 
     def _refresh_marker_positions_if_needed(self):
         if self._last_target is None or not self._underlines:
-            return
-        mode = str(getattr(self._last_target, "mode", "") or "")
-        if mode not in {"notepad", "notepad_selection"}:
             return
         live_underlines: list[SpellingUnderline] = []
         for underline in list(self._underlines):
@@ -822,6 +926,8 @@ class SpellingInspectionOverlayManager:
         if not editor:
             return self._fallback_rect(hwnd, issue)
         raw_text = self._window_text(editor)
+        if not raw_text:
+            raw_text = self._read_notepad_document_text(hwnd)
         normalized_text = self._normalize_editor_text(raw_text)
         index_text = normalized_text or self._normalize_editor_text(self._last_text)
         expected_start = max(0, min(int(getattr(issue, "start", 0) or 0), len(index_text)))
@@ -942,6 +1048,16 @@ class SpellingInspectionOverlayManager:
         except Exception:
             return ""
 
+    def _read_notepad_document_text(self, hwnd: int) -> str:
+        try:
+            from client.input.notepad_monitor import _read_window_text
+
+            text, _details = _read_window_text(int(hwnd or 0))
+            return str(text or "")
+        except Exception as exc:
+            _log_spelling_overlay("notepad_document_text_failed", hwnd=hwnd, error=f"{type(exc).__name__}: {exc}")
+            return ""
+
     def _pos_from_char(self, hwnd: int, index: int) -> tuple[int, int] | None:
         try:
             class_name = ""
@@ -1023,15 +1139,27 @@ class SpellingInspectionOverlayManager:
             style_info = dict(getattr(target, "style_info", None) or {})
             selection_start = style_info.get("selection_start")
             selection_text = str(self._last_text or style_info.get("selection_text") or "")
-            if selection_start is not None and selection_text:
+            mode = str(getattr(target, "mode", "") or "")
+            if mode == "word_selection" and selection_start is not None and selection_text:
                 raw_index = self._raw_index_from_normalized(selection_text, issue.start)
                 range_start = int(selection_start) + raw_index
             else:
                 content = document.Content
                 raw_text = str(getattr(content, "Text", "") or "")
-                raw_index = raw_text.find(issue.original)
-                if raw_index < 0:
-                    raw_index = self._raw_index_from_normalized(raw_text, issue.start)
+                raw_index = self._raw_index_from_normalized(raw_text, issue.start)
+                if issue.original and raw_text[raw_index : raw_index + len(issue.original)] != issue.original:
+                    nearby_index = raw_text.find(issue.original, max(0, raw_index - 12), raw_index + len(issue.original) + 12)
+                    if nearby_index >= 0:
+                        raw_index = nearby_index
+                    else:
+                        _log_spelling_overlay(
+                            "word_issue_text_mismatch_keep_index",
+                            hwnd=hwnd,
+                            original=issue.original,
+                            issue_start=issue.start,
+                            raw_index=raw_index,
+                            text_at_index=raw_text[raw_index : raw_index + len(issue.original) + 8],
+                        )
                 range_start = int(content.Start) + raw_index
             word_range = document.Range(Start=range_start, End=range_start + len(issue.original))
             rect = self._word_range_screen_rect(word, word_range, issue)

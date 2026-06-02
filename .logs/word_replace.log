@@ -2835,3 +2835,243 @@
 2026-05-31 02:06:01 segments applied=32 failed=0
 2026-05-31 02:06:01 last-line overlay applied range=(107,120) doc=(107,120) style_keys=['bold', 'color_hex', 'double_strike_through', 'font_name', 'font_size', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline', 'underline_color', 'underline_color_hex'] align=3
 2026-05-31 02:06:01 UndoRecord ended
+2026-05-31 18:44:00 UndoRecord started name='Writing Assistant correction'
+2026-05-31 18:44:00 selection write start=18 end=44 text_len=39 segments=5 sample='\n안녕하서요 싫어해요\n\n잘 있어요 다시 만너요 [교정 기능 사용 됨]\n'
+2026-05-31 18:44:01 apply segment start=1 end=2 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-05-31 18:44:01 apply segment start=2 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-31 18:44:02 apply segment start=6 end=11 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-31 18:44:03 apply segment start=13 end=14 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-31 18:44:03 apply segment start=14 end=25 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-05-31 18:44:03 segments applied=5 failed=0
+2026-05-31 18:44:04 last-line overlay applied range=(25,38) doc=(43,56) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-05-31 18:44:04 UndoRecord ended
+2026-05-31 18:44:07 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:05:34 UndoRecord started name='Writing Assistant correction'
+2026-06-02 02:05:34 selection write start=19 end=44 text_len=38 segments=5 sample='안녕하서요 싫어해요\n\n잘 있어요 다시 만너요 [교정 기능 사용 됨]\n'
+2026-06-02 02:05:36 apply segment start=0 end=1 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:05:36 apply segment start=1 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:05:37 apply segment start=5 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:05:37 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:05:38 apply segment start=13 end=24 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:05:38 segments applied=5 failed=0
+2026-06-02 02:05:39 last-line overlay applied range=(24,37) doc=(43,56) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-06-02 02:05:39 UndoRecord ended
+2026-06-02 02:05:43 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:05:45 Redo invoked via CommandBars.ExecuteMso('Redo') hwnd=67736
+2026-06-02 02:05:52 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:05:54 Redo invoked via CommandBars.ExecuteMso('Redo') hwnd=67736
+2026-06-02 02:06:35 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:06:50 UndoRecord started name='Writing Assistant correction'
+2026-06-02 02:06:50 selection write start=89 end=108 text_len=32 segments=12 sample='김자원\n\n김자원\n\n김자원\n\n테스트 [교정 기능 사용 됨]\n'
+2026-06-02 02:06:52 apply segment start=0 end=1 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:06:53 apply segment start=1 end=2 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:06:54 apply segment start=2 end=3 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:06:55 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:06:56 apply segment start=6 end=7 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:06:57 apply segment start=7 end=8 style={'bold': False, 'italic': True, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:06:57 apply segment start=10 end=11 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#92D050'}
+2026-06-02 02:06:58 apply segment start=11 end=12 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:07:02 segments applied=12 failed=0
+2026-06-02 02:07:03 last-line overlay applied range=(18,31) doc=(107,120) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-06-02 02:07:03 UndoRecord ended
+2026-06-02 02:07:05 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:07:36 UndoRecord started name='Writing Assistant correction'
+2026-06-02 02:07:36 selection write start=89 end=108 text_len=32 segments=12 sample='김자원\n\n김자원\n\n김자원\n\n테스트 [교정 기능 사용 됨]\n'
+2026-06-02 02:07:38 apply segment start=0 end=1 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:07:39 apply segment start=1 end=2 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:07:40 apply segment start=2 end=3 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:07:41 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:07:41 apply segment start=6 end=7 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': True, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:07:42 apply segment start=7 end=8 style={'bold': False, 'italic': True, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:07:42 apply segment start=10 end=11 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#92D050'}
+2026-06-02 02:07:43 apply segment start=11 end=12 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:07:46 segments applied=12 failed=0
+2026-06-02 02:07:46 last-line overlay applied range=(18,31) doc=(107,120) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-06-02 02:07:46 UndoRecord ended
+2026-06-02 02:07:49 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:07:50 Redo invoked via CommandBars.ExecuteMso('Redo') hwnd=67736
+2026-06-02 02:08:08 UndoRecord started name='Writing Assistant correction'
+2026-06-02 02:08:08 selection write start=74 end=93 text_len=33 segments=12 sample='김자원\n\n김자원\n\n김자원\n\n김자원 [부드럽게 문체 사용됨]\n'
+2026-06-02 02:08:10 apply segment start=0 end=1 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:11 apply segment start=1 end=2 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': True, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:11 apply segment start=2 end=3 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:08:12 apply segment start=5 end=6 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:13 apply segment start=6 end=7 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:14 apply segment start=7 end=8 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:15 apply segment start=10 end=11 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': True, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:16 apply segment start=11 end=12 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': True, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#1F497D'}
+2026-06-02 02:08:20 segments applied=12 failed=0
+2026-06-02 02:08:21 last-line overlay applied range=(18,32) doc=(92,106) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-06-02 02:08:21 UndoRecord ended
+2026-06-02 02:08:23 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:08:24 Redo invoked via CommandBars.ExecuteMso('Redo') hwnd=67736
+2026-06-02 02:08:26 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:08:36 UndoRecord started name='Writing Assistant correction'
+2026-06-02 02:08:36 selection write start=74 end=93 text_len=32 segments=12 sample='김자원\n\n김자원\n\n김자원\n\n김자원 [교정 기능 사용 됨]\n'
+2026-06-02 02:08:37 apply segment start=0 end=1 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:38 apply segment start=1 end=2 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': True, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:39 apply segment start=2 end=3 style={'bold': False, 'italic': False, 'underline': 1, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:08:40 apply segment start=5 end=6 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:40 apply segment start=6 end=7 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': True, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:41 apply segment start=7 end=8 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': True, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:42 apply segment start=10 end=11 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': True, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:08:43 apply segment start=11 end=12 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': True, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#1F497D'}
+2026-06-02 02:08:47 segments applied=12 failed=0
+2026-06-02 02:08:49 last-line overlay applied range=(18,31) doc=(92,105) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-06-02 02:08:49 UndoRecord ended
+2026-06-02 02:08:51 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:18:02 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 02:18:03 marker subrange write selection=(19,44) relative=(18,24) absolute=(37,43) text_len=6 char_styles=6 sample='다시 만나요'
+2026-06-02 02:18:07 marker character styles applied=6 failed=0 source_styles=6
+2026-06-02 02:18:08 UndoRecord ended
+2026-06-02 02:19:04 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:19:07 Redo invoked via CommandBars.ExecuteMso('Redo') hwnd=67736
+2026-06-02 02:19:34 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:19:49 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 02:19:50 marker subrange write selection=(19,44) relative=(0,5) absolute=(19,24) text_len=5 char_styles=5 sample='안녕하세요'
+2026-06-02 02:19:54 marker character styles applied=5 failed=0 source_styles=5
+2026-06-02 02:19:54 UndoRecord ended
+2026-06-02 02:22:46 write text_len=109 newlines=26 line_styles=25 segments=32 sample='Writing Assistant\n\n안녕하세요 싫어해요\n\n잘 있어요 다시 만나요\n\n김자원\n\n김자원\n\nWriting Assistant\n\n김자원\n\n김'
+2026-06-02 02:22:46 UndoRecord started name='Writing Assistant realtime correction'
+2026-06-02 02:22:48 apply line=0 content_line=0 text='Writing Assistant' bold=True italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=1
+2026-06-02 02:22:49 verify line=0 content_line=0 bold=-1 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:22:49 apply line=2 content_line=1 text='안녕하세요 싫어해요' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#FF0000' align=3
+2026-06-02 02:22:49 verify line=2 content_line=1 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:22:49 apply line=4 content_line=2 text='잘 있어요 다시 만나요' bold=True italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=3
+2026-06-02 02:22:50 verify line=4 content_line=2 bold=-1 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:22:50 apply line=6 content_line=3 text='김자원' bold=True italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=3
+2026-06-02 02:22:51 verify line=6 content_line=3 bold=-1 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:22:51 apply line=8 content_line=4 text='김자원' bold=False italic=True underline=0 strike=True double_strike=False sub=False super=False highlight=7 color='#000000' align=3
+2026-06-02 02:22:51 verify line=8 content_line=4 bold=0 italic=-1 underline=0 strike=-1 double_strike=0 sub=0 super=0 highlight=7
+2026-06-02 02:22:51 apply line=10 content_line=5 text='Writing Assistant' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=1
+2026-06-02 02:22:52 verify line=10 content_line=5 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:22:52 apply line=12 content_line=6 text='김자원' bold=False italic=False underline=1 strike=False double_strike=False sub=True super=False highlight=0 color='#000000' align=3
+2026-06-02 02:22:53 verify line=12 content_line=6 bold=0 italic=0 underline=1 strike=0 double_strike=0 sub=-1 super=0 highlight=0
+2026-06-02 02:22:53 apply line=14 content_line=7 text='김자원' bold=True italic=False underline=0 strike=True double_strike=False sub=False super=True highlight=0 color='#000000' align=3
+2026-06-02 02:22:54 verify line=14 content_line=7 bold=-1 italic=0 underline=0 strike=-1 double_strike=0 sub=0 super=-1 highlight=0
+2026-06-02 02:22:54 apply line=16 content_line=8 text='김자원' bold=False italic=False underline=0 strike=True double_strike=False sub=True super=False highlight=0 color='#000000' align=3
+2026-06-02 02:22:54 verify line=16 content_line=8 bold=0 italic=0 underline=0 strike=-1 double_strike=0 sub=-1 super=0 highlight=0
+2026-06-02 02:22:55 apply line=18 content_line=9 text='김자원' bold=False italic=False underline=1 strike=False double_strike=False sub=False super=True highlight=0 color='#000000' align=3
+2026-06-02 02:22:55 verify line=18 content_line=9 bold=0 italic=0 underline=1 strike=0 double_strike=0 sub=0 super=-1 highlight=0
+2026-06-02 02:22:55 apply line=20 content_line=10 text='김자원' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=True highlight=7 color='#000000' align=3
+2026-06-02 02:22:56 verify line=20 content_line=10 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=-1 highlight=7
+2026-06-02 02:22:56 apply line=22 content_line=11 text='김자원' bold=False italic=False underline=1 strike=True double_strike=False sub=False super=False highlight=0 color='#92D050' align=3
+2026-06-02 02:22:57 verify line=22 content_line=11 bold=0 italic=0 underline=1 strike=-1 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:22:57 apply line=24 content_line=12 text='테스트' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=7 color='#FF0000' align=3
+2026-06-02 02:22:58 terminal paragraph style applied
+2026-06-02 02:22:58 verify line=24 content_line=12 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=7
+2026-06-02 02:22:59 apply segment start=0 end=17 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:23:00 apply segment start=19 end=20 style={'bold': False, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:23:00 apply segment start=20 end=29 style={'bold': False, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:23:01 apply segment start=31 end=43 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:23:01 apply segment start=45 end=46 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:23:02 apply segment start=46 end=47 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:23:03 apply segment start=47 end=48 style={'bold': True, 'italic': True, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:23:03 apply segment start=50 end=51 style={'bold': False, 'italic': True, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:23:21 segments applied=32 failed=0
+2026-06-02 02:23:21 last-line overlay skipped: covered by segments
+2026-06-02 02:23:21 UndoRecord ended
+2026-06-02 02:25:17 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 02:26:09 write text_len=120 newlines=24 line_styles=25 segments=32 sample='Writing Assistant\n\n안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n\n김자원\n\n김자원\n\nWriting Assistant\n\n김자원\n\n김'
+2026-06-02 02:26:09 UndoRecord started name='Writing Assistant realtime correction'
+2026-06-02 02:26:11 apply line=0 content_line=0 text='Writing Assistant' bold=True italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=1
+2026-06-02 02:26:12 verify line=0 content_line=0 bold=-1 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:26:12 apply line=2 content_line=1 text='안녕하세요 싫어해요' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#FF0000' align=3
+2026-06-02 02:26:12 verify line=2 content_line=1 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:26:12 apply line=4 content_line=2 text='잘 있어요 다시 만너요' bold=True italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=3
+2026-06-02 02:26:13 verify line=4 content_line=2 bold=-1 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:26:13 apply line=6 content_line=3 text='김자원' bold=True italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=3
+2026-06-02 02:26:14 verify line=6 content_line=3 bold=-1 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:26:14 apply line=8 content_line=4 text='김자원' bold=False italic=True underline=0 strike=True double_strike=False sub=False super=False highlight=7 color='#000000' align=3
+2026-06-02 02:26:15 verify line=8 content_line=4 bold=0 italic=-1 underline=0 strike=-1 double_strike=0 sub=0 super=0 highlight=7
+2026-06-02 02:26:15 apply line=10 content_line=5 text='Writing Assistant' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=0 color='#000000' align=1
+2026-06-02 02:26:15 verify line=10 content_line=5 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:26:15 apply line=12 content_line=6 text='김자원' bold=False italic=False underline=1 strike=False double_strike=False sub=True super=False highlight=0 color='#000000' align=3
+2026-06-02 02:26:16 verify line=12 content_line=6 bold=0 italic=0 underline=1 strike=0 double_strike=0 sub=-1 super=0 highlight=0
+2026-06-02 02:26:16 apply line=14 content_line=7 text='김자원' bold=True italic=False underline=0 strike=True double_strike=False sub=False super=True highlight=0 color='#000000' align=3
+2026-06-02 02:26:17 verify line=14 content_line=7 bold=-1 italic=0 underline=0 strike=-1 double_strike=0 sub=0 super=-1 highlight=0
+2026-06-02 02:26:17 apply line=16 content_line=8 text='김자원' bold=False italic=False underline=0 strike=True double_strike=False sub=True super=False highlight=0 color='#000000' align=3
+2026-06-02 02:26:18 verify line=16 content_line=8 bold=0 italic=0 underline=0 strike=-1 double_strike=0 sub=-1 super=0 highlight=0
+2026-06-02 02:26:18 apply line=18 content_line=9 text='김자원' bold=False italic=False underline=1 strike=False double_strike=False sub=False super=True highlight=0 color='#000000' align=3
+2026-06-02 02:26:19 verify line=18 content_line=9 bold=0 italic=0 underline=1 strike=0 double_strike=0 sub=0 super=-1 highlight=0
+2026-06-02 02:26:19 apply line=20 content_line=10 text='김자원' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=True highlight=7 color='#000000' align=3
+2026-06-02 02:26:20 verify line=20 content_line=10 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=-1 highlight=7
+2026-06-02 02:26:20 apply line=22 content_line=11 text='김자원' bold=False italic=False underline=1 strike=True double_strike=False sub=False super=False highlight=0 color='#92D050' align=3
+2026-06-02 02:26:21 verify line=22 content_line=11 bold=0 italic=0 underline=1 strike=-1 double_strike=0 sub=0 super=0 highlight=0
+2026-06-02 02:26:21 apply line=24 content_line=12 text='테스트 [교정 기능 사용 됨]' bold=False italic=False underline=0 strike=False double_strike=False sub=False super=False highlight=7 color='#FF0000' align=3
+2026-06-02 02:26:22 terminal paragraph style applied
+2026-06-02 02:26:22 verify line=24 content_line=12 bold=0 italic=0 underline=0 strike=0 double_strike=0 sub=0 super=0 highlight=7
+2026-06-02 02:26:23 apply segment start=0 end=17 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:26:24 apply segment start=19 end=20 style={'bold': False, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:26:24 apply segment start=20 end=29 style={'bold': False, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:26:25 apply segment start=31 end=43 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:26:25 apply segment start=45 end=46 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:26:26 apply segment start=46 end=47 style={'bold': True, 'italic': False, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-02 02:26:26 apply segment start=47 end=48 style={'bold': True, 'italic': True, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-02 02:26:27 apply segment start=50 end=51 style={'bold': False, 'italic': True, 'underline': 0, 'strike_through': False, 'double_strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 7, 'color_hex': '#000000'}
+2026-06-02 02:26:40 segments applied=32 failed=0
+2026-06-02 02:26:41 last-line overlay applied range=(107,120) doc=(107,120) style_keys=['bold', 'color_hex', 'double_strike_through', 'font_name', 'font_size', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline', 'underline_color', 'underline_color_hex'] align=3
+2026-06-02 02:26:41 UndoRecord ended
+2026-06-02 02:33:32 notepad marker subrange write selection_base=0 normalized_selection_start=0 relative=(17,23) absolute=(18,24) text_len=6 sample='다시 만나요'
+2026-06-02 02:42:48 notepad marker subrange write selection_base=0 normalized_selection_start=0 relative=(0,5) absolute=(0,5) text_len=5 sample='안녕하세요'
+2026-06-02 08:07:55 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:07:56 marker subrange write selection=(18,44) relative=(7,11) absolute=(25,29) text_len=4 char_styles=4 sample='반가워요'
+2026-06-02 08:08:00 marker character styles applied=4 failed=0 source_styles=4
+2026-06-02 08:08:00 UndoRecord ended
+2026-06-02 08:10:43 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:10:43 marker subrange write selection=(19,44) relative=(6,10) absolute=(25,29) text_len=4 char_styles=4 sample='반가워요'
+2026-06-02 08:10:46 marker character styles applied=4 failed=0 source_styles=4
+2026-06-02 08:10:46 UndoRecord ended
+2026-06-02 08:11:09 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 08:18:51 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:18:53 marker subrange write selection=(19,54) relative=(18,24) absolute=(37,43) text_len=6 char_styles=6 sample='다시 만나요'
+2026-06-02 08:18:57 marker character styles applied=6 failed=0 source_styles=6
+2026-06-02 08:18:58 UndoRecord ended
+2026-06-02 08:19:08 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:19:08 marker subrange write selection=(19,54) relative=(6,10) absolute=(25,29) text_len=4 char_styles=4 sample='반가워요'
+2026-06-02 08:19:11 marker character styles applied=4 failed=0 source_styles=4
+2026-06-02 08:19:11 UndoRecord ended
+2026-06-02 08:19:14 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 08:19:50 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:19:50 marker subrange write selection=(18,44) relative=(7,11) absolute=(25,29) text_len=4 char_styles=4 sample='반가워요'
+2026-06-02 08:19:53 marker character styles applied=4 failed=0 source_styles=4
+2026-06-02 08:19:53 UndoRecord ended
+2026-06-02 08:20:01 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 08:20:08 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:20:09 marker subrange write selection=(18,44) relative=(19,25) absolute=(37,43) text_len=6 char_styles=6 sample='다시 만나요'
+2026-06-02 08:20:13 marker character styles applied=6 failed=0 source_styles=6
+2026-06-02 08:20:13 UndoRecord ended
+2026-06-02 08:20:25 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 08:20:39 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:20:40 marker subrange write selection=(37,43) relative=(0,6) absolute=(37,43) text_len=6 char_styles=6 sample='다시 만나요'
+2026-06-02 08:20:44 marker character styles applied=6 failed=0 source_styles=6
+2026-06-02 08:20:44 UndoRecord ended
+2026-06-02 08:21:43 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 08:21:58 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:21:59 marker subrange write selection=(19,44) relative=(6,10) absolute=(25,29) text_len=4 char_styles=4 sample='반가워요'
+2026-06-02 08:22:02 marker character styles applied=4 failed=0 source_styles=4
+2026-06-02 08:22:02 UndoRecord ended
+2026-06-02 08:22:54 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 08:28:53 notepad marker subrange write selection_base=0 normalized_selection_start=0 relative=(0,5) absolute=(0,5) text_len=5 sample='안녕하세요'
+2026-06-02 08:29:01 notepad marker subrange write selection_base=5 normalized_selection_start=0 relative=(6,10) absolute=(6,10) text_len=4 sample='반가워요'
+2026-06-02 08:29:18 notepad marker subrange write selection_base=0 normalized_selection_start=0 relative=(17,23) absolute=(18,24) text_len=6 sample='다시 만나요'
+2026-06-02 08:43:28 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 08:43:29 marker subrange write selection=(19,44) relative=(6,10) absolute=(25,29) text_len=4 char_styles=4 sample='반가워요'
+2026-06-02 08:43:33 marker character styles applied=4 failed=0 source_styles=4
+2026-06-02 08:43:33 UndoRecord ended
+2026-06-02 08:48:06 UndoRecord started name='Writing Assistant subtitle'
+2026-06-02 08:48:07 subtitle inserted selection=(19,44) insert_start=19 font_size=9.0 title='Writing Assistant'
+2026-06-02 08:48:07 UndoRecord ended
+2026-06-02 08:48:15 Undo invoked via CommandBars.ExecuteMso('Undo') hwnd=67736
+2026-06-02 09:42:07 UndoRecord started name='Writing Assistant marker correction'
+2026-06-02 09:42:08 marker subrange write selection=(19,54) relative=(6,10) absolute=(25,29) text_len=4 char_styles=4 sample='반가워요'
+2026-06-02 09:42:11 marker character styles applied=4 failed=0 source_styles=4
+2026-06-02 09:42:12 UndoRecord ended
+2026-06-02 09:50:46 UndoRecord started name='Writing Assistant subtitle'
+2026-06-02 09:50:47 subtitle inserted selection=(19,44) insert_start=19 font_size=9.0 title='Writing Assistant'
+2026-06-02 09:50:47 UndoRecord ended
+2026-06-02 09:52:33 notepad direct selection replace text_len=44 sample='Writing Assistant\r\n\r\n안녕하세요 싫어해요\n잘 있어요 다시 만너요'
+2026-06-02 11:23:30 UndoRecord started name='Writing Assistant subtitle'
+2026-06-02 11:23:30 subtitle inserted selection=(19,44) insert_start=19 font_size=9.0 title='Writing Assistant'
+2026-06-02 11:23:30 UndoRecord ended
+2026-06-02 11:43:36 notepad marker subrange write selection_base=0 normalized_selection_start=0 relative=(17,23) absolute=(18,24) text_len=6 sample='다시 만나요'
