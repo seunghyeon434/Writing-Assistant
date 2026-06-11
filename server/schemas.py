@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from datetime import datetime
 # fastapi pydantic에서 json 요청을 자동으로 파싱
 # api 입출력 형식 정의
@@ -42,8 +42,59 @@ class CorrectRequest(BaseModel):
     text: str
 
 
+class CorrectionIssue(BaseModel):
+    id: str = ""
+    original: str = ""
+    suggestion: str = ""
+    category: str = ""
+    explanation: str = ""
+    confidence: str = ""
+    severity: str = ""
+    source_start: int | None = None
+    source_end: int | None = None
+    anchor_text: str = ""
+    display_title: str = ""
+
+
 class CorrectResponse(BaseModel):
     corrected_text: str
+    spelling_feedback: str | None = None
+    corrections: list[CorrectionIssue] = Field(default_factory=list)
+
+
+class SummaryRequest(BaseModel):
+    text: str
+
+
+class SummaryResponse(BaseModel):
+    summary: str
+
+
+class EvaluationRequest(BaseModel):
+    text: str
+
+
+class EvaluationResponse(BaseModel):
+    score: int
+    feedback: str
+
+
+class TitleRequest(BaseModel):
+    text: str
+
+
+class TitleResponse(BaseModel):
+    title: str
+
+
+class ToneRequest(BaseModel):
+    text: str
+    tone: str = ""
+
+
+class ToneResponse(BaseModel):
+    converted_text: str
+    feedback: str | None = None
 
 
 class UsageLogCreateRequest(BaseModel):
@@ -80,6 +131,7 @@ class UserSettingsRequest(BaseModel):
     history_enabled: bool = False
     input_mode: str = "clipboard"
     replace_mode: bool = False
+    spell_scope: str = "current_sentence"
 
 
 class UserSettingsResponse(UserSettingsRequest):

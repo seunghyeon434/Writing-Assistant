@@ -1,0 +1,187 @@
+{"ts": "2026-06-12T01:30:37.142", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:30:37.144", "event": "ai_json_schema_request_failed", "feature": "correction", "model": "gpt-5-mini", "error_type": "RuntimeError", "error": "OPENAI_API_KEY environment variable is not set.", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:35:00.405", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:35:00.419", "event": "ai_json_schema_request_failed", "feature": "correction", "model": "gpt-5-mini", "error_type": "RuntimeError", "error": "OPENAI_API_KEY environment variable is not set.", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:38:02.809", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 11, "text_lines": 2, "text_hash": "77032c7c75c0f1ce"}
+{"ts": "2026-06-12T01:38:08.464", "event": "ai_json_parse_failed", "feature": "correction", "model": "gpt-5-mini", "output_len": 679, "output_preview": "{\n  \"corrected_text\": \"안녕하세요. 싫어해요.\",\n  \"feedback\": \"문장 구분을 위해 문장부호(.)를 추가하고 각 문장을 따로 구분했습니다. 의미는 변경하지 않았습니다.\",\n  \"corrections\": [\n    {\n      \"original\": \"안녕하세", "text_len": 11, "text_lines": 2, "text_hash": "77032c7c75c0f1ce"}
+{"ts": "2026-06-12T02:45:43.164", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:45:54.140", "event": "ai_json_parse_failed", "feature": "correction", "model": "gpt-5-mini", "output_len": 1623, "output_preview": "{\n  \"corrected_text\": \"안녕하세요. 싫어해요.\\n\\n잘 있어요. 다시 만나요.\",\n  \"feedback\": \"문장부호, 띄어쓰기, 철자(오타)를 수정하고 존댓말 표현을 통일했습니다.\",\n  \"corrections\": [\n    {\n      \"original\": \"안녕", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:33.135", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:42.736", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 9600, "output_len": 435, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.043", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.043", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.078", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.079", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:56:48.116", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:50.181", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 2064, "output_len": 113, "response_status": "completed", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:50.590", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:50.592", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:57.811", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:57.813", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:57:00.407", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 14, "text_lines": 3, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T02:57:07.264", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 6856, "output_len": 403, "response_status": "completed", "text_len": 14, "text_lines": 3, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T02:57:07.581", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:57:07.582", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:58:52.013", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:58:52.016", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 3, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:14.956", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:14.958", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:26.937", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:26.939", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:56.074", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:56.076", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T03:31:43.934", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 13, "text_lines": 2, "text_hash": "3b980f0386d1e711"}
+{"ts": "2026-06-12T03:31:52.163", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 8228, "output_len": 528, "response_status": "completed", "text_len": 13, "text_lines": 2, "text_hash": "3b980f0386d1e711"}
+{"ts": "2026-06-12T03:32:02.779", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:32:08.208", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 5429, "output_len": 785, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:33:11.975", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 29, "text_lines": 4, "text_hash": "4ae134f102d6d528"}
+{"ts": "2026-06-12T03:33:17.855", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 5880, "output_len": 842, "response_status": "completed", "text_len": 29, "text_lines": 4, "text_hash": "4ae134f102d6d528"}
+{"ts": "2026-06-12T03:34:05.397", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:05.398", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:06.864", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:06.865", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:31.528", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:31.528", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:30.975", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:42.272", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 11296, "output_len": 852, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:42.438", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:42.439", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:53:57.339", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 4, "text_lines": 1, "text_hash": "b2dc43c3b8032b4e"}
+{"ts": "2026-06-12T06:54:03.680", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 6340, "output_len": 271, "response_status": "completed", "text_len": 4, "text_lines": 1, "text_hash": "b2dc43c3b8032b4e"}
+{"ts": "2026-06-12T06:54:03.861", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:07.924", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 4062, "output_len": 695, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:25.245", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:25.246", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:42.284", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:54:46.667", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 4382, "output_len": 694, "response_status": "completed", "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:54:47.082", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:54:51.198", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 4115, "output_len": 219, "response_status": "completed", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:55:03.094", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:55:03.095", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:55:12.028", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:12.029", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:14.762", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:14.762", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:41.489", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:55:41.489", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:55:57.406", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:55:57.406", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:23.459", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:23.460", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:33.341", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:33.341", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 27, "text_lines": 4, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:49.678", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:56:49.679", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:56:56.555", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:56.555", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:57.706", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:57.707", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.290", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.291", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.339", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.340", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:00:54.257", "event": "ai_correction_filtered_broad_deletion", "original": "안녕하세요 싫어해요", "suggestion": "안녕하세요.", "category": "문장부호"}
+{"ts": "2026-06-12T07:03:27.818", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.315", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 7497, "output_len": 777, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.438", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.439", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.495", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.495", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:26.257", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:26.258", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:28.003", "event": "ai_request_started", "feature": "title", "model": "gpt-5-nano", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:29.792", "event": "ai_request_completed", "feature": "title", "model": "gpt-5-nano", "duration_ms": 1789, "output_len": 25, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:36.590", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:36.590", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:17:45.874", "event": "ai_request_started", "feature": "summary", "model": "gpt-5-nano", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:17:47.604", "event": "ai_request_completed", "feature": "summary", "model": "gpt-5-nano", "duration_ms": 1730, "output_len": 72, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:17:54.848", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:17:58.171", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 3323, "output_len": 273, "response_status": "completed", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:17.347", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:17.348", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:19.978", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:19.979", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:23.047", "event": "ai_request_started", "feature": "summary", "model": "gpt-5-nano", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:25.807", "event": "ai_request_completed", "feature": "summary", "model": "gpt-5-nano", "duration_ms": 2759, "output_len": 58, "response_status": "completed", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:29.621", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:29.623", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:31.855", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:31.856", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:32.444", "event": "ai_request_started", "feature": "summary", "model": "gpt-5-nano", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:32.445", "event": "ai_cache_hit", "feature": "summary", "model": "gpt-5-nano", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:33.205", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:33.205", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:35.339", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:35.340", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.238", "event": "ai_request_started", "feature": "summary", "model": "gpt-5-nano", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.238", "event": "ai_cache_hit", "feature": "summary", "model": "gpt-5-nano", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.927", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.928", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:39.138", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:39.139", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:22.305", "event": "ai_request_started", "feature": "summary", "model": "gpt-5-nano", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:22.306", "event": "ai_cache_hit", "feature": "summary", "model": "gpt-5-nano", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:23.020", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:23.021", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:27.085", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:27.087", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:38.666", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:38.667", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:53.776", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 10, "text_lines": 5, "text_hash": "dbcf89c35ff54673"}
+{"ts": "2026-06-12T07:19:57.562", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 3786, "output_len": 390, "response_status": "completed", "text_len": 10, "text_lines": 5, "text_hash": "dbcf89c35ff54673"}
+{"ts": "2026-06-12T07:19:57.801", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:19:57.802", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:20:03.277", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:20:03.278", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:21.344", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:21.345", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:29.234", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:29.234", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:29.449", "event": "ai_request_started", "feature": "tone", "model": "gpt-5-nano", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:31.862", "event": "ai_request_completed", "feature": "tone", "model": "gpt-5-nano", "duration_ms": 2412, "output_len": 139, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:55.439", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:55.440", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:24:25.766", "event": "ai_request_started", "feature": "summary", "model": "gpt-5-nano", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:24:25.767", "event": "ai_cache_hit", "feature": "summary", "model": "gpt-5-nano", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:24:26.346", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:24:26.347", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:24:28.281", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:24:28.281", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:28:44.376", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:28:44.377", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:29:27.947", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:29:27.948", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:35:32.955", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 14, "text_lines": 3, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T07:35:37.263", "event": "ai_request_completed", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 4307, "output_len": 544, "response_status": "completed", "text_len": 14, "text_lines": 3, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T07:35:37.435", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:37.435", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:41.439", "event": "ai_request_started", "feature": "evaluation", "model": "gpt-5-nano", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:43.513", "event": "ai_request_completed", "feature": "evaluation", "model": "gpt-5-nano", "duration_ms": 2073, "output_len": 123, "response_status": "completed", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:49.976", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:35:49.977", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:33.724", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:33.725", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:52.034", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:52.035", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:56.754", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:56.754", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:03.925", "event": "ai_request_started", "feature": "evaluation", "model": "gpt-5-nano", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:06.228", "event": "ai_request_completed", "feature": "evaluation", "model": "gpt-5-nano", "duration_ms": 2302, "output_len": 125, "response_status": "completed", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:09.373", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:09.374", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:37.011", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:37.012", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:43.645", "event": "ai_request_started", "feature": "title", "model": "gpt-5-nano", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:44.955", "event": "ai_request_completed", "feature": "title", "model": "gpt-5-nano", "duration_ms": 1310, "output_len": 25, "response_status": "completed", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:22.267", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:22.269", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 2, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:28.996", "event": "ai_request_started", "feature": "evaluation", "model": "gpt-5-nano", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:28.997", "event": "ai_cache_hit", "feature": "evaluation", "model": "gpt-5-nano", "duration_ms": 1, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:29.651", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:29.653", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 2, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:41.702", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:41.703", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 1, "text_len": 1, "text_lines": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:48.349", "event": "ai_request_started", "feature": "title", "model": "gpt-5-nano", "text_len": 69, "text_lines": 21, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T07:48:52.588", "event": "ai_request_completed", "feature": "title", "model": "gpt-5-nano", "duration_ms": 4238, "output_len": 28, "response_status": "completed", "text_len": 69, "text_lines": 21, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T07:49:01.668", "event": "ai_request_started", "feature": "title", "model": "gpt-5-nano", "text_len": 69, "text_lines": 21, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T07:49:01.668", "event": "ai_cache_hit", "feature": "title", "model": "gpt-5-nano", "duration_ms": 0, "text_len": 69, "text_lines": 21, "text_hash": "fe5671d32e8130ea"}

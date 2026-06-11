@@ -14516,3 +14516,1896 @@
 2026-06-02 11:43:35 mouse release below drag threshold; probing selection
 2026-06-02 11:43:36 empty selection ignored below drag threshold reader='notepad_selection' hwnd=459466 had_previous=True
 2026-06-02 11:43:44 mouse release below drag threshold; probing selection
+2026-06-03 13:37:07 mouse release below drag threshold; probing selection
+2026-06-03 13:37:07 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:10 mouse release below drag threshold; probing selection
+2026-06-03 13:37:11 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:37:13 mouse release below drag threshold; probing selection
+2026-06-03 13:37:13 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:37:29 mouse release below drag threshold; probing selection
+2026-06-03 13:37:29 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:39 mouse release below drag threshold; probing selection
+2026-06-03 13:37:40 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:41 mouse release below drag threshold; probing selection
+2026-06-03 13:37:41 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:42 mouse release below drag threshold; probing selection
+2026-06-03 13:37:42 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:43 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:44 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:50 mouse release below drag threshold; probing selection
+2026-06-03 13:37:51 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:56 mouse release below drag threshold; probing selection
+2026-06-03 13:37:56 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:37:57 mouse release below drag threshold; probing selection
+2026-06-03 13:37:57 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:01 mouse release below drag threshold; probing selection
+2026-06-03 13:38:01 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:01 mouse release below drag threshold; probing selection
+2026-06-03 13:38:02 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:02 mouse release below drag threshold; probing selection
+2026-06-03 13:38:02 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:03 mouse release below drag threshold; probing selection
+2026-06-03 13:38:03 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:03 mouse release below drag threshold; probing selection
+2026-06-03 13:38:04 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:05 mouse release below drag threshold; probing selection
+2026-06-03 13:38:05 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:05 mouse release below drag threshold; probing selection
+2026-06-03 13:38:06 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:13 mouse release below drag threshold; probing selection
+2026-06-03 13:38:13 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:38:28 mouse release below drag threshold; probing selection
+2026-06-03 13:38:29 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:38:30 mouse release below drag threshold; probing selection
+2026-06-03 13:38:30 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:39:34 mouse release below drag threshold; probing selection
+2026-06-03 13:39:34 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:39:37 mouse release below drag threshold; probing selection
+2026-06-03 13:39:37 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:39:41 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:39:44 mouse release below drag threshold; probing selection
+2026-06-03 13:39:45 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:40:08 mouse release below drag threshold; probing selection
+2026-06-03 13:40:08 selection release skipped unsupported process='msedge.exe' hwnd=1181760
+2026-06-03 13:40:09 mouse release below drag threshold; probing selection
+2026-06-03 13:40:09 selection release skipped unsupported process='' hwnd=0
+2026-06-03 13:40:11 mouse release below drag threshold; probing selection
+2026-06-03 13:40:11 selection release skipped unsupported process='msedge.exe' hwnd=1181760
+2026-06-03 13:40:12 mouse release below drag threshold; probing selection
+2026-06-03 13:40:12 selection release skipped unsupported process='discord.exe' hwnd=66732
+2026-06-03 13:40:18 selection release skipped unsupported process='discord.exe' hwnd=66732
+2026-06-03 13:40:22 selection release skipped unsupported process='discord.exe' hwnd=66732
+2026-06-03 13:40:24 mouse release below drag threshold; probing selection
+2026-06-03 13:40:24 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:40:53 mouse release below drag threshold; probing selection
+2026-06-03 13:40:54 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:40:55 mouse release below drag threshold; probing selection
+2026-06-03 13:40:55 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:41:51 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:42:20 mouse release below drag threshold; probing selection
+2026-06-03 13:42:20 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:42:23 mouse release below drag threshold; probing selection
+2026-06-03 13:42:24 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:42:39 mouse release below drag threshold; probing selection
+2026-06-03 13:42:40 selection release skipped unsupported process='code.exe' hwnd=721618
+2026-06-03 13:42:41 mouse release below drag threshold; probing selection
+2026-06-03 13:42:41 selection release skipped unsupported process='discord.exe' hwnd=66732
+2026-06-03 13:42:45 mouse release below drag threshold; probing selection
+2026-06-03 13:42:45 selection release skipped unsupported process='discord.exe' hwnd=66732
+2026-06-03 13:42:54 mouse release below drag threshold; probing selection
+2026-06-03 13:42:54 selection release skipped unsupported process='code.exe' hwnd=721618
+2026-06-03 13:42:56 mouse release below drag threshold; probing selection
+2026-06-03 13:42:56 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:43:06 mouse release below drag threshold; probing selection
+2026-06-03 13:43:06 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:43:08 mouse release below drag threshold; probing selection
+2026-06-03 13:43:08 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:43:12 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:43:13 mouse release below drag threshold; probing selection
+2026-06-03 13:43:14 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:44:56 mouse release below drag threshold; probing selection
+2026-06-03 13:44:56 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:44:58 mouse release below drag threshold; probing selection
+2026-06-03 13:44:59 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:45:20 mouse release below drag threshold; probing selection
+2026-06-03 13:45:22 word selection probe timed out hwnd=787312
+2026-06-03 13:45:22 empty selection ignored below drag threshold reader='word_selection' hwnd=787312 had_previous=False
+2026-06-03 13:45:27 mouse release below drag threshold; probing selection
+2026-06-03 13:45:27 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:45:28 mouse release below drag threshold; probing selection
+2026-06-03 13:45:28 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:45:40 mouse release below drag threshold; probing selection
+2026-06-03 13:45:41 selection release skipped unsupported process='code.exe' hwnd=721618
+2026-06-03 13:45:41 mouse release below drag threshold; probing selection
+2026-06-03 13:45:41 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:45:42 mouse release below drag threshold; probing selection
+2026-06-03 13:45:43 word selection probe timed out hwnd=787312
+2026-06-03 13:45:43 empty selection ignored below drag threshold reader='word_selection' hwnd=787312 had_previous=False
+2026-06-03 13:45:43 mouse release below drag threshold; probing selection
+2026-06-03 13:45:44 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:45:45 mouse release below drag threshold; probing selection
+2026-06-03 13:45:45 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:45:48 mouse release below drag threshold; probing selection
+2026-06-03 13:45:49 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:45:59 mouse release below drag threshold; probing selection
+2026-06-03 13:45:59 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:46:03 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:46:04 mouse release below drag threshold; probing selection
+2026-06-03 13:46:05 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:46:11 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:46:40 mouse release below drag threshold; probing selection
+2026-06-03 13:46:40 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:46:42 mouse release below drag threshold; probing selection
+2026-06-03 13:46:42 selection release skipped unsupported process='code.exe' hwnd=263784
+2026-06-03 13:47:23 mouse release below drag threshold; probing selection
+2026-06-03 13:47:24 selection release skipped unsupported process='python.exe' hwnd=393516
+2026-06-03 13:47:24 mouse release below drag threshold; probing selection
+2026-06-05 03:05:53 mouse release below drag threshold; probing selection
+2026-06-05 03:05:54 selection release skipped unsupported process='python.exe' hwnd=264130
+2026-06-05 03:05:54 mouse release below drag threshold; probing selection
+2026-06-05 03:05:55 selection release skipped unsupported process='python.exe' hwnd=264130
+2026-06-05 03:05:55 mouse release below drag threshold; probing selection
+2026-06-05 03:05:55 selection release skipped unsupported process='python.exe' hwnd=264130
+2026-06-05 03:05:58 mouse release below drag threshold; probing selection
+2026-06-05 03:05:59 selection release skipped unsupported process='searchapp.exe' hwnd=1376942
+2026-06-05 03:06:00 mouse release below drag threshold; probing selection
+2026-06-05 03:06:01 selection release skipped unsupported process='explorer.exe' hwnd=66090
+2026-06-05 03:06:12 mouse release below drag threshold; probing selection
+2026-06-05 03:06:13 word selection probe timed out hwnd=198776
+2026-06-05 03:06:13 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 03:06:17 mouse release below drag threshold; probing selection
+2026-06-05 03:06:18 selection release skipped unsupported process='python.exe' hwnd=264070
+2026-06-05 03:06:22 mouse release below drag threshold; probing selection
+2026-06-05 03:06:22 selection release skipped unsupported process='python.exe' hwnd=264130
+2026-06-05 03:06:28 mouse release below drag threshold; probing selection
+2026-06-05 03:06:28 selection release skipped unsupported process='python.exe' hwnd=264130
+2026-06-05 03:06:29 mouse release below drag threshold; probing selection
+2026-06-05 03:06:29 selection release skipped unsupported process='code.exe' hwnd=198378
+2026-06-05 03:06:47 mouse release below drag threshold; probing selection
+2026-06-05 03:06:48 selection release skipped unsupported process='python.exe' hwnd=264130
+2026-06-05 03:06:50 mouse release below drag threshold; probing selection
+2026-06-05 03:16:13 mouse release below drag threshold; probing selection
+2026-06-05 03:16:14 word selection probe timed out hwnd=198776
+2026-06-05 03:16:14 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 03:16:17 mouse release below drag threshold; probing selection
+2026-06-05 03:16:17 selection release skipped unsupported process='python.exe' hwnd=1247212
+2026-06-05 03:16:24 mouse release below drag threshold; probing selection
+2026-06-05 03:16:24 selection release skipped unsupported process='code.exe' hwnd=198378
+2026-06-05 03:16:26 mouse release below drag threshold; probing selection
+2026-06-05 03:16:26 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:16:27 mouse release below drag threshold; probing selection
+2026-06-05 03:16:27 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:16:56 mouse release below drag threshold; probing selection
+2026-06-05 03:18:48 mouse release below drag threshold; probing selection
+2026-06-05 03:18:49 selection release skipped unsupported process='python.exe' hwnd=3605682
+2026-06-05 03:18:58 mouse release below drag threshold; probing selection
+2026-06-05 03:18:58 selection release skipped unsupported process='python.exe' hwnd=3605682
+2026-06-05 03:18:58 mouse release below drag threshold; probing selection
+2026-06-05 03:19:00 word selection probe timed out hwnd=198776
+2026-06-05 03:19:00 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 03:19:00 mouse release below drag threshold; probing selection
+2026-06-05 03:19:01 selection release skipped unsupported process='python.exe' hwnd=3605682
+2026-06-05 03:19:01 mouse release below drag threshold; probing selection
+2026-06-05 03:19:01 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:19:04 mouse release below drag threshold; probing selection
+2026-06-05 03:19:04 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:19:10 mouse release below drag threshold; probing selection
+2026-06-05 03:19:11 word selection probe timed out hwnd=198776
+2026-06-05 03:19:11 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 03:19:12 mouse release below drag threshold; probing selection
+2026-06-05 03:19:12 selection release skipped unsupported process='python.exe' hwnd=2623446
+2026-06-05 03:19:13 mouse release below drag threshold; probing selection
+2026-06-05 03:19:13 selection release skipped unsupported process='python.exe' hwnd=2623446
+2026-06-05 03:19:14 mouse release below drag threshold; probing selection
+2026-06-05 03:19:14 selection captured once reader='word_selection' len=1 signature=('word_selection', 198776, 0, 1, 'W')
+2026-06-05 03:19:17 mouse release below drag threshold; probing selection
+2026-06-05 03:19:18 selection captured once reader='word_selection' len=25 signature=('word_selection', 198776, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-05 03:19:19 mouse release below drag threshold; probing selection
+2026-06-05 03:19:19 selection captured once reader='word_selection' len=25 signature=('word_selection', 198776, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-05 03:19:52 mouse release below drag threshold; probing selection
+2026-06-05 03:19:52 selection captured once reader='word_selection' len=38 signature=('word_selection', 198776, 38, 76, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요 [교정 기능 사용 됨]\n')
+2026-06-05 03:19:55 mouse release below drag threshold; probing selection
+2026-06-05 03:19:57 word selection probe timed out hwnd=198776
+2026-06-05 03:19:57 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=True
+2026-06-05 03:19:57 mouse release below drag threshold; probing selection
+2026-06-05 03:19:57 selection captured once reader='word_selection' len=38 signature=('word_selection', 198776, 38, 76, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요 [교정 기능 사용 됨]\n')
+2026-06-05 03:20:02 selection release skipped unsupported process='screenclippinghost.exe' hwnd=264280
+2026-06-05 03:20:03 mouse release below drag threshold; probing selection
+2026-06-05 03:20:03 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:20:11 mouse release below drag threshold; probing selection
+2026-06-05 03:20:11 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:20:16 mouse release below drag threshold; probing selection
+2026-06-05 03:20:16 selection captured once reader='word_selection' len=38 signature=('word_selection', 198776, 38, 76, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요 [교정 기능 사용 됨]\n')
+2026-06-05 03:20:32 mouse release below drag threshold; probing selection
+2026-06-05 03:20:33 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:20:58 mouse release below drag threshold; probing selection
+2026-06-05 03:20:58 selection release skipped unsupported process='python.exe' hwnd=3605682
+2026-06-05 03:20:59 mouse release below drag threshold; probing selection
+2026-06-05 03:21:00 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:21:00 mouse release below drag threshold; probing selection
+2026-06-05 03:21:01 selection release skipped unsupported process='code.exe' hwnd=198378
+2026-06-05 03:21:01 mouse release below drag threshold; probing selection
+2026-06-05 03:21:02 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:21:02 mouse release below drag threshold; probing selection
+2026-06-05 03:21:02 selection captured once reader='word_selection' len=38 signature=('word_selection', 198776, 38, 76, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요 [교정 기능 사용 됨]\n')
+2026-06-05 03:21:03 mouse release below drag threshold; probing selection
+2026-06-05 03:21:03 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:21:05 mouse release below drag threshold; probing selection
+2026-06-05 03:21:06 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:21:06 mouse release below drag threshold; probing selection
+2026-06-05 03:21:07 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:21:59 mouse release below drag threshold; probing selection
+2026-06-05 03:21:59 selection release skipped unsupported process='python.exe' hwnd=3605682
+2026-06-05 03:21:59 mouse release below drag threshold; probing selection
+2026-06-05 03:25:29 mouse release below drag threshold; probing selection
+2026-06-05 03:25:29 selection captured once reader='word_selection' len=38 signature=('word_selection', 198776, 38, 76, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요 [교정 기능 사용 됨]\n')
+2026-06-05 03:25:32 mouse release below drag threshold; probing selection
+2026-06-05 03:25:33 word selection probe timed out hwnd=198776
+2026-06-05 03:25:33 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=True
+2026-06-05 03:25:35 mouse release below drag threshold; probing selection
+2026-06-05 03:25:35 selection captured once reader='word_selection' len=25 signature=('word_selection', 198776, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-05 03:25:36 mouse release below drag threshold; probing selection
+2026-06-05 03:25:36 selection captured once reader='word_selection' len=25 signature=('word_selection', 198776, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-05 03:25:57 mouse release below drag threshold; probing selection
+2026-06-05 03:25:58 word selection probe timed out hwnd=198776
+2026-06-05 03:25:58 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=True
+2026-06-05 03:25:59 mouse release below drag threshold; probing selection
+2026-06-05 03:25:59 selection captured once reader='word_selection' len=24 signature=('word_selection', 198776, 38, 62, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요')
+2026-06-05 03:26:02 selection release skipped unsupported process='screenclippinghost.exe' hwnd=3605978
+2026-06-05 03:26:03 mouse release below drag threshold; probing selection
+2026-06-05 03:26:03 selection release skipped unsupported process='python.exe' hwnd=4786136
+2026-06-05 03:26:04 mouse release below drag threshold; probing selection
+2026-06-05 03:26:04 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:26:05 mouse release below drag threshold; probing selection
+2026-06-05 03:26:05 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 03:29:09 mouse release below drag threshold; probing selection
+2026-06-05 03:29:09 selection release skipped unsupported process='python.exe' hwnd=4786136
+2026-06-05 03:29:10 mouse release below drag threshold; probing selection
+2026-06-05 03:29:15 mouse release below drag threshold; probing selection
+2026-06-05 03:29:16 selection captured once reader='word_selection' len=24 signature=('word_selection', 198776, 38, 62, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요')
+2026-06-05 03:29:18 mouse release below drag threshold; probing selection
+2026-06-05 03:29:19 word selection probe timed out hwnd=198776
+2026-06-05 03:29:19 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=True
+2026-06-05 03:29:19 mouse release below drag threshold; probing selection
+2026-06-05 03:29:20 selection captured once reader='word_selection' len=25 signature=('word_selection', 198776, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-05 03:29:20 mouse release below drag threshold; probing selection
+2026-06-05 03:29:20 selection duplicate ignored signature=('word_selection', 198776, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-05 03:29:21 mouse release below drag threshold; probing selection
+2026-06-05 03:29:22 selection captured once reader='word_selection' len=25 signature=('word_selection', 198776, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-05 03:30:33 mouse release below drag threshold; probing selection
+2026-06-05 03:30:34 word selection probe timed out hwnd=198776
+2026-06-05 03:30:34 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=True
+2026-06-05 03:30:36 mouse release below drag threshold; probing selection
+2026-06-05 03:30:36 selection release skipped unsupported process='python.exe' hwnd=3672004
+2026-06-05 03:30:37 mouse release below drag threshold; probing selection
+2026-06-05 11:05:11 mouse release below drag threshold; probing selection
+2026-06-05 11:05:12 word selection probe timed out hwnd=198776
+2026-06-05 11:05:12 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:05:15 mouse release below drag threshold; probing selection
+2026-06-05 11:05:15 selection release skipped unsupported process='explorer.exe' hwnd=65956
+2026-06-05 11:05:19 mouse release below drag threshold; probing selection
+2026-06-05 11:05:19 selection release skipped unsupported process='python.exe' hwnd=527030
+2026-06-05 11:05:20 mouse release below drag threshold; probing selection
+2026-06-05 11:05:20 selection release skipped unsupported process='explorer.exe' hwnd=65956
+2026-06-05 11:05:20 mouse release below drag threshold; probing selection
+2026-06-05 11:05:21 word selection probe timed out hwnd=198776
+2026-06-05 11:05:21 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:05:28 mouse release below drag threshold; probing selection
+2026-06-05 11:05:28 selection release skipped unsupported process='python.exe' hwnd=1312736
+2026-06-05 11:05:30 mouse release below drag threshold; probing selection
+2026-06-05 11:05:31 selection captured once reader='word_selection' len=1 signature=('word_selection', 198776, 0, 1, 'W')
+2026-06-05 11:05:41 mouse release below drag threshold; probing selection
+2026-06-05 11:05:41 selection captured once reader='word_selection' len=18 signature=('word_selection', 198776, 0, 18, 'Writing Assistant\n')
+2026-06-05 11:05:42 mouse release below drag threshold; probing selection
+2026-06-05 11:05:42 selection release skipped unsupported process='python.exe' hwnd=1312736
+2026-06-05 11:05:43 mouse release below drag threshold; probing selection
+2026-06-05 11:05:44 selection captured once reader='word_selection' len=18 signature=('word_selection', 198776, 0, 18, 'Writing Assistant\n')
+2026-06-05 11:05:45 mouse release below drag threshold; probing selection
+2026-06-05 11:05:46 selection release skipped unsupported process='python.exe' hwnd=1968846
+2026-06-05 11:05:50 mouse release below drag threshold; probing selection
+2026-06-05 11:05:50 selection release skipped unsupported process='python.exe' hwnd=1968846
+2026-06-05 11:05:53 mouse release below drag threshold; probing selection
+2026-06-05 11:05:53 selection release skipped unsupported process='python.exe' hwnd=1968846
+2026-06-05 11:05:54 mouse release below drag threshold; probing selection
+2026-06-05 11:05:54 selection release skipped unsupported process='python.exe' hwnd=1968846
+2026-06-05 11:05:56 mouse release below drag threshold; probing selection
+2026-06-05 11:05:56 selection captured once reader='word_selection' len=18 signature=('word_selection', 198776, 0, 18, 'Writing Assistant\n')
+2026-06-05 11:06:05 mouse release below drag threshold; probing selection
+2026-06-05 11:06:05 selection release skipped unsupported process='python.exe' hwnd=1312736
+2026-06-05 11:06:11 mouse release below drag threshold; probing selection
+2026-06-05 11:06:11 selection release skipped unsupported process='python.exe' hwnd=1968846
+2026-06-05 11:06:12 mouse release below drag threshold; probing selection
+2026-06-05 11:07:33 mouse release below drag threshold; probing selection
+2026-06-05 11:07:34 word selection probe timed out hwnd=198776
+2026-06-05 11:07:34 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:08:00 mouse release below drag threshold; probing selection
+2026-06-05 11:08:00 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:08:00 mouse release below drag threshold; probing selection
+2026-06-05 11:08:01 selection release skipped unsupported process='msedge.exe' hwnd=2558018
+2026-06-05 11:08:02 mouse release below drag threshold; probing selection
+2026-06-05 11:08:02 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:08:03 mouse release below drag threshold; probing selection
+2026-06-05 11:08:03 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:08:04 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:08:07 mouse release below drag threshold; probing selection
+2026-06-05 11:08:08 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:09:23 mouse release below drag threshold; probing selection
+2026-06-05 11:09:24 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:09:31 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:09:44 mouse release below drag threshold; probing selection
+2026-06-05 11:09:44 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:09:48 mouse release below drag threshold; probing selection
+2026-06-05 11:09:49 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:09:51 mouse release below drag threshold; probing selection
+2026-06-05 11:09:52 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:09:53 mouse release below drag threshold; probing selection
+2026-06-05 11:09:54 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:11:41 mouse release below drag threshold; probing selection
+2026-06-05 11:11:41 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:11:42 mouse release below drag threshold; probing selection
+2026-06-05 11:11:42 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:11:43 mouse release below drag threshold; probing selection
+2026-06-05 11:11:43 selection release skipped unsupported process='msedge.exe' hwnd=657960
+2026-06-05 11:11:47 mouse release below drag threshold; probing selection
+2026-06-05 11:11:48 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:11:49 mouse release below drag threshold; probing selection
+2026-06-05 11:11:49 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:12:16 mouse release below drag threshold; probing selection
+2026-06-05 11:12:17 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:12:17 mouse release below drag threshold; probing selection
+2026-06-05 11:12:18 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:12:22 mouse release below drag threshold; probing selection
+2026-06-05 11:12:22 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:12:27 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:12:32 mouse release below drag threshold; probing selection
+2026-06-05 11:12:33 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:12:42 mouse release below drag threshold; probing selection
+2026-06-05 11:12:42 selection release skipped unsupported process='' hwnd=0
+2026-06-05 11:13:09 mouse release below drag threshold; probing selection
+2026-06-05 11:13:10 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:13:10 mouse release below drag threshold; probing selection
+2026-06-05 11:13:10 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:13:12 mouse release below drag threshold; probing selection
+2026-06-05 11:13:12 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:13:14 mouse release below drag threshold; probing selection
+2026-06-05 11:13:14 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:13:19 mouse release below drag threshold; probing selection
+2026-06-05 11:13:26 selection release skipped unsupported process='python.exe' hwnd=1903392
+2026-06-05 11:13:27 mouse release below drag threshold; probing selection
+2026-06-05 11:13:27 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:13:28 mouse release below drag threshold; probing selection
+2026-06-05 11:13:28 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:13:29 mouse release below drag threshold; probing selection
+2026-06-05 11:13:30 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:13:30 mouse release below drag threshold; probing selection
+2026-06-05 11:13:30 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:13:31 mouse release below drag threshold; probing selection
+2026-06-05 11:13:31 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:13:32 mouse release below drag threshold; probing selection
+2026-06-05 11:13:33 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:13:36 mouse release below drag threshold; probing selection
+2026-06-05 11:13:37 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:14:19 mouse release below drag threshold; probing selection
+2026-06-05 11:14:20 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:14:22 mouse release below drag threshold; probing selection
+2026-06-05 11:14:22 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:14:22 mouse release below drag threshold; probing selection
+2026-06-05 11:14:23 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:14:23 mouse release below drag threshold; probing selection
+2026-06-05 11:14:23 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:14:27 mouse release below drag threshold; probing selection
+2026-06-05 11:14:27 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:14:44 mouse release below drag threshold; probing selection
+2026-06-05 11:14:44 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:15:23 mouse release below drag threshold; probing selection
+2026-06-05 11:15:23 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:15:25 mouse release below drag threshold; probing selection
+2026-06-05 11:15:25 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:15:28 mouse release below drag threshold; probing selection
+2026-06-05 11:15:29 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:15:53 mouse release below drag threshold; probing selection
+2026-06-05 11:15:54 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:15:57 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:15:59 mouse release below drag threshold; probing selection
+2026-06-05 11:15:59 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:16:09 mouse release below drag threshold; probing selection
+2026-06-05 11:16:09 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:16:10 mouse release below drag threshold; probing selection
+2026-06-05 11:16:10 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:16:12 mouse release below drag threshold; probing selection
+2026-06-05 11:16:12 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:16:15 mouse release below drag threshold; probing selection
+2026-06-05 11:16:15 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:16:48 mouse release below drag threshold; probing selection
+2026-06-05 11:16:49 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:16:53 mouse release below drag threshold; probing selection
+2026-06-05 11:16:53 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:18:19 mouse release below drag threshold; probing selection
+2026-06-05 11:18:19 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:18:23 mouse release below drag threshold; probing selection
+2026-06-05 11:18:23 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:18:48 mouse release below drag threshold; probing selection
+2026-06-05 11:18:48 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:18:50 mouse release below drag threshold; probing selection
+2026-06-05 11:18:51 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:18:53 mouse release below drag threshold; probing selection
+2026-06-05 11:18:53 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:18:54 mouse release below drag threshold; probing selection
+2026-06-05 11:18:55 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:18:57 mouse release below drag threshold; probing selection
+2026-06-05 11:18:57 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:19:04 mouse release below drag threshold; probing selection
+2026-06-05 11:19:04 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:19:07 mouse release below drag threshold; probing selection
+2026-06-05 11:19:07 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:08 mouse release below drag threshold; probing selection
+2026-06-05 11:19:09 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:11 mouse release below drag threshold; probing selection
+2026-06-05 11:19:11 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:12 mouse release below drag threshold; probing selection
+2026-06-05 11:19:12 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:13 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:15 mouse release below drag threshold; probing selection
+2026-06-05 11:19:15 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:17 mouse release below drag threshold; probing selection
+2026-06-05 11:19:17 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:18 mouse release below drag threshold; probing selection
+2026-06-05 11:19:18 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:19 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:20 mouse release below drag threshold; probing selection
+2026-06-05 11:19:21 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:23 mouse release below drag threshold; probing selection
+2026-06-05 11:19:24 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:25 mouse release below drag threshold; probing selection
+2026-06-05 11:19:25 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:25 mouse release below drag threshold; probing selection
+2026-06-05 11:19:26 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:26 mouse release below drag threshold; probing selection
+2026-06-05 11:19:27 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:38 mouse release below drag threshold; probing selection
+2026-06-05 11:19:39 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:41 mouse release below drag threshold; probing selection
+2026-06-05 11:19:42 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:19:42 mouse release below drag threshold; probing selection
+2026-06-05 11:19:42 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:09 mouse release below drag threshold; probing selection
+2026-06-05 11:20:09 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:12 mouse release below drag threshold; probing selection
+2026-06-05 11:20:12 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:14 mouse release below drag threshold; probing selection
+2026-06-05 11:20:14 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:26 mouse release below drag threshold; probing selection
+2026-06-05 11:20:26 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:29 mouse release below drag threshold; probing selection
+2026-06-05 11:20:29 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:30 mouse release below drag threshold; probing selection
+2026-06-05 11:20:30 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:31 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:33 mouse release below drag threshold; probing selection
+2026-06-05 11:20:33 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:34 mouse release below drag threshold; probing selection
+2026-06-05 11:20:35 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:37 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:38 mouse release below drag threshold; probing selection
+2026-06-05 11:20:39 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:39 mouse release below drag threshold; probing selection
+2026-06-05 11:20:39 selection release skipped unsupported process='explorer.exe' hwnd=854600
+2026-06-05 11:20:40 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:20:43 mouse release below drag threshold; probing selection
+2026-06-05 11:20:43 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:20:44 mouse release below drag threshold; probing selection
+2026-06-05 11:20:44 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:20:50 mouse release below drag threshold; probing selection
+2026-06-05 11:20:51 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:20:52 mouse release below drag threshold; probing selection
+2026-06-05 11:20:52 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:21:01 mouse release below drag threshold; probing selection
+2026-06-05 11:21:01 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:21:21 mouse release below drag threshold; probing selection
+2026-06-05 11:21:22 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:21:22 mouse release below drag threshold; probing selection
+2026-06-05 11:21:22 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:23:23 mouse release below drag threshold; probing selection
+2026-06-05 11:23:24 word selection probe timed out hwnd=198776
+2026-06-05 11:23:24 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:23:25 mouse release below drag threshold; probing selection
+2026-06-05 11:23:25 selection release skipped unsupported process='python.exe' hwnd=1116864
+2026-06-05 11:23:28 mouse release below drag threshold; probing selection
+2026-06-05 11:23:29 word selection probe timed out hwnd=198776
+2026-06-05 11:23:29 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:23:45 word selection probe timed out hwnd=198776
+2026-06-05 11:23:45 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:23:45 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:23:50 selection release skipped unsupported process='python.exe' hwnd=1116864
+2026-06-05 11:23:57 word selection probe timed out hwnd=198776
+2026-06-05 11:23:57 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:23:57 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:24:23 word selection probe timed out hwnd=198776
+2026-06-05 11:24:23 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:24:23 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:24:29 word selection probe timed out hwnd=198776
+2026-06-05 11:24:29 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:24:29 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:24:55 word selection probe timed out hwnd=198776
+2026-06-05 11:24:55 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:24:55 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:24:57 mouse release below drag threshold; probing selection
+2026-06-05 11:24:59 word selection probe timed out hwnd=198776
+2026-06-05 11:24:59 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:24:59 selection release skipped unsupported process='python.exe' hwnd=1116864
+2026-06-05 11:24:59 mouse release below drag threshold; probing selection
+2026-06-05 11:25:00 selection release skipped unsupported process='python.exe' hwnd=1116864
+2026-06-05 11:25:00 selection release skipped unsupported process='python.exe' hwnd=1116864
+2026-06-05 11:25:10 word selection probe timed out hwnd=198776
+2026-06-05 11:25:10 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:25:10 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:25:25 word selection probe timed out hwnd=198776
+2026-06-05 11:25:25 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:25:25 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:26:29 mouse release below drag threshold; probing selection
+2026-06-05 11:26:29 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:26:34 mouse release below drag threshold; probing selection
+2026-06-05 11:26:35 word selection probe timed out hwnd=198776
+2026-06-05 11:26:35 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:27:20 mouse release below drag threshold; probing selection
+2026-06-05 11:27:21 selection release skipped unsupported process='searchapp.exe' hwnd=1376942
+2026-06-05 11:27:46 mouse release below drag threshold; probing selection
+2026-06-05 11:27:46 selection release skipped unsupported process='explorer.exe' hwnd=66090
+2026-06-05 11:27:53 mouse release below drag threshold; probing selection
+2026-06-05 11:27:53 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:28:10 mouse release below drag threshold; probing selection
+2026-06-05 11:28:11 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:28:16 mouse release below drag threshold; probing selection
+2026-06-05 11:28:17 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:28:50 mouse release below drag threshold; probing selection
+2026-06-05 11:28:51 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:28:52 mouse release below drag threshold; probing selection
+2026-06-05 11:28:53 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:28:58 mouse release below drag threshold; probing selection
+2026-06-05 11:28:58 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:28:59 mouse release below drag threshold; probing selection
+2026-06-05 11:28:59 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:31:22 mouse release below drag threshold; probing selection
+2026-06-05 11:31:23 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:31:23 mouse release below drag threshold; probing selection
+2026-06-05 11:31:23 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:31:26 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:31:26 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:31:26 mouse release below drag threshold; probing selection
+2026-06-05 11:31:27 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:32:15 mouse release below drag threshold; probing selection
+2026-06-05 11:32:15 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:32:18 mouse release below drag threshold; probing selection
+2026-06-05 11:32:18 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:32:21 mouse release below drag threshold; probing selection
+2026-06-05 11:32:21 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:32:22 mouse release below drag threshold; probing selection
+2026-06-05 11:32:22 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:32:22 mouse release below drag threshold; probing selection
+2026-06-05 11:32:23 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:32:46 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:32:46 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:34:34 mouse release below drag threshold; probing selection
+2026-06-05 11:34:34 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:34:36 mouse release below drag threshold; probing selection
+2026-06-05 11:34:37 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:35:43 mouse release below drag threshold; probing selection
+2026-06-05 11:35:43 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:35:53 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:35:53 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:35:55 mouse release below drag threshold; probing selection
+2026-06-05 11:35:55 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:35:56 mouse release below drag threshold; probing selection
+2026-06-05 11:35:56 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:03 mouse release below drag threshold; probing selection
+2026-06-05 11:36:03 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:05 mouse release below drag threshold; probing selection
+2026-06-05 11:36:06 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:06 mouse release below drag threshold; probing selection
+2026-06-05 11:36:07 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:10 mouse release below drag threshold; probing selection
+2026-06-05 11:36:11 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:34 mouse release below drag threshold; probing selection
+2026-06-05 11:36:34 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:36 mouse release below drag threshold; probing selection
+2026-06-05 11:36:37 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:38 mouse release below drag threshold; probing selection
+2026-06-05 11:36:38 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:36:40 mouse release below drag threshold; probing selection
+2026-06-05 11:36:41 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:37:03 mouse release below drag threshold; probing selection
+2026-06-05 11:37:04 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:37:34 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:37:34 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:37:40 mouse release below drag threshold; probing selection
+2026-06-05 11:37:41 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:37:42 selection captured once reader='notepad_selection' len=502 signature=('notepad_selection', 396122, None, None, '1. 메인 오버레이를 움직이게 만들자.\n2. 교정 오버레이를 없애고, 오버레이의 기능을\n모두 메인 오버레이로 통합시키고 메인 오버레이를 약간 수정한다.\n\n기존의 교정 버튼을 맞춤법 버튼으로 바꾸고, 그 오른쪽에 문체 버튼을 갖다 둔다.\n모드 표시를 모든 모드를 표기할 필요 없이\n현재 모드만 알려주게 만들고 기록-설정-X 버튼과 같은 줄 선상에 있게 하고, \n현재 모드 : 드래그 이런 식으로 알려주게 만든다.\n이거로 맞춤법 버튼과 문체 버튼이 위치할 수 있게 만든다.\n\n되돌리기-재실행 버튼도 기록-설정-X 버튼 선상에 위치시킨다.\n알림 버튼도 같은 선상에 위치시키게 한다.\n알림 기능에 기존의 교정 오버레이에서 알려주던 교정 완료, 재실행 완료도 알려주게 추가를 한다.\n\n내가 그동안 혼자 UI를 계속 만들다가 이제 회의를 통해서 UI 구조를 개편했어.\n그동안 UI에 대한 의견이 많이 없다가 확 생겨서 허무하긴 하지만\n이렇게 오버레이를 통합하게 되었어, 어쩌겠어, 개발이 원래 다 그렇지 뭐.')
+2026-06-05 11:37:43 mouse release below drag threshold; probing selection
+2026-06-05 11:37:43 selection release skipped unsupported process='discord.exe' hwnd=66846
+2026-06-05 11:37:45 mouse release below drag threshold; probing selection
+2026-06-05 11:37:46 selection release skipped unsupported process='discord.exe' hwnd=66846
+2026-06-05 11:37:47 mouse release below drag threshold; probing selection
+2026-06-05 11:37:47 selection release skipped unsupported process='discord.exe' hwnd=66846
+2026-06-05 11:37:50 mouse release below drag threshold; probing selection
+2026-06-05 11:37:50 selection release skipped unsupported process='discord.exe' hwnd=66846
+2026-06-05 11:37:52 mouse release below drag threshold; probing selection
+2026-06-05 11:37:54 word selection probe timed out hwnd=198776
+2026-06-05 11:37:54 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:37:54 mouse release below drag threshold; probing selection
+2026-06-05 11:37:54 selection release skipped unsupported process='discord.exe' hwnd=66846
+2026-06-05 11:37:56 mouse release below drag threshold; probing selection
+2026-06-05 11:37:56 selection release skipped unsupported process='' hwnd=0
+2026-06-05 11:37:58 mouse release below drag threshold; probing selection
+2026-06-05 11:37:58 selection captured once reader='notepad_selection' len=502 signature=('notepad_selection', 396122, None, None, '1. 메인 오버레이를 움직이게 만들자.\n2. 교정 오버레이를 없애고, 오버레이의 기능을\n모두 메인 오버레이로 통합시키고 메인 오버레이를 약간 수정한다.\n\n기존의 교정 버튼을 맞춤법 버튼으로 바꾸고, 그 오른쪽에 문체 버튼을 갖다 둔다.\n모드 표시를 모든 모드를 표기할 필요 없이\n현재 모드만 알려주게 만들고 기록-설정-X 버튼과 같은 줄 선상에 있게 하고, \n현재 모드 : 드래그 이런 식으로 알려주게 만든다.\n이거로 맞춤법 버튼과 문체 버튼이 위치할 수 있게 만든다.\n\n되돌리기-재실행 버튼도 기록-설정-X 버튼 선상에 위치시킨다.\n알림 버튼도 같은 선상에 위치시키게 한다.\n알림 기능에 기존의 교정 오버레이에서 알려주던 교정 완료, 재실행 완료도 알려주게 추가를 한다.\n\n내가 그동안 혼자 UI를 계속 만들다가 이제 회의를 통해서 UI 구조를 개편했어.\n그동안 UI에 대한 의견이 많이 없다가 확 생겨서 허무하긴 하지만\n이렇게 오버레이를 통합하게 되었어, 어쩌겠어, 개발이 원래 다 그렇지 뭐.')
+2026-06-05 11:37:59 mouse release below drag threshold; probing selection
+2026-06-05 11:37:59 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:04 mouse release below drag threshold; probing selection
+2026-06-05 11:38:05 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:15 mouse release below drag threshold; probing selection
+2026-06-05 11:38:16 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:19 selection captured once reader='notepad_selection' len=8 signature=('notepad_selection', 396122, None, None, '현재 모드 : ')
+2026-06-05 11:38:27 mouse release below drag threshold; probing selection
+2026-06-05 11:38:28 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:28 mouse release below drag threshold; probing selection
+2026-06-05 11:38:28 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:32 mouse release below drag threshold; probing selection
+2026-06-05 11:38:33 word selection probe timed out hwnd=198776
+2026-06-05 11:38:33 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:38:38 mouse release below drag threshold; probing selection
+2026-06-05 11:38:38 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:40 mouse release below drag threshold; probing selection
+2026-06-05 11:38:41 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:42 mouse release below drag threshold; probing selection
+2026-06-05 11:38:42 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=True
+2026-06-05 11:38:50 selection read empty reader='notepad_selection' hwnd=396122 confirmed=True
+2026-06-05 11:38:50 selection cleared reader='notepad_selection' hwnd=396122 confirmed=True
+2026-06-05 11:38:56 mouse release below drag threshold; probing selection
+2026-06-05 11:38:57 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:39:15 mouse release below drag threshold; probing selection
+2026-06-05 11:39:15 selection release skipped unsupported process='discord.exe' hwnd=66846
+2026-06-05 11:39:16 mouse release below drag threshold; probing selection
+2026-06-05 11:39:17 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:39:19 selection release skipped unsupported process='discord.exe' hwnd=66846
+2026-06-05 11:39:22 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:39:22 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:39:55 mouse release below drag threshold; probing selection
+2026-06-05 11:39:56 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:39:56 mouse release below drag threshold; probing selection
+2026-06-05 11:39:57 selection release skipped unsupported process='python.exe' hwnd=2886190
+2026-06-05 11:39:57 mouse release below drag threshold; probing selection
+2026-06-05 11:39:57 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:40:00 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:40:00 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:40:04 mouse release below drag threshold; probing selection
+2026-06-05 11:40:46 mouse release below drag threshold; probing selection
+2026-06-05 11:40:46 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:40:49 mouse release below drag threshold; probing selection
+2026-06-05 11:40:50 word selection probe timed out hwnd=198776
+2026-06-05 11:40:50 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:40:52 mouse release below drag threshold; probing selection
+2026-06-05 11:40:52 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:40:54 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:40:54 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:40:55 mouse release below drag threshold; probing selection
+2026-06-05 11:40:57 word selection probe timed out hwnd=198776
+2026-06-05 11:40:57 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:41:00 word selection probe timed out hwnd=198776
+2026-06-05 11:41:00 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:41:00 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 11:41:00 mouse release below drag threshold; probing selection
+2026-06-05 11:41:01 word selection probe timed out hwnd=198776
+2026-06-05 11:41:01 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:41:03 mouse release below drag threshold; probing selection
+2026-06-05 11:41:03 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:41:05 selection release skipped unsupported process='python.exe' hwnd=1509234
+2026-06-05 11:41:08 mouse release below drag threshold; probing selection
+2026-06-05 11:41:08 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:41:10 mouse release below drag threshold; probing selection
+2026-06-05 11:41:11 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:41:11 mouse release below drag threshold; probing selection
+2026-06-05 11:41:12 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:41:18 selection read empty reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:41:18 selection cleared reader='notepad_selection' hwnd=396122 confirmed=False
+2026-06-05 11:41:46 mouse release below drag threshold; probing selection
+2026-06-05 11:41:48 word selection probe timed out hwnd=198776
+2026-06-05 11:41:48 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:41:51 selection release skipped unsupported process='screenclippinghost.exe' hwnd=2688532
+2026-06-05 11:41:52 mouse release below drag threshold; probing selection
+2026-06-05 11:41:52 empty selection ignored below drag threshold reader='notepad_selection' hwnd=396122 had_previous=False
+2026-06-05 11:41:59 mouse release below drag threshold; probing selection
+2026-06-05 11:42:00 word selection probe timed out hwnd=198776
+2026-06-05 11:42:00 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:42:01 mouse release below drag threshold; probing selection
+2026-06-05 11:42:01 selection release skipped unsupported process='searchapp.exe' hwnd=1376942
+2026-06-05 11:42:07 mouse release below drag threshold; probing selection
+2026-06-05 11:42:07 selection release skipped unsupported process='explorer.exe' hwnd=66090
+2026-06-05 11:42:13 selection release skipped unsupported process='snippingtool.exe' hwnd=2820368
+2026-06-05 11:42:17 mouse release below drag threshold; probing selection
+2026-06-05 11:42:17 selection release skipped unsupported process='python.exe' hwnd=199562
+2026-06-05 11:42:18 mouse release below drag threshold; probing selection
+2026-06-05 11:42:53 mouse release below drag threshold; probing selection
+2026-06-05 11:42:54 word selection probe timed out hwnd=198776
+2026-06-05 11:42:54 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:42:58 selection release skipped unsupported process='screenclippinghost.exe' hwnd=131824
+2026-06-05 11:43:01 mouse release below drag threshold; probing selection
+2026-06-05 11:43:02 word selection probe timed out hwnd=198776
+2026-06-05 11:43:02 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:43:03 selection release skipped unsupported process='snippingtool.exe' hwnd=2820368
+2026-06-05 11:43:07 mouse release below drag threshold; probing selection
+2026-06-05 11:43:07 selection release skipped unsupported process='snippingtool.exe' hwnd=2820368
+2026-06-05 11:43:11 mouse release below drag threshold; probing selection
+2026-06-05 11:43:11 selection release skipped unsupported process='' hwnd=0
+2026-06-05 11:43:13 mouse release below drag threshold; probing selection
+2026-06-05 11:43:14 word selection probe timed out hwnd=198776
+2026-06-05 11:43:14 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:43:16 mouse release below drag threshold; probing selection
+2026-06-05 11:43:17 word selection probe timed out hwnd=198776
+2026-06-05 11:43:17 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:43:18 selection release skipped unsupported process='snippingtool.exe' hwnd=2820368
+2026-06-05 11:43:19 mouse release below drag threshold; probing selection
+2026-06-05 11:43:20 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 11:43:20 mouse release below drag threshold; probing selection
+2026-06-05 11:43:22 word selection probe timed out hwnd=198776
+2026-06-05 11:43:22 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 11:43:22 mouse release below drag threshold; probing selection
+2026-06-05 11:43:23 selection release skipped unsupported process='python.exe' hwnd=3803944
+2026-06-05 14:59:50 mouse release below drag threshold; probing selection
+2026-06-05 14:59:50 selection release skipped unsupported process='python.exe' hwnd=2163994
+2026-06-05 14:59:51 mouse release below drag threshold; probing selection
+2026-06-05 14:59:51 selection release skipped unsupported process='python.exe' hwnd=2163994
+2026-06-05 14:59:51 mouse release below drag threshold; probing selection
+2026-06-05 14:59:51 selection release skipped unsupported process='python.exe' hwnd=2163994
+2026-06-05 14:59:52 mouse release below drag threshold; probing selection
+2026-06-05 14:59:52 selection release skipped unsupported process='python.exe' hwnd=2163994
+2026-06-05 15:00:03 mouse release below drag threshold; probing selection
+2026-06-05 15:05:37 mouse release below drag threshold; probing selection
+2026-06-05 15:05:38 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:05:38 mouse release below drag threshold; probing selection
+2026-06-05 15:05:39 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:05:39 mouse release below drag threshold; probing selection
+2026-06-05 15:05:40 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:05:41 mouse release below drag threshold; probing selection
+2026-06-05 15:05:42 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:05:42 mouse release below drag threshold; probing selection
+2026-06-05 15:05:42 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:05:43 mouse release below drag threshold; probing selection
+2026-06-05 15:05:43 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:05:45 mouse release below drag threshold; probing selection
+2026-06-05 15:05:45 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:05:47 mouse release below drag threshold; probing selection
+2026-06-05 15:05:48 word selection probe timed out hwnd=198776
+2026-06-05 15:05:48 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:05:50 word selection probe timed out hwnd=198776
+2026-06-05 15:05:50 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:05:50 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:05:56 mouse release below drag threshold; probing selection
+2026-06-05 15:05:57 word selection probe timed out hwnd=198776
+2026-06-05 15:05:57 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:06:03 selection release skipped unsupported process='screenclippinghost.exe' hwnd=4456552
+2026-06-05 15:06:06 mouse release below drag threshold; probing selection
+2026-06-05 15:06:07 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:06:07 mouse release below drag threshold; probing selection
+2026-06-05 15:06:08 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:06:08 mouse release below drag threshold; probing selection
+2026-06-05 15:06:08 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:06:12 mouse release below drag threshold; probing selection
+2026-06-05 15:06:12 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:06:13 mouse release below drag threshold; probing selection
+2026-06-05 15:06:13 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:06:13 mouse release below drag threshold; probing selection
+2026-06-05 15:06:14 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:06:30 mouse release below drag threshold; probing selection
+2026-06-05 15:06:30 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:07:01 mouse release below drag threshold; probing selection
+2026-06-05 15:07:02 selection release skipped unsupported process='python.exe' hwnd=7144296
+2026-06-05 15:07:02 mouse release below drag threshold; probing selection
+2026-06-05 15:08:26 mouse release below drag threshold; probing selection
+2026-06-05 15:08:27 word selection probe timed out hwnd=198776
+2026-06-05 15:08:27 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:08:36 word selection probe timed out hwnd=198776
+2026-06-05 15:08:36 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:08:36 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:08:36 mouse release below drag threshold; probing selection
+2026-06-05 15:08:37 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:08:37 mouse release below drag threshold; probing selection
+2026-06-05 15:08:37 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:08:49 mouse release below drag threshold; probing selection
+2026-06-05 15:08:49 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:08:51 mouse release below drag threshold; probing selection
+2026-06-05 15:08:51 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:09:41 mouse release below drag threshold; probing selection
+2026-06-05 15:09:41 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:09:47 mouse release below drag threshold; probing selection
+2026-06-05 15:09:47 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:09:50 mouse release below drag threshold; probing selection
+2026-06-05 15:09:50 selection release skipped unsupported process='python.exe' hwnd=1574200
+2026-06-05 15:09:51 mouse release below drag threshold; probing selection
+2026-06-05 15:10:09 mouse release below drag threshold; probing selection
+2026-06-05 15:10:10 word selection probe timed out hwnd=198776
+2026-06-05 15:10:10 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:10:14 selection release skipped unsupported process='screenclippinghost.exe' hwnd=2491630
+2026-06-05 15:10:15 mouse release below drag threshold; probing selection
+2026-06-05 15:10:16 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:11:35 mouse release below drag threshold; probing selection
+2026-06-05 15:11:35 selection release skipped unsupported process='python.exe' hwnd=1313638
+2026-06-05 15:11:36 mouse release below drag threshold; probing selection
+2026-06-05 15:11:45 mouse release below drag threshold; probing selection
+2026-06-05 15:11:46 word selection probe timed out hwnd=198776
+2026-06-05 15:11:46 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:11:57 word selection probe timed out hwnd=198776
+2026-06-05 15:11:57 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:11:57 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:12:02 mouse release below drag threshold; probing selection
+2026-06-05 15:12:03 selection release skipped unsupported process='python.exe' hwnd=7471976
+2026-06-05 15:12:03 mouse release below drag threshold; probing selection
+2026-06-05 15:12:04 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:12:05 mouse release below drag threshold; probing selection
+2026-06-05 15:12:05 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:12:19 mouse release below drag threshold; probing selection
+2026-06-05 15:12:20 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:12:21 mouse release below drag threshold; probing selection
+2026-06-05 15:12:21 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:13:34 mouse release below drag threshold; probing selection
+2026-06-05 15:13:34 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:13:36 mouse release below drag threshold; probing selection
+2026-06-05 15:13:37 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:13:37 mouse release below drag threshold; probing selection
+2026-06-05 15:13:37 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:13:47 mouse release below drag threshold; probing selection
+2026-06-05 15:13:48 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:13:48 mouse release below drag threshold; probing selection
+2026-06-05 15:13:48 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:14:16 mouse release below drag threshold; probing selection
+2026-06-05 15:14:16 selection release skipped unsupported process='python.exe' hwnd=7471976
+2026-06-05 15:14:16 mouse release below drag threshold; probing selection
+2026-06-05 15:15:22 mouse release below drag threshold; probing selection
+2026-06-05 15:15:23 word selection probe timed out hwnd=198776
+2026-06-05 15:15:23 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:15:37 selection release skipped unsupported process='screenclippinghost.exe' hwnd=3804280
+2026-06-05 15:15:39 mouse release below drag threshold; probing selection
+2026-06-05 15:15:39 selection release skipped unsupported process='python.exe' hwnd=1575442
+2026-06-05 15:15:40 mouse release below drag threshold; probing selection
+2026-06-05 15:15:40 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:15:48 mouse release below drag threshold; probing selection
+2026-06-05 15:15:48 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:15:48 mouse release below drag threshold; probing selection
+2026-06-05 15:15:48 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:16:51 mouse release below drag threshold; probing selection
+2026-06-05 15:16:58 mouse release below drag threshold; probing selection
+2026-06-05 15:16:59 word selection probe timed out hwnd=198776
+2026-06-05 15:16:59 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:17:10 word selection probe timed out hwnd=198776
+2026-06-05 15:17:10 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:17:10 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:17:10 mouse release below drag threshold; probing selection
+2026-06-05 15:17:10 selection release skipped unsupported process='python.exe' hwnd=2556694
+2026-06-05 15:18:36 mouse release below drag threshold; probing selection
+2026-06-05 15:18:37 selection release skipped unsupported process='python.exe' hwnd=2556694
+2026-06-05 15:18:37 mouse release below drag threshold; probing selection
+2026-06-05 15:18:43 mouse release below drag threshold; probing selection
+2026-06-05 15:18:44 word selection probe timed out hwnd=198776
+2026-06-05 15:18:44 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:18:59 word selection probe timed out hwnd=198776
+2026-06-05 15:18:59 selection read empty reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:18:59 selection cleared reader='word_selection' hwnd=198776 confirmed=False
+2026-06-05 15:19:00 mouse release below drag threshold; probing selection
+2026-06-05 15:19:00 selection release skipped unsupported process='python.exe' hwnd=1706514
+2026-06-05 15:19:01 mouse release below drag threshold; probing selection
+2026-06-05 15:19:01 selection release skipped unsupported process='code.exe' hwnd=460336
+2026-06-05 15:19:59 mouse release below drag threshold; probing selection
+2026-06-05 15:19:59 selection release skipped unsupported process='python.exe' hwnd=1706514
+2026-06-05 15:20:00 mouse release below drag threshold; probing selection
+2026-06-05 15:20:11 mouse release below drag threshold; probing selection
+2026-06-05 15:20:12 word selection probe timed out hwnd=198776
+2026-06-05 15:20:12 empty selection ignored below drag threshold reader='word_selection' hwnd=198776 had_previous=False
+2026-06-05 15:20:26 mouse release below drag threshold; probing selection
+2026-06-05 15:20:26 selection release skipped unsupported process='python.exe' hwnd=2687766
+2026-06-05 15:20:33 mouse release below drag threshold; probing selection
+2026-06-05 15:20:33 selection release skipped unsupported process='python.exe' hwnd=2687766
+2026-06-05 15:20:35 mouse release below drag threshold; probing selection
+2026-06-05 15:20:35 selection release skipped unsupported process='python.exe' hwnd=1772050
+2026-06-05 15:20:36 mouse release below drag threshold; probing selection
+2026-06-05 15:20:36 selection captured once reader='word_selection' len=1 signature=('word_selection', 198776, 0, 1, 'W')
+2026-06-05 15:20:37 mouse release below drag threshold; probing selection
+2026-06-12 01:28:12 mouse release below drag threshold; probing selection
+2026-06-12 01:28:12 selection release skipped unsupported process='' hwnd=0
+2026-06-12 01:28:17 mouse release below drag threshold; probing selection
+2026-06-12 01:28:18 selection release skipped unsupported process='searchapp.exe' hwnd=1901254
+2026-06-12 01:28:28 mouse release below drag threshold; probing selection
+2026-06-12 01:28:29 word selection probe timed out hwnd=131970
+2026-06-12 01:28:29 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 01:28:58 mouse release below drag threshold; probing selection
+2026-06-12 01:28:59 word selection probe timed out hwnd=131970
+2026-06-12 01:28:59 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 01:29:01 mouse release below drag threshold; probing selection
+2026-06-12 01:29:01 selection release skipped unsupported process='discord.exe' hwnd=853840
+2026-06-12 01:29:10 mouse release below drag threshold; probing selection
+2026-06-12 01:29:11 word selection probe timed out hwnd=131970
+2026-06-12 01:29:11 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 01:29:15 selection captured once reader='word_selection' len=25 signature=('word_selection', 131970, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 01:30:29 mouse release below drag threshold; probing selection
+2026-06-12 01:30:30 word selection probe timed out hwnd=131970
+2026-06-12 01:30:30 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 01:30:37 mouse release below drag threshold; probing selection
+2026-06-12 01:34:56 mouse release below drag threshold; probing selection
+2026-06-12 01:34:57 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 01:34:57 mouse release below drag threshold; probing selection
+2026-06-12 01:34:58 selection release skipped unsupported process='python.exe' hwnd=1640578
+2026-06-12 01:34:59 mouse release below drag threshold; probing selection
+2026-06-12 01:35:00 selection captured once reader='word_selection' len=25 signature=('word_selection', 131970, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 01:38:02 mouse release below drag threshold; probing selection
+2026-06-12 01:38:02 selection captured once reader='word_selection' len=11 signature=('word_selection', 131970, 38, 49, '안녕하세요 싫어해요\n')
+2026-06-12 01:38:03 mouse release below drag threshold; probing selection
+2026-06-12 02:45:41 mouse release below drag threshold; probing selection
+2026-06-12 02:45:43 selection captured once reader='word_selection' len=25 signature=('word_selection', 131970, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 02:45:44 mouse release below drag threshold; probing selection
+2026-06-12 02:54:51 mouse release below drag threshold; probing selection
+2026-06-12 02:54:52 selection captured once reader='word_selection' len=25 signature=('word_selection', 131970, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 02:54:53 mouse release below drag threshold; probing selection
+2026-06-12 02:55:32 mouse release below drag threshold; probing selection
+2026-06-12 02:55:33 selection captured once reader='word_selection' len=25 signature=('word_selection', 131970, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 02:55:48 mouse release below drag threshold; probing selection
+2026-06-12 02:55:49 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:55:57 mouse release below drag threshold; probing selection
+2026-06-12 02:55:58 word selection probe timed out hwnd=131970
+2026-06-12 02:55:58 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:56:19 mouse release below drag threshold; probing selection
+2026-06-12 02:56:20 word selection probe timed out hwnd=131970
+2026-06-12 02:56:20 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:56:21 mouse release below drag threshold; probing selection
+2026-06-12 02:56:21 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 02:56:36 mouse release below drag threshold; probing selection
+2026-06-12 02:56:37 word selection probe timed out hwnd=131970
+2026-06-12 02:56:37 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:56:38 mouse release below drag threshold; probing selection
+2026-06-12 02:56:38 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:56:40 mouse release below drag threshold; probing selection
+2026-06-12 02:56:40 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:56:43 mouse release below drag threshold; probing selection
+2026-06-12 02:56:44 selection release skipped unsupported process='python.exe' hwnd=3214174
+2026-06-12 02:56:45 mouse release below drag threshold; probing selection
+2026-06-12 02:56:46 selection captured once reader='word_selection' len=1 signature=('word_selection', 131970, 0, 1, 'W')
+2026-06-12 02:56:47 mouse release below drag threshold; probing selection
+2026-06-12 02:56:48 selection captured once reader='word_selection' len=1 signature=('word_selection', 131970, 0, 1, 'W')
+2026-06-12 02:56:54 mouse release below drag threshold; probing selection
+2026-06-12 02:56:55 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:56:56 mouse release below drag threshold; probing selection
+2026-06-12 02:56:57 selection captured once reader='word_selection' len=1 signature=('word_selection', 131970, 0, 1, 'W')
+2026-06-12 02:56:59 mouse release below drag threshold; probing selection
+2026-06-12 02:57:00 selection captured once reader='word_selection' len=14 signature=('word_selection', 131970, 49, 63, '\n잘 있어요 다시 만너요\n')
+2026-06-12 02:57:03 mouse release below drag threshold; probing selection
+2026-06-12 02:57:07 selection release skipped unsupported process='' hwnd=0
+2026-06-12 02:58:24 mouse release below drag threshold; probing selection
+2026-06-12 02:58:25 word selection probe timed out hwnd=131970
+2026-06-12 02:58:25 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:58:30 selection release skipped unsupported process='screenclippinghost.exe' hwnd=6162394
+2026-06-12 02:58:32 mouse release below drag threshold; probing selection
+2026-06-12 02:58:33 word selection probe timed out hwnd=131970
+2026-06-12 02:58:33 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:58:39 selection release skipped unsupported process='screenclippinghost.exe' hwnd=2099720
+2026-06-12 02:58:40 mouse release below drag threshold; probing selection
+2026-06-12 02:58:40 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 02:58:46 mouse release below drag threshold; probing selection
+2026-06-12 02:58:47 word selection probe timed out hwnd=131970
+2026-06-12 02:58:47 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:58:49 mouse release below drag threshold; probing selection
+2026-06-12 02:58:49 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:58:50 mouse release below drag threshold; probing selection
+2026-06-12 02:58:51 selection captured once reader='word_selection' len=1 signature=('word_selection', 131970, 0, 1, 'W')
+2026-06-12 02:58:56 mouse release below drag threshold; probing selection
+2026-06-12 02:58:57 word selection probe timed out hwnd=131970
+2026-06-12 02:58:57 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:59:01 mouse release below drag threshold; probing selection
+2026-06-12 02:59:01 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:59:04 mouse release below drag threshold; probing selection
+2026-06-12 02:59:04 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 02:59:04 mouse release below drag threshold; probing selection
+2026-06-12 02:59:05 selection release skipped unsupported process='' hwnd=0
+2026-06-12 02:59:06 mouse release below drag threshold; probing selection
+2026-06-12 02:59:07 word selection probe timed out hwnd=131970
+2026-06-12 02:59:07 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 02:59:07 mouse release below drag threshold; probing selection
+2026-06-12 02:59:08 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:59:09 mouse release below drag threshold; probing selection
+2026-06-12 02:59:10 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:59:13 mouse release below drag threshold; probing selection
+2026-06-12 02:59:14 selection captured once reader='word_selection' len=1 signature=('word_selection', 131970, 0, 1, 'W')
+2026-06-12 02:59:21 mouse release below drag threshold; probing selection
+2026-06-12 02:59:21 selection release skipped unsupported process='python.exe' hwnd=1510050
+2026-06-12 02:59:24 mouse release below drag threshold; probing selection
+2026-06-12 02:59:24 selection release skipped unsupported process='python.exe' hwnd=3214174
+2026-06-12 02:59:24 mouse release below drag threshold; probing selection
+2026-06-12 02:59:25 selection release skipped unsupported process='python.exe' hwnd=3214174
+2026-06-12 02:59:25 mouse release below drag threshold; probing selection
+2026-06-12 02:59:26 selection captured once reader='word_selection' len=1 signature=('word_selection', 131970, 0, 1, 'W')
+2026-06-12 02:59:36 mouse release below drag threshold; probing selection
+2026-06-12 02:59:36 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 02:59:39 mouse release below drag threshold; probing selection
+2026-06-12 02:59:39 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 02:59:44 mouse release below drag threshold; probing selection
+2026-06-12 02:59:44 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 02:59:53 mouse release below drag threshold; probing selection
+2026-06-12 02:59:54 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 02:59:55 mouse release below drag threshold; probing selection
+2026-06-12 02:59:56 selection captured once reader='word_selection' len=1 signature=('word_selection', 131970, 0, 1, 'W')
+2026-06-12 02:59:58 mouse release below drag threshold; probing selection
+2026-06-12 02:59:59 word selection probe timed out hwnd=131970
+2026-06-12 02:59:59 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:00:06 mouse release below drag threshold; probing selection
+2026-06-12 03:00:06 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 03:00:08 mouse release below drag threshold; probing selection
+2026-06-12 03:00:08 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 03:00:09 mouse release below drag threshold; probing selection
+2026-06-12 03:00:09 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 03:00:15 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 03:00:16 mouse release below drag threshold; probing selection
+2026-06-12 03:00:18 word selection probe timed out hwnd=131970
+2026-06-12 03:00:18 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:00:32 mouse release below drag threshold; probing selection
+2026-06-12 03:00:32 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 03:00:33 mouse release below drag threshold; probing selection
+2026-06-12 03:00:34 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:00:36 mouse release below drag threshold; probing selection
+2026-06-12 03:00:37 selection release skipped unsupported process='' hwnd=0
+2026-06-12 03:00:37 mouse release below drag threshold; probing selection
+2026-06-12 03:00:37 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:02:54 mouse release below drag threshold; probing selection
+2026-06-12 03:02:54 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:03:24 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:03:24 mouse release below drag threshold; probing selection
+2026-06-12 03:03:25 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:03:26 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:03:26 mouse release below drag threshold; probing selection
+2026-06-12 03:03:26 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:03:28 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:03:40 mouse release below drag threshold; probing selection
+2026-06-12 03:03:41 selection release skipped unsupported process='explorer.exe' hwnd=131944
+2026-06-12 03:04:00 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:04:04 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:04:10 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:04:11 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:04:19 mouse release below drag threshold; probing selection
+2026-06-12 03:04:19 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:04:27 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:05:17 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:05:17 mouse release below drag threshold; probing selection
+2026-06-12 03:05:18 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:05:30 mouse release below drag threshold; probing selection
+2026-06-12 03:05:31 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:05:34 mouse release below drag threshold; probing selection
+2026-06-12 03:05:34 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:05:36 mouse release below drag threshold; probing selection
+2026-06-12 03:05:36 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:05:37 mouse release below drag threshold; probing selection
+2026-06-12 03:05:37 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:06:15 mouse release below drag threshold; probing selection
+2026-06-12 03:06:15 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:06:35 mouse release below drag threshold; probing selection
+2026-06-12 03:06:36 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:06:36 mouse release below drag threshold; probing selection
+2026-06-12 03:06:37 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:06:38 mouse release below drag threshold; probing selection
+2026-06-12 03:06:38 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:07:15 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:07:23 mouse release below drag threshold; probing selection
+2026-06-12 03:07:23 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:07:24 mouse release below drag threshold; probing selection
+2026-06-12 03:07:25 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:07:34 mouse release below drag threshold; probing selection
+2026-06-12 03:07:34 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:07:42 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:08:35 mouse release below drag threshold; probing selection
+2026-06-12 03:08:35 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:08:39 mouse release below drag threshold; probing selection
+2026-06-12 03:08:40 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:20 mouse release below drag threshold; probing selection
+2026-06-12 03:11:20 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:24 mouse release below drag threshold; probing selection
+2026-06-12 03:11:25 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:26 mouse release below drag threshold; probing selection
+2026-06-12 03:11:26 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:27 mouse release below drag threshold; probing selection
+2026-06-12 03:11:27 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:28 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:28 mouse release below drag threshold; probing selection
+2026-06-12 03:11:28 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:30 mouse release below drag threshold; probing selection
+2026-06-12 03:11:30 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:40 mouse release below drag threshold; probing selection
+2026-06-12 03:11:41 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:43 mouse release below drag threshold; probing selection
+2026-06-12 03:11:43 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:11:54 mouse release below drag threshold; probing selection
+2026-06-12 03:11:55 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:12:34 mouse release below drag threshold; probing selection
+2026-06-12 03:12:35 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:12:47 mouse release below drag threshold; probing selection
+2026-06-12 03:12:47 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 03:12:48 selection release skipped unsupported process='python.exe' hwnd=1968194
+2026-06-12 03:12:49 mouse release below drag threshold; probing selection
+2026-06-12 03:31:38 mouse release below drag threshold; probing selection
+2026-06-12 03:31:39 word selection probe timed out hwnd=131970
+2026-06-12 03:31:39 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 03:31:40 mouse release below drag threshold; probing selection
+2026-06-12 03:31:41 word selection probe timed out hwnd=131970
+2026-06-12 03:31:41 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 03:31:42 mouse release below drag threshold; probing selection
+2026-06-12 03:31:43 selection captured once reader='word_selection' len=13 signature=('word_selection', 131970, 50, 63, '잘 있어요 다시 만너요\n')
+2026-06-12 03:32:02 mouse release below drag threshold; probing selection
+2026-06-12 03:32:08 selection release skipped unsupported process='python.exe' hwnd=3279342
+2026-06-12 03:32:54 mouse release below drag threshold; probing selection
+2026-06-12 03:32:55 word selection probe timed out hwnd=131970
+2026-06-12 03:32:55 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:33:02 mouse release below drag threshold; probing selection
+2026-06-12 03:33:03 word selection probe timed out hwnd=131970
+2026-06-12 03:33:03 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:33:11 mouse release below drag threshold; probing selection
+2026-06-12 03:33:11 selection captured once reader='word_selection' len=29 signature=('word_selection', 131970, 38, 67, '안녕하세요. 싫어해요.\n\n잘 있어요. 다시 만나요.\n')
+2026-06-12 03:33:29 mouse release below drag threshold; probing selection
+2026-06-12 03:33:30 word selection probe timed out hwnd=131970
+2026-06-12 03:33:30 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:33:37 mouse release below drag threshold; probing selection
+2026-06-12 03:33:37 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:33:39 mouse release below drag threshold; probing selection
+2026-06-12 03:33:39 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:33:53 mouse release below drag threshold; probing selection
+2026-06-12 03:33:53 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:33:57 mouse release below drag threshold; probing selection
+2026-06-12 03:33:58 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:34:01 mouse release below drag threshold; probing selection
+2026-06-12 03:34:01 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:34:02 mouse release below drag threshold; probing selection
+2026-06-12 03:34:03 word selection probe timed out hwnd=131970
+2026-06-12 03:34:03 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:34:05 selection captured once reader='word_selection' len=25 signature=('word_selection', 131970, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 03:34:06 mouse release below drag threshold; probing selection
+2026-06-12 03:34:07 selection captured once reader='word_selection' len=25 signature=('word_selection', 131970, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 03:34:48 mouse release below drag threshold; probing selection
+2026-06-12 03:34:49 word selection probe timed out hwnd=131970
+2026-06-12 03:34:49 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:35:15 mouse release below drag threshold; probing selection
+2026-06-12 03:35:15 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:35:16 mouse release below drag threshold; probing selection
+2026-06-12 03:35:16 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:35:17 mouse release below drag threshold; probing selection
+2026-06-12 03:35:18 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:35:47 selection release skipped unsupported process='screenclippinghost.exe' hwnd=4786398
+2026-06-12 03:35:52 mouse release below drag threshold; probing selection
+2026-06-12 03:35:52 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:35:53 mouse release below drag threshold; probing selection
+2026-06-12 03:35:53 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:36:21 mouse release below drag threshold; probing selection
+2026-06-12 03:36:21 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:36:24 mouse release below drag threshold; probing selection
+2026-06-12 03:36:25 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:37:10 mouse release below drag threshold; probing selection
+2026-06-12 03:37:10 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:37:19 mouse release below drag threshold; probing selection
+2026-06-12 03:37:19 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:37:20 mouse release below drag threshold; probing selection
+2026-06-12 03:37:21 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:37:31 mouse release below drag threshold; probing selection
+2026-06-12 03:37:32 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:38:26 mouse release below drag threshold; probing selection
+2026-06-12 03:38:26 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:38:52 mouse release below drag threshold; probing selection
+2026-06-12 03:38:54 word selection probe timed out hwnd=131970
+2026-06-12 03:38:54 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=True
+2026-06-12 03:38:55 mouse release below drag threshold; probing selection
+2026-06-12 03:38:55 selection release skipped unsupported process='python.exe' hwnd=3342646
+2026-06-12 03:39:18 mouse release below drag threshold; probing selection
+2026-06-12 03:50:02 mouse release below drag threshold; probing selection
+2026-06-12 03:50:03 word selection probe timed out hwnd=131970
+2026-06-12 03:50:03 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 03:50:10 mouse release below drag threshold; probing selection
+2026-06-12 03:50:12 mouse release below drag threshold; probing selection
+2026-06-12 03:50:13 word selection probe timed out hwnd=131970
+2026-06-12 03:50:13 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 03:50:20 mouse release below drag threshold; probing selection
+2026-06-12 03:50:24 mouse release below drag threshold; probing selection
+2026-06-12 03:50:26 word selection probe timed out hwnd=131970
+2026-06-12 03:50:26 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 03:50:30 mouse release below drag threshold; probing selection
+2026-06-12 03:50:42 selection release skipped unsupported process='python.exe' hwnd=8260446
+2026-06-12 03:52:12 mouse release below drag threshold; probing selection
+2026-06-12 03:52:13 word selection probe timed out hwnd=131970
+2026-06-12 03:52:13 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 03:52:30 mouse release below drag threshold; probing selection
+2026-06-12 03:52:31 word selection probe timed out hwnd=131970
+2026-06-12 03:52:31 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 03:52:34 selection release skipped unsupported process='screenclippinghost.exe' hwnd=5046582
+2026-06-12 03:52:46 selection release skipped unsupported process='screenclippinghost.exe' hwnd=5046582
+2026-06-12 03:52:51 mouse release below drag threshold; probing selection
+2026-06-12 03:52:51 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:52:57 mouse release below drag threshold; probing selection
+2026-06-12 03:52:57 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:52:57 mouse release below drag threshold; probing selection
+2026-06-12 03:52:57 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:53:04 mouse release below drag threshold; probing selection
+2026-06-12 03:53:05 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:53:07 mouse release below drag threshold; probing selection
+2026-06-12 03:53:07 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:53:09 mouse release below drag threshold; probing selection
+2026-06-12 03:53:09 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:53:35 mouse release below drag threshold; probing selection
+2026-06-12 03:53:36 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:53:58 mouse release below drag threshold; probing selection
+2026-06-12 03:53:58 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:54:28 mouse release below drag threshold; probing selection
+2026-06-12 03:54:28 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:54:33 mouse release below drag threshold; probing selection
+2026-06-12 03:54:34 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:54:34 mouse release below drag threshold; probing selection
+2026-06-12 03:54:35 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:54:36 mouse release below drag threshold; probing selection
+2026-06-12 03:54:36 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:54:36 mouse release below drag threshold; probing selection
+2026-06-12 03:54:36 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:54:39 mouse release below drag threshold; probing selection
+2026-06-12 03:54:39 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:55:39 mouse release below drag threshold; probing selection
+2026-06-12 03:55:39 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:55:43 mouse release below drag threshold; probing selection
+2026-06-12 03:55:43 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:55:49 mouse release below drag threshold; probing selection
+2026-06-12 03:55:49 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:55:49 mouse release below drag threshold; probing selection
+2026-06-12 03:55:50 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:55:50 mouse release below drag threshold; probing selection
+2026-06-12 03:55:50 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:57:07 mouse release below drag threshold; probing selection
+2026-06-12 03:57:07 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:57:15 mouse release below drag threshold; probing selection
+2026-06-12 03:57:15 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:57:20 mouse release below drag threshold; probing selection
+2026-06-12 03:57:21 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:57:21 mouse release below drag threshold; probing selection
+2026-06-12 03:57:21 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:57:28 mouse release below drag threshold; probing selection
+2026-06-12 03:57:28 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 03:57:44 mouse release below drag threshold; probing selection
+2026-06-12 03:57:44 selection release skipped unsupported process='code.exe' hwnd=853870
+2026-06-12 04:03:57 mouse release below drag threshold; probing selection
+2026-06-12 04:03:58 selection release skipped unsupported process='python.exe' hwnd=5769890
+2026-06-12 04:03:59 mouse release below drag threshold; probing selection
+2026-06-12 04:04:45 mouse release below drag threshold; probing selection
+2026-06-12 04:04:46 word selection probe timed out hwnd=131970
+2026-06-12 04:04:46 empty selection ignored below drag threshold reader='word_selection' hwnd=131970 had_previous=False
+2026-06-12 04:04:55 mouse release below drag threshold; probing selection
+2026-06-12 06:53:28 mouse release below drag threshold; probing selection
+2026-06-12 06:53:29 selection release skipped unsupported process='searchapp.exe' hwnd=262918
+2026-06-12 06:53:31 mouse release below drag threshold; probing selection
+2026-06-12 06:53:31 selection release skipped unsupported process='explorer.exe' hwnd=66084
+2026-06-12 06:53:47 mouse release below drag threshold; probing selection
+2026-06-12 06:53:48 word selection probe timed out hwnd=197598
+2026-06-12 06:53:48 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 06:53:56 mouse release below drag threshold; probing selection
+2026-06-12 06:53:57 selection captured once reader='word_selection' len=4 signature=('word_selection', 197598, 58, 62, ' 만너요')
+2026-06-12 06:54:00 mouse release below drag threshold; probing selection
+2026-06-12 06:54:03 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:54:07 mouse release below drag threshold; probing selection
+2026-06-12 06:54:08 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 06:54:39 mouse release below drag threshold; probing selection
+2026-06-12 06:54:39 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:54:41 mouse release below drag threshold; probing selection
+2026-06-12 06:54:42 selection captured once reader='word_selection' len=27 signature=('word_selection', 197598, 38, 65, '안녕하세요. 반가워요\n\n잘 있어요. 다시 만나요\n')
+2026-06-12 06:54:46 mouse release below drag threshold; probing selection
+2026-06-12 06:54:47 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, 'W')
+2026-06-12 06:54:48 mouse release below drag threshold; probing selection
+2026-06-12 06:54:51 selection release skipped unsupported process='' hwnd=0
+2026-06-12 06:54:57 mouse release below drag threshold; probing selection
+2026-06-12 06:54:58 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:55:02 mouse release below drag threshold; probing selection
+2026-06-12 06:55:03 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, 'W')
+2026-06-12 06:55:03 mouse release below drag threshold; probing selection
+2026-06-12 06:55:04 word selection probe timed out hwnd=197598
+2026-06-12 06:55:04 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:55:05 mouse release below drag threshold; probing selection
+2026-06-12 06:55:05 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:55:06 mouse release below drag threshold; probing selection
+2026-06-12 06:55:06 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:55:07 mouse release below drag threshold; probing selection
+2026-06-12 06:55:07 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:55:08 mouse release below drag threshold; probing selection
+2026-06-12 06:55:09 word selection probe timed out hwnd=197598
+2026-06-12 06:55:09 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:55:09 mouse release below drag threshold; probing selection
+2026-06-12 06:55:10 word selection probe timed out hwnd=197598
+2026-06-12 06:55:10 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:55:11 mouse release below drag threshold; probing selection
+2026-06-12 06:55:12 selection captured once reader='word_selection' len=27 signature=('word_selection', 197598, 38, 65, '안녕하세요. 반가워요\n\n잘 있어요. 다시 만나요\n')
+2026-06-12 06:55:12 mouse release below drag threshold; probing selection
+2026-06-12 06:55:14 word selection probe timed out hwnd=197598
+2026-06-12 06:55:14 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:55:14 mouse release below drag threshold; probing selection
+2026-06-12 06:55:14 selection captured once reader='word_selection' len=27 signature=('word_selection', 197598, 38, 65, '안녕하세요. 반가워요\n\n잘 있어요. 다시 만나요\n')
+2026-06-12 06:55:16 mouse release below drag threshold; probing selection
+2026-06-12 06:55:17 word selection probe timed out hwnd=197598
+2026-06-12 06:55:17 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:55:18 mouse release below drag threshold; probing selection
+2026-06-12 06:55:18 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:55:19 mouse release below drag threshold; probing selection
+2026-06-12 06:55:19 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:55:35 mouse release below drag threshold; probing selection
+2026-06-12 06:55:35 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:55:37 mouse release below drag threshold; probing selection
+2026-06-12 06:55:38 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:55:39 mouse release below drag threshold; probing selection
+2026-06-12 06:55:40 word selection probe timed out hwnd=197598
+2026-06-12 06:55:40 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:55:41 mouse release below drag threshold; probing selection
+2026-06-12 06:55:41 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 06:55:42 mouse release below drag threshold; probing selection
+2026-06-12 06:55:42 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 06:55:59 mouse release below drag threshold; probing selection
+2026-06-12 06:56:00 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:56:01 mouse release below drag threshold; probing selection
+2026-06-12 06:56:01 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:56:02 mouse release below drag threshold; probing selection
+2026-06-12 06:56:02 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:56:21 mouse release below drag threshold; probing selection
+2026-06-12 06:56:21 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:56:21 mouse release below drag threshold; probing selection
+2026-06-12 06:56:22 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:56:23 mouse release below drag threshold; probing selection
+2026-06-12 06:56:23 selection captured once reader='word_selection' len=27 signature=('word_selection', 197598, 38, 65, '안녕하세요. 반가워요\n\n잘 있어요. 다시 만나요\n')
+2026-06-12 06:56:31 mouse release below drag threshold; probing selection
+2026-06-12 06:56:31 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 06:56:32 mouse release below drag threshold; probing selection
+2026-06-12 06:56:33 selection captured once reader='word_selection' len=27 signature=('word_selection', 197598, 38, 65, '안녕하세요. 반가워요\n\n잘 있어요. 다시 만나요\n')
+2026-06-12 06:56:39 mouse release below drag threshold; probing selection
+2026-06-12 06:56:40 word selection probe timed out hwnd=197598
+2026-06-12 06:56:40 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:56:42 mouse release below drag threshold; probing selection
+2026-06-12 06:56:43 word selection probe timed out hwnd=197598
+2026-06-12 06:56:43 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:56:45 mouse release below drag threshold; probing selection
+2026-06-12 06:56:45 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:56:46 mouse release below drag threshold; probing selection
+2026-06-12 06:56:46 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:56:46 mouse release below drag threshold; probing selection
+2026-06-12 06:56:47 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:56:49 mouse release below drag threshold; probing selection
+2026-06-12 06:56:49 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, 'W')
+2026-06-12 06:56:51 mouse release below drag threshold; probing selection
+2026-06-12 06:56:52 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:56:55 mouse release below drag threshold; probing selection
+2026-06-12 06:56:56 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 06:56:57 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 38, 63, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 06:57:00 mouse release below drag threshold; probing selection
+2026-06-12 06:57:00 selection release skipped unsupported process='python.exe' hwnd=263814
+2026-06-12 06:57:04 mouse release below drag threshold; probing selection
+2026-06-12 06:57:05 word selection probe timed out hwnd=197598
+2026-06-12 06:57:05 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:57:07 mouse release below drag threshold; probing selection
+2026-06-12 06:57:08 word selection probe timed out hwnd=197598
+2026-06-12 06:57:08 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:57:32 mouse release below drag threshold; probing selection
+2026-06-12 06:57:34 word selection probe timed out hwnd=197598
+2026-06-12 06:57:34 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:57:38 mouse release below drag threshold; probing selection
+2026-06-12 06:57:39 word selection probe timed out hwnd=197598
+2026-06-12 06:57:39 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:57:40 mouse release below drag threshold; probing selection
+2026-06-12 06:57:41 word selection probe timed out hwnd=197598
+2026-06-12 06:57:41 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 06:57:53 selection release skipped unsupported process='screenclippinghost.exe' hwnd=919600
+2026-06-12 06:57:56 mouse release below drag threshold; probing selection
+2026-06-12 06:57:56 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 06:58:14 mouse release below drag threshold; probing selection
+2026-06-12 06:58:14 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 06:58:15 mouse release below drag threshold; probing selection
+2026-06-12 06:58:15 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:01:16 mouse release below drag threshold; probing selection
+2026-06-12 07:01:16 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:01:28 mouse release below drag threshold; probing selection
+2026-06-12 07:01:28 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:01:31 mouse release below drag threshold; probing selection
+2026-06-12 07:01:32 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:01:33 mouse release below drag threshold; probing selection
+2026-06-12 07:01:33 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:01:34 mouse release below drag threshold; probing selection
+2026-06-12 07:01:34 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:02:19 mouse release below drag threshold; probing selection
+2026-06-12 07:02:19 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:22 mouse release below drag threshold; probing selection
+2026-06-12 07:02:22 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:22 mouse release below drag threshold; probing selection
+2026-06-12 07:02:22 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:23 mouse release below drag threshold; probing selection
+2026-06-12 07:02:23 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:24 mouse release below drag threshold; probing selection
+2026-06-12 07:02:24 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:30 mouse release below drag threshold; probing selection
+2026-06-12 07:02:31 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:32 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:33 mouse release below drag threshold; probing selection
+2026-06-12 07:02:33 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:36 mouse release below drag threshold; probing selection
+2026-06-12 07:02:36 selection release skipped unsupported process='python.exe' hwnd=394830
+2026-06-12 07:02:37 mouse release below drag threshold; probing selection
+2026-06-12 07:02:46 mouse release below drag threshold; probing selection
+2026-06-12 07:02:46 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:46 mouse release below drag threshold; probing selection
+2026-06-12 07:02:47 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:02:47 mouse release below drag threshold; probing selection
+2026-06-12 07:02:48 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:02:48 mouse release below drag threshold; probing selection
+2026-06-12 07:02:49 word selection probe timed out hwnd=197598
+2026-06-12 07:02:49 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:03:20 mouse release below drag threshold; probing selection
+2026-06-12 07:03:21 word selection probe timed out hwnd=197598
+2026-06-12 07:03:21 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:03:21 mouse release below drag threshold; probing selection
+2026-06-12 07:03:23 word selection probe timed out hwnd=197598
+2026-06-12 07:03:23 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:03:27 mouse release below drag threshold; probing selection
+2026-06-12 07:03:35 selection release skipped unsupported process='python.exe' hwnd=329350
+2026-06-12 07:04:17 mouse release below drag threshold; probing selection
+2026-06-12 07:04:19 word selection probe timed out hwnd=197598
+2026-06-12 07:04:19 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:04:21 mouse release below drag threshold; probing selection
+2026-06-12 07:04:22 word selection probe timed out hwnd=197598
+2026-06-12 07:04:22 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:04:35 mouse release below drag threshold; probing selection
+2026-06-12 07:04:37 word selection probe timed out hwnd=197598
+2026-06-12 07:04:37 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:04:38 mouse release below drag threshold; probing selection
+2026-06-12 07:04:39 word selection probe timed out hwnd=197598
+2026-06-12 07:04:39 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:04:40 mouse release below drag threshold; probing selection
+2026-06-12 07:04:40 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:04:41 mouse release below drag threshold; probing selection
+2026-06-12 07:04:41 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:04:43 mouse release below drag threshold; probing selection
+2026-06-12 07:04:44 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:05:13 mouse release below drag threshold; probing selection
+2026-06-12 07:05:14 word selection probe timed out hwnd=197598
+2026-06-12 07:05:14 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:05:21 mouse release below drag threshold; probing selection
+2026-06-12 07:05:22 word selection probe timed out hwnd=197598
+2026-06-12 07:05:22 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:05:26 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 0, 25, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 07:05:35 mouse release below drag threshold; probing selection
+2026-06-12 07:05:35 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 0, 25, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 07:05:42 mouse release below drag threshold; probing selection
+2026-06-12 07:05:43 word selection probe timed out hwnd=197598
+2026-06-12 07:05:43 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:05:48 mouse release below drag threshold; probing selection
+2026-06-12 07:05:49 word selection probe timed out hwnd=197598
+2026-06-12 07:05:49 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:05:51 mouse release below drag threshold; probing selection
+2026-06-12 07:05:52 word selection probe timed out hwnd=197598
+2026-06-12 07:05:52 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:06:09 mouse release below drag threshold; probing selection
+2026-06-12 07:06:10 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:11 mouse release below drag threshold; probing selection
+2026-06-12 07:06:11 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:12 mouse release below drag threshold; probing selection
+2026-06-12 07:06:12 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:17 mouse release below drag threshold; probing selection
+2026-06-12 07:06:18 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:19 mouse release below drag threshold; probing selection
+2026-06-12 07:06:19 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:21 mouse release below drag threshold; probing selection
+2026-06-12 07:06:21 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:26 mouse release below drag threshold; probing selection
+2026-06-12 07:06:26 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:27 mouse release below drag threshold; probing selection
+2026-06-12 07:06:27 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:28 mouse release below drag threshold; probing selection
+2026-06-12 07:06:29 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:30 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:31 mouse release below drag threshold; probing selection
+2026-06-12 07:06:32 word selection probe timed out hwnd=197598
+2026-06-12 07:06:32 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:06:34 mouse release below drag threshold; probing selection
+2026-06-12 07:06:35 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:36 mouse release below drag threshold; probing selection
+2026-06-12 07:06:36 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:36 mouse release below drag threshold; probing selection
+2026-06-12 07:06:37 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:42 mouse release below drag threshold; probing selection
+2026-06-12 07:06:43 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:43 mouse release below drag threshold; probing selection
+2026-06-12 07:06:43 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:47 mouse release below drag threshold; probing selection
+2026-06-12 07:06:48 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:55 mouse release below drag threshold; probing selection
+2026-06-12 07:06:55 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:56 mouse release below drag threshold; probing selection
+2026-06-12 07:06:56 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:06:58 mouse release below drag threshold; probing selection
+2026-06-12 07:07:00 word selection probe timed out hwnd=197598
+2026-06-12 07:07:00 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:07:00 mouse release below drag threshold; probing selection
+2026-06-12 07:07:00 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:09:34 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:09:34 mouse release below drag threshold; probing selection
+2026-06-12 07:09:34 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:10:48 mouse release below drag threshold; probing selection
+2026-06-12 07:10:49 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:11:14 mouse release below drag threshold; probing selection
+2026-06-12 07:11:14 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:11:17 mouse release below drag threshold; probing selection
+2026-06-12 07:11:18 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:11:19 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:11:51 mouse release below drag threshold; probing selection
+2026-06-12 07:11:51 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:11:53 mouse release below drag threshold; probing selection
+2026-06-12 07:11:54 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:12:00 mouse release below drag threshold; probing selection
+2026-06-12 07:12:00 selection release skipped unsupported process='' hwnd=0
+2026-06-12 07:12:01 mouse release below drag threshold; probing selection
+2026-06-12 07:12:01 selection release skipped unsupported process='shellexperiencehost.exe' hwnd=1770912
+2026-06-12 07:12:03 mouse release below drag threshold; probing selection
+2026-06-12 07:12:03 selection release skipped unsupported process='shellexperiencehost.exe' hwnd=1770912
+2026-06-12 07:12:04 mouse release below drag threshold; probing selection
+2026-06-12 07:12:04 selection release skipped unsupported process='shellexperiencehost.exe' hwnd=1770912
+2026-06-12 07:12:06 mouse release below drag threshold; probing selection
+2026-06-12 07:12:06 selection release skipped unsupported process='shellexperiencehost.exe' hwnd=1770912
+2026-06-12 07:12:07 mouse release below drag threshold; probing selection
+2026-06-12 07:12:07 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:12:08 mouse release below drag threshold; probing selection
+2026-06-12 07:12:09 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:12:37 mouse release below drag threshold; probing selection
+2026-06-12 07:12:37 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:12:48 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:12:51 mouse release below drag threshold; probing selection
+2026-06-12 07:12:51 selection release skipped unsupported process='searchapp.exe' hwnd=262918
+2026-06-12 07:12:53 mouse release below drag threshold; probing selection
+2026-06-12 07:12:54 selection release skipped unsupported process='explorer.exe' hwnd=66084
+2026-06-12 07:12:56 mouse release below drag threshold; probing selection
+2026-06-12 07:12:56 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:12:58 mouse release below drag threshold; probing selection
+2026-06-12 07:12:58 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:13:00 mouse release below drag threshold; probing selection
+2026-06-12 07:13:01 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:14:29 mouse release below drag threshold; probing selection
+2026-06-12 07:14:30 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:14:53 mouse release below drag threshold; probing selection
+2026-06-12 07:14:54 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:14:54 mouse release below drag threshold; probing selection
+2026-06-12 07:14:55 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:14:55 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:14:56 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:14:58 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:16:23 mouse release below drag threshold; probing selection
+2026-06-12 07:16:23 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:16:29 mouse release below drag threshold; probing selection
+2026-06-12 07:16:29 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:16:30 mouse release below drag threshold; probing selection
+2026-06-12 07:16:30 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:16:31 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:16:32 mouse release below drag threshold; probing selection
+2026-06-12 07:16:32 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:17:08 mouse release below drag threshold; probing selection
+2026-06-12 07:17:09 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:17:11 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:17:17 mouse release below drag threshold; probing selection
+2026-06-12 07:17:17 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:17:28 mouse release below drag threshold; probing selection
+2026-06-12 07:17:28 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:17:30 mouse release below drag threshold; probing selection
+2026-06-12 07:17:31 word selection probe timed out hwnd=197598
+2026-06-12 07:17:31 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:17:32 mouse release below drag threshold; probing selection
+2026-06-12 07:17:33 word selection probe timed out hwnd=197598
+2026-06-12 07:17:33 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:17:45 mouse release below drag threshold; probing selection
+2026-06-12 07:17:47 selection release skipped unsupported process='python.exe' hwnd=329350
+2026-06-12 07:17:54 mouse release below drag threshold; probing selection
+2026-06-12 07:17:54 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:17:57 mouse release below drag threshold; probing selection
+2026-06-12 07:17:58 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:18:01 mouse release below drag threshold; probing selection
+2026-06-12 07:18:01 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:18:16 mouse release below drag threshold; probing selection
+2026-06-12 07:18:17 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:17 mouse release below drag threshold; probing selection
+2026-06-12 07:18:18 selection release skipped unsupported process='explorer.exe' hwnd=65834
+2026-06-12 07:18:18 mouse release below drag threshold; probing selection
+2026-06-12 07:18:18 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:18:19 mouse release below drag threshold; probing selection
+2026-06-12 07:18:19 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:20 mouse release below drag threshold; probing selection
+2026-06-12 07:18:22 word selection probe timed out hwnd=197598
+2026-06-12 07:18:22 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:18:22 mouse release below drag threshold; probing selection
+2026-06-12 07:18:25 selection release skipped unsupported process='python.exe' hwnd=329350
+2026-06-12 07:18:29 mouse release below drag threshold; probing selection
+2026-06-12 07:18:29 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:31 mouse release below drag threshold; probing selection
+2026-06-12 07:18:31 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:32 mouse release below drag threshold; probing selection
+2026-06-12 07:18:32 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:34 mouse release below drag threshold; probing selection
+2026-06-12 07:18:35 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:35 mouse release below drag threshold; probing selection
+2026-06-12 07:18:36 word selection probe timed out hwnd=197598
+2026-06-12 07:18:36 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:18:37 mouse release below drag threshold; probing selection
+2026-06-12 07:18:37 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:38 mouse release below drag threshold; probing selection
+2026-06-12 07:18:39 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:18:39 mouse release below drag threshold; probing selection
+2026-06-12 07:18:40 word selection probe timed out hwnd=197598
+2026-06-12 07:18:40 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:18:41 mouse release below drag threshold; probing selection
+2026-06-12 07:18:42 word selection probe timed out hwnd=197598
+2026-06-12 07:18:42 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:18:44 mouse release below drag threshold; probing selection
+2026-06-12 07:18:45 word selection probe timed out hwnd=197598
+2026-06-12 07:18:45 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:18:45 mouse release below drag threshold; probing selection
+2026-06-12 07:18:46 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:19:17 mouse release below drag threshold; probing selection
+2026-06-12 07:19:17 selection release skipped unsupported process='explorer.exe' hwnd=65834
+2026-06-12 07:19:17 mouse release below drag threshold; probing selection
+2026-06-12 07:19:18 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:19:18 mouse release below drag threshold; probing selection
+2026-06-12 07:19:19 word selection probe timed out hwnd=197598
+2026-06-12 07:19:19 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:19:20 mouse release below drag threshold; probing selection
+2026-06-12 07:19:21 word selection probe timed out hwnd=197598
+2026-06-12 07:19:21 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:19:22 mouse release below drag threshold; probing selection
+2026-06-12 07:19:22 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:19:26 mouse release below drag threshold; probing selection
+2026-06-12 07:19:26 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:19:29 mouse release below drag threshold; probing selection
+2026-06-12 07:19:29 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:19:36 mouse release below drag threshold; probing selection
+2026-06-12 07:19:37 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:19:38 mouse release below drag threshold; probing selection
+2026-06-12 07:19:38 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:19:39 mouse release below drag threshold; probing selection
+2026-06-12 07:19:40 word selection probe timed out hwnd=197598
+2026-06-12 07:19:40 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:19:46 mouse release below drag threshold; probing selection
+2026-06-12 07:19:47 word selection probe timed out hwnd=197598
+2026-06-12 07:19:47 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:19:52 mouse release below drag threshold; probing selection
+2026-06-12 07:19:53 selection captured once reader='word_selection' len=10 signature=('word_selection', 197598, 30, 40, '\n김자원\n\n김자원\n')
+2026-06-12 07:19:54 mouse release below drag threshold; probing selection
+2026-06-12 07:19:54 mouse release below drag threshold; probing selection
+2026-06-12 07:19:57 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 0, 25, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 07:20:03 mouse release below drag threshold; probing selection
+2026-06-12 07:20:03 selection release skipped unsupported process='python.exe' hwnd=15468154
+2026-06-12 07:20:04 mouse release below drag threshold; probing selection
+2026-06-12 07:20:05 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:20:06 mouse release below drag threshold; probing selection
+2026-06-12 07:20:06 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:20:07 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:21:17 mouse release below drag threshold; probing selection
+2026-06-12 07:21:17 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:21:20 mouse release below drag threshold; probing selection
+2026-06-12 07:21:21 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 0, 25, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 07:21:22 mouse release below drag threshold; probing selection
+2026-06-12 07:21:22 selection release skipped unsupported process='python.exe' hwnd=15468154
+2026-06-12 07:21:29 mouse release below drag threshold; probing selection
+2026-06-12 07:21:32 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 0, 25, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 07:21:44 mouse release below drag threshold; probing selection
+2026-06-12 07:21:44 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:21:51 mouse release below drag threshold; probing selection
+2026-06-12 07:21:53 word selection probe timed out hwnd=197598
+2026-06-12 07:21:53 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:21:58 mouse release below drag threshold; probing selection
+2026-06-12 07:22:00 word selection probe timed out hwnd=197598
+2026-06-12 07:22:00 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:22:04 mouse release below drag threshold; probing selection
+2026-06-12 07:22:06 word selection probe timed out hwnd=197598
+2026-06-12 07:22:06 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:22:07 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:22:08 mouse release below drag threshold; probing selection
+2026-06-12 07:22:08 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:22:19 mouse release below drag threshold; probing selection
+2026-06-12 07:22:19 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:22:19 mouse release below drag threshold; probing selection
+2026-06-12 07:22:20 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:23:00 mouse release below drag threshold; probing selection
+2026-06-12 07:23:00 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:23:07 mouse release below drag threshold; probing selection
+2026-06-12 07:23:07 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:24:16 mouse release below drag threshold; probing selection
+2026-06-12 07:24:16 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:24:19 mouse release below drag threshold; probing selection
+2026-06-12 07:24:20 word selection probe timed out hwnd=197598
+2026-06-12 07:24:20 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:24:21 mouse release below drag threshold; probing selection
+2026-06-12 07:24:22 word selection probe timed out hwnd=197598
+2026-06-12 07:24:22 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:24:23 mouse release below drag threshold; probing selection
+2026-06-12 07:24:25 word selection probe timed out hwnd=197598
+2026-06-12 07:24:25 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:24:25 mouse release below drag threshold; probing selection
+2026-06-12 07:24:26 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:24:27 mouse release below drag threshold; probing selection
+2026-06-12 07:24:28 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:24:58 mouse release below drag threshold; probing selection
+2026-06-12 07:24:58 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:24:59 mouse release below drag threshold; probing selection
+2026-06-12 07:25:00 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:27:12 selection release skipped unsupported process='explorer.exe' hwnd=65834
+2026-06-12 07:27:27 mouse release below drag threshold; probing selection
+2026-06-12 07:27:27 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:27:28 mouse release below drag threshold; probing selection
+2026-06-12 07:27:29 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:27:42 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:28:40 mouse release below drag threshold; probing selection
+2026-06-12 07:28:41 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:28:43 mouse release below drag threshold; probing selection
+2026-06-12 07:28:44 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:28:46 mouse release below drag threshold; probing selection
+2026-06-12 07:28:46 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:29:27 mouse release below drag threshold; probing selection
+2026-06-12 07:29:27 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:29:29 mouse release below drag threshold; probing selection
+2026-06-12 07:29:30 word selection probe timed out hwnd=197598
+2026-06-12 07:29:30 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:29:34 mouse release below drag threshold; probing selection
+2026-06-12 07:29:34 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:29:43 mouse release below drag threshold; probing selection
+2026-06-12 07:29:43 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:29:44 mouse release below drag threshold; probing selection
+2026-06-12 07:29:45 word selection probe timed out hwnd=197598
+2026-06-12 07:29:45 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:29:47 mouse release below drag threshold; probing selection
+2026-06-12 07:29:47 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:29:48 mouse release below drag threshold; probing selection
+2026-06-12 07:29:48 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:29:50 mouse release below drag threshold; probing selection
+2026-06-12 07:29:50 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:29:51 mouse release below drag threshold; probing selection
+2026-06-12 07:29:51 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:29:53 mouse release below drag threshold; probing selection
+2026-06-12 07:29:53 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:30:26 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:31:32 mouse release below drag threshold; probing selection
+2026-06-12 07:31:33 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:31:49 mouse release below drag threshold; probing selection
+2026-06-12 07:31:50 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:31:55 mouse release below drag threshold; probing selection
+2026-06-12 07:31:55 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:31:56 mouse release below drag threshold; probing selection
+2026-06-12 07:31:57 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:31:58 mouse release below drag threshold; probing selection
+2026-06-12 07:31:58 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:32:03 mouse release below drag threshold; probing selection
+2026-06-12 07:32:03 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:32:14 mouse release below drag threshold; probing selection
+2026-06-12 07:32:15 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:32:44 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:32:48 mouse release below drag threshold; probing selection
+2026-06-12 07:32:48 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:32:49 mouse release below drag threshold; probing selection
+2026-06-12 07:32:49 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:33:51 mouse release below drag threshold; probing selection
+2026-06-12 07:33:52 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:35:04 mouse release below drag threshold; probing selection
+2026-06-12 07:35:05 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:35:06 mouse release below drag threshold; probing selection
+2026-06-12 07:35:06 selection release skipped unsupported process='discord.exe' hwnd=4260582
+2026-06-12 07:35:11 mouse release below drag threshold; probing selection
+2026-06-12 07:35:12 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:35:26 mouse release below drag threshold; probing selection
+2026-06-12 07:35:28 word selection probe timed out hwnd=197598
+2026-06-12 07:35:28 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:35:28 mouse release below drag threshold; probing selection
+2026-06-12 07:35:29 word selection probe timed out hwnd=197598
+2026-06-12 07:35:29 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:35:32 mouse release below drag threshold; probing selection
+2026-06-12 07:35:32 selection captured once reader='word_selection' len=14 signature=('word_selection', 197598, 11, 25, '\n잘 있어요 다시 만너요\n')
+2026-06-12 07:35:37 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 0, 25, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 07:35:39 mouse release below drag threshold; probing selection
+2026-06-12 07:35:41 word selection probe timed out hwnd=197598
+2026-06-12 07:35:41 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:35:41 mouse release below drag threshold; probing selection
+2026-06-12 07:35:43 selection release skipped unsupported process='python.exe' hwnd=329350
+2026-06-12 07:35:46 mouse release below drag threshold; probing selection
+2026-06-12 07:35:46 selection release skipped unsupported process='python.exe' hwnd=2427098
+2026-06-12 07:35:49 mouse release below drag threshold; probing selection
+2026-06-12 07:35:49 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:35:50 mouse release below drag threshold; probing selection
+2026-06-12 07:35:51 selection release skipped unsupported process='python.exe' hwnd=2427098
+2026-06-12 07:35:55 selection release skipped unsupported process='screenclippinghost.exe' hwnd=329080
+2026-06-12 07:36:00 mouse release below drag threshold; probing selection
+2026-06-12 07:36:01 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:36:33 mouse release below drag threshold; probing selection
+2026-06-12 07:36:33 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:36:37 mouse release below drag threshold; probing selection
+2026-06-12 07:36:37 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:36:42 mouse release below drag threshold; probing selection
+2026-06-12 07:36:42 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:36:50 mouse release below drag threshold; probing selection
+2026-06-12 07:36:51 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:36:51 mouse release below drag threshold; probing selection
+2026-06-12 07:36:52 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:36:55 selection release skipped unsupported process='python.exe' hwnd=2427098
+2026-06-12 07:36:55 mouse release below drag threshold; probing selection
+2026-06-12 07:36:55 selection release skipped unsupported process='python.exe' hwnd=2427098
+2026-06-12 07:36:56 mouse release below drag threshold; probing selection
+2026-06-12 07:36:56 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:37:03 mouse release below drag threshold; probing selection
+2026-06-12 07:37:06 selection release skipped unsupported process='python.exe' hwnd=329350
+2026-06-12 07:37:07 mouse release below drag threshold; probing selection
+2026-06-12 07:37:07 selection release skipped unsupported process='python.exe' hwnd=2427098
+2026-06-12 07:37:08 mouse release below drag threshold; probing selection
+2026-06-12 07:37:09 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:37:10 mouse release below drag threshold; probing selection
+2026-06-12 07:37:10 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:37:11 mouse release below drag threshold; probing selection
+2026-06-12 07:37:11 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:37:35 mouse release below drag threshold; probing selection
+2026-06-12 07:37:35 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:37:36 mouse release below drag threshold; probing selection
+2026-06-12 07:37:36 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:37:41 mouse release below drag threshold; probing selection
+2026-06-12 07:37:43 word selection probe timed out hwnd=197598
+2026-06-12 07:37:43 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:37:47 word selection probe timed out hwnd=197598
+2026-06-12 07:37:47 selection read empty reader='word_selection' hwnd=197598 confirmed=True
+2026-06-12 07:37:47 selection cleared reader='word_selection' hwnd=197598 confirmed=True
+2026-06-12 07:37:52 mouse release below drag threshold; probing selection
+2026-06-12 07:37:52 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:37:53 mouse release below drag threshold; probing selection
+2026-06-12 07:37:53 empty selection ignored below drag threshold reader='notepad_selection' hwnd=460022 had_previous=False
+2026-06-12 07:37:55 mouse release below drag threshold; probing selection
+2026-06-12 07:37:55 selection release skipped unsupported process='code.exe' hwnd=198138
+2026-06-12 07:39:09 mouse release below drag threshold; probing selection
+2026-06-12 07:39:09 selection release skipped unsupported process='python.exe' hwnd=198746
+2026-06-12 07:39:11 mouse release below drag threshold; probing selection
+2026-06-12 07:47:57 mouse release below drag threshold; probing selection
+2026-06-12 07:47:58 word selection probe timed out hwnd=197598
+2026-06-12 07:47:58 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:48:00 mouse release below drag threshold; probing selection
+2026-06-12 07:48:01 word selection probe timed out hwnd=197598
+2026-06-12 07:48:01 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:48:08 mouse release below drag threshold; probing selection
+2026-06-12 07:48:09 word selection probe timed out hwnd=197598
+2026-06-12 07:48:09 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:48:21 mouse release below drag threshold; probing selection
+2026-06-12 07:48:22 selection captured once reader='word_selection' len=25 signature=('word_selection', 197598, 0, 25, '안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n')
+2026-06-12 07:48:28 mouse release below drag threshold; probing selection
+2026-06-12 07:48:29 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:48:31 mouse release below drag threshold; probing selection
+2026-06-12 07:48:31 selection release skipped unsupported process='python.exe' hwnd=657000
+2026-06-12 07:48:33 mouse release below drag threshold; probing selection
+2026-06-12 07:48:34 selection release skipped unsupported process='python.exe' hwnd=525958
+2026-06-12 07:48:41 selection captured once reader='word_selection' len=1 signature=('word_selection', 197598, 0, 1, '안')
+2026-06-12 07:48:43 mouse release below drag threshold; probing selection
+2026-06-12 07:48:44 word selection probe timed out hwnd=197598
+2026-06-12 07:48:44 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:48:44 mouse release below drag threshold; probing selection
+2026-06-12 07:48:45 word selection probe timed out hwnd=197598
+2026-06-12 07:48:45 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=True
+2026-06-12 07:48:48 mouse release below drag threshold; probing selection
+2026-06-12 07:48:52 selection release skipped unsupported process='python.exe' hwnd=264282
+2026-06-12 07:48:56 word selection probe timed out hwnd=197598
+2026-06-12 07:48:56 selection read empty reader='word_selection' hwnd=197598 confirmed=True
+2026-06-12 07:48:56 selection cleared reader='word_selection' hwnd=197598 confirmed=True
+2026-06-12 07:48:59 mouse release below drag threshold; probing selection
+2026-06-12 07:49:00 word selection probe timed out hwnd=197598
+2026-06-12 07:49:00 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:49:01 mouse release below drag threshold; probing selection
+2026-06-12 07:49:01 selection release skipped unsupported process='python.exe' hwnd=264282
+2026-06-12 07:49:08 mouse release below drag threshold; probing selection
+2026-06-12 07:49:09 word selection probe timed out hwnd=197598
+2026-06-12 07:49:09 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:49:10 mouse release below drag threshold; probing selection
+2026-06-12 07:49:11 word selection probe timed out hwnd=197598
+2026-06-12 07:49:11 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:49:14 mouse release below drag threshold; probing selection
+2026-06-12 07:49:14 selection release skipped unsupported process='python.exe' hwnd=526252
+2026-06-12 07:49:15 mouse release below drag threshold; probing selection
+2026-06-12 07:49:15 selection release skipped unsupported process='python.exe' hwnd=526252
+2026-06-12 07:49:16 mouse release below drag threshold; probing selection
+2026-06-12 07:49:16 selection release skipped unsupported process='python.exe' hwnd=526252
+2026-06-12 07:49:21 mouse release below drag threshold; probing selection
+2026-06-12 07:49:22 selection release skipped unsupported process='python.exe' hwnd=526252
+2026-06-12 07:49:23 mouse release below drag threshold; probing selection
+2026-06-12 07:49:24 word selection probe timed out hwnd=197598
+2026-06-12 07:49:24 empty selection ignored below drag threshold reader='word_selection' hwnd=197598 had_previous=False
+2026-06-12 07:49:30 mouse release below drag threshold; probing selection
+2026-06-12 07:49:31 selection release skipped unsupported process='python.exe' hwnd=526252
+2026-06-12 07:49:32 mouse release below drag threshold; probing selection

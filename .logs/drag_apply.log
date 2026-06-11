@@ -3498,3 +3498,346 @@
 2026-06-02 11:43:35 marker_replace_start mode='notepad_selection' start=17 end=23 source_len=23 original='다시 만너요' replacement='다시 만나요'
 2026-06-02 11:43:36 marker_replace_overlay_sync synced=True text_len=23
 2026-06-02 11:43:36 marker_replace_success live_start=17 live_end=23
+2026-06-03 13:37:47 tone_favorite_refresh_success count=1
+2026-06-05 03:19:14 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:14 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:14 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:15 selection_ready reader='word_selection' hwnd=198776 text_len=1
+2026-06-05 03:19:18 main_correction_word_focus_nudge focused=True had_selection=True hwnd=198776
+2026-06-05 03:19:18 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:19:19 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-05 03:19:19 immediate_selection_capture_success reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:19:19 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:19:19 apply_preflight_word_capture captured=True
+2026-06-05 03:19:19 inspect_result can_replace=True reason=''
+2026-06-05 03:19:44 apply_success reader='word_selection' hwnd=198776 text_len=38
+2026-06-05 03:19:44 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:19:49 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:49 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:50 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:52 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:52 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:52 selection_ready reader='word_selection' hwnd=198776 text_len=38
+2026-06-05 03:19:52 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 03:19:57 selection_ready reader='word_selection' hwnd=198776 text_len=38
+2026-06-05 03:20:16 selection_ready reader='word_selection' hwnd=198776 text_len=38
+2026-06-05 03:21:02 selection_ready reader='word_selection' hwnd=198776 text_len=38
+2026-06-05 03:25:30 selection_ready reader='word_selection' hwnd=198776 text_len=38
+2026-06-05 03:25:35 main_correction_word_focus_nudge focused=True had_selection=True hwnd=198776
+2026-06-05 03:25:35 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:25:36 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-05 03:25:36 immediate_selection_capture_success reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:25:36 apply_preflight_word_capture captured=True
+2026-06-05 03:25:36 inspect_result can_replace=True reason=''
+2026-06-05 03:25:51 apply_success reader='word_selection' hwnd=198776 text_len=24
+2026-06-05 03:25:51 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:25:59 selection_ready reader='word_selection' hwnd=198776 text_len=24
+2026-06-05 03:29:16 selection_ready reader='word_selection' hwnd=198776 text_len=24
+2026-06-05 03:29:20 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:29:20 main_correction_word_focus_nudge focused=True had_selection=True hwnd=198776
+2026-06-05 03:29:22 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-05 03:29:22 immediate_selection_capture_success reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:29:22 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 03:29:22 apply_preflight_word_capture captured=True
+2026-06-05 03:29:22 inspect_result can_replace=True reason=''
+2026-06-05 03:29:47 apply_success reader='word_selection' hwnd=198776 text_len=38
+2026-06-05 03:29:47 selection_ready reader='word_selection' hwnd=198776 text_len=25
+2026-06-05 11:05:31 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:05:31 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:05:32 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:05:32 selection_ready reader='word_selection' hwnd=198776 text_len=1
+2026-06-05 11:05:41 selection_ready reader='word_selection' hwnd=198776 text_len=18
+2026-06-05 11:05:44 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:05:44 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:05:44 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:05:44 selection_ready reader='word_selection' hwnd=198776 text_len=18
+2026-06-05 11:05:56 selection_ready reader='word_selection' hwnd=198776 text_len=18
+2026-06-05 11:06:06 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:06:07 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:06:07 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:13:26 tone_favorite_refresh_success count=1
+2026-06-05 11:14:16 tone_favorite_refresh_success count=1
+2026-06-05 11:23:26 immediate_selection_capture_failed reader='word_selection' hwnd=198776
+2026-06-05 11:23:26 main_correction_pre_show_capture captured=False reader='word_selection' hwnd=198776
+2026-06-05 11:23:26 main_correction_word_focus_nudge focused=True had_selection=False hwnd=198776
+2026-06-05 11:23:44 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:23:44 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:23:44 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:23:56 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:23:56 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:23:56 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:22 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:23 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:23 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:28 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:28 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:28 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:54 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:54 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:24:54 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:25:10 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:25:10 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:25:10 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:25:24 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:25:24 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:25:25 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 11:32:45 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:32:45 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:32:46 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:37:34 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:37:34 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:37:34 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:37:43 selection_ready reader='notepad_selection' hwnd=396122 text_len=502
+2026-06-05 11:37:58 selection_ready reader='notepad_selection' hwnd=396122 text_len=502
+2026-06-05 11:38:19 selection_ready reader='notepad_selection' hwnd=396122 text_len=8
+2026-06-05 11:40:00 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:40:00 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:40:00 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:40:45 tone_favorite_refresh_success count=1
+2026-06-05 11:41:14 immediate_selection_capture_skipped reason='unsupported_reader' reader='notepad_selection' hwnd=396122
+2026-06-05 11:41:14 main_correction_pre_show_capture captured=False reader='notepad_selection' hwnd=396122
+2026-06-05 11:41:14 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:41:14 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:41:14 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:41:18 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:41:18 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:41:18 notepad_focus_restore_after_overlay hwnd=396122 restored=True
+2026-06-05 11:42:47 tone_favorite_refresh_success count=1
+2026-06-05 11:43:15 immediate_selection_capture_failed reader='word_selection' hwnd=198776
+2026-06-05 11:43:15 main_correction_pre_show_capture captured=False reader='word_selection' hwnd=198776
+2026-06-05 11:43:15 main_correction_word_focus_nudge focused=True had_selection=False hwnd=198776
+2026-06-05 15:20:37 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-05 15:20:37 word_focus_restore_after_overlay hwnd=198776 restored=True
+2026-06-12 01:30:37 drag_spelling_selection_missing has_target=False target_mode='' input_len=0
+2026-06-12 01:30:37 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 02:55:42 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 02:55:48 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-12 02:55:49 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 02:55:49 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 02:55:49 apply_preflight_word_capture captured=True
+2026-06-12 02:55:49 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=25
+2026-06-12 02:55:49 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:55:50 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:55:50 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:56:46 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:56:47 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:56:47 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:56:50 selection_ready reader='word_selection' hwnd=131970 text_len=1
+2026-06-12 02:56:50 selection_ready reader='word_selection' hwnd=131970 text_len=1
+2026-06-12 02:56:57 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:56:57 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:56:57 selection_ready reader='word_selection' hwnd=131970 text_len=1
+2026-06-12 02:56:58 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:57:07 selection_ready reader='word_selection' hwnd=131970 text_len=14
+2026-06-12 02:57:07 apply_pressed has_target=True input_len=14 retry=False snapshot=True
+2026-06-12 02:57:07 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 02:57:07 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 02:57:07 apply_preflight_word_capture captured=True
+2026-06-12 02:57:07 inspect_result can_replace=True reason=''
+2026-06-12 02:58:08 apply_success reader='word_selection' hwnd=131970 text_len=42
+2026-06-12 02:58:51 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:58:51 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:58:51 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:58:52 selection_ready reader='word_selection' hwnd=131970 text_len=1
+2026-06-12 02:59:14 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:59:14 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:59:14 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:59:14 selection_ready reader='word_selection' hwnd=131970 text_len=1
+2026-06-12 02:59:26 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:59:26 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:59:26 word_focus_restore_after_overlay hwnd=131970 restored=True
+2026-06-12 02:59:26 selection_ready reader='word_selection' hwnd=131970 text_len=1
+2026-06-12 02:59:49 tone_favorite_refresh_success count=1
+2026-06-12 02:59:56 selection_ready reader='word_selection' hwnd=131970 text_len=1
+2026-06-12 03:31:52 selection_ready reader='word_selection' hwnd=131970 text_len=13
+2026-06-12 03:32:02 apply_pressed has_target=True input_len=13 retry=False snapshot=True
+2026-06-12 03:32:02 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:32:08 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:32:08 apply_preflight_word_capture captured=True
+2026-06-12 03:32:08 inspect_result can_replace=True reason=''
+2026-06-12 03:32:46 apply_success reader='word_selection' hwnd=131970 text_len=29
+2026-06-12 03:33:17 selection_ready reader='word_selection' hwnd=131970 text_len=29
+2026-06-12 03:33:58 tone_favorite_refresh_success count=1
+2026-06-12 03:34:05 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:34:06 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-12 03:34:06 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:34:06 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:34:06 apply_preflight_word_capture captured=True
+2026-06-12 03:34:06 inspect_result can_replace=True reason=''
+2026-06-12 03:34:31 apply_success reader='word_selection' hwnd=131970 text_len=29
+2026-06-12 03:34:31 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:48:03 tone_favorite_refresh_success count=1
+2026-06-12 03:50:30 drag_spelling_selection_missing has_target=False target_mode='' input_len=0
+2026-06-12 03:50:30 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:50:42 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:50:42 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-12 03:50:42 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:50:42 selection_ready reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 03:50:42 apply_preflight_word_capture captured=True
+2026-06-12 03:50:42 inspect_result can_replace=True reason=''
+2026-06-12 03:51:09 apply_success reader='word_selection' hwnd=131970 text_len=21
+2026-06-12 04:04:55 drag_spelling_selection_missing has_target=False target_mode='' input_len=0
+2026-06-12 04:04:56 immediate_selection_capture_success reader='word_selection' hwnd=131970 text_len=25
+2026-06-12 06:54:03 selection_ready reader='word_selection' hwnd=197598 text_len=4
+2026-06-12 06:54:03 apply_pressed has_target=True input_len=4 retry=False snapshot=True
+2026-06-12 06:54:03 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:54:07 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:54:07 apply_preflight_word_capture captured=True
+2026-06-12 06:54:07 inspect_result can_replace=True reason=''
+2026-06-12 06:54:25 apply_success reader='word_selection' hwnd=197598 text_len=27
+2026-06-12 06:54:25 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:54:42 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:54:42 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:54:46 selection_ready reader='word_selection' hwnd=197598 text_len=27
+2026-06-12 06:54:47 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:54:51 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 06:55:03 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 06:55:12 selection_ready reader='word_selection' hwnd=197598 text_len=27
+2026-06-12 06:55:14 selection_ready reader='word_selection' hwnd=197598 text_len=27
+2026-06-12 06:55:35 tone_favorite_refresh_success count=1
+2026-06-12 06:55:41 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:55:42 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-12 06:55:42 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:55:42 apply_preflight_word_capture captured=True
+2026-06-12 06:55:42 inspect_result can_replace=True reason=''
+2026-06-12 06:55:57 apply_success reader='word_selection' hwnd=197598 text_len=27
+2026-06-12 06:55:57 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:56:23 selection_ready reader='word_selection' hwnd=197598 text_len=27
+2026-06-12 06:56:33 selection_ready reader='word_selection' hwnd=197598 text_len=27
+2026-06-12 06:56:49 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:56:49 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:56:49 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 06:56:49 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:56:52 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:56:53 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:56:53 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:56:56 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:56:57 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:57:00 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-12 06:57:00 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:57:00 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 06:57:00 apply_preflight_word_capture captured=True
+2026-06-12 06:57:00 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=25
+2026-06-12 06:57:00 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:57:01 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:57:01 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 06:57:32 marker_replace_start mode='word_selection' start=0 end=10 source_len=25 original='안녕하세요 싫어해요' replacement='안녕하세요.'
+2026-06-12 06:57:36 marker_replace_overlay_sync synced=True text_len=21
+2026-06-12 06:57:36 marker_replace_success live_start=0 live_end=10
+2026-06-12 07:02:43 tone_favorite_refresh_success count=1
+2026-06-12 07:03:27 drag_spelling_selection_missing has_target=False target_mode='' input_len=0
+2026-06-12 07:03:27 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:03:35 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:03:35 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-12 07:03:35 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:03:35 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:03:35 apply_preflight_word_capture captured=True
+2026-06-12 07:03:35 spelling_inspection_scope active_mode='drag' target_mode='word_selection' scope='selection' text_len=25
+2026-06-12 07:03:35 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:03:36 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:03:36 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:05:26 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:05:36 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:17:48 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:17:48 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:17:48 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:17:54 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:17:54 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:17:58 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:17:58 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:17 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:19 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:26 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:26 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:26 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:29 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:31 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:31 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:31 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:32 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:32 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:32 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:33 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:33 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:35 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:35 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:35 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:35 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:37 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:37 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:37 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:38 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:38 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:39 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:18:39 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:18:39 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:19:22 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:19:22 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:19:23 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:19:23 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:19:26 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:19:27 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:19:27 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:19:27 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:19:38 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:19:57 selection_ready reader='word_selection' hwnd=197598 text_len=10
+2026-06-12 07:19:57 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:20:03 tone_button_pressed has_target=True input_len=25 snapshot=True
+2026-06-12 07:20:03 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:20:03 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:20:03 tone_button_preflight_word_capture captured=True
+2026-06-12 07:21:21 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:21:29 tone_apply_pressed has_target=True input_len=25 snapshot=True tone='부드럽게'
+2026-06-12 07:21:29 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:21:29 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:21:29 tone_preflight_word_capture captured=True
+2026-06-12 07:21:31 tone_inspect_result can_replace=True reason=''
+2026-06-12 07:21:55 tone_apply_success reader='word_selection' hwnd=197598 text_len=46
+2026-06-12 07:21:55 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:21:55 tone_favorite_prompt_skipped tone='부드럽게' logged_in=True already_favorite=True
+2026-06-12 07:24:26 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:24:26 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:24:26 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:24:26 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:24:28 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:24:28 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:24:28 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:24:28 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:28:44 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:29:27 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:35:37 selection_ready reader='word_selection' hwnd=197598 text_len=14
+2026-06-12 07:35:37 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:35:43 restored_recent_snapshot snapshot_age='6.087'
+2026-06-12 07:35:43 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:35:44 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:35:44 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:35:49 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:35:49 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:35:49 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:35:50 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:36:33 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:36:49 tone_favorite_refresh_success count=1
+2026-06-12 07:36:52 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:36:56 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:36:56 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:36:56 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:36:57 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:37:06 restored_recent_snapshot snapshot_age='9.503'
+2026-06-12 07:37:06 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:37:06 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:37:06 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:37:09 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:37:09 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:37:09 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:37:09 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:37:37 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:47:55 tone_favorite_refresh_success count=1
+2026-06-12 07:48:22 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 07:48:29 restored_recent_snapshot snapshot_age='6.724'
+2026-06-12 07:48:29 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:48:29 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:48:29 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:48:29 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 07:48:41 selection_ready reader='word_selection' hwnd=197598 text_len=1
+2026-06-12 07:48:48 drag_spelling_selection_stale age='6.575' max_age=3.0 target_mode='word_selection' hwnd=197598
+2026-06-12 07:49:01 drag_spelling_selection_missing has_target=False target_mode='' input_len=0

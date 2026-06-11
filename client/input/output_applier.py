@@ -3,6 +3,7 @@ from __future__ import annotations
 import ctypes
 from ctypes import wintypes
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from pathlib import Path
 import shutil
 import sys
@@ -749,15 +750,17 @@ class OutputApplier:
         try:
             replacement_text = self._word_text_for_write(text)
             target_range = document.Range(Start=absolute_start, End=absolute_end)
+            source_fragment = str(getattr(target_range, "Text", "") or "")
             character_styles = self._capture_word_character_styles(target_range)
+            mapped_styles = self._map_word_character_styles(source_fragment, replacement_text, character_styles)
             self._log_word_replace(
                 f"marker subrange write selection=({selection_start},{selection_end}) "
                 f"relative=({relative_start},{relative_end}) absolute=({absolute_start},{absolute_end}) "
-                f"text_len={len(str(text or ''))} char_styles={len(character_styles)} sample={str(text or '')[:80]!r}"
+                f"text_len={len(str(text or ''))} char_styles={len(character_styles)} mapped_styles={len(mapped_styles)} sample={str(text or '')[:80]!r}"
             )
             target_range.Text = replacement_text
             applied_end = absolute_start + len(replacement_text)
-            self._apply_word_character_styles(document, absolute_start, applied_end, character_styles)
+            self._apply_word_character_styles(document, absolute_start, applied_end, mapped_styles)
             self._select_word_range(document, absolute_start, applied_end)
         finally:
             if undo_record_started:
@@ -788,15 +791,17 @@ class OutputApplier:
         try:
             replacement_text = self._word_text_for_write(text)
             target_range = document.Range(Start=absolute_start, End=absolute_end)
+            source_fragment = str(getattr(target_range, "Text", "") or "")
             character_styles = self._capture_word_character_styles(target_range)
+            mapped_styles = self._map_word_character_styles(source_fragment, replacement_text, character_styles)
             self._log_word_replace(
                 f"marker document subrange write relative=({relative_start},{relative_end}) "
                 f"absolute=({absolute_start},{absolute_end}) text_len={len(str(text or ''))} "
-                f"char_styles={len(character_styles)} sample={str(text or '')[:80]!r}"
+                f"char_styles={len(character_styles)} mapped_styles={len(mapped_styles)} sample={str(text or '')[:80]!r}"
             )
             target_range.Text = replacement_text
             applied_end = absolute_start + len(replacement_text)
-            self._apply_word_character_styles(document, absolute_start, applied_end, character_styles)
+            self._apply_word_character_styles(document, absolute_start, applied_end, mapped_styles)
             self._select_word_range(document, absolute_start, applied_end)
         finally:
             if undo_record_started:
@@ -877,7 +882,9 @@ class OutputApplier:
                 f"segments={len(style_info.get('segments') or [])} sample={str(text or '')[:80]!r}"
             )
             selection_range = document.Range(Start=start, End=end)
+            source_fragment = str(getattr(selection_range, "Text", "") or "")
             character_styles = self._capture_word_character_styles(selection_range)
+            mapped_styles = self._map_word_character_styles(source_fragment, replacement_text, character_styles)
             selection_range.Text = replacement_text
             applied_end = start + len(replacement_text)
             applied_range = document.Range(Start=start, End=applied_end)
@@ -889,7 +896,8 @@ class OutputApplier:
                 self._reset_word_style_flags(applied_range)
                 self._apply_word_style(applied_range, style_info)
             self._apply_word_last_line_style_overlay(document, start, applied_end, text, style_info)
-            self._apply_word_character_styles(document, start, applied_end, character_styles)
+            self._apply_word_character_styles(document, start, applied_end, mapped_styles)
+            self._apply_word_temporary_marker_style(document, start, applied_end, text, mapped_styles)
             self._select_word_range(document, start, applied_end)
         finally:
             if undo_record_started:
@@ -1531,6 +1539,129 @@ class OutputApplier:
                         f"marker character style apply failed offset={offset}: {type(exc).__name__}: {exc}"
                     )
         self._log_word_replace(f"marker character styles applied={applied} failed={failed} source_styles={len(styles)}")
+
+    def _apply_word_temporary_marker_style(self, document, start: int, end: int, replacement_text: str, styles: list[dict]):
+        marker_range = self._temporary_result_marker_range(replacement_text)
+        if marker_range is None or end <= start:
+            return
+        marker_start_offset, marker_end_offset = marker_range
+        marker_start = max(start, min(start + marker_start_offset, max(start, end - 1)))
+        marker_end = max(start, min(start + marker_end_offset, end))
+        if marker_end <= marker_start:
+            return
+        style = self._dominant_word_character_style(styles)
+        if not style:
+            return
+        try:
+            marker_word_range = document.Range(Start=marker_start, End=marker_end)
+            neutral_style = {
+                key: style.get(key)
+                for key in ("font_name", "font_size")
+                if style.get(key) is not None
+            }
+            neutral_style.update(
+                {
+                    "bold": False,
+                    "italic": False,
+                    "underline": 0,
+                    "strike_through": False,
+                    "double_strike_through": False,
+                    "subscript": False,
+                    "superscript": False,
+                    "highlight_color_index": 0,
+                    "color_hex": "#000000",
+                }
+            )
+            self._reset_word_style_flags(marker_word_range)
+            self._apply_word_style(marker_word_range, neutral_style)
+            self._log_word_replace(
+                f"temporary marker style normalized range=({marker_start_offset},{marker_end_offset}) "
+                f"doc=({marker_start},{marker_end}) style={neutral_style!r}"
+            )
+        except Exception as exc:
+            self._log_word_replace(f"temporary marker style normalize failed: {type(exc).__name__}: {exc}")
+
+    def _map_word_character_styles(self, source_text: str, replacement_text: str, styles: list[dict]) -> list[dict]:
+        if not styles:
+            return []
+        source = str(source_text or "")
+        replacement = str(replacement_text or "")
+        if not replacement:
+            return []
+        if not source:
+            return [dict(styles[-1] or {}) for _ in replacement]
+
+        def style_at(index: int) -> dict:
+            if index < 0:
+                index = 0
+            if index >= len(styles):
+                index = len(styles) - 1
+            return dict(styles[index] or {})
+
+        mapped: list[dict] = []
+        matcher = SequenceMatcher(None, source, replacement, autojunk=False)
+        for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+            length = max(0, j2 - j1)
+            if length <= 0:
+                continue
+            if tag == "equal":
+                for offset in range(length):
+                    mapped.append(style_at(i1 + offset))
+            elif tag == "insert":
+                anchor = i1 - 1 if i1 > 0 else i1
+                for _ in range(length):
+                    mapped.append(style_at(anchor))
+            elif tag == "replace":
+                for offset in range(length):
+                    mapped.append(style_at(min(i2 - 1, i1 + offset)))
+            elif tag == "delete":
+                continue
+
+        if len(mapped) < len(replacement):
+            filler = mapped[-1] if mapped else style_at(len(styles) - 1)
+            mapped.extend(dict(filler) for _ in range(len(replacement) - len(mapped)))
+        elif len(mapped) > len(replacement):
+            mapped = mapped[: len(replacement)]
+        self._log_word_replace(
+            f"character styles mapped source_len={len(source)} replacement_len={len(replacement)} "
+            f"source_styles={len(styles)} mapped={len(mapped)}"
+        )
+        return mapped
+
+    def _temporary_result_marker_range(self, text: str) -> tuple[int, int] | None:
+        value = str(text or "").rstrip()
+        if not value.endswith("]"):
+            return None
+        marker_start = value.rfind(" [")
+        if marker_start < 0:
+            return None
+        suffix = value[marker_start:]
+        marker_tokens = (
+            "\uc0ac\uc6a9 \ub428",
+            "\uc0ac\uc6a9\ub428",
+            "\uae30\ub2a5 \uc0ac\uc6a9",
+        )
+        if not any(token in suffix for token in marker_tokens):
+            return None
+        return marker_start, len(value)
+
+    def _dominant_word_character_style(self, styles: list[dict]) -> dict:
+        candidates = [style for style in (styles or []) if isinstance(style, dict) and style]
+        if not candidates:
+            return {}
+        size_counts: dict[object, int] = {}
+        for style in candidates:
+            size = style.get("font_size")
+            if size is None:
+                continue
+            size_counts[size] = size_counts.get(size, 0) + 1
+        dominant_size = None
+        if size_counts:
+            dominant_size = max(size_counts.items(), key=lambda item: item[1])[0]
+        for style in candidates:
+            if dominant_size is None or style.get("font_size") == dominant_size:
+                return dict(style)
+        return dict(candidates[0])
 
     def _apply_word_style(self, word_range, style_info: dict):
         if not style_info:

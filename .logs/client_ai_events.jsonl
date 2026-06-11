@@ -1,0 +1,194 @@
+{"ts": "2026-06-05T15:20:37.567", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-05T15:20:37.703", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 136, "error_type": "RuntimeError", "error": "Not Found", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T01:29:15.776", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:29:17.986", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 2237, "error_type": "ConnectionError", "error": "HTTPConnectionPool(host='127.0.0.1', port=8765): Max retries exceeded with url: /correct-public (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000134A1C1C980>: Failed to establish a new connection: [WinError", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:30:37.118", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:30:37.149", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 31, "error_type": "RuntimeError", "error": "OpenAI correction failed: OPENAI_API_KEY environment variable is not set.", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:35:00.223", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:35:00.440", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 218, "error_type": "RuntimeError", "error": "OpenAI correction failed: OPENAI_API_KEY environment variable is not set.", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T01:38:02.788", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 11, "text_hash": "77032c7c75c0f1ce"}
+{"ts": "2026-06-12T01:38:08.469", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 5682, "error_type": "RuntimeError", "error": "OpenAI correction failed: OpenAI correction response was not valid JSON.", "text_len": 11, "text_hash": "77032c7c75c0f1ce"}
+{"ts": "2026-06-12T02:45:43.135", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:45:54.147", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 11013, "error_type": "RuntimeError", "error": "OpenAI correction failed: OpenAI correction response was not valid JSON.", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:54:52.322", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:54:54.380", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 2060, "error_type": "ConnectionError", "error": "HTTPConnectionPool(host='127.0.0.1', port=8765): Max retries exceeded with url: /correct-public (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E989020980>: Failed to establish a new connection: [WinError", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:33.079", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:42.743", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 9664, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.038", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.047", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 9, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.074", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:55:49.082", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 8, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:56:48.084", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:50.191", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 2106, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:50.581", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:50.598", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 17, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:57.801", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:56:57.820", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 18, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:57:00.388", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 14, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T02:57:07.271", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6882, "text_len": 14, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T02:57:07.547", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:57:07.589", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 41, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T02:58:51.997", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:58:52.027", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 30, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:14.925", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:14.965", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 40, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:26.914", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:26.946", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 32, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:56.064", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T02:59:56.083", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 18, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T03:31:43.869", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 13, "text_hash": "3b980f0386d1e711"}
+{"ts": "2026-06-12T03:31:52.174", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 8305, "text_len": 13, "text_hash": "3b980f0386d1e711"}
+{"ts": "2026-06-12T03:32:02.773", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:32:08.217", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 5443, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:33:11.968", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 29, "text_hash": "4ae134f102d6d528"}
+{"ts": "2026-06-12T03:33:17.860", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 5891, "text_len": 29, "text_hash": "4ae134f102d6d528"}
+{"ts": "2026-06-12T03:34:05.392", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:05.402", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 10, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:06.860", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:06.869", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 8, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:31.522", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:34:31.533", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 10, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:30.969", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:42.276", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 11308, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:42.433", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T03:50:42.443", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 9, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T04:04:56.018", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T04:04:58.039", "event": "client_ai_request_failed", "path": "/correct-public", "duration_ms": 2022, "error_type": "ConnectionError", "error": "HTTPConnectionPool(host='127.0.0.1', port=8765): Max retries exceeded with url: /correct-public (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020FA19C8980>: Failed to establish a new connection: [WinError", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:53:57.272", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 4, "text_hash": "b2dc43c3b8032b4e"}
+{"ts": "2026-06-12T06:54:03.685", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6414, "text_len": 4, "text_hash": "b2dc43c3b8032b4e"}
+{"ts": "2026-06-12T06:54:03.858", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:07.929", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 4071, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:25.241", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:25.249", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:54:42.280", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:54:46.679", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 4398, "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:54:47.078", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:54:51.201", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 4123, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:55:03.090", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:55:03.097", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:55:12.025", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:12.031", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:14.758", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:14.765", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:55:41.485", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:55:41.492", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:55:57.402", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:55:57.409", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:23.455", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:23.462", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:33.338", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:33.345", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 27, "text_hash": "a55b9fce4175aa89"}
+{"ts": "2026-06-12T06:56:49.675", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:56:49.681", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "fcb5f40df9be6bae"}
+{"ts": "2026-06-12T06:56:56.551", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:56.558", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:57.701", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:56:57.711", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 9, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.285", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.296", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 11, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.334", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T06:57:00.345", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 11, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:27.813", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.320", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7507, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.435", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.441", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.491", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:03:35.497", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:26.252", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:26.261", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 9, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:27.999", "event": "client_ai_request_started", "path": "/title-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:29.795", "event": "client_ai_request_completed", "path": "/title-public", "status_code": 200, "duration_ms": 1795, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:36.585", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:05:36.593", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:17:45.865", "event": "client_ai_request_started", "path": "/summary-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:17:47.612", "event": "client_ai_request_completed", "path": "/summary-public", "status_code": 200, "duration_ms": 1747, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:17:54.842", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:17:58.176", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 3334, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:17.342", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:17.351", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 9, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:19.974", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:19.981", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:23.043", "event": "client_ai_request_started", "path": "/summary-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:25.813", "event": "client_ai_request_completed", "path": "/summary-public", "status_code": 200, "duration_ms": 2769, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:29.618", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:29.625", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:31.847", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:31.860", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 12, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:32.441", "event": "client_ai_request_started", "path": "/summary-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:32.447", "event": "client_ai_request_completed", "path": "/summary-public", "status_code": 200, "duration_ms": 5, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:33.201", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:33.208", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:35.335", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:35.342", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.233", "event": "client_ai_request_started", "path": "/summary-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.240", "event": "client_ai_request_completed", "path": "/summary-public", "status_code": 200, "duration_ms": 7, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.920", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:37.931", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 10, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:39.133", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:18:39.143", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 10, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:22.301", "event": "client_ai_request_started", "path": "/summary-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:22.309", "event": "client_ai_request_completed", "path": "/summary-public", "status_code": 200, "duration_ms": 7, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:23.004", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:23.026", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 21, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:27.078", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:27.091", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 13, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:38.654", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:38.673", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 19, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:19:53.770", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 10, "text_hash": "dbcf89c35ff54673"}
+{"ts": "2026-06-12T07:19:57.567", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 3797, "text_len": 10, "text_hash": "dbcf89c35ff54673"}
+{"ts": "2026-06-12T07:19:57.797", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:19:57.805", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 8, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:20:03.274", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:20:03.281", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:21.340", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:21.347", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:29.229", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:29.237", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 8, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:29.440", "event": "client_ai_request_started", "path": "/tone-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:31.865", "event": "client_ai_request_completed", "path": "/tone-public", "status_code": 200, "duration_ms": 2424, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:55.435", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:21:55.443", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:24:25.760", "event": "client_ai_request_started", "path": "/summary-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:24:25.771", "event": "client_ai_request_completed", "path": "/summary-public", "status_code": 200, "duration_ms": 10, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:24:26.343", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:24:26.349", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:24:28.275", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:24:28.284", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 8, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:28:44.372", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:28:44.380", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:29:27.942", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:29:27.951", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 8, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:35:32.947", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 14, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T07:35:37.268", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 4321, "text_len": 14, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T07:35:37.431", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:37.438", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:41.434", "event": "client_ai_request_started", "path": "/evaluation-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:43.523", "event": "client_ai_request_completed", "path": "/evaluation-public", "status_code": 200, "duration_ms": 2089, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:35:49.973", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:35:49.980", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:33.714", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:33.727", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 13, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:52.031", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:52.037", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:56.750", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:36:56.757", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:03.922", "event": "client_ai_request_started", "path": "/evaluation-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:06.230", "event": "client_ai_request_completed", "path": "/evaluation-public", "status_code": 200, "duration_ms": 2308, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:09.369", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:09.376", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:36.998", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:37.014", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 16, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:43.640", "event": "client_ai_request_started", "path": "/title-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:37:44.965", "event": "client_ai_request_completed", "path": "/title-public", "status_code": 200, "duration_ms": 1325, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:22.261", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:22.274", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 13, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:28.972", "event": "client_ai_request_started", "path": "/evaluation-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:29.000", "event": "client_ai_request_completed", "path": "/evaluation-public", "status_code": 200, "duration_ms": 27, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T07:48:29.636", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:29.663", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 26, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:41.698", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:41.708", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 9, "text_len": 1, "text_hash": "bc00bc8172c83d5f"}
+{"ts": "2026-06-12T07:48:48.332", "event": "client_ai_request_started", "path": "/title-public", "text_len": 69, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T07:48:52.591", "event": "client_ai_request_completed", "path": "/title-public", "status_code": 200, "duration_ms": 4258, "text_len": 69, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T07:49:01.664", "event": "client_ai_request_started", "path": "/title-public", "text_len": 69, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T07:49:01.671", "event": "client_ai_request_completed", "path": "/title-public", "status_code": 200, "duration_ms": 7, "text_len": 69, "text_hash": "fe5671d32e8130ea"}

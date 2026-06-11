@@ -6,6 +6,7 @@ from PyQt5.QtCore import QPoint, QRectF, QSize, Qt, QVariantAnimation, QTimer
 from PyQt5.QtGui import QColor, QIcon, QPainter, QPainterPath, QPen, QPixmap
 from PyQt5.QtWidgets import (
     QApplication,
+    QButtonGroup,
     QCheckBox,
     QFrame,
     QGraphicsOpacityEffect,
@@ -99,6 +100,7 @@ class ResultPanel(QWidget):
         self.saved_input_mode = "realtime"
         self.saved_replace_mode = False
         self.saved_history_enabled = False
+        self.saved_spell_scope = "current_sentence"
         self.drag_active = False
         self.drag_position = QPoint()
         self.resize_active = False
@@ -208,9 +210,11 @@ class ResultPanel(QWidget):
             self.settings_btn.setText("")
         self.settings_btn.clicked.connect(self.open_settings_tab)
 
-        self.dark_mode_btn = QPushButton("다크 모드 켜기")
-        self.dark_mode_btn.setObjectName("secondaryButton")
+        self.dark_mode_btn = QPushButton("")
+        self.dark_mode_btn.setObjectName("iconButton")
+        self.dark_mode_btn.setToolTip("\ub2e4\ud06c \ubaa8\ub4dc \ubc14\uafb8\uae30")
         self.dark_mode_btn.setCheckable(True)
+        self.dark_mode_btn.setIconSize(QSize(18, 18))
         self.dark_mode_btn.clicked.connect(self.toggle_theme)
 
         self.hide_btn = QPushButton("숨기기")
@@ -256,6 +260,19 @@ class ResultPanel(QWidget):
         self.apply_correction_btn.setObjectName("primaryButton")
         self.apply_correction_btn.hide()
         self.spell_history_btn = self._create_history_button()
+        self.spell_scope_group = QButtonGroup(self)
+        self.spell_scope_group.setExclusive(True)
+        self.spell_scope_buttons = {}
+        for scope, label in (
+            ("current_sentence", "현재 문장"),
+            ("current_paragraph", "현재 문단"),
+            ("full_text", "글 전체"),
+        ):
+            button = QPushButton(label)
+            button.setObjectName("scopeButton")
+            button.setCheckable(True)
+            self.spell_scope_group.addButton(button)
+            self.spell_scope_buttons[scope] = button
         self.run_summary_btn = QPushButton("글 요약")
         self.run_summary_btn.setObjectName("secondaryButton")
         self.summary_history_btn = self._create_history_button()
@@ -444,6 +461,11 @@ class ResultPanel(QWidget):
     def _find_settings_icon_path(self):
         return self._find_asset_path(("settings.png", "settings.svg"))
 
+    def _find_theme_icon_path(self):
+        if self.is_dark_mode:
+            return self._find_asset_path(("dark_mode.png", "dark_mode.svg"))
+        return self._find_asset_path(("brightness.png", "brightness.svg"))
+
     def _update_settings_icon(self, color_value):
         if not self.settings_icon_path:
             return
@@ -463,6 +485,29 @@ class ResultPanel(QWidget):
         painter.end()
 
         self.settings_btn.setIcon(QIcon(tinted_pixmap))
+
+    def _update_theme_icon(self, color_value):
+        icon_path = self._find_theme_icon_path()
+        if not icon_path:
+            self.dark_mode_btn.setText("\ub2e4")
+            return
+
+        base_icon = QIcon(str(icon_path))
+        base_pixmap = base_icon.pixmap(QSize(18, 18))
+        if base_pixmap.isNull():
+            return
+
+        tinted_pixmap = QPixmap(base_pixmap.size())
+        tinted_pixmap.fill(Qt.transparent)
+
+        painter = QPainter(tinted_pixmap)
+        painter.drawPixmap(0, 0, base_pixmap)
+        painter.setCompositionMode(QPainter.CompositionMode_SourceIn)
+        painter.fillRect(tinted_pixmap.rect(), QColor(color_value))
+        painter.end()
+
+        self.dark_mode_btn.setText("")
+        self.dark_mode_btn.setIcon(QIcon(tinted_pixmap))
 
     def _create_text_box(self, placeholder):
         text_box = QTextEdit()
@@ -532,9 +577,53 @@ class ResultPanel(QWidget):
         self.auth_stack = QStackedLayout(self.auth_stack_container)
         self.auth_stack.addWidget(self._create_login_form())
         self.auth_stack.addWidget(self._create_signup_form())
+        self.auth_stack.addWidget(self._create_login_required_page())
         panel_layout.addWidget(self.auth_stack_container, 1)
 
         layout.addWidget(panel)
+        return page
+
+    def _create_login_required_page(self):
+        page = QWidget()
+        outer_layout = QVBoxLayout(page)
+        outer_layout.setContentsMargins(0, -2, 0, 0)
+        outer_layout.setSpacing(10)
+
+        message_box = QWidget()
+        message_box.setFixedWidth(360)
+        layout = QVBoxLayout(message_box)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(12)
+
+        title = QLabel("이 기능은 로그인해야 사용할 수 있습니다.")
+        title.setObjectName("sectionTitle")
+        title.setAlignment(Qt.AlignCenter)
+        layout.addWidget(title)
+
+        message = QLabel("기록은 계정에 연결된 문서별 데이터로 저장됩니다.\n로그인 후 현재 문서의 기록을 확인할 수 있습니다.")
+        message.setObjectName("authLabel")
+        message.setAlignment(Qt.AlignCenter)
+        message.setWordWrap(True)
+        layout.addWidget(message)
+
+        self.auth_required_login_btn = QPushButton("로그인하러 가기")
+        self.auth_required_login_btn.setObjectName("authSubmitButton")
+        self.auth_required_login_btn.setFixedWidth(210)
+        self.auth_required_login_btn.setFixedHeight(32)
+        self.auth_required_login_btn.clicked.connect(self.show_login_form)
+        button_row = QHBoxLayout()
+        button_row.addStretch()
+        button_row.addWidget(self.auth_required_login_btn)
+        button_row.addStretch()
+        layout.addLayout(button_row)
+
+        outer_layout.addStretch()
+        row = QHBoxLayout()
+        row.addStretch()
+        row.addWidget(message_box)
+        row.addStretch()
+        outer_layout.addLayout(row)
+        outer_layout.addStretch()
         return page
 
     def _create_login_form(self):
@@ -689,6 +778,19 @@ class ResultPanel(QWidget):
         layout = QVBoxLayout(page)
         layout.setContentsMargins(14, 14, 14, 14)
         layout.setSpacing(12)
+
+        self.spell_scope_widget = QWidget()
+        scope_row = QHBoxLayout(self.spell_scope_widget)
+        scope_row.setContentsMargins(0, 0, 0, 0)
+        scope_row.setSpacing(8)
+        scope_label = QLabel("검사 범위")
+        scope_label.setObjectName("historyFieldLabel")
+        scope_row.addWidget(scope_label)
+        for scope in ("current_sentence", "current_paragraph", "full_text"):
+            scope_row.addWidget(self.spell_scope_buttons[scope])
+        scope_row.addStretch()
+        layout.addWidget(self.spell_scope_widget)
+
         layout.addWidget(self.spell_box, 1)
 
         button_row = QHBoxLayout()
@@ -1058,7 +1160,8 @@ class ResultPanel(QWidget):
         layout = QVBoxLayout(content)
         layout.setContentsMargins(4, 4, 6, 4)
         layout.setSpacing(10)
-        for label, value, long_text in self._history_detail_fields(feature_type, log):
+        detail_feature_type = log.get("feature_type") if int(feature_type or 0) == 0 else feature_type
+        for label, value, long_text in self._history_detail_fields(detail_feature_type, log):
             row_label = QLabel(label)
             row_label.setObjectName("historyFieldLabel")
             layout.addWidget(row_label)
@@ -1093,6 +1196,19 @@ class ResultPanel(QWidget):
         self.content_stack.setCurrentIndex(3)
         self.settings_btn.setChecked(False)
         self.login_username_input.setFocus()
+
+    def show_login_required_page(self):
+        self.auth_title_label.setText("로그인 필요")
+        self.auth_mode_link_btn.setText("회원가입")
+        try:
+            self.auth_mode_link_btn.clicked.disconnect()
+        except Exception:
+            pass
+        self.auth_mode_link_btn.clicked.connect(self.show_signup_form)
+        self.auth_stack.setCurrentIndex(2)
+        self.content_stack.setCurrentIndex(3)
+        self.settings_btn.setChecked(False)
+        self.auth_required_login_btn.setFocus()
 
     def close_auth_page(self):
         self.content_stack.setCurrentIndex(0)
@@ -1164,6 +1280,7 @@ class ResultPanel(QWidget):
 
     def _history_title(self, feature_type):
         return {
+            0: "\ud604\uc7ac \ubb38\uc11c \uae30\ub85d",
             1: "\ud14d\uc2a4\ud2b8 \uae30\ub85d",
             2: "\uad50\uc815 \uae30\ub85d",
             3: "\uc694\uc57d \uae30\ub85d",
@@ -1197,7 +1314,7 @@ class ResultPanel(QWidget):
         source = self._history_display_source(log).strip()
         if not source:
             return "\uc81c\ubaa9 \uc5c6\uc74c..."
-        return source[:5] + "..."
+        return source if len(source) <= 18 else source[:18] + "..."
 
     def _format_history_time(self, value):
         raw = str(value or "").strip()
@@ -1240,7 +1357,7 @@ class ResultPanel(QWidget):
                     matched["key"] = key
         entries = []
         for group in groups:
-            if len(group.get("logs", [])) >= 2:
+            if group.get("title_key") or len(group.get("logs", [])) >= 2:
                 entries.append({"kind": "group", **group})
             else:
                 entries.append({"kind": "single", "log": group.get("logs", [{}])[0]})
@@ -1266,6 +1383,10 @@ class ResultPanel(QWidget):
         return f"{preview} {kind}\n{created_at}"
 
     def _history_detail_fields(self, feature_type, log):
+        try:
+            feature_type = int(feature_type or 0)
+        except Exception:
+            feature_type = 0
         created_at = self._format_history_time(log.get("created_at", ""))
         kind_label = self._history_kind_label(log.get("feature_type"), log.get("feature_label"))
         if feature_type == 1:
@@ -1273,7 +1394,7 @@ class ResultPanel(QWidget):
                 ("\uc6d0\ubcf8", log.get("input_text"), True),
                 ("\uc6d0\ubcf8 \uc810\uc218", log.get("score"), False),
                 ("\ud3c9\uac00 \uc774\uc720", log.get("evaluation_reason"), True),
-                ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+                ("\ubb38\uc11c \uc774\ub984", log.get("title"), False),
                 ("\uc885\ub958", kind_label, False),
                 ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
             ]
@@ -1282,7 +1403,7 @@ class ResultPanel(QWidget):
                 ("\uc6d0\ubcf8 \uae00", log.get("input_text"), True),
                 ("\uad50\uc815 \ud3c9\uac00", log.get("spelling_feedback"), True),
                 ("\uad50\uc815\ub41c \uae00", log.get("output_text"), True),
-                ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+                ("\ubb38\uc11c \uc774\ub984", log.get("title"), False),
                 ("\uc885\ub958", kind_label, False),
                 ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
             ]
@@ -1290,7 +1411,7 @@ class ResultPanel(QWidget):
             return [
                 ("\uc6d0\ubcf8 \uae00", log.get("input_text"), True),
                 ("\uc694\uc57d\uae00", log.get("output_text"), True),
-                ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+                ("\ubb38\uc11c \uc774\ub984", log.get("title"), False),
                 ("\uc885\ub958", kind_label, False),
                 ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
             ]
@@ -1298,7 +1419,7 @@ class ResultPanel(QWidget):
             ("\uc6d0\ubcf8 \uae00", log.get("input_text"), True),
             ("\uc81c\uc2dc\ud55c \ubb38\uccb4", log.get("tone"), False),
             ("\ubb38\uccb4 \ubcc0\uacbd\ub41c \uae00", log.get("output_text"), True),
-            ("\ucd94\ucc9c \uc81c\ubaa9", log.get("title"), False),
+            ("\ubb38\uc11c \uc774\ub984", log.get("title"), False),
             ("\uc885\ub958", kind_label, False),
             ("\uc800\uc7a5 \uc2dc\uac04", created_at, False),
         ]
@@ -1331,7 +1452,6 @@ class ResultPanel(QWidget):
 
     def apply_theme(self):
         colors = self._blended_colors()
-        self.dark_mode_btn.setText("다크 모드 끄기" if self.is_dark_mode else "다크 모드 켜기")
         self.dark_mode_btn.setChecked(self.is_dark_mode)
 
         self.setStyleSheet(
@@ -1605,6 +1725,21 @@ class ResultPanel(QWidget):
                 background: #e1e1e1;
                 color: #8a8a8a;
             }}
+            QPushButton#scopeButton {{
+                background: {colors["button_bg"]};
+                color: {colors["button_text"]};
+                border-radius: 14px;
+                padding: 8px 14px;
+                font-size: 12px;
+                font-weight: 800;
+            }}
+            QPushButton#scopeButton:hover {{
+                background: {colors["button_hover"]};
+            }}
+            QPushButton#scopeButton:checked {{
+                background: {colors["accent"]};
+                color: {colors["accent_text"]};
+            }}
             QPushButton#dangerButton {{
                 background: transparent;
                 color: #b64040;
@@ -1743,6 +1878,7 @@ class ResultPanel(QWidget):
             """
         )
         self._update_settings_icon(colors["button_text"])
+        self._update_theme_icon("#ffffff" if self.is_dark_mode else "#1f1f1f")
         self.update_login_state(
             getattr(self, "_is_logged_in", False),
             getattr(self, "_login_username", ""),
@@ -2053,6 +2189,7 @@ class ResultPanel(QWidget):
             "realtime": "실시간 모드",
         }
         self.input_mode_status_label.setText(f"{mode_names[normalized]} 인식 사용중")
+        self._update_spell_scope_visibility()
         self._update_replace_mode_availability()
 
     def get_input_mode(self):
@@ -2078,6 +2215,26 @@ class ResultPanel(QWidget):
         if self.realtime_mode_checkbox.isChecked():
             return self.realtime_replace_mode_checkbox.isChecked()
         return self.drag_replace_mode_checkbox.isChecked() or self.realtime_replace_mode_checkbox.isChecked()
+
+    def set_spell_scope(self, scope):
+        normalized = scope if scope in {"current_sentence", "current_paragraph", "full_text"} else "current_sentence"
+        self.saved_spell_scope = normalized
+        for value, button in self.spell_scope_buttons.items():
+            button.blockSignals(True)
+            button.setChecked(value == normalized)
+            button.blockSignals(False)
+        self._update_spell_scope_visibility()
+
+    def get_spell_scope(self):
+        for value, button in self.spell_scope_buttons.items():
+            if button.isChecked():
+                return value
+        return self.saved_spell_scope or "current_sentence"
+
+    def _update_spell_scope_visibility(self):
+        widget = getattr(self, "spell_scope_widget", None)
+        if widget is not None:
+            widget.setVisible(self.saved_input_mode == "realtime")
 
     def _sync_replace_mode_checks(self, source_mode, checked):
         other = self.realtime_replace_mode_checkbox if source_mode == "drag" else self.drag_replace_mode_checkbox

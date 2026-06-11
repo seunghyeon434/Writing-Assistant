@@ -8,6 +8,7 @@ DEFAULT_SETTINGS = {
     "input_mode": "clipboard",
     "replace_mode": False,
     "history_enabled": False,
+    "spell_scope": "current_sentence",
 }
 
 

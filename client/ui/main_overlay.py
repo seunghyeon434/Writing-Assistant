@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 import math
 import time
 
@@ -16,6 +17,8 @@ except Exception:  # pragma: no cover - optional Windows dependency
 _LOG_DIR = Path(__file__).resolve().parents[2] / ".logs"
 _LOG_DIR.mkdir(parents=True, exist_ok=True)
 _MAIN_OVERLAY_LOG_PATH = _LOG_DIR / "main_overlay.log"
+_NOTIFICATION_LOG_PATH = _LOG_DIR / "notifications.jsonl"
+_NOTIFICATION_LOG_PATH.touch(exist_ok=True)
 
 
 
@@ -176,12 +179,12 @@ class EvaluationReasonOverlay(QWidget):
         layout.setContentsMargins(14, 10, 14, 14)
         layout.setSpacing(8)
         top = QHBoxLayout()
-        title = QLabel("\ud3c9\uac00 \uc774\uc720")
-        title.setObjectName("reasonTitle")
+        self.title_label = QLabel("\ud3c9\uac00 \uc774\uc720")
+        self.title_label.setObjectName("reasonTitle")
         close_btn = QPushButton("X")
         close_btn.setObjectName("closeOverlayButton")
         close_btn.clicked.connect(self._request_close)
-        top.addWidget(title, 1)
+        top.addWidget(self.title_label, 1)
         top.addWidget(close_btn, 0, Qt.AlignRight)
         layout.addLayout(top)
         self.reason_label = QLabel("\uac4d")
@@ -190,7 +193,8 @@ class EvaluationReasonOverlay(QWidget):
         self.reason_label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
         layout.addWidget(self.reason_label, 1)
 
-    def show_for_window(self, window_handle, reason):
+    def show_for_window(self, window_handle, reason, title=None):
+        self.title_label.setText(str(title or "\ud3c9\uac00 \uc774\uc720"))
         self.reason_label.setText(str(reason or ""))
         rect = self._target_rect(window_handle)
         if rect is None:
@@ -208,6 +212,196 @@ class EvaluationReasonOverlay(QWidget):
         self.move(x, y)
         self.show()
         self.raise_()
+
+    def _request_close(self):
+        self.hide()
+        self.close_requested.emit()
+
+    def _target_rect(self, window_handle):
+        if win32gui is None or not window_handle:
+            return None
+        try:
+            if not win32gui.IsWindow(window_handle):
+                return None
+            root = win32gui.GetAncestor(window_handle, 2) or window_handle
+            return win32gui.GetWindowRect(root)
+        except Exception:
+            return None
+
+
+class NotificationOverlay(QWidget):
+    close_requested = pyqtSignal()
+
+    PAGE_SIZE = 5
+
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Writing Assistant Notifications")
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setAttribute(Qt.WA_ShowWithoutActivating)
+        self.setFixedSize(360, 290)
+        self._notifications = []
+        self._page = 0
+        self.setStyleSheet(
+            """
+            QFrame#notificationCard {
+                background: #f7efe5;
+                border: 1px solid #dccbbb;
+                border-radius: 18px;
+            }
+            QLabel#notificationTitle {
+                color: #2f241f;
+                font-size: 14px;
+                font-weight: 900;
+            }
+            QLabel#notificationItem {
+                background: #fffaf4;
+                border: 1px solid #e3d4c4;
+                border-radius: 8px;
+                color: #2f241f;
+                padding: 6px 8px;
+                font-size: 11px;
+                font-weight: 700;
+            }
+            QLabel#notificationItem[error="true"] {
+                border: 1px solid #d34a4a;
+            }
+            QLabel#notificationEmpty {
+                color: #7b6658;
+                font-size: 12px;
+                font-weight: 800;
+            }
+            QLabel#notificationPage {
+                color: #7b6658;
+                font-size: 11px;
+                font-weight: 800;
+            }
+            QPushButton#notificationNavButton, QPushButton#closeOverlayButton {
+                min-width: 26px;
+                max-width: 26px;
+                min-height: 26px;
+                max-height: 26px;
+                border-radius: 13px;
+                border: 0;
+                padding: 0;
+                background: #ead7cf;
+                color: #2f241f;
+                font-weight: 900;
+            }
+            QPushButton#notificationNavButton:hover, QPushButton#closeOverlayButton:hover {
+                background: #dcc1a7;
+            }
+            """
+        )
+
+        card = QFrame(self)
+        card.setObjectName("notificationCard")
+        card.setGeometry(0, 0, 360, 290)
+        layout = QVBoxLayout(card)
+        layout.setContentsMargins(14, 10, 14, 12)
+        layout.setSpacing(8)
+
+        top = QHBoxLayout()
+        title = QLabel("알림")
+        title.setObjectName("notificationTitle")
+        close_btn = QPushButton("X")
+        close_btn.setObjectName("closeOverlayButton")
+        close_btn.clicked.connect(self._request_close)
+        top.addWidget(title, 1)
+        top.addWidget(close_btn, 0, Qt.AlignRight)
+        layout.addLayout(top)
+
+        self.item_labels = []
+        for _ in range(self.PAGE_SIZE):
+            label = QLabel("")
+            label.setObjectName("notificationItem")
+            label.setWordWrap(True)
+            label.setFixedHeight(34)
+            self.item_labels.append(label)
+            layout.addWidget(label)
+
+        self.empty_label = QLabel("알림이 없습니다.")
+        self.empty_label.setObjectName("notificationEmpty")
+        self.empty_label.setAlignment(Qt.AlignCenter)
+        layout.addWidget(self.empty_label, 1)
+
+        bottom = QHBoxLayout()
+        self.prev_btn = QPushButton("<")
+        self.prev_btn.setObjectName("notificationNavButton")
+        self.prev_btn.clicked.connect(self._prev_page)
+        self.page_label = QLabel("1 / 1")
+        self.page_label.setObjectName("notificationPage")
+        self.page_label.setAlignment(Qt.AlignCenter)
+        self.next_btn = QPushButton(">")
+        self.next_btn.setObjectName("notificationNavButton")
+        self.next_btn.clicked.connect(self._next_page)
+        bottom.addStretch()
+        bottom.addWidget(self.prev_btn)
+        bottom.addWidget(self.page_label)
+        bottom.addWidget(self.next_btn)
+        bottom.addStretch()
+        layout.addLayout(bottom)
+        self._render()
+
+    def set_notifications(self, notifications):
+        self._notifications = list(notifications or [])
+        max_page = self._max_page()
+        self._page = max(0, min(self._page, max_page))
+        self._render()
+
+    def show_for_window(self, window_handle):
+        self._render()
+        rect = self._target_rect(window_handle)
+        if rect is None:
+            screen = QApplication.primaryScreen()
+            if screen is None:
+                self.show()
+                self.raise_()
+                return
+            geo = screen.availableGeometry()
+            left, top, right, bottom = geo.left(), geo.top(), geo.right(), geo.bottom()
+        else:
+            left, top, right, bottom = rect
+        self.move(left + max(0, (right - left - self.width()) // 2), top + max(0, (bottom - top - self.height()) // 2))
+        self.show()
+        self.raise_()
+
+    def _render(self):
+        total = len(self._notifications)
+        has_items = total > 0
+        self.empty_label.setVisible(not has_items)
+        max_page = self._max_page()
+        self._page = max(0, min(self._page, max_page))
+        start = self._page * self.PAGE_SIZE
+        page_items = self._notifications[start:start + self.PAGE_SIZE]
+        for index, label in enumerate(self.item_labels):
+            if index < len(page_items):
+                item = page_items[index]
+                label.setText(f"{item.get('time', '')}  {item.get('message', '')}")
+                label.setProperty("error", bool(item.get("error")))
+                label.style().unpolish(label)
+                label.style().polish(label)
+                label.show()
+            else:
+                label.hide()
+        pages = max(1, max_page + 1)
+        self.page_label.setText(f"{self._page + 1} / {pages}")
+        self.prev_btn.setEnabled(self._page > 0)
+        self.next_btn.setEnabled(self._page < max_page)
+
+    def _max_page(self):
+        if not self._notifications:
+            return 0
+        return max(0, (len(self._notifications) - 1) // self.PAGE_SIZE)
+
+    def _prev_page(self):
+        self._page = max(0, self._page - 1)
+        self._render()
+
+    def _next_page(self):
+        self._page = min(self._max_page(), self._page + 1)
+        self._render()
 
     def _request_close(self):
         self.hide()
@@ -458,14 +652,19 @@ class TitleConfirmOverlay(QWidget):
 class MainOverlay(QWidget):
     settings_save_requested = pyqtSignal(str, bool)
     open_panel_requested = pyqtSignal()
+    history_requested = pyqtSignal()
+    undo_requested = pyqtSignal()
+    redo_requested = pyqtSignal()
     evaluate_requested = pyqtSignal()
     evaluation_reason_requested = pyqtSignal()
     title_requested = pyqtSignal()
     title_insert_requested = pyqtSignal(str)
     correction_requested = pyqtSignal()
+    spelling_requested = pyqtSignal()
     summary_requested = pyqtSignal()
     summary_copy_requested = pyqtSignal(str)
     tone_requested = pyqtSignal()
+    dark_mode_requested = pyqtSignal()
     focus_restore_requested = pyqtSignal()
 
     def __init__(self):
@@ -474,12 +673,12 @@ class MainOverlay(QWidget):
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setAttribute(Qt.WA_ShowWithoutActivating)
-        self._compact_size = (420, 128)
-        self._card_size = (420, 94)
+        self._compact_size = (432, 128)
+        self._card_size = (432, 94)
         self._default_compact_size = self._compact_size
         self._default_card_size = self._card_size
-        self._notepad_compact_size = (392, 118)
-        self._notepad_card_size = (392, 84)
+        self._notepad_compact_size = (408, 118)
+        self._notepad_card_size = (408, 84)
         self._collapsed_size = (94, 54)
         self._collapsed = False
         self.setFixedSize(*self._compact_size)
@@ -488,6 +687,7 @@ class MainOverlay(QWidget):
         self._overlay_state = None
         self._active_mode = "clipboard"
         self._spelling_replace_mode = False
+        self._dark_mode = False
         self._pending_hide_reason = "direct"
         self._status_timer = QTimer(self)
         self._status_timer.setSingleShot(True)
@@ -498,6 +698,8 @@ class MainOverlay(QWidget):
         self.score_overlay.reason_requested.connect(self._handle_score_reason_requested)
         self.reason_overlay = EvaluationReasonOverlay()
         self.reason_overlay.close_requested.connect(self.focus_restore_requested.emit)
+        self.notification_overlay = NotificationOverlay()
+        self.notification_overlay.close_requested.connect(self.focus_restore_requested.emit)
         self.summary_overlay = SummaryResultOverlay()
         self.title_overlay = TitleConfirmOverlay()
         self.summary_overlay.copy_requested.connect(self.summary_copy_requested.emit)
@@ -506,6 +708,9 @@ class MainOverlay(QWidget):
         self._evaluation_reason = ""
         self._score_visible = False
         self._summary_visible = False
+        self._notifications = []
+        self._notification_unread = False
+        self._reset_notification_log()
         self._busy_message = ""
         self._busy_step = 0
         self._busy_timer = QTimer(self)
@@ -551,6 +756,11 @@ class MainOverlay(QWidget):
                 min-width: 13px;
                 max-width: 13px;
             }
+            QWidget#modePill {
+                background: #fffaf4;
+                border: 1px solid #dccbbb;
+                border-radius: 12px;
+            }
             QPushButton {
                 border: 0;
                 border-radius: 13px;
@@ -576,6 +786,13 @@ class MainOverlay(QWidget):
                 color: #3f2f26;
             }
             QPushButton#iconOverlayButton:hover { background: #dcc1a7; }
+            QPushButton#iconOverlayButton[loginRequired="true"] {
+                background: #d8d0c8;
+                color: #fff8f2;
+            }
+            QPushButton#iconOverlayButton[loginRequired="true"]:hover {
+                background: #cfc6be;
+            }
             QPushButton#hideOverlayButton {
                 min-width: 30px;
                 max-width: 30px;
@@ -665,38 +882,45 @@ class MainOverlay(QWidget):
         )
 
         layout = QHBoxLayout(self.card)
-        layout.setContentsMargins(13, 9, 12, 9)
-        layout.setSpacing(6)
+        layout.setContentsMargins(11, 9, 11, 9)
+        layout.setSpacing(4)
 
         self.mode_widget = self._create_mode_display()
-        mode_group = QHBoxLayout()
-        mode_group.setContentsMargins(0, 0, 0, 0)
-        mode_group.setSpacing(3)
-        mode_group.addWidget(self.mode_widget, 0, Qt.AlignVCenter)
-        layout.addLayout(mode_group)
-        layout.addWidget(self._section_line())
+        self.mode_widget.setParent(self)
 
         layout.addWidget(self._section("\ud14d\uc2a4\ud2b8", [
-            self._button("\ud3c9\uac00", self.evaluate_requested.emit, width=56),
-            self._button("\uc81c\ubaa9", self.title_requested.emit, width=56),
-        ], width=124))
+            self._button("\ud3c9\uac00", self.evaluate_requested.emit, width=54),
+            self._button("\uc81c\ubaa9", self.title_requested.emit, width=54),
+        ], width=114))
         layout.addWidget(self._section_line())
 
-        self.correction_btn = self._button("\uad50\uc815", self.correction_requested.emit)
+        self.spelling_btn = self._button("\ub9de\ucda4\ubc95", self.spelling_requested.emit, width=70)
+        self.tone_btn = self._button("\ubb38\uccb4", self.tone_requested.emit, width=54)
+        self.correction_btn = self.spelling_btn
         layout.addWidget(self._section("\uad50\uc815", [
-            self.correction_btn,
-        ], width=64))
+            self.spelling_btn,
+            self.tone_btn,
+        ], width=126, button_spacing=2))
         layout.addWidget(self._section_line())
 
         layout.addWidget(self._section("\uc694\uc57d", [
             self._button("\uc694\uc57d", self.summary_requested.emit, width=56),
-        ], width=64))
+        ], width=66, left_pad=8))
 
         self.status_label = QLabel("")
         self.status_label.setObjectName("statusLabel")
         self.status_label.setFixedWidth(0)
         self.status_label.setAlignment(Qt.AlignCenter)
         self.status_label.hide()
+
+        self.undo_btn = self._icon_button("\ub418\ub3cc\ub9ac\uae30", ("back.png", "back.svg"))
+        self.undo_btn.setParent(self)
+        self.undo_btn.clicked.connect(self.undo_requested.emit)
+        self.undo_btn.setEnabled(False)
+        self.redo_btn = self._icon_button("\uc7ac\uc2e4\ud589", ("forward.png", "forward.svg"))
+        self.redo_btn.setParent(self)
+        self.redo_btn.clicked.connect(self.redo_requested.emit)
+        self.redo_btn.setEnabled(False)
 
         self.hide_btn = QPushButton("X", self)
         self.hide_btn.setObjectName("hideOverlayButton")
@@ -706,6 +930,18 @@ class MainOverlay(QWidget):
         self.settings_btn = self._icon_button("\uc124\uc815", ("settings.png", "settings.svg"))
         self.settings_btn.setParent(self)
         self.settings_btn.clicked.connect(self.open_settings_cover)
+        self.history_btn = self._icon_button("\uae30\ub85d", ("list.png", "list.svg"))
+        self.history_btn.setParent(self)
+        self.history_btn.clicked.connect(self.history_requested.emit)
+        self.open_btn = self._icon_button("\uc5f4\uae30", ("magnification_large.png", "magnification_large.svg"))
+        self.open_btn.setParent(self)
+        self.open_btn.clicked.connect(self.open_panel_requested.emit)
+        self.notification_btn = self._icon_button("\uc54c\ub9bc", ("notifications.png", "notifications.svg"))
+        self.notification_btn.setParent(self)
+        self.notification_btn.clicked.connect(self.show_notifications)
+        self.dark_btn = self._icon_button("\ub2e4\ud06c \ubaa8\ub4dc", ("brightness.png", "brightness.svg"))
+        self.dark_btn.setParent(self)
+        self.dark_btn.clicked.connect(self.dark_mode_requested.emit)
 
         self.collapsed_btn = QPushButton("도우미\n키기", self.card)
         self.collapsed_btn.setObjectName("collapsedHelperButton")
@@ -739,16 +975,16 @@ class MainOverlay(QWidget):
             """
         )
         layout = QVBoxLayout(self.busy_cover)
-        layout.setContentsMargins(0, 8, 0, 16)
+        layout.setContentsMargins(0, 16, 0, 8)
         layout.setSpacing(2)
         self.busy_spinner_label = BusySpinner(self.busy_cover)
         self.busy_text_label = QLabel("")
         self.busy_text_label.setObjectName("busyText")
         self.busy_text_label.setAlignment(Qt.AlignCenter)
-        layout.addStretch(1)
+        layout.addStretch(2)
         layout.addWidget(self.busy_spinner_label, 0, Qt.AlignCenter)
         layout.addWidget(self.busy_text_label, 0, Qt.AlignCenter)
-        layout.addStretch(2)
+        layout.addStretch(1)
         self.busy_cover.hide()
 
     def show_busy(self, message):
@@ -780,27 +1016,19 @@ class MainOverlay(QWidget):
 
     def _create_mode_display(self):
         widget = QWidget()
-        widget.setFixedWidth(84)
-        layout = QVBoxLayout(widget)
-        layout.setContentsMargins(0, 0, 0, 0)
-        layout.setSpacing(2)
-        for mode, label in (
-            ("clipboard", "\ud074\ub9bd\ubcf4\ub4dc \ubaa8\ub4dc"),
-            ("drag", "\ub4dc\ub798\uadf8 \ubaa8\ub4dc"),
-            ("realtime", "\uc2e4\uc2dc\uac04 \ubaa8\ub4dc"),
-        ):
-            row = QHBoxLayout()
-            row.setContentsMargins(0, 0, 0, 0)
-            row.setSpacing(4)
-            dot = QLabel("\u25cb")
-            dot.setObjectName("modeDot")
-            text = QLabel(label)
-            text.setObjectName("modeText")
-            row.addWidget(dot, 0, Qt.AlignVCenter)
-            row.addWidget(text, 1, Qt.AlignVCenter)
-            layout.addLayout(row)
-            self._mode_indicators[mode] = dot
-            self._mode_labels[mode] = text
+        widget.setObjectName("modePill")
+        widget.setFixedSize(82, 30)
+        layout = QHBoxLayout(widget)
+        layout.setContentsMargins(8, 4, 8, 4)
+        layout.setSpacing(4)
+        dot = QLabel("\u25cf")
+        dot.setObjectName("modeDot")
+        text = QLabel("\ud074\ub9bd\ubcf4\ub4dc")
+        text.setObjectName("modeText")
+        layout.addWidget(dot, 0, Qt.AlignVCenter)
+        layout.addWidget(text, 1, Qt.AlignVCenter)
+        self._mode_indicators["active"] = dot
+        self._mode_labels["active"] = text
         return widget
 
     def _build_settings_cover(self):
@@ -875,18 +1103,18 @@ class MainOverlay(QWidget):
             button.setText("?")
         return button
 
-    def _section(self, title, buttons, width):
+    def _section(self, title, buttons, width, left_pad=0, button_spacing=4):
         widget = QWidget()
         widget.setFixedWidth(width)
         layout = QVBoxLayout(widget)
-        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setContentsMargins(left_pad, 0, 0, 0)
         layout.setSpacing(5)
         label = QLabel(title)
         label.setObjectName("sectionLabel")
         label.setAlignment(Qt.AlignCenter)
         row = QHBoxLayout()
         row.setContentsMargins(0, 0, 0, 0)
-        row.setSpacing(4)
+        row.setSpacing(button_spacing)
         row.setAlignment(Qt.AlignCenter)
         for button in buttons:
             row.addWidget(button)
@@ -931,13 +1159,108 @@ class MainOverlay(QWidget):
         self._update_settings_replace_availability()
 
     def set_correction_enabled(self, enabled):
-        if hasattr(self, "correction_btn"):
-            self.correction_btn.setEnabled(bool(enabled))
+        if hasattr(self, "spelling_btn"):
+            self.spelling_btn.setEnabled(bool(enabled))
+
+    def set_undo_available(self, available):
+        if hasattr(self, "undo_btn"):
+            self.undo_btn.setEnabled(bool(available))
+
+    def set_redo_available(self, available):
+        if hasattr(self, "redo_btn"):
+            self.redo_btn.setEnabled(bool(available))
+
+    def set_dark_mode(self, enabled):
+        self._dark_mode = bool(enabled)
+        if not hasattr(self, "dark_btn"):
+            return
+        names = ("dark_mode.png", "dark_mode.svg") if self._dark_mode else ("brightness.png", "brightness.svg")
+        icon_path = self._find_icon(names)
+        if icon_path:
+            self.dark_btn.setText("")
+            self.dark_btn.setIcon(QIcon(str(icon_path)))
+            self.dark_btn.setIconSize(QSize(18, 18))
+        else:
+            self.dark_btn.setText("\ub2e4")
+
+    def set_history_login_state(self, logged_in):
+        if not hasattr(self, "history_btn"):
+            return
+        login_required = not bool(logged_in)
+        self.history_btn.setProperty("loginRequired", login_required)
+        self.history_btn.setToolTip("기록" if not login_required else "로그인 후 기록 사용")
+        self.history_btn.style().unpolish(self.history_btn)
+        self.history_btn.style().polish(self.history_btn)
+        self.history_btn.update()
+
+    def add_notification(self, message, error=False):
+        text = str(message or "").strip()
+        if not text:
+            return
+        item = {
+            "time": time.strftime("%H:%M:%S"),
+            "message": text,
+            "error": bool(error),
+        }
+        self._notifications.insert(0, item)
+        self._notifications = self._notifications[:100]
+        self._notification_unread = True
+        self._write_notification_log(item)
+        self._update_notification_icon()
+        if getattr(self, "notification_overlay", None) is not None and self.notification_overlay.isVisible():
+            self.notification_overlay.set_notifications(self._notifications)
+
+    def show_notifications(self):
+        if not hasattr(self, "notification_overlay"):
+            return
+        self._notification_unread = False
+        self._update_notification_icon()
+        self.notification_overlay.set_notifications(self._notifications)
+        self.notification_overlay.show_for_window(self._last_window_handle)
+
+    def _update_notification_icon(self):
+        if not hasattr(self, "notification_btn"):
+            return
+        names = ("notifications_un.png", "notifications_un.svg") if self._notification_unread else ("notifications.png", "notifications.svg")
+        icon_path = self._find_icon(names)
+        if icon_path:
+            self.notification_btn.setText("")
+            self.notification_btn.setIcon(QIcon(str(icon_path)))
+            self.notification_btn.setIconSize(QSize(18, 18))
+        elif self._notification_unread:
+            self.notification_btn.setText("!")
+        else:
+            self.notification_btn.setText("?")
+
+    def _write_notification_log(self, item):
+        try:
+            payload = {
+                "ts": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "time": item.get("time", ""),
+                "message": item.get("message", ""),
+                "error": bool(item.get("error")),
+            }
+            with _NOTIFICATION_LOG_PATH.open("a", encoding="utf-8") as log_file:
+                log_file.write(json.dumps(payload, ensure_ascii=False) + "\n")
+        except Exception:
+            pass
+
+    def _reset_notification_log(self):
+        try:
+            _NOTIFICATION_LOG_PATH.write_text("", encoding="utf-8")
+        except Exception:
+            pass
 
     def set_active_mode(self, mode):
         self._active_mode = mode if mode in {"clipboard", "drag", "realtime"} else "clipboard"
-        for mode_name, dot in self._mode_indicators.items():
-            dot.setText("\u25cf" if mode_name == self._active_mode else "\u25cb")
+        active_label = {
+            "clipboard": "\ud074\ub9bd\ubcf4\ub4dc",
+            "drag": "\ub4dc\ub798\uadf8",
+            "realtime": "\uc2e4\uc2dc\uac04",
+        }.get(self._active_mode, "\ud074\ub9bd\ubcf4\ub4dc")
+        label = self._mode_labels.get("active")
+        if label is not None:
+            label.setText(active_label)
         radio = {
             "drag": self.drag_radio,
             "realtime": self.realtime_radio,
@@ -989,7 +1312,13 @@ class MainOverlay(QWidget):
         for widget in (
             self.mode_widget,
             self.status_label,
+            self.undo_btn,
+            self.redo_btn,
+            self.history_btn,
+            self.open_btn,
             self.settings_btn,
+            self.notification_btn,
+            self.dark_btn,
             self.hide_btn,
         ):
             widget.hide()
@@ -1012,7 +1341,13 @@ class MainOverlay(QWidget):
         self._ensure_expanded_size()
         self.collapsed_btn.hide()
         self.hide_btn.show()
+        self.undo_btn.show()
+        self.redo_btn.show()
+        self.history_btn.show()
+        self.open_btn.show()
         self.settings_btn.show()
+        self.notification_btn.show()
+        self.dark_btn.show()
         for child in self.card.findChildren(QWidget):
             if child is not self.settings_cover and child is not self.collapsed_btn:
                 child.show()
@@ -1023,12 +1358,12 @@ class MainOverlay(QWidget):
         if self._is_notepad_reader():
             self._compact_size = self._notepad_compact_size
             self._card_size = self._notepad_card_size
-            self.mode_widget.setFixedWidth(64)
+            self.mode_widget.setFixedSize(72, 30)
             self._set_mode_labels_compact(True)
         else:
             self._compact_size = self._default_compact_size
             self._card_size = self._default_card_size
-            self.mode_widget.setFixedWidth(84)
+            self.mode_widget.setFixedSize(82, 30)
             self._set_mode_labels_compact(False)
         if hasattr(self, "root_layout"):
             self.root_layout.setContentsMargins(0, 34, 0, 0)
@@ -1040,10 +1375,23 @@ class MainOverlay(QWidget):
         if hasattr(self, "busy_cover"):
             self.busy_cover.setGeometry(self.card.rect())
         top_button_y = 0
-        self.settings_btn.setGeometry(self._card_size[0] - 66, top_button_y, 30, 30)
-        self.hide_btn.setGeometry(self._card_size[0] - 30, top_button_y, 30, 30)
-        self.settings_btn.raise_()
-        self.hide_btn.raise_()
+        self.mode_widget.move(0, top_button_y)
+        self.mode_widget.raise_()
+        buttons = [
+            self.undo_btn,
+            self.redo_btn,
+            self.history_btn,
+            self.open_btn,
+            self.settings_btn,
+            self.notification_btn,
+            self.dark_btn,
+            self.hide_btn,
+        ]
+        x = self.width() - 30
+        for button in reversed(buttons):
+            button.setGeometry(x, top_button_y, 30, 30)
+            x -= 36
+            button.raise_()
 
     def _ensure_collapsed_size(self):
         if hasattr(self, "root_layout"):
@@ -1054,7 +1402,13 @@ class MainOverlay(QWidget):
         self.card.setFixedSize(*self._collapsed_size)
         self.card.resize(*self._collapsed_size)
         self.hide_btn.hide()
+        self.undo_btn.hide()
+        self.redo_btn.hide()
         self.settings_btn.hide()
+        self.history_btn.hide()
+        self.open_btn.hide()
+        self.notification_btn.hide()
+        self.dark_btn.hide()
         self.collapsed_btn.setGeometry(8, 7, 78, 40)
 
     def show_status(self, message, auto_hide_ms=1200):
@@ -1152,7 +1506,17 @@ class MainOverlay(QWidget):
         if self._should_delegate_reason_to_panel():
             self.evaluation_reason_requested.emit()
             return
-        self.reason_overlay.show_for_window(self._last_window_handle, self._evaluation_reason or "\uac4d")
+        self.reason_overlay.show_for_window(
+            self._last_window_handle,
+            self._evaluation_reason or "\ud3c9\uac00 \uc774\uc720\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.",
+        )
+
+    def show_spelling_feedback_reason(self, feedback, window_handle=None):
+        self.reason_overlay.show_for_window(
+            window_handle or self._last_window_handle,
+            feedback or "\uad50\uc815 \ud3c9\uac00\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.",
+            "\uad50\uc815 \ud3c9\uac00",
+        )
 
     def _should_delegate_reason_to_panel(self):
         rect = self._target_rect(self._last_window_handle)
@@ -1168,14 +1532,13 @@ class MainOverlay(QWidget):
 
     def _set_mode_labels_compact(self, compact: bool):
         labels = {
-            "clipboard": "\ud074\ub9bd\ubcf4\ub4dc" if compact else "\ud074\ub9bd\ubcf4\ub4dc \ubaa8\ub4dc",
-            "drag": "\ub4dc\ub798\uadf8" if compact else "\ub4dc\ub798\uadf8 \ubaa8\ub4dc",
-            "realtime": "\uc2e4\uc2dc\uac04" if compact else "\uc2e4\uc2dc\uac04 \ubaa8\ub4dc",
+            "clipboard": "\ud074\ub9bd\ubcf4\ub4dc",
+            "drag": "\ub4dc\ub798\uadf8",
+            "realtime": "\uc2e4\uc2dc\uac04",
         }
-        for mode, label in labels.items():
-            widget = self._mode_labels.get(mode)
-            if widget is not None:
-                widget.setText(label)
+        widget = self._mode_labels.get("active")
+        if widget is not None:
+            widget.setText(labels.get(self._active_mode, "\ud074\ub9bd\ubcf4\ub4dc"))
 
     def hide_evaluation_score(self):
         self._score_visible = False
@@ -1236,6 +1599,8 @@ class MainOverlay(QWidget):
             self.title_overlay.hide()
         if hasattr(self, "summary_overlay"):
             self.summary_overlay.hide()
+        if hasattr(self, "notification_overlay"):
+            self.notification_overlay.hide()
         self._overlay_state = None
         super().hide()
 
@@ -1255,6 +1620,7 @@ class MainOverlay(QWidget):
                 "Writing Assistant Evaluation Reason",
                 "Writing Assistant Summary",
                 "Writing Assistant Title",
+                "Writing Assistant Notifications",
             }
             return title in overlay_titles and (class_name.startswith("Qt") or "QWindow" in class_name)
         except Exception:

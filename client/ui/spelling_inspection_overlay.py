@@ -360,6 +360,7 @@ class SpellingInspectionOverlayManager:
         self.on_replace = on_replace
         self._underlines: list[SpellingUnderline] = []
         self._cards: list[SpellingGuideCard] = []
+        self._corrections: list[dict] = []
         self._avoidance_rect_provider = None
         self._last_target = None
         self._last_text = ""
@@ -372,6 +373,12 @@ class SpellingInspectionOverlayManager:
 
     def set_avoidance_rect_provider(self, provider):
         self._avoidance_rect_provider = provider if callable(provider) else None
+
+    def set_corrections(self, corrections):
+        if not isinstance(corrections, list):
+            self._corrections = []
+            return
+        self._corrections = [dict(item) for item in corrections if isinstance(item, dict)]
 
     def clear(self):
         for widget in [*self._underlines, *self._cards]:
@@ -407,7 +414,7 @@ class SpellingInspectionOverlayManager:
         previous_text = self._last_text
         current_text = self._live_text_for_target(target, text) if use_live else str(text or "")
         self._target_hwnd = int(getattr(target, "window_handle", 0) or 0) if target is not None else 0
-        issues = self._test_issues(current_text)
+        issues = self._build_issues(current_text)
         if use_live and self._looks_like_transient_sync(target, previous_text, current_text, issues):
             _log_spelling_overlay(
                 "sync_ignored_transient_text",
@@ -509,8 +516,10 @@ class SpellingInspectionOverlayManager:
                 continue
         return False
 
-    def show_for_target(self, target, text: str):
+    def show_for_target(self, target, text: str, corrections=None):
         self.clear()
+        if corrections is not None:
+            self.set_corrections(corrections)
         self._last_target = target
         self._last_text = self._live_text_for_target(target, text)
         self._target_hwnd = int(getattr(target, "window_handle", 0) or 0) if target is not None else 0
@@ -526,7 +535,7 @@ class SpellingInspectionOverlayManager:
             text_len=len(self._last_text),
             text_sample=self._last_text[:80],
         )
-        issues = self._test_issues(self._last_text)
+        issues = self._build_issues(self._last_text)
         _log_spelling_overlay("issues_built", count=len(issues), originals=[issue.original for issue in issues])
         if not issues:
             return 0
@@ -856,7 +865,79 @@ class SpellingInspectionOverlayManager:
             return self._notepad_editor_rect(hwnd) or self._target_client_rect(hwnd)
         return self._target_client_rect(hwnd)
 
-    def _test_issues(self, text: str) -> list[SpellingGuideIssue]:
+    def _build_issues(self, text: str) -> list[SpellingGuideIssue]:
+        issues: list[SpellingGuideIssue] = []
+        source = str(text or "")
+        cursor = 0
+        for index, item in enumerate(self._corrections or []):
+            original = str(item.get("original") or item.get("anchor_text") or "").strip()
+            replacement = str(item.get("suggestion") or "").strip()
+            reason = str(item.get("explanation") or item.get("display_title") or "").strip()
+            if not original or not replacement:
+                continue
+            start = self._issue_start_from_correction(source, item, original, cursor)
+            if start < 0:
+                _log_spelling_overlay(
+                    "ai_issue_not_found",
+                    index=index,
+                    original=original,
+                    expected_start=item.get("source_start"),
+                    text_sample=source[:120],
+                )
+                continue
+            end = start + len(original)
+            cursor = end
+            category = self._issue_category_label(str(item.get("category") or ""))
+            if not reason:
+                reason = f'"{original}"을(를) "{replacement}"로 고치는 것이 더 자연스럽습니다.'
+            _log_spelling_overlay(
+                "ai_issue_matched",
+                index=index,
+                original=original,
+                start=start,
+                end=end,
+                replacement=replacement,
+                category=category,
+            )
+            issues.append(
+                SpellingGuideIssue(
+                    original=original,
+                    replacement=replacement,
+                    reason=reason,
+                    start=start,
+                    end=end,
+                    category=category,
+                    has_blank_line_above=self._has_blank_line_above(source, start),
+                )
+            )
+        return issues
+
+    def _issue_start_from_correction(self, text: str, item: dict, original: str, cursor: int) -> int:
+        try:
+            expected = int(item.get("source_start"))
+        except Exception:
+            expected = -1
+        if expected >= 0 and text[expected : expected + len(original)] == original:
+            return expected
+        if expected >= 0:
+            nearby_start = max(0, expected - 40)
+            nearby_end = min(len(text), expected + len(original) + 40)
+            nearby = text.find(original, nearby_start, nearby_end)
+            if nearby >= 0:
+                return nearby
+        start = text.find(original, max(0, cursor))
+        if start >= 0:
+            return start
+        return text.find(original)
+
+    def _issue_category_label(self, category: str) -> str:
+        value = str(category or "").strip().lower()
+        if any(token in value for token in ("문맥", "context", "맥락")):
+            return "문맥"
+        return "맞춤법"
+
+    def _legacy_test_issues_disabled(self, text: str) -> list[SpellingGuideIssue]:
+        return []
         specs = [
             (
                 ("안녕하요", "안녕하서요", "안녕하소요"),

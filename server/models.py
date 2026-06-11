@@ -52,6 +52,7 @@ class UserSetting(Base):
     history_enabled = Column(Boolean, nullable=False, default=False)
     input_mode = Column(String(20), nullable=False, default="clipboard")
     replace_mode = Column(Boolean, nullable=False, default=False)
+    spell_scope = Column(String(30), nullable=False, default="current_sentence")
     updated_at = Column(DateTime, default=local_now, onupdate=local_now)
 
 

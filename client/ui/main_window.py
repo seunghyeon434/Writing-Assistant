@@ -63,6 +63,7 @@ class App:
         self.realtime_overlay.set_avoidance_rect_provider(self._correction_overlay_avoidance_rects)
         self.main_overlay.set_active_mode(self.settings.get("input_mode", "clipboard"))
         self.main_overlay.set_spelling_replace_mode(self.settings.get("replace_mode", False))
+        self.main_overlay.set_dark_mode(self.settings.get("default_dark_mode", False))
         self.panel.set_default_dark_mode_checked(
             self.settings.get("default_dark_mode", False)
         )
@@ -76,8 +77,13 @@ class App:
         self.analyzer = TextAnalyzer()
         self.output_applier = None
         self.last_input = ""
+        self.previous_input = ""
         self.last_corrected_text = ""
         self.last_correction_source_text = ""
+        self.last_correction_source_range = (0, 0)
+        self.last_correction_scope = "current_sentence"
+        self.last_spelling_feedback = ""
+        self.last_spelling_corrections = []
         self.last_evaluation_reason = ""
         self.last_output_target = None
         self.tone_favorites = []
@@ -105,6 +111,8 @@ class App:
         self.drag_overlay_requested = False
         self.realtime_overlay_requested = False
         self.realtime_overlay_anchor = None
+        self._main_overlay_spelling_action_active = False
+        self._main_overlay_tone_action_active = False
         self.word_undo_available_by_hwnd = {}
         self.word_redo_available_by_hwnd = {}
         self.notepad_undo_available_by_hwnd = {}
@@ -175,6 +183,7 @@ class App:
         self.mini_overlay.choice_spelling_requested.connect(self.apply_correction_to_source)
         self.mini_overlay.choice_tone_requested.connect(self.handle_drag_tone_button)
         self.mini_overlay.overlay_moved.connect(self.handle_correction_overlay_moved)
+        self.mini_overlay.spelling_feedback_requested.connect(self.show_spelling_feedback_reason)
         self.realtime_overlay.apply_pressed.connect(lambda: None)
         self.realtime_overlay.apply_clicked.connect(self.apply_correction_to_source)
         self.realtime_overlay.open_clicked.connect(self.show_panel)
@@ -188,15 +197,22 @@ class App:
         self.realtime_overlay.choice_spelling_requested.connect(self.apply_correction_to_source)
         self.realtime_overlay.choice_tone_requested.connect(self.handle_realtime_tone_button)
         self.realtime_overlay.overlay_moved.connect(self.handle_correction_overlay_moved)
+        self.realtime_overlay.spelling_feedback_requested.connect(self.show_spelling_feedback_reason)
         self.main_overlay.settings_save_requested.connect(self.handle_main_overlay_mode_save)
+        self.main_overlay.open_panel_requested.connect(self.show_panel)
+        self.main_overlay.history_requested.connect(self.show_current_document_history)
+        self.main_overlay.undo_requested.connect(self.undo_last_main_overlay_correction)
+        self.main_overlay.redo_requested.connect(self.redo_last_main_overlay_correction)
         self.main_overlay.evaluate_requested.connect(lambda: self.handle_main_overlay_action("evaluate"))
         self.main_overlay.evaluation_reason_requested.connect(self.show_overlay_evaluation_reason)
         self.main_overlay.summary_copy_requested.connect(self.safe_copy)
         self.main_overlay.title_requested.connect(lambda: self.handle_main_overlay_action("title"))
         self.main_overlay.title_insert_requested.connect(self.insert_recommended_title_from_overlay)
         self.main_overlay.correction_requested.connect(lambda: self.handle_main_overlay_action("correction"))
+        self.main_overlay.spelling_requested.connect(lambda: self.handle_main_overlay_action("spelling"))
         self.main_overlay.summary_requested.connect(lambda: self.handle_main_overlay_action("summary"))
         self.main_overlay.tone_requested.connect(lambda: self.handle_main_overlay_action("tone"))
+        self.main_overlay.dark_mode_requested.connect(self.toggle_main_overlay_dark_mode)
         self.main_overlay.summary_overlay.close_requested.connect(self.handle_main_summary_closed)
         self.main_overlay.focus_restore_requested.connect(
             lambda: self._schedule_editor_focus_restore(self.main_overlay_anchor or self.drag_overlay_anchor or self.realtime_overlay_anchor)
@@ -357,6 +373,8 @@ class App:
             redo_available = False
         self.mini_overlay.set_undo_available(undo_available)
         self.mini_overlay.set_redo_available(redo_available)
+        self.main_overlay.set_undo_available(undo_available)
+        self.main_overlay.set_redo_available(redo_available)
 
     def _set_realtime_overlay_undo_state(self, reader_name, hwnd):
         hwnd = int(hwnd or 0)
@@ -372,6 +390,8 @@ class App:
             redo_available = False
         self.realtime_overlay.set_undo_available(undo_available)
         self.realtime_overlay.set_redo_available(redo_available)
+        self.main_overlay.set_undo_available(undo_available)
+        self.main_overlay.set_redo_available(redo_available)
 
     def _hide_mini_overlay(self, reason):
         try:
@@ -557,6 +577,16 @@ class App:
         self._save_main_overlay_state_for_anchor(self.main_overlay_anchor)
         self._schedule_editor_focus_restore(self.main_overlay_anchor or self.drag_overlay_anchor or self.realtime_overlay_anchor)
 
+    def _clear_saved_summary_state_for_anchor(self, anchor=None):
+        key = self._main_overlay_state_key(anchor or self.main_overlay_anchor)
+        if key is None:
+            return
+        state = self.main_overlay_state_by_target.get(key)
+        if not isinstance(state, dict):
+            return
+        state["summary_visible"] = False
+        state["summary_text"] = ""
+
     def _main_overlay_overlaps_mini_overlay(self, margin=14):
         try:
             if not hasattr(self, "main_overlay") or not hasattr(self, "mini_overlay"):
@@ -620,14 +650,21 @@ class App:
 
     def handle_main_overlay_action(self, action):
         if action == "tone":
+            self._main_overlay_tone_action_active = True
+            self.main_overlay.show_status("\ubb38\uccb4\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694.", auto_hide_ms=900)
             if self.active_input_mode == "drag":
                 self.handle_drag_tone_button()
             else:
-                self.show_panel()
-                try:
-                    self.panel.tabs.setCurrentIndex(3)
-                except Exception:
-                    pass
+                self.handle_realtime_tone_button()
+            try:
+                prompt = self.mini_overlay.tone_prompt if self.active_input_mode == "drag" else self.realtime_overlay.tone_prompt
+                if not prompt.isVisible():
+                    self._main_overlay_tone_action_active = False
+            except Exception:
+                pass
+            return
+        if action == "spelling":
+            self.run_main_overlay_spelling_action()
             return
         if action == "correction" and self.active_input_mode == "drag":
             self.request_drag_overlay_from_main()
@@ -666,6 +703,9 @@ class App:
             self.main_overlay.show_status("\uad50\uc815 \uc644\ub8cc")
             return
         if action == "summary":
+            self.main_overlay.hide_summary_result()
+            self.panel.clear_summary_result()
+            self._clear_saved_summary_state_for_anchor(self.main_overlay_anchor)
             self.main_overlay.show_busy("\uc694\uc57d \uc9c4\ud589\uc911")
             QApplication.processEvents()
             try:
@@ -684,21 +724,250 @@ class App:
                 self._schedule_editor_focus_restore(self.main_overlay_anchor or self.drag_overlay_anchor or self.realtime_overlay_anchor)
             return
 
+    def run_main_overlay_spelling_action(self):
+        self.main_overlay.show_busy("\ub9de\ucda4\ubc95 \uac80\uc0ac \uc9c4\ud589\uc911")
+        QApplication.processEvents()
+        self._main_overlay_spelling_action_active = True
+        try:
+            if self.active_input_mode == "drag":
+                if not self._has_fresh_drag_spelling_selection(max_age=60.0):
+                    captured = self._capture_current_drag_selection_from_anchor()
+                    if not captured:
+                        restored = self._restore_recent_drag_snapshot(max_age=30.0)
+                    else:
+                        restored = bool(self.last_output_target and self.last_input)
+                    if not restored:
+                        self.main_overlay.hide_busy()
+                        self.main_overlay.show_status("\ub4dc\ub798\uadf8\ub97c \ud574\uc8fc\uc138\uc694!", auto_hide_ms=1200)
+                        self.add_notification("\ub4dc\ub798\uadf8 \uc120\ud0dd \uc5c6\uc774 \ub9de\ucda4\ubc95 \uac80\uc0ac\uac00 \uc694\uccad\ub428", error=True)
+                        return
+                self.apply_correction_to_source()
+                return
+            if self.active_input_mode == "realtime":
+                if self.main_overlay_anchor and self.realtime_overlay_anchor is None:
+                    self.realtime_overlay_anchor = self.main_overlay_anchor
+                if not self._refresh_realtime_overlay_input():
+                    self.main_overlay.hide_busy()
+                    self.main_overlay.show_status("\ud14d\uc2a4\ud2b8 \uc5c6\uc74c")
+                    return
+                if self.last_output_target is None:
+                    self.last_output_target = self._output_target_from_anchor(self.realtime_overlay_anchor or self.main_overlay_anchor)
+                self.apply_correction_to_source()
+                return
+            if not self.last_input:
+                self.main_overlay.hide_busy()
+                self.main_overlay.show_status("\ud14d\uc2a4\ud2b8 \uc5c6\uc74c")
+                return
+            self.run_spell_check()
+            if self._can_apply_spelling_source_replacement():
+                self.apply_correction_to_source()
+            else:
+                self.show_spelling_inspection_guides()
+        finally:
+            self._main_overlay_spelling_action_active = False
+            self.main_overlay.hide_busy()
+
+    def undo_last_main_overlay_correction(self):
+        if self.active_input_mode == "realtime":
+            self.undo_last_realtime_correction()
+        else:
+            self.undo_last_drag_correction()
+
+    def redo_last_main_overlay_correction(self):
+        if self.active_input_mode == "realtime":
+            self.redo_last_realtime_correction()
+        else:
+            self.redo_last_drag_correction()
+
+    def toggle_main_overlay_dark_mode(self):
+        try:
+            self.panel.toggle_theme()
+            self.main_overlay.set_dark_mode(self.panel.is_dark_mode)
+        except Exception:
+            pass
+
     def _refresh_realtime_overlay_input(self):
         if self.active_input_mode != "realtime":
             return False
-        text = self._read_full_text_for_title()
+        full_text = self._read_full_text_for_title()
+        if not str(full_text or "").strip():
+            return False
+        scope = self.settings.get("spell_scope") or self.panel.get_spell_scope()
+        text, source_start, source_end = self._spell_check_target_text(full_text, scope)
         if not str(text or "").strip():
             return False
         previous_target = self.last_output_target
+        self.previous_input = self.last_input
         self.last_input = text
         self.last_corrected_text = ""
+        self.last_correction_scope = scope
+        self.last_correction_source_range = (source_start, source_end)
         self.last_output_target = self._output_target_from_anchor(
             self.realtime_overlay_anchor or self.main_overlay_anchor,
             previous_target=previous_target,
         )
         self.panel.set_original_text(text)
         return True
+
+    def _spell_check_target_text(self, text, scope):
+        value = str(text or "")
+        normalized_scope = scope if scope in {"current_sentence", "current_paragraph", "full_text"} else "current_sentence"
+        if normalized_scope == "full_text":
+            return value, 0, len(value)
+        anchor = self._current_spell_caret_anchor(value)
+        if anchor is None:
+            anchor = self._changed_text_anchor(value, self.previous_input)
+        if normalized_scope == "current_paragraph":
+            return self._current_paragraph_at(value, anchor)
+        return self._current_sentence_at(value, anchor)
+
+    def _current_spell_caret_anchor(self, text):
+        anchor = self.realtime_overlay_anchor or self.main_overlay_anchor
+        if not anchor:
+            return None
+        reader_name, hwnd = anchor
+        reader_name = str(reader_name or "")
+        if reader_name in {"word", "word_selection"}:
+            return self._current_word_caret_index(text)
+        if reader_name in {"notepad", "notepad_selection"}:
+            return self._current_notepad_caret_index(hwnd, text)
+        return None
+
+    def _current_word_caret_index(self, text):
+        try:
+            import pythoncom
+            import win32com.client as win32
+
+            pythoncom.CoInitialize()
+            word = win32.GetActiveObject("Word.Application")
+            document = getattr(word, "ActiveDocument", None)
+            selection = getattr(word, "Selection", None)
+            if document is None or selection is None:
+                return None
+            selection_range = selection.Range
+            content = document.Content
+            content_start = int(getattr(content, "Start", 0) or 0)
+            caret_start = int(getattr(selection_range, "Start", content_start) or content_start)
+            caret_start = max(content_start, min(caret_start, int(getattr(content, "End", caret_start) or caret_start)))
+            prefix_range = document.Range(Start=content_start, End=caret_start)
+            prefix = self._normalize_word_caret_text(getattr(prefix_range, "Text", "") or "")
+            return max(0, min(len(str(text or "")), len(prefix)))
+        except Exception as exc:
+            self._log_drag_apply("word_caret_anchor_failed", error=f"{type(exc).__name__}: {exc}")
+            return None
+
+    def _current_notepad_caret_index(self, hwnd, text):
+        try:
+            import ctypes
+            from ctypes import wintypes
+            import win32gui
+
+            EM_GETSEL = 0x00B0
+            user32 = ctypes.WinDLL("user32", use_last_error=True)
+            edit_hwnd = self._notepad_edit_handle(int(hwnd or 0))
+            if not edit_hwnd:
+                return None
+            selection = int(user32.SendMessageW(wintypes.HWND(edit_hwnd), EM_GETSEL, 0, 0))
+            start = selection & 0xFFFF
+            end = (selection >> 16) & 0xFFFF
+            caret = max(start, end)
+            return max(0, min(len(str(text or "")), caret))
+        except Exception as exc:
+            self._log_drag_apply("notepad_caret_anchor_failed", error=f"{type(exc).__name__}: {exc}")
+            return None
+
+    def _notepad_edit_handle(self, hwnd):
+        if not hwnd:
+            return 0
+        try:
+            import win32gui
+
+            def is_edit(candidate):
+                class_name = (win32gui.GetClassName(candidate) or "").lower()
+                return "edit" in class_name or "richedit" in class_name
+
+            if is_edit(hwnd):
+                return int(hwnd)
+            found = 0
+
+            def visit(child_hwnd, _):
+                nonlocal found
+                if found:
+                    return False
+                try:
+                    if is_edit(child_hwnd):
+                        found = int(child_hwnd)
+                        return False
+                except Exception:
+                    pass
+                return True
+
+            win32gui.EnumChildWindows(hwnd, visit, None)
+            return found
+        except Exception:
+            return 0
+
+    @staticmethod
+    def _normalize_word_caret_text(text):
+        return (
+            str(text or "")
+            .replace("\x00", "")
+            .replace("\r\n", "\n")
+            .replace("\r", "\n")
+            .replace("\v", "\n")
+            .replace("\f", "\n")
+            .replace("\x07", "")
+        )
+
+    def _changed_text_anchor(self, current, previous):
+        if not previous or current == previous:
+            return len(current)
+        if current.startswith(previous):
+            return len(current)
+        if previous.startswith(current):
+            return len(current)
+        limit = min(len(current), len(previous))
+        index = 0
+        while index < limit and current[index] == previous[index]:
+            index += 1
+        return max(0, min(len(current), index))
+
+    def _current_sentence_at(self, text, anchor):
+        if not text:
+            return "", 0, 0
+        anchor = max(0, min(len(text), anchor))
+        left_boundaries = ".?!。！？\n"
+        right_boundaries = ".?!。！？\n"
+        start = anchor
+        while start > 0 and text[start - 1] not in left_boundaries:
+            start -= 1
+        end = anchor
+        while end < len(text) and text[end] not in right_boundaries:
+            end += 1
+        if end < len(text) and text[end] in ".?!。！？":
+            end += 1
+        return self._trim_scoped_text(text, start, end)
+
+    def _current_paragraph_at(self, text, anchor):
+        if not text:
+            return "", 0, 0
+        anchor = max(0, min(len(text), anchor))
+        normalized = str(text)
+        start = normalized.rfind("\n\n", 0, anchor)
+        start = 0 if start < 0 else start + 2
+        end = normalized.find("\n\n", anchor)
+        end = len(normalized) if end < 0 else end
+        return self._trim_scoped_text(normalized, start, end)
+
+    @staticmethod
+    def _trim_scoped_text(full_text, start, end):
+        start = max(0, min(len(full_text), start))
+        end = max(start, min(len(full_text), end))
+        while start < end and full_text[start].isspace():
+            start += 1
+        while end > start and full_text[end - 1].isspace():
+            end -= 1
+        return full_text[start:end], start, end
 
     def _output_target_from_anchor(self, anchor, previous_target=None):
         if not anchor:
@@ -1876,8 +2145,10 @@ class App:
 
     def clear_drag_selection(self, reader_name="", window_handle=None):
         self.last_input = ""
+        self.previous_input = ""
         self.last_corrected_text = ""
         self.last_correction_source_text = ""
+        self.last_correction_source_range = (0, 0)
         self.last_evaluation_reason = ""
         self.last_output_target = None
         self.suppress_replacement_echo_text = ""
@@ -1888,6 +2159,8 @@ class App:
         self.panel.clear_tone_result()
         self.last_drag_selection_signature = None
         self.pending_word_clear_at = 0.0
+        self.mini_overlay.set_spelling_feedback_available(False)
+        self.realtime_overlay.set_spelling_feedback_available(False)
         self.mini_overlay.clear_selection(reader_name, window_handle)
 
     def handle_input_event(self, event):
@@ -1997,8 +2270,11 @@ class App:
     def reset_session_state(self):
         self.spelling_inspection_overlay.clear()
         self.last_input = ""
+        self.previous_input = ""
         self.last_corrected_text = ""
         self.last_correction_source_text = ""
+        self.last_correction_source_range = (0, 0)
+        self.last_spelling_feedback = ""
         self.last_output_target = None
         self._clear_recent_drag_snapshot()
         self.suppress_replacement_echo_until = 0.0
@@ -2008,6 +2284,8 @@ class App:
         self.panel.clear_summary_result()
         self.panel.clear_tone_result()
         self.panel.set_active_window_title("")
+        self.mini_overlay.set_spelling_feedback_available(False)
+        self.realtime_overlay.set_spelling_feedback_available(False)
         self._hide_mini_overlay("main_window_hide_call")
         self._hide_main_overlay("main_window_hide_call")
 
@@ -2042,17 +2320,52 @@ class App:
     def run_spell_check(self):
         if not self.last_input:
             return
-        self.last_correction_source_text = self.last_input
-        result = self.analyzer.analyze_spelling(self.last_correction_source_text)
-        spelling_feedback = self.analyzer.TEMP_SPELLING_FEEDBACK
-        self.last_corrected_text = self._extract_corrected_text(result)
-        self.panel.set_spell_result(result)
-        self.save_history_log(
-            feature_type=2,
-            input_text=self.last_correction_source_text,
-            output_text=self.last_corrected_text,
-            spelling_feedback=spelling_feedback,
+        scope_label = self._spell_scope_label(self.last_correction_scope)
+        self.add_notification(f"{scope_label} \ub9de\ucda4\ubc95 \uac80\uc0ac \uc2dc\uc791")
+        try:
+            self.last_correction_source_text = self.last_input
+            result = self.analyzer.analyze_spelling(self.last_correction_source_text)
+            spelling_feedback = self.analyzer.last_spelling_feedback or self.analyzer.TEMP_SPELLING_FEEDBACK
+            self.last_spelling_feedback = spelling_feedback
+            self.last_spelling_corrections = list(getattr(self.analyzer, "last_spelling_corrections", []) or [])
+            self.last_corrected_text = self._extract_corrected_text(result)
+            self.panel.set_spell_result(result)
+            self.save_history_log(
+                feature_type=2,
+                input_text=self.last_correction_source_text,
+                output_text=self.last_corrected_text,
+                spelling_feedback=spelling_feedback,
+            )
+            self.add_notification(f"{scope_label} \ub9de\ucda4\ubc95 \uac80\uc0ac \uc644\ub8cc")
+        except Exception as exc:
+            self.add_notification(f"\ub9de\ucda4\ubc95 \uac80\uc0ac \uc2e4\ud328: {type(exc).__name__}", error=True)
+            raise
+
+    def add_notification(self, message, error=False):
+        try:
+            self.main_overlay.add_notification(message, error=error)
+        except Exception:
+            pass
+
+    def _active_correction_status_overlay(self):
+        use_main_overlay = (
+            getattr(self, "_main_overlay_spelling_action_active", False)
+            or getattr(self, "_main_overlay_tone_action_active", False)
         )
+        if (
+            use_main_overlay
+            and hasattr(self, "main_overlay")
+            and self.main_overlay.isVisible()
+        ):
+            return self.main_overlay
+        return self.realtime_overlay if self.active_input_mode == "realtime" else self.mini_overlay
+
+    def _spell_scope_label(self, scope):
+        return {
+            "current_sentence": "\ud604\uc7ac \ubb38\uc7a5",
+            "current_paragraph": "\ud604\uc7ac \ubb38\ub2e8",
+            "full_text": "\uae00 \uc804\uccb4",
+        }.get(scope, "\ud604\uc7ac \ubb38\uc7a5")
 
     def apply_correction_to_source(self):
         spelling_replacement_enabled = self._can_apply_spelling_source_replacement()
@@ -2088,7 +2401,7 @@ class App:
                         QTimer.singleShot(180, self._retry_drag_apply_once)
                         return
                     self.pending_drag_apply_retry = False
-                    self.mini_overlay.show_status("\ub4dc\ub798\uadf8\ub97c \ud574\uc8fc\uc138\uc694!", auto_hide_ms=1000)
+                    self._active_correction_status_overlay().show_status("\ub4dc\ub798\uadf8\ub97c \ud574\uc8fc\uc138\uc694!", auto_hide_ms=1000)
                     return
             self.pending_drag_apply_retry = False
         if not spelling_replacement_enabled:
@@ -2097,10 +2410,7 @@ class App:
         text = self.last_corrected_text or self._extract_corrected_text(self.panel.spell_box.toPlainText())
         if not text:
             self.panel.set_spell_result("\ub9de\ucda4\ubc95 \uc218\uc815 \uacb0\uacfc\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.")
-            if self.active_input_mode == "realtime":
-                self.realtime_overlay.show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
-            else:
-                self.mini_overlay.show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
+            self._active_correction_status_overlay().show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
             return
 
         output_applier = self.get_output_applier()
@@ -2113,16 +2423,13 @@ class App:
                 + '\n\n[\uc6d0\ubcf8 \uc218\uc815 \uc2e4\ud328]\n'
                 + (reason or "\uc218\uc815\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.")
             )
-            if self.active_input_mode == "realtime":
-                self.realtime_overlay.show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
-            else:
-                self.mini_overlay.show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
+            self._active_correction_status_overlay().show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
             return
 
         busy_shown = False
         try:
             if self.active_input_mode in {"drag", "realtime"}:
-                active_overlay = self.realtime_overlay if self.active_input_mode == "realtime" else self.mini_overlay
+                active_overlay = self._active_correction_status_overlay()
                 active_overlay.show_busy("\uad50\uc815 \uc9c4\ud589\uc911")
                 QApplication.processEvents()
                 busy_shown = True
@@ -2148,25 +2455,35 @@ class App:
                     self.word_redo_available_by_hwnd[int(target_handle)] = False
                     self.mini_overlay.set_undo_available(True)
                     self.mini_overlay.set_redo_available(False)
+                    self.main_overlay.set_undo_available(True)
+                    self.main_overlay.set_redo_available(False)
                 elif target_reader == "notepad_selection" and target_handle:
                     self.notepad_undo_available_by_hwnd[int(target_handle)] = True
                     self.notepad_redo_available_by_hwnd[int(target_handle)] = False
                     self.mini_overlay.set_undo_available(True)
                     self.mini_overlay.set_redo_available(False)
+                    self.main_overlay.set_undo_available(True)
+                    self.main_overlay.set_redo_available(False)
                 self._clear_recent_drag_snapshot()
                 self.clear_drag_selection(target_reader, target_handle)
+                self.mini_overlay.set_spelling_feedback_available(bool(self.last_spelling_feedback))
             else:
                 if target_reader == "word" and target_handle:
                     self.word_undo_available_by_hwnd[int(target_handle)] = True
                     self.word_redo_available_by_hwnd[int(target_handle)] = False
                     self.realtime_overlay.set_undo_available(True)
                     self.realtime_overlay.set_redo_available(False)
+                    self.main_overlay.set_undo_available(True)
+                    self.main_overlay.set_redo_available(False)
                 elif target_reader == "notepad" and target_handle:
                     self.notepad_undo_available_by_hwnd[int(target_handle)] = True
                     self.notepad_redo_available_by_hwnd[int(target_handle)] = False
                     self.realtime_overlay.set_undo_available(True)
                     self.realtime_overlay.set_redo_available(False)
-                self.realtime_overlay.show_status("\uc6d0\ubcf8 \uc218\uc815 \uc644\ub8cc")
+                    self.main_overlay.set_undo_available(True)
+                    self.main_overlay.set_redo_available(False)
+                self._active_correction_status_overlay().show_status("\uc6d0\ubcf8 \uc218\uc815 \uc644\ub8cc")
+                self.realtime_overlay.set_spelling_feedback_available(bool(self.last_spelling_feedback))
         except Exception as exc:
             if self.active_input_mode == "drag":
                 self._log_drag_apply("apply_exception", error=str(exc))
@@ -2174,13 +2491,9 @@ class App:
                 self.panel.spell_box.toPlainText().rstrip()
                 + f"\n\n[\uc6d0\ubcf8 \uc218\uc815 \uc2e4\ud328]\n{exc}"
             )
-            if self.active_input_mode == "realtime":
-                self.realtime_overlay.show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
-            else:
-                self.mini_overlay.show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
+            self._active_correction_status_overlay().show_status("\uc218\uc815 \uc2e4\ud328", auto_hide_ms=1200)
         finally:
             if busy_shown:
-                active_overlay = self.realtime_overlay if self.active_input_mode == "realtime" else self.mini_overlay
                 active_overlay.hide_busy()
 
     def show_spelling_inspection_guides(self):
@@ -2233,7 +2546,7 @@ class App:
         active_overlay = None
         busy_shown = False
         if self.active_input_mode in {"drag", "realtime"}:
-            active_overlay = self.realtime_overlay if self.active_input_mode == "realtime" else self.mini_overlay
+            active_overlay = self._active_correction_status_overlay()
             try:
                 active_overlay.show_busy("\uac80\uc0ac \uc9c4\ud589\uc911")
                 QApplication.processEvents()
@@ -2242,11 +2555,19 @@ class App:
                 busy_shown = False
         try:
             self.run_spell_check()
-            count = self.spelling_inspection_overlay.show_for_target(self.last_output_target, self.last_input)
+            count = self.spelling_inspection_overlay.show_for_target(
+                self.last_output_target,
+                self.last_input,
+                self.last_spelling_corrections,
+            )
         finally:
             if busy_shown and active_overlay is not None:
                 active_overlay.hide_busy()
-        message = "\ub9de\ucda4\ubc95 \uc548\ub0b4 \ud45c\uc2dc" if count > 0 else "\ud14c\uc2a4\ud2b8 \ub300\uc0c1 \ub2e8\uc5b4 \uc5c6\uc74c"
+        message = "\ub9de\ucda4\ubc95 \uc548\ub0b4 \ud45c\uc2dc" if count > 0 else "\uac80\uc0ac\ub41c \uc624\ub958 \uc5c6\uc74c"
+        if getattr(self, "_main_overlay_spelling_action_active", False) and self.main_overlay.isVisible():
+            self.main_overlay.show_status(message, auto_hide_ms=1200)
+            self._schedule_editor_focus_restore(self.main_overlay_anchor or self.drag_overlay_anchor or self.realtime_overlay_anchor)
+            return
         if self.active_input_mode == "drag":
             self.mini_overlay.show_status(message, auto_hide_ms=1200)
             self._schedule_editor_focus_restore(self.drag_overlay_anchor or self.main_overlay_anchor)
@@ -2387,8 +2708,9 @@ class App:
             self.realtime_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc2e4\ud328", auto_hide_ms=1200)
             return
         busy_shown = False
+        busy_overlay = self._active_correction_status_overlay()
         try:
-            self.realtime_overlay.show_busy("\ubb38\uccb4 \ubcc0\uacbd \uc9c4\ud589\uc911")
+            busy_overlay.show_busy("\ubb38\uccb4 \uad50\uc815 \uc9c4\ud589\uc911")
             QApplication.processEvents()
             busy_shown = True
             source_text = self.last_input
@@ -2419,14 +2741,15 @@ class App:
                 self.notepad_redo_available_by_hwnd[int(target_handle)] = False
                 self.realtime_overlay.set_undo_available(True)
                 self.realtime_overlay.set_redo_available(False)
-            self.realtime_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc644\ub8cc", auto_hide_ms=1000)
+            busy_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc644\ub8cc", auto_hide_ms=1000)
             self.maybe_prompt_tone_favorite(tone, self.realtime_overlay)
         except Exception as exc:
             self.panel.set_tone_result(str(exc))
-            self.realtime_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc2e4\ud328", auto_hide_ms=1200)
+            busy_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc2e4\ud328", auto_hide_ms=1200)
         finally:
             if busy_shown:
-                self.realtime_overlay.hide_busy()
+                busy_overlay.hide_busy()
+            self._main_overlay_tone_action_active = False
 
     def handle_drag_tone_button(self):
         if self.active_input_mode != "drag":
@@ -2489,8 +2812,9 @@ class App:
             return
 
         busy_shown = False
+        busy_overlay = self._active_correction_status_overlay()
         try:
-            self.mini_overlay.show_busy("\ubb38\uccb4 \ubcc0\uacbd \uc9c4\ud589\uc911")
+            busy_overlay.show_busy("\ubb38\uccb4 \uad50\uc815 \uc9c4\ud589\uc911")
             QApplication.processEvents()
             busy_shown = True
             source_text = self.last_input
@@ -2509,7 +2833,7 @@ class App:
             can_replace, reason = output_applier.inspect_replace_availability(self.last_output_target)
             self._log_drag_apply("tone_inspect_result", can_replace=can_replace, reason=reason or "")
             if not can_replace:
-                self.mini_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc2e4\ud328", auto_hide_ms=1200)
+                busy_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc2e4\ud328", auto_hide_ms=1200)
                 return
 
             target_reader = self.last_output_target.mode if self.last_output_target else ""
@@ -2535,17 +2859,18 @@ class App:
                 self.mini_overlay.set_redo_available(False)
             self.panel.tone_input.setText(tone)
             self.panel.set_tone_result(result)
-            self.mini_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc644\ub8cc", auto_hide_ms=1000)
+            busy_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc644\ub8cc", auto_hide_ms=1000)
             self._clear_recent_drag_snapshot()
             self.clear_drag_selection(target_reader, target_handle)
             QTimer.singleShot(80, lambda tone=tone: self.maybe_prompt_tone_favorite(tone, self.mini_overlay))
         except Exception as exc:
             self._log_drag_apply("tone_apply_exception", error=str(exc))
             self.panel.set_tone_result(str(exc))
-            self.mini_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc2e4\ud328", auto_hide_ms=1200)
+            busy_overlay.show_status("\ubb38\uccb4 \ubcc0\uacbd \uc2e4\ud328", auto_hide_ms=1200)
         finally:
             if busy_shown:
-                self.mini_overlay.hide_busy()
+                busy_overlay.hide_busy()
+            self._main_overlay_tone_action_active = False
 
     def undo_last_drag_correction(self):
         if self.active_input_mode != "drag":
@@ -2572,6 +2897,8 @@ class App:
                 return
             self.mini_overlay.set_undo_available(False)
             self.mini_overlay.set_redo_available(True)
+            self.main_overlay.set_undo_available(False)
+            self.main_overlay.set_redo_available(True)
             self.clear_drag_selection(reader_name, hwnd)
             self.mini_overlay.show_status("\ub418\ub3cc\ub9ac\uae30 \uc644\ub8cc", auto_hide_ms=1000)
         except Exception as exc:
@@ -2604,6 +2931,8 @@ class App:
                 return
             self.mini_overlay.set_undo_available(True)
             self.mini_overlay.set_redo_available(False)
+            self.main_overlay.set_undo_available(True)
+            self.main_overlay.set_redo_available(False)
             self.clear_drag_selection(reader_name, hwnd)
             self.mini_overlay.show_status("\uc7ac\uc2e4\ud589 \uc644\ub8cc", auto_hide_ms=1000)
         except Exception as exc:
@@ -2636,6 +2965,8 @@ class App:
                 return
             self.realtime_overlay.set_undo_available(False)
             self.realtime_overlay.set_redo_available(True)
+            self.main_overlay.set_undo_available(False)
+            self.main_overlay.set_redo_available(True)
             self.realtime_overlay.show_status("\ub418\ub3cc\ub9ac\uae30 \uc644\ub8cc", auto_hide_ms=1000)
         except Exception as exc:
             self._log_drag_apply("realtime_undo_exception", reader=reader_name, hwnd=hwnd, error=str(exc))
@@ -2667,6 +2998,8 @@ class App:
                 return
             self.realtime_overlay.set_undo_available(True)
             self.realtime_overlay.set_redo_available(False)
+            self.main_overlay.set_undo_available(True)
+            self.main_overlay.set_redo_available(False)
             self.realtime_overlay.show_status("\uc7ac\uc2e4\ud589 \uc644\ub8cc", auto_hide_ms=1000)
         except Exception as exc:
             self._log_drag_apply("realtime_redo_exception", reader=reader_name, hwnd=hwnd, error=str(exc))
@@ -2791,53 +3124,85 @@ class App:
             pass
 
     def show_evaluation_reason(self):
-        reason = self.last_evaluation_reason or "\uac4d"
+        reason = self.last_evaluation_reason or "\ud3c9\uac00 \uc774\uc720\uac00 \uc5c6\uc2b5\ub2c8\ub2e4."
         self.panel.show_notice("\ud3c9\uac00 \uc774\uc720", reason)
 
     def show_overlay_evaluation_reason(self):
         self.show_panel()
         self.show_evaluation_reason()
 
+    def show_spelling_feedback_reason(self):
+        feedback = self.last_spelling_feedback or self.analyzer.TEMP_SPELLING_FEEDBACK
+        target = self.last_output_target
+        hwnd = getattr(target, "window_handle", None) if target is not None else None
+        if hwnd is None:
+            anchor = self.drag_overlay_anchor or self.realtime_overlay_anchor or self.main_overlay_anchor
+            if anchor:
+                hwnd = anchor[1]
+        self.main_overlay.show_spelling_feedback_reason(feedback, hwnd)
+        self._schedule_editor_focus_restore(self.drag_overlay_anchor or self.realtime_overlay_anchor or self.main_overlay_anchor)
+
     def run_summary(self):
         if not self.last_input:
             return ""
-        result = self.analyzer.analyze_summary(self.last_input)
-        self.panel.set_summary_result(result)
-        self.save_history_log(
-            feature_type=3,
-            input_text=self.last_input,
-            output_text=self._strip_result_heading(result),
-        )
-        return result
+        self.add_notification("\uc694\uc57d \uc2dc\uc791")
+        try:
+            result = self.analyzer.analyze_summary(self.last_input)
+            self.panel.set_summary_result(result)
+            self.save_history_log(
+                feature_type=3,
+                input_text=self.last_input,
+                output_text=self._strip_result_heading(result),
+            )
+            self.add_notification("\uc694\uc57d \uc644\ub8cc")
+            return result
+        except Exception as exc:
+            self.add_notification(f"\uc694\uc57d \uc2e4\ud328: {type(exc).__name__}", error=True)
+            raise
 
     def run_evaluation(self):
         if not self.last_input:
             return None
-        result = self.analyzer.analyze_evaluation(self.last_input)
-        score = self._parse_score(result)
-        self.last_evaluation_reason = "\uac4d"
-        self.panel.set_evaluation_score(result)
-        self.save_history_log(
-            feature_type=1,
-            input_text=self.last_input,
-            score=score,
-            evaluation_reason=self.last_evaluation_reason,
-        )
-        return score
+        self.add_notification("\ud3c9\uac00 \uc2dc\uc791")
+        try:
+            result = self.analyzer.analyze_evaluation(self.last_input)
+            score = self._parse_score(result)
+            self.last_evaluation_reason = (
+                str(getattr(self.analyzer, "last_evaluation_feedback", "") or "").strip()
+                or "\ud3c9\uac00 \uc774\uc720\uac00 \uc5c6\uc2b5\ub2c8\ub2e4."
+            )
+            self.panel.set_evaluation_score(result)
+            self.save_history_log(
+                feature_type=1,
+                input_text=self.last_input,
+                score=score,
+                evaluation_reason=self.last_evaluation_reason,
+            )
+            self.add_notification("\ud3c9\uac00 \uc644\ub8cc")
+            return score
+        except Exception as exc:
+            self.add_notification(f"\ud3c9\uac00 \uc2e4\ud328: {type(exc).__name__}", error=True)
+            raise
 
     def run_title_recommendation(self, source_text=None):
         input_text = str(source_text if source_text is not None else self.last_input or "")
         if not input_text.strip():
             return ""
-        result = self.analyzer.analyze_title_recommendation(input_text)
-        self.panel.set_title_recommendation(result)
-        self.save_history_log(
-            feature_type=1,
-            input_text=input_text,
-            title=result,
-            score=self._parse_score(self.panel.score_label.text()),
-        )
-        return result
+        self.add_notification("\uc81c\ubaa9 \ucd94\ucc9c \uc2dc\uc791")
+        try:
+            result = self.analyzer.analyze_title_recommendation(input_text)
+            self.panel.set_title_recommendation(result)
+            self.save_history_log(
+                feature_type=1,
+                input_text=input_text,
+                title=result,
+                score=self._parse_score(self.panel.score_label.text()),
+            )
+            self.add_notification("\uc81c\ubaa9 \ucd94\ucc9c \uc644\ub8cc")
+            return result
+        except Exception as exc:
+            self.add_notification(f"\uc81c\ubaa9 \ucd94\ucc9c \uc2e4\ud328: {type(exc).__name__}", error=True)
+            raise
 
     def run_overlay_title_recommendation(self):
         self.main_overlay.show_busy("\uc81c\ubaa9 \ucd94\ucc9c\uc911")
@@ -2876,20 +3241,24 @@ class App:
         return target, self._read_full_text_for_title(), False
 
     def _title_selection_target(self):
+        allow_stored_drag_selection = True
+        if self.active_input_mode == "drag" and not self._has_fresh_drag_spelling_selection(max_age=3.0):
+            allow_stored_drag_selection = False
         target = self.last_output_target
-        if target is not None and str(getattr(target, "mode", "") or "") in {"word_selection", "notepad_selection"}:
+        if allow_stored_drag_selection and target is not None and str(getattr(target, "mode", "") or "") in {"word_selection", "notepad_selection"}:
             text = self.last_input or ""
             hwnd = getattr(target, "window_handle", None)
             if text.strip() and (not hwnd or self._is_live_window(hwnd)):
                 return self._title_target_with_selection_text(target, text), text
-        snapshot = self.last_valid_drag_snapshot or {}
-        target = snapshot.get("target")
-        text = snapshot.get("input", "")
-        snapshot_age = time.monotonic() - self.last_valid_drag_snapshot_at if self.last_valid_drag_snapshot_at else 9999.0
-        if target is not None and str(getattr(target, "mode", "") or "") in {"word_selection", "notepad_selection"} and str(text or "").strip() and 0 <= snapshot_age <= 60.0:
-            hwnd = getattr(target, "window_handle", None)
-            if not hwnd or self._is_live_window(hwnd):
-                return self._title_target_with_selection_text(target, text), text
+        if allow_stored_drag_selection:
+            snapshot = self.last_valid_drag_snapshot or {}
+            target = snapshot.get("target")
+            text = snapshot.get("input", "")
+            snapshot_age = time.monotonic() - self.last_valid_drag_snapshot_at if self.last_valid_drag_snapshot_at else 9999.0
+            if target is not None and str(getattr(target, "mode", "") or "") in {"word_selection", "notepad_selection"} and str(text or "").strip() and 0 <= snapshot_age <= 60.0:
+                hwnd = getattr(target, "window_handle", None)
+                if not hwnd or self._is_live_window(hwnd):
+                    return self._title_target_with_selection_text(target, text), text
         word_target, word_text = self._current_word_selection_title_target()
         if word_target is not None and word_text.strip():
             return word_target, word_text
@@ -3053,15 +3422,21 @@ class App:
         if not self.last_input:
             return
         tone = self.panel.tone_input.text().strip()
-        result = self.analyzer.analyze_tone_change(self.last_input, tone)
-        self.panel.set_tone_result(result)
-        self.save_history_log(
-            feature_type=4,
-            input_text=self.last_input,
-            output_text=result,
-            tone=tone,
-        )
-        self.maybe_prompt_tone_favorite(tone)
+        self.add_notification("\ubb38\uccb4/\ub9d0\ud22c \ubcc0\uacbd \uc2dc\uc791")
+        try:
+            result = self.analyzer.analyze_tone_change(self.last_input, tone)
+            self.panel.set_tone_result(result)
+            self.save_history_log(
+                feature_type=4,
+                input_text=self.last_input,
+                output_text=result,
+                tone=tone,
+            )
+            self.add_notification("\ubb38\uccb4/\ub9d0\ud22c \ubcc0\uacbd \uc644\ub8cc")
+            self.maybe_prompt_tone_favorite(tone)
+        except Exception as exc:
+            self.add_notification(f"\ubb38\uccb4/\ub9d0\ud22c \ubcc0\uacbd \uc2e4\ud328: {type(exc).__name__}", error=True)
+            raise
 
 
     def history_feature_label(self, feature_type):
@@ -3071,6 +3446,54 @@ class App:
             3: "\uc694\uc57d \uae30\ub85d",
             4: "\ubb38\uccb4 \ubcc0\uacbd \uae30\ub85d",
         }.get(int(feature_type or 0), "\uae30\ub85d")
+
+    def _document_title_from_window_title(self, window_title):
+        title = str(window_title or "").strip()
+        if not title:
+            return ""
+        title = title.lstrip("*").strip()
+        separators = [
+            " - Windows \uba54\ubaa8\uc7a5",
+            " - \uba54\ubaa8\uc7a5",
+            " - Word",
+            " - Microsoft Word",
+            " - Visual Studio Code",
+        ]
+        for sep in separators:
+            if sep in title:
+                title = title.split(sep, 1)[0].strip()
+                break
+        if " - " in title and title.lower().endswith("word"):
+            title = title.rsplit(" - ", 1)[0].strip()
+        return title or "\uc81c\ubaa9 \uc5c6\uc74c"
+
+    def _window_title_for_handle(self, hwnd):
+        if not hwnd:
+            return ""
+        try:
+            import win32gui
+
+            root = win32gui.GetAncestor(int(hwnd), 2) or int(hwnd)
+            return win32gui.GetWindowText(root) or win32gui.GetWindowText(int(hwnd)) or ""
+        except Exception:
+            return ""
+
+    def _current_document_title(self):
+        target = self.last_output_target
+        if target is not None:
+            title = self._document_title_from_window_title(getattr(target, "window_title", ""))
+            if title:
+                return title
+            title = self._document_title_from_window_title(self._window_title_for_handle(getattr(target, "window_handle", None)))
+            if title:
+                return title
+        for anchor in (self.main_overlay_anchor, self.drag_overlay_anchor, self.realtime_overlay_anchor):
+            if anchor:
+                title = self._document_title_from_window_title(self._window_title_for_handle(anchor[1]))
+                if title:
+                    return title
+        return self._current_title()
+
     def save_history_log(
         self,
         feature_type,
@@ -3089,7 +3512,7 @@ class App:
             "feature_label": self.history_feature_label(feature_type),
             "input_text": input_text,
             "output_text": output_text or "",
-            "title": title or self._current_title(),
+            "title": self._current_document_title() or title or self._current_title(),
             "score": score,
             "tone": tone,
             "spelling_feedback": spelling_feedback,
@@ -3171,6 +3594,43 @@ class App:
         except Exception as exc:
             self.panel.show_notice("\uae30\ub85d \uc870\ud68c \uc2e4\ud328", str(exc))
 
+    def show_current_document_history(self):
+        if not self.is_logged_in():
+            self.show_login_from_overlay()
+            return
+        if not self.ensure_history_available():
+            return
+        if not self.ensure_server_available():
+            return
+        document_title = self._current_document_title()
+        try:
+            logs = self.api_client.list_logs()
+            if document_title:
+                normalized_title = " ".join(document_title.lower().split())
+                filtered = [
+                    log for log in logs
+                    if " ".join(str(log.get("title") or "").lower().split()) == normalized_title
+                ]
+            else:
+                filtered = logs
+            self.show_panel()
+            self.panel.show_history_list(0, filtered)
+        except UnauthorizedError as exc:
+            self.handle_session_expired(str(exc))
+        except Exception as exc:
+            self.panel.show_notice("\uae30\ub85d \uc870\ud68c \uc2e4\ud328", str(exc))
+
+    def show_login_from_overlay(self):
+        self.show_panel()
+        if hasattr(self.panel, "show_login_required_page"):
+            self.panel.show_login_required_page()
+        else:
+            self.panel.show_auth_page()
+        self.panel.showNormal()
+        self.panel.show()
+        self.panel.raise_()
+        self.panel.activateWindow()
+
     def _current_title(self):
         title = self.panel.title_label_box.text().strip()
         return "" if title in {"\uc81c\ubaa9", ""} else title
@@ -3196,6 +3656,8 @@ class App:
         input_mode = normalized.get("input_mode")
         normalized["input_mode"] = input_mode if input_mode in {"clipboard", "drag", "realtime"} else "clipboard"
         normalized["replace_mode"] = bool(normalized.get("replace_mode", False))
+        if normalized.get("spell_scope") not in {"current_sentence", "current_paragraph", "full_text"}:
+            normalized["spell_scope"] = "current_sentence"
         return normalized
 
     def collect_settings_from_panel(self):
@@ -3203,6 +3665,7 @@ class App:
         settings["default_dark_mode"] = self.panel.get_default_dark_mode_checked()
         settings["input_mode"] = self.panel.get_input_mode()
         settings["replace_mode"] = self.panel.get_replace_mode_checked()
+        settings["spell_scope"] = self.panel.get_spell_scope()
         if self.is_logged_in():
             settings["history_enabled"] = self.panel.get_history_enabled_checked()
         return self.normalize_settings(settings)
@@ -3215,9 +3678,11 @@ class App:
 
         self.panel.set_dark_mode(self.settings["default_dark_mode"], animate=False)
         self.panel.set_default_dark_mode_checked(self.settings["default_dark_mode"])
+        self.main_overlay.set_dark_mode(self.settings["default_dark_mode"])
         self.panel.set_history_enabled_checked(self.settings["history_enabled"])
         self.panel.set_input_mode(self.settings["input_mode"])
         self.panel.set_replace_mode_checked(self.settings["replace_mode"])
+        self.panel.set_spell_scope(self.settings["spell_scope"])
         self.update_login_state()
         if self.settings["replace_mode"]:
             self.spelling_inspection_overlay.clear()
@@ -3656,6 +4121,8 @@ class App:
         username = self.api_client.current_username or ""
         if hasattr(self, "panel"):
             self.panel.update_login_state(logged_in, username, self.is_history_enabled())
+        if hasattr(self, "main_overlay"):
+            self.main_overlay.set_history_login_state(logged_in)
         if hasattr(self, "mini_overlay"):
             self._sync_tone_favorite_overlays()
         if hasattr(self, "login_action"):

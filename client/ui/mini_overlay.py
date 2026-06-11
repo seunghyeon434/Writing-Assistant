@@ -406,8 +406,15 @@ class TonePrompt(QWidget):
         screen = QApplication.screenAt(cursor) or QApplication.primaryScreen()
         if rect is not None:
             left, top, right, bottom = rect
+            margin = 12
+            min_x = left + margin
+            min_y = top + margin
+            max_x = max(min_x, right - self.width() - margin)
+            max_y = max(min_y, bottom - self.height() - margin)
             x = left + max(0, (right - left - self.width()) // 2)
             y = top + max(0, (bottom - top - self.height()) // 2)
+            x = min(max(min_x, x), max_x)
+            y = min(max(min_y, y), max_y)
             self.move(x, y)
         elif screen is not None:
             available = screen.availableGeometry()
@@ -690,6 +697,7 @@ class MiniOverlay(QWidget):
     tone_favorite_list_requested = pyqtSignal()
     tone_favorite_add_requested = pyqtSignal(str)
     tone_favorite_delete_requested = pyqtSignal(int)
+    spelling_feedback_requested = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -713,6 +721,7 @@ class MiniOverlay(QWidget):
         self._state_before_status = None
         self._status_until = 0.0
         self._collapsed = False
+        self._spelling_feedback_available = False
         self._focus_guard_timer = QTimer(self)
         self._focus_guard_timer.setInterval(80)
         self._focus_guard_timer.timeout.connect(self._hide_if_target_lost_focus)
@@ -815,6 +824,19 @@ class MiniOverlay(QWidget):
             QPushButton#undoButton:disabled, QPushButton#redoButton:disabled {
                 background: #d6d6d6;
             }
+            QPushButton#feedbackButton {
+                min-width: 24px;
+                max-width: 24px;
+                min-height: 24px;
+                max-height: 24px;
+                border-radius: 12px;
+                padding: 0;
+                background: #e8d4bf;
+                color: #3f2f26;
+            }
+            QPushButton#feedbackButton:hover {
+                background: #dcc1a7;
+            }
             QPushButton#closeButton {
                 min-width: 24px;
                 max-width: 24px;
@@ -880,11 +902,22 @@ class MiniOverlay(QWidget):
         self.title_label.setObjectName("titleLabel")
         self.hint_label = QLabel("Ctrl+Alt+Enter")
         self.hint_label.setObjectName("hintLabel")
+        self.feedback_btn = QPushButton("")
+        self.feedback_btn.setObjectName("feedbackButton")
+        self.feedback_btn.setToolTip("교정 평가")
+        history_icon_path = Path(__file__).resolve().parent.parent / "icon" / "list.png"
+        if history_icon_path.exists():
+            self.feedback_btn.setIcon(QIcon(str(history_icon_path)))
+            self.feedback_btn.setIconSize(QSize(15, 15))
+        else:
+            self.feedback_btn.setText("i")
+        self.feedback_btn.hide()
         self.close_btn = QPushButton("X")
         self.close_btn.setObjectName("closeButton")
         self.close_btn.setToolTip("\uc811\uae30")
         self.top_layout.addWidget(self.title_label, 1)
         self.top_layout.addWidget(self.hint_label, 0, Qt.AlignRight)
+        self.top_layout.addWidget(self.feedback_btn, 0, Qt.AlignRight)
         self.top_layout.addWidget(self.close_btn, 0, Qt.AlignRight)
         self.card_layout.addLayout(self.top_layout)
 
@@ -903,6 +936,7 @@ class MiniOverlay(QWidget):
         self.redo_btn.clicked.connect(self.redo_clicked.emit)
         self.tone_btn.clicked.connect(self.tone_requested.emit)
         self.open_btn.clicked.connect(self.open_clicked.emit)
+        self.feedback_btn.clicked.connect(self.spelling_feedback_requested.emit)
         self.close_btn.clicked.connect(self.collapse)
         self.actions_layout.addWidget(self.apply_btn)
         self.actions_layout.addWidget(self.tone_btn)
@@ -914,7 +948,7 @@ class MiniOverlay(QWidget):
         self.collapsed_btn.setToolTip("\ub4dc\ub798\uadf8 \uc624\ubc84\ub808\uc774 \ud3bc\uce58\uae30")
         self.collapsed_btn.clicked.connect(self._handle_collapsed_clicked)
         self.collapsed_btn.hide()
-        for widget in (self.card, self.collapsed_btn, self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.apply_btn, self.tone_btn, self.open_btn, self.close_btn):
+        for widget in (self.card, self.collapsed_btn, self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.feedback_btn, self.apply_btn, self.tone_btn, self.open_btn, self.close_btn):
             widget.installEventFilter(self)
         self._build_busy_cover()
 
@@ -942,16 +976,16 @@ class MiniOverlay(QWidget):
             """
         )
         layout = QVBoxLayout(self.busy_cover)
-        layout.setContentsMargins(0, 8, 0, 16)
+        layout.setContentsMargins(0, 16, 0, 8)
         layout.setSpacing(2)
         self.busy_spinner_label = BusySpinner(self.busy_cover)
         self.busy_text_label = QLabel("")
         self.busy_text_label.setObjectName("busyText")
         self.busy_text_label.setAlignment(Qt.AlignCenter)
-        layout.addStretch(1)
+        layout.addStretch(2)
         layout.addWidget(self.busy_spinner_label, 0, Qt.AlignCenter)
         layout.addWidget(self.busy_text_label, 0, Qt.AlignCenter)
-        layout.addStretch(2)
+        layout.addStretch(1)
         self.busy_cover.hide()
 
     def show_busy(self, message):
@@ -987,6 +1021,15 @@ class MiniOverlay(QWidget):
 
     def set_redo_available(self, available: bool):
         self.redo_btn.setEnabled(bool(available))
+
+    def set_spelling_feedback_available(self, available: bool):
+        self._spelling_feedback_available = bool(available)
+        if not hasattr(self, "feedback_btn"):
+            return
+        if self._spelling_feedback_available and not self._collapsed and not self._is_notepad_reader():
+            self.feedback_btn.show()
+        else:
+            self.feedback_btn.hide()
 
     def set_movable_mode(self, enabled: bool):
         enabled = bool(enabled)
@@ -1042,7 +1085,7 @@ class MiniOverlay(QWidget):
         self._collapsed = True
         self._overlay_state = ("collapsed", int(self._last_window_handle or 0))
         self._ensure_collapsed_size()
-        for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.apply_btn, self.tone_btn, self.open_btn, self.close_btn):
+        for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.feedback_btn, self.apply_btn, self.tone_btn, self.open_btn, self.close_btn):
             widget.hide()
         self.collapsed_btn.show()
         self._show_near_cursor(self._last_window_handle)
@@ -1062,8 +1105,9 @@ class MiniOverlay(QWidget):
         self._overlay_state = None
         self._ensure_expanded_size()
         self.collapsed_btn.hide()
-        for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.apply_btn, self.tone_btn, self.open_btn, self.close_btn):
+        for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.feedback_btn, self.apply_btn, self.tone_btn, self.open_btn, self.close_btn):
             widget.show()
+        self.set_spelling_feedback_available(self._spelling_feedback_available)
         self.show_waiting(window_handle=self._last_window_handle)
         self.overlay_moved.emit(self._last_reader_name, self._last_window_handle)
 
@@ -1281,7 +1325,7 @@ class MiniOverlay(QWidget):
         if enabled:
             self._collapsed = False
             self.collapsed_btn.hide()
-            for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.open_btn, self.close_btn):
+            for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.feedback_btn, self.open_btn, self.close_btn):
                 widget.hide()
             self.apply_btn.show()
             self.tone_btn.show()
@@ -1299,6 +1343,7 @@ class MiniOverlay(QWidget):
         else:
             for widget in (self.undo_btn, self.redo_btn, self.title_label, self.hint_label, self.open_btn, self.close_btn):
                 widget.show()
+            self.set_spelling_feedback_available(self._spelling_feedback_available)
             self.apply_btn.setFont(self._default_action_font)
             self.tone_btn.setFont(self._default_action_font)
             self.apply_btn.setMinimumSize(0, 0)

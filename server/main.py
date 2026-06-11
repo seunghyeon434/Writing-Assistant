@@ -1,3 +1,4 @@
+import os
 from datetime import datetime, timezone
 from sqlalchemy import inspect, text
 
@@ -12,6 +13,14 @@ from schemas import (
     CorrectResponse,
     TokenResponse,
     CorrectRequest,
+    SummaryRequest,
+    SummaryResponse,
+    EvaluationRequest,
+    EvaluationResponse,
+    TitleRequest,
+    TitleResponse,
+    ToneRequest,
+    ToneResponse,
     UsageLogCreateRequest,
     UsageLogResponse,
     UserSettingsRequest,
@@ -75,6 +84,24 @@ def ensure_user_columns():
 
 ensure_user_columns()
 
+
+def ensure_user_setting_columns():
+    inspector = inspect(engine)
+    column_names = {column["name"] for column in inspector.get_columns("user_settings")}
+    statements = []
+    if "spell_scope" not in column_names:
+        statements.append("ALTER TABLE user_settings ADD COLUMN spell_scope VARCHAR(30) NOT NULL DEFAULT 'current_sentence'")
+
+    if not statements:
+        return
+
+    with engine.begin() as connection:
+        for statement in statements:
+            connection.execute(text(statement))
+
+
+ensure_user_setting_columns()
+
 app = FastAPI(title="AI 문서 보조 서버") # 서버본체
 ai_service = AIService()
 
@@ -130,6 +157,15 @@ def get_current_user(
 @app.get("/")
 def root():
     return {"message": "server is running 2021810064"}
+
+
+@app.get("/ai-status")
+def ai_status():
+    return {
+        "openai_key_loaded": bool(os.getenv("OPENAI_API_KEY", "").strip()),
+        "correction_model": ai_service.model_for("correction"),
+        "prompt_version": ai_service.PROMPT_VERSION,
+    }
 
 
 @app.post("/signup")
@@ -238,7 +274,8 @@ def correct_text(
     if not data.text.strip():
         raise HTTPException(status_code=400, detail="교정할 텍스트가 비어 있습니다.")
 
-    corrected = ai_service.correct_text(data.text)
+    result = run_ai_feature("correction", lambda: ai_service.correct_text(data.text))
+    corrected = result["corrected_text"]
 
     log = UsageLog(
         user_id=current_user.id,
@@ -246,11 +283,67 @@ def correct_text(
         output_text=corrected,
         feature_type=2,
         feature_label=feature_label_for(2),
+        spelling_feedback=result.get("feedback"),
     )
     db.add(log)
     db.commit()
 
-    return CorrectResponse(corrected_text=corrected)
+    return CorrectResponse(
+        corrected_text=corrected,
+        spelling_feedback=result.get("feedback"),
+        corrections=result.get("corrections") or [],
+    )
+
+
+@app.post("/correct-public", response_model=CorrectResponse)
+def correct_text_public(data: CorrectRequest):
+    if not data.text.strip():
+        raise HTTPException(status_code=400, detail="Text is required.")
+    result = run_ai_feature("correction", lambda: ai_service.correct_text(data.text))
+    return CorrectResponse(
+        corrected_text=result["corrected_text"],
+        spelling_feedback=result.get("feedback"),
+        corrections=result.get("corrections") or [],
+    )
+
+
+@app.post("/summary-public", response_model=SummaryResponse)
+def summarize_text_public(data: SummaryRequest):
+    result = run_ai_feature("summary", lambda: ai_service.summarize_text(data.text))
+    return SummaryResponse(summary=result["summary"])
+
+
+@app.post("/evaluation-public", response_model=EvaluationResponse)
+def evaluate_text_public(data: EvaluationRequest):
+    result = run_ai_feature("evaluation", lambda: ai_service.evaluate_text(data.text))
+    return EvaluationResponse(
+        score=int(result["score"]),
+        feedback=str(result.get("feedback") or ""),
+    )
+
+
+@app.post("/title-public", response_model=TitleResponse)
+def recommend_title_public(data: TitleRequest):
+    result = run_ai_feature("title", lambda: ai_service.recommend_title(data.text))
+    return TitleResponse(title=result["title"])
+
+
+@app.post("/tone-public", response_model=ToneResponse)
+def convert_tone_public(data: ToneRequest):
+    result = run_ai_feature("tone", lambda: ai_service.convert_tone(data.text, data.tone))
+    return ToneResponse(
+        converted_text=result["converted_text"],
+        feedback=result.get("feedback"),
+    )
+
+
+def run_ai_feature(feature_name: str, callback):
+    try:
+        return callback()
+    except RuntimeError as exc:
+        raise HTTPException(status_code=502, detail=f"OpenAI {feature_name} failed: {exc}") from exc
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=f"OpenAI {feature_name} failed: {exc}") from exc
 
 
 @app.post("/logs", response_model=UsageLogResponse)
@@ -403,6 +496,7 @@ def get_user_settings(
         history_enabled=settings.history_enabled,
         input_mode=settings.input_mode,
         replace_mode=settings.replace_mode,
+        spell_scope=settings.spell_scope,
         updated_at=settings.updated_at,
     )
 
@@ -415,6 +509,7 @@ def update_user_settings(
 ):
     input_mode = data.input_mode if data.input_mode in {"clipboard", "drag", "realtime"} else "clipboard"
     replace_mode = bool(data.replace_mode)
+    spell_scope = data.spell_scope if data.spell_scope in {"current_sentence", "current_paragraph", "full_text"} else "current_sentence"
     settings = db.query(UserSetting).filter(UserSetting.user_id == current_user.id).first()
     if not settings:
         settings = UserSetting(user_id=current_user.id)
@@ -424,6 +519,7 @@ def update_user_settings(
     settings.history_enabled = bool(data.history_enabled)
     settings.input_mode = input_mode
     settings.replace_mode = replace_mode
+    settings.spell_scope = spell_scope
     settings.updated_at = datetime.now()
     db.commit()
     db.refresh(settings)
@@ -433,5 +529,6 @@ def update_user_settings(
         history_enabled=settings.history_enabled,
         input_mode=settings.input_mode,
         replace_mode=settings.replace_mode,
+        spell_scope=settings.spell_scope,
         updated_at=settings.updated_at,
     )

@@ -2,5 +2,6 @@
   "default_dark_mode": false,
   "input_mode": "drag",
   "replace_mode": false,
-  "history_enabled": true
+  "history_enabled": true,
+  "spell_scope": "current_sentence"
 }
