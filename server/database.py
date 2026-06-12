@@ -8,7 +8,8 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 load_dotenv(Path(__file__).resolve().parent / ".env")
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./app.db")
+DEFAULT_DATABASE_URL = "postgresql+psycopg2://postgres:password@localhost:5432/ai_grammary"
+DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_DATABASE_URL)
 
 
 def mask_database_url(url: str) -> str:

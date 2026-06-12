@@ -3512,3 +3512,7 @@
 2026-06-12 07:48:29 reader='word_selection' source='drag' title='김승현  -  호환성 모드 - Word' text_len=1 newlines=0 blank_lines=0 note='' sample='안'
 2026-06-12 07:48:41 reader='word_selection' source='drag' title='김승현  -  호환성 모드 - Word' text_len=1 newlines=0 blank_lines=0 note='' sample='안'
 2026-06-12 07:48:56 reader='selection_cleared' source='drag' title='김승현  -  호환성 모드 - Word' text_len=0 newlines=0 blank_lines=1 note='' sample=''
+2026-06-12 08:24:27 reader='word_selection' source='drag' title='김승현  -  호환성 모드 - Word' text_len=14 newlines=2 blank_lines=2 note='' sample='\n잘 있어요 다시 만너요\n'
+2026-06-12 08:24:28 reader='word_selection' source='drag' title='김승현  -  호환성 모드 - Word' text_len=25 newlines=3 blank_lines=2 note='' sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-06-12 08:24:32 reader='word_selection' source='drag' title='김승현  -  호환성 모드 - Word' text_len=25 newlines=3 blank_lines=2 note='' sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'
+2026-06-12 08:24:46 reader='word_selection' source='drag' title='김승현  -  호환성 모드 - Word' text_len=25 newlines=3 blank_lines=2 note='' sample='안녕하세요 싫어해요\n\n잘 있어요 다시 만너요\n'

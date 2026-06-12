@@ -170,6 +170,7 @@ class App:
         self.panel.spell_history_btn.clicked.connect(lambda: self.show_history(2))
         self.panel.summary_history_btn.clicked.connect(lambda: self.show_history(3))
         self.panel.tone_history_btn.clicked.connect(lambda: self.show_history(4))
+        self.panel.history_delete_requested.connect(self.delete_history_log)
         self.mini_overlay.apply_pressed.connect(self.mark_drag_overlay_interaction)
         self.mini_overlay.apply_clicked.connect(self.apply_correction_to_source)
         self.mini_overlay.open_clicked.connect(self.show_panel)
@@ -205,6 +206,7 @@ class App:
         self.main_overlay.redo_requested.connect(self.redo_last_main_overlay_correction)
         self.main_overlay.evaluate_requested.connect(lambda: self.handle_main_overlay_action("evaluate"))
         self.main_overlay.evaluation_reason_requested.connect(self.show_overlay_evaluation_reason)
+        self.main_overlay.spelling_feedback_requested.connect(self.show_spelling_feedback_reason)
         self.main_overlay.summary_copy_requested.connect(self.safe_copy)
         self.main_overlay.title_requested.connect(lambda: self.handle_main_overlay_action("title"))
         self.main_overlay.title_insert_requested.connect(self.insert_recommended_title_from_overlay)
@@ -2286,6 +2288,7 @@ class App:
         self.panel.set_active_window_title("")
         self.mini_overlay.set_spelling_feedback_available(False)
         self.realtime_overlay.set_spelling_feedback_available(False)
+        self.main_overlay.set_spelling_feedback_available(False)
         self._hide_mini_overlay("main_window_hide_call")
         self._hide_main_overlay("main_window_hide_call")
 
@@ -2330,6 +2333,7 @@ class App:
             self.last_spelling_corrections = list(getattr(self.analyzer, "last_spelling_corrections", []) or [])
             self.last_corrected_text = self._extract_corrected_text(result)
             self.panel.set_spell_result(result)
+            self.main_overlay.set_spelling_feedback_available(bool(spelling_feedback))
             self.save_history_log(
                 feature_type=2,
                 input_text=self.last_correction_source_text,
@@ -3147,7 +3151,8 @@ class App:
             return ""
         self.add_notification("\uc694\uc57d \uc2dc\uc791")
         try:
-            result = self.analyzer.analyze_summary(self.last_input)
+            summary_style = self.panel.get_summary_style() if hasattr(self.panel, "get_summary_style") else "brief"
+            result = self.analyzer.analyze_summary(self.last_input, summary_style)
             self.panel.set_summary_result(result)
             self.save_history_log(
                 feature_type=3,
@@ -3593,6 +3598,23 @@ class App:
             self.handle_session_expired(str(exc))
         except Exception as exc:
             self.panel.show_notice("\uae30\ub85d \uc870\ud68c \uc2e4\ud328", str(exc))
+
+    def delete_history_log(self, log_id):
+        if not self.ensure_history_available():
+            return
+        if not self.ensure_server_available():
+            return
+        try:
+            self.api_client.delete_log(log_id)
+            feature_type = getattr(self.panel, "_history_feature_type", None)
+            if int(feature_type or 0) == 0:
+                self.show_current_document_history()
+            else:
+                self.show_history(feature_type)
+        except UnauthorizedError as exc:
+            self.handle_session_expired(str(exc))
+        except Exception as exc:
+            self.panel.show_notice("\uae30\ub85d \uc0ad\uc81c \uc2e4\ud328", str(exc))
 
     def show_current_document_history(self):
         if not self.is_logged_in():

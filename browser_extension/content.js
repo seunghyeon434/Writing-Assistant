@@ -9,8 +9,63 @@
   let lastSignature = "";
   let lastCaptureSentAt = 0;
   let lastEditable = null;
+  let lastInteractedEditable = null;
+  let lastInteractedAt = 0;
   let observedEditable = null;
   let editableObserver = null;
+
+  const GMAIL_EDITOR_SELECTOR = [
+    ".Am.Al.editable",
+    ".editable[contenteditable='true']",
+    "[g_editable='true']",
+    "[aria-label='Message Body']",
+    "[aria-label*='Message Body']",
+    "[aria-label*='메일 본문']",
+    "[aria-label*='메시지 본문']"
+  ].join(",");
+
+  const NAVER_CAFE_EDITOR_SELECTOR = [
+    ".se-editable",
+    ".se-editable[contenteditable='true']",
+    ".se-component-content",
+    ".se-content",
+    ".se-main-container",
+    ".se-module-text",
+    ".se-text-paragraph",
+    ".se-section-text",
+    ".se2_inputarea",
+    ".SmartEditor",
+    "[class*='SmartEditor']",
+    "[id*='SmartEditor']",
+    "[data-a11y-title*='본문']",
+    "[data-placeholder*='본문']",
+    "[data-placeholder*='내용']"
+  ].join(",");
+
+  const EDITABLE_SELECTOR = [
+    "textarea",
+    "input[type='text']",
+    "input[type='search']",
+    "input[type='email']",
+    "input:not([type])",
+    "[contenteditable]",
+    "[contenteditable='']",
+    "[contenteditable='true']",
+    "[role='textbox']",
+    "[aria-label]",
+    "[placeholder]",
+    ".Am.Al.editable",
+    ".editable[contenteditable='true']",
+    ".se-editable",
+    ".se-content",
+    ".se-component-content",
+    "[class*='SmartEditor']",
+    "[id*='SmartEditor']",
+    GMAIL_EDITOR_SELECTOR,
+    NAVER_CAFE_EDITOR_SELECTOR
+  ].join(",");
+
+  const EDITOR_HINT_RE = /(\uae00\uc4f0\uae30|\ub0b4\uc6a9|\ubcf8\ubb38|\uba54\uc2dc\uc9c0|\ub313\uae00|\ub2f5\uae00|\uac8c\uc2dc\uae00|\uba54\uc77c|\uce74\ud398|\uc5d0\ub514\ud130|compose|message|body|write|editor|content|textbox|mail|cafe|smarteditor|article|post|reply|comment)/i;
 
   console.info("[Writing Assistant Bridge] content script loaded", {
     sessionId: SESSION_ID,
@@ -20,7 +75,47 @@
   function isEditableElement(node) {
     if (!node || node.nodeType !== Node.ELEMENT_NODE) return false;
     const tag = node.tagName.toLowerCase();
-    return tag === "textarea" || node.isContentEditable;
+    return tag === "textarea" || isTextInputElement(node) || isEditorLikeElement(node);
+  }
+
+  function isTextInputElement(node) {
+    if (!node || node.nodeType !== Node.ELEMENT_NODE) return false;
+    if (node.tagName.toLowerCase() !== "input") return false;
+    const type = String(node.getAttribute("type") || "text").toLowerCase();
+    return ["text", "search", "email"].includes(type);
+  }
+
+  function isEditorLikeElement(node) {
+    if (!node || node.nodeType !== Node.ELEMENT_NODE) return false;
+    if (node.isContentEditable) return true;
+    if (node.getAttribute("role") === "textbox") return true;
+    if (EDITOR_HINT_RE.test(editorHintText(node))) return true;
+    return false;
+  }
+
+  function editorHintText(element) {
+    if (!element || !element.getAttribute) return "";
+    return [
+      element.id || "",
+      typeof element.className === "string" ? element.className : "",
+      element.getAttribute("role") || "",
+      element.getAttribute("aria-label") || "",
+      element.getAttribute("placeholder") || "",
+      element.getAttribute("title") || "",
+      element.getAttribute("name") || ""
+    ].join(" ").toLowerCase();
+  }
+
+  function closestMatches(element, selector) {
+    try {
+      return Boolean(element && element.closest && element.closest(selector));
+    } catch (_error) {
+      return false;
+    }
+  }
+
+  function pageHintText() {
+    return `${location.hostname || ""} ${location.href || ""} ${document.title || ""}`.toLowerCase();
   }
 
   function closestEditableFromNode(node) {
@@ -28,32 +123,29 @@
     const element = node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
     if (!element || !element.closest) return null;
     if (isEditorChromeNode(element)) return null;
-    return element.closest("textarea,[contenteditable=''],[contenteditable='true']");
+    return element.closest(EDITABLE_SELECTOR);
   }
 
   function activeEditable() {
+    const recent = recentInteractedEditable();
+    if (recent) return chooseEditable(recent);
+
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
       const editableFromSelection = closestEditableFromNode(selection.anchorNode);
       if (isCaptureReadyEditable(editableFromSelection)) {
-        lastEditable = editableFromSelection;
-        observeEditable(editableFromSelection);
-        return editableFromSelection;
+        return chooseEditable(editableFromSelection);
       }
     }
 
     const active = document.activeElement;
     if (isCaptureReadyEditable(active)) {
-      lastEditable = active;
-      observeEditable(active);
-      return active;
+      return chooseEditable(active);
     }
 
     const fallback = bestEditableCandidate();
     if (fallback) {
-      lastEditable = fallback;
-      observeEditable(fallback);
-      return fallback;
+      return chooseEditable(fallback);
     }
     return null;
   }
@@ -73,23 +165,113 @@
     return Boolean(element && document.contains(element) && isEditableElement(element));
   }
 
+  function rememberInteractedEditable(target) {
+    const editable = closestEditableFromNode(target) || (isCaptureReadyEditable(target) ? target : null);
+    if (!editable || !isCaptureReadyEditable(editable)) return;
+    lastInteractedEditable = editable;
+    lastInteractedAt = Date.now();
+    chooseEditable(editable, "interaction");
+  }
+
+  function chooseEditable(element, reason = "selected") {
+    if (!element) return null;
+    lastEditable = element;
+    observeEditable(element);
+    logSelectedEditable(element, reason);
+    return element;
+  }
+
+  function logSelectedEditable(element, reason) {
+    if (!element) return;
+    const rect = element.getBoundingClientRect();
+    const className = typeof element.className === "string" ? element.className.slice(0, 140) : "";
+    console.log("[Writing Assistant Bridge] selected editable", {
+      reason,
+      tagName: element.tagName,
+      role: element.getAttribute("role") || "",
+      contenteditable: element.getAttribute("contenteditable") || String(Boolean(element.isContentEditable)),
+      className,
+      id: element.id || "",
+      ariaLabel: element.getAttribute("aria-label") || "",
+      placeholder: element.getAttribute("placeholder") || "",
+      width: Math.round(rect.width),
+      height: Math.round(rect.height),
+      frameUrl: location.href
+    });
+  }
+
+  function recentInteractedEditable() {
+    if (!isCaptureReadyEditable(lastInteractedEditable)) return null;
+    if (Date.now() - lastInteractedAt > 10 * 60 * 1000) return null;
+    return lastInteractedEditable;
+  }
+
   function bestEditableCandidate() {
-    const candidates = Array.from(document.querySelectorAll("textarea,[contenteditable=''],[contenteditable='true']"))
+    const candidates = Array.from(document.querySelectorAll(EDITABLE_SELECTOR))
       .filter((element) => isCaptureReadyEditable(element) && editableCandidateText(element).trim());
     if (!candidates.length) return null;
     if (candidates.length === 1) return candidates[0];
     return candidates.sort((left, right) => {
-      const leftScore = editableCandidateText(left).length + visibleArea(left) / 100 + editorLikeScore(left);
-      const rightScore = editableCandidateText(right).length + visibleArea(right) / 100 + editorLikeScore(right);
+      const leftScore = editableCandidateScore(left);
+      const rightScore = editableCandidateScore(right);
       return rightScore - leftScore;
     })[0];
+  }
+
+  function editableCandidateScore(element) {
+    const rect = element.getBoundingClientRect();
+    const viewportCenterX = window.innerWidth / 2;
+    const viewportCenterY = window.innerHeight / 2;
+    const elementCenterX = rect.left + rect.width / 2;
+    const elementCenterY = rect.top + rect.height / 2;
+    const distance = Math.hypot(elementCenterX - viewportCenterX, elementCenterY - viewportCenterY);
+    const focusBoost = element === document.activeElement ? 900 : 0;
+    const recentBoost = element === lastInteractedEditable ? 1200 : 0;
+    return (
+      candidatePriority(element) * 10000 +
+      editableCandidateText(element).length +
+      visibleArea(element) / 80 +
+      editorLikeScore(element) +
+      focusBoost +
+      recentBoost -
+      distance / 4
+    );
+  }
+
+  function candidatePriority(element) {
+    if (!element || !element.matches) return 0;
+    const hint = editorHintText(element);
+    if (isGmailEditor(element)) return 95;
+    if (isCafeEditor(element)) return 90;
+    if (element.matches("textarea")) return 80;
+    if (isTextInputElement(element)) return 70;
+    if (element.isContentEditable || element.getAttribute("contenteditable") === "true") return 60;
+    if (element.getAttribute("role") === "textbox") return 50;
+    if (EDITOR_HINT_RE.test(hint)) return 40;
+    return 10;
+  }
+
+  function isGmailEditor(element) {
+    const hint = editorHintText(element);
+    const page = pageHintText();
+    return (
+      /mail\.google\.com|gmail/.test(page) && closestMatches(element, GMAIL_EDITOR_SELECTOR)
+    ) || /gmail|g_editable|message body|\uba54\uc77c \ubcf8\ubb38|\uba54\uc2dc\uc9c0 \ubcf8\ubb38/.test(hint);
+  }
+
+  function isCafeEditor(element) {
+    const hint = editorHintText(element);
+    const page = pageHintText();
+    return (
+      /cafe\.naver\.com|m\.cafe\.naver\.com|naver.*cafe/.test(page) && closestMatches(element, NAVER_CAFE_EDITOR_SELECTOR)
+    ) || /se-|smarteditor|cafe|article|post|editor|\ub313\uae00|\ub2f5\uae00|\ubcf8\ubb38|\ub0b4\uc6a9/.test(hint);
   }
 
   function isVisibleEditable(element) {
     if (!element) return false;
     const rect = element.getBoundingClientRect();
     const style = window.getComputedStyle(element);
-    return rect.width > 0 && rect.height > 0 && style.visibility !== "hidden" && style.display !== "none";
+    return rect.width > 0 && rect.height > 0 && style.visibility !== "hidden" && style.display !== "none" && style.opacity !== "0";
   }
 
   function isCaptureReadyEditable(element) {
@@ -109,7 +291,7 @@
 
   function editorContentText(element) {
     if (!element) return "";
-    if (element.matches && element.matches("textarea")) return element.value || "";
+    if (element.matches && (element.matches("textarea") || isTextInputElement(element))) return element.value || "";
     const chunks = [];
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
@@ -125,18 +307,21 @@
   }
 
   function editorLikeScore(element) {
-    const attrs = `${element.id || ""} ${element.className || ""} ${element.getAttribute("role") || ""} ${element.getAttribute("aria-label") || ""}`.toLowerCase();
+    const attrs = editorHintText(element);
     let score = 0;
-    if (/editor|write|content|article|post|se-|prosemirror|textbox/.test(attrs)) score += 500;
+    if (EDITOR_HINT_RE.test(attrs)) score += 500;
+    if (/gmail|editable|g_editable|se-|prosemirror|article|post|cafe|smarteditor/.test(attrs)) score += 500;
+    if (isGmailEditor(element) || isCafeEditor(element)) score += 900;
     if (element.getAttribute("role") === "textbox") score += 300;
-    if (element.matches("textarea")) score += 200;
+    if (element.matches("textarea") || isTextInputElement(element)) score += 200;
+    if (element.isContentEditable) score += 250;
     return score;
   }
 
   function editableCandidateText(element) {
     if (!element) return "";
-    if (element.matches("textarea")) return element.value || "";
-    return editorContentText(element);
+    if (element.matches("textarea") || isTextInputElement(element)) return element.value || "";
+    return editorContentText(element) || element.textContent || "";
   }
 
   function visibleArea(element) {
@@ -149,7 +334,7 @@
     return {
       text,
       html: "",
-      target_kind: element.tagName.toLowerCase(),
+      target_kind: isTextInputElement(element) ? "input" : element.tagName.toLowerCase(),
       selection: {
         start: element.selectionStart || 0,
         end: element.selectionEnd || 0
@@ -525,12 +710,8 @@
     const element = activeEditable();
     if (!element) return;
     if (!shouldCaptureDocument()) return;
-    const payload = element.matches("textarea") ? captureInput(element) : captureContentEditable(element);
+    const payload = payloadFromElement(element);
     if (!payload.text.trim()) return;
-    payload.segments = cleanSegments(payload.segments || []);
-    payload.session_id = SESSION_ID;
-    payload.url = location.href;
-    payload.title = document.title;
 
     const signature = JSON.stringify([payload.url, payload.text, payload.html, payload.selection, payload.segments]);
     const now = Date.now();
@@ -569,9 +750,9 @@
   function applyReplacement(text, styleInfo) {
     const element = activeEditable();
     if (!element) return;
-    if (element.matches("textarea")) {
-      const start = element.selectionStart || 0;
-      const end = element.selectionEnd || start;
+    if (element.matches("textarea") || isTextInputElement(element)) {
+      const start = 0;
+      const end = element.value.length;
       element.setRangeText(text, start, end, "end");
       element.dispatchEvent(new InputEvent("input", { bubbles: true, inputType: "insertReplacementText", data: text }));
       element.dispatchEvent(new Event("change", { bubbles: true }));
@@ -579,7 +760,7 @@
     }
 
     const selection = window.getSelection();
-    const range = selectedRangeInside(element) || rangeForElementContents(element);
+    const range = rangeForElementContents(element);
     const beforeDebug = domDebug(element, range);
     if (replaceTextPreservingDom(range, element, text)) {
       selection.removeAllRanges();
@@ -606,6 +787,36 @@
     reportApplied("fragment", text, beforeDebug, domDebug(element, rangeForElementContents(element)));
   }
 
+  function payloadFromElement(element) {
+    const payload = (element.matches("textarea") || isTextInputElement(element))
+      ? captureInput(element)
+      : captureContentEditable(element);
+    payload.segments = cleanSegments(payload.segments || []);
+    payload.session_id = SESSION_ID;
+    payload.url = location.href;
+    payload.title = document.title;
+    return payload;
+  }
+
+  function focusedTextPayload() {
+    const element = activeEditable();
+    if (!element) {
+      return {
+        ok: false,
+        error: "Focused editable field was not found."
+      };
+    }
+    const payload = payloadFromElement(element);
+    if (!String(payload.text || "").trim()) {
+      return {
+        ok: false,
+        error: "The editable field is empty.",
+        payload
+      };
+    }
+    return { ok: true, payload };
+  }
+
   async function reportApplied(method, text, before, after) {
     try {
       await fetch(`${BRIDGE}/applied`, {
@@ -628,6 +839,7 @@
 
   function replaceTextPreservingDom(range, element, text) {
     if (String(text).includes("\n")) return false;
+    if (range.toString().length !== String(text).length) return false;
     const entries = textNodeEntriesForRange(range, element);
     if (!entries.length) return false;
 
@@ -830,11 +1042,47 @@
     }
   }
 
+  if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.onMessage) {
+    chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+      if (!message || message.source !== "writing-assistant-popup") return false;
+
+      if (message.type === "getFocusedText") {
+        sendResponse(focusedTextPayload());
+        return true;
+      }
+
+      if (message.type === "applyText") {
+        const text = String(message.text || "");
+        if (!text.trim()) {
+          sendResponse({ ok: false, error: "No correction result to apply." });
+          return true;
+        }
+        applyReplacement(text, message.style_info || {});
+        scheduleCapture();
+        sendResponse({ ok: true });
+        return true;
+      }
+
+      return false;
+    });
+  }
+
+  document.addEventListener("mousedown", (event) => rememberInteractedEditable(event.target), true);
+  document.addEventListener("click", (event) => rememberInteractedEditable(event.target), true);
+  document.addEventListener("focusin", (event) => {
+    rememberInteractedEditable(event.target);
+    scheduleSettledCaptures();
+  }, true);
+  document.addEventListener("input", (event) => {
+    rememberInteractedEditable(event.target);
+    scheduleSettledCaptures();
+  }, true);
+  document.addEventListener("keyup", (event) => {
+    rememberInteractedEditable(event.target);
+    scheduleSettledCaptures();
+  }, true);
   document.addEventListener("selectionchange", scheduleCapture, true);
-  document.addEventListener("input", scheduleSettledCaptures, true);
-  document.addEventListener("keyup", scheduleSettledCaptures, true);
   document.addEventListener("mouseup", scheduleSettledCaptures, true);
-  document.addEventListener("focusin", scheduleSettledCaptures, true);
   window.addEventListener("load", scheduleCapture, true);
   pollCommand();
 })();

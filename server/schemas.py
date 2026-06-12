@@ -64,6 +64,7 @@ class CorrectResponse(BaseModel):
 
 class SummaryRequest(BaseModel):
     text: str
+    style: str = "brief"
 
 
 class SummaryResponse(BaseModel):
@@ -101,6 +102,7 @@ class UsageLogCreateRequest(BaseModel):
     feature_type: int
     feature_label: str | None = None
     input_text: str
+    request_id: int | None = None
     output_text: str = ""
     title: str | None = None
     score: int | None = None
@@ -114,6 +116,7 @@ class UsageLogResponse(BaseModel):
     feature_type: int
     feature_label: str | None = None
     input_text: str
+    request_id: int | None = None
     output_text: str
     title: str | None = None
     score: int | None = None
@@ -140,6 +143,17 @@ class UserSettingsResponse(UserSettingsRequest):
 
     class Config:
         from_attributes = True
+
+
+class HistoryRequestResponse(BaseModel):
+    request_id: int
+    input_text: str
+    created_at: datetime
+    spelling: dict | None = None
+    summary: dict | None = None
+    tone: dict | None = None
+    evaluation: dict | None = None
+    title: dict | None = None
 
 
 class ToneFavoriteCreateRequest(BaseModel):

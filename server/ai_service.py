@@ -163,8 +163,8 @@ class AIService:
             "corrections": self._normalize_corrections(data.get("corrections"), source_text),
         }
 
-    def summarize_text(self, text: str) -> dict[str, str]:
-        data = self._run_json_feature("summary", self._require_text(text))
+    def summarize_text(self, text: str, style: str = "brief") -> dict[str, str]:
+        data = self._run_json_feature("summary", self._require_text(text), {"summary_style": style or "brief"})
         summary = str(data.get("summary") or "").strip()
         if not summary:
             raise RuntimeError("OpenAI summary response did not include summary.")
@@ -267,8 +267,18 @@ class AIService:
             )
         if feature == "tone":
             lines.append(f"요청 문체/말투: {extra.get('tone') or '자연스럽게'}")
+        if feature == "summary":
+            lines.append(self._summary_style_instruction(extra.get("summary_style")))
         lines.extend(["", "원문:", trimmed_text])
         return "\n".join(lines)
+
+    def _summary_style_instruction(self, style: str) -> str:
+        value = str(style or "brief").strip()
+        if value == "bullet":
+            return "요약 방식: 핵심 bullet. 핵심 내용을 3~5개의 짧은 bullet로 정리하세요."
+        if value == "detailed":
+            return "요약 방식: 자세히. 중요한 맥락과 흐름을 보존하며 5~8문장 정도로 자세히 요약하세요."
+        return "요약 방식: 짧게. 핵심만 1~3문장으로 간결하게 요약하세요."
 
     def _json_schema_format(self, feature: str, spec: dict) -> dict:
         properties = {}

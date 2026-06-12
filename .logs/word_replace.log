@@ -3234,3 +3234,16 @@
 2026-06-12 07:49:04 UndoRecord started name='Writing Assistant title'
 2026-06-12 07:49:05 title inserted title='김자원과의 이별과 만남의 흔적'
 2026-06-12 07:49:05 UndoRecord ended
+2026-06-12 08:24:32 UndoRecord started name='Writing Assistant correction'
+2026-06-12 08:24:32 selection write start=0 end=25 text_len=30 segments=6 sample='안녕하세요. 반갑습니다.\n\n잘 있어요. 다시 만나요.\n'
+2026-06-12 08:24:34 character styles mapped source_len=25 replacement_len=30 source_styles=25 mapped=30
+2026-06-12 08:24:34 apply segment start=0 end=1 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#FF0000'}
+2026-06-12 08:24:35 apply segment start=1 end=5 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-12 08:24:35 apply segment start=5 end=6 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-12 08:24:35 apply segment start=6 end=10 style={'bold': False, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-12 08:24:35 apply segment start=12 end=13 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-12 08:24:36 apply segment start=13 end=24 style={'bold': True, 'italic': False, 'underline': 0, 'double_strike_through': False, 'strike_through': False, 'subscript': False, 'superscript': False, 'highlight_color_index': 0, 'color_hex': '#000000'}
+2026-06-12 08:24:36 segments applied=6 failed=0
+2026-06-12 08:24:36 last-line overlay applied range=(24,29) doc=(24,29) style_keys=['bold', 'color_hex', 'double_strike_through', 'highlight_color_index', 'italic', 'strike_through', 'subscript', 'superscript', 'underline'] align=None
+2026-06-12 08:24:46 marker character styles applied=30 failed=0 source_styles=30
+2026-06-12 08:24:46 UndoRecord ended

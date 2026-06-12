@@ -3841,3 +3841,15 @@
 2026-06-12 07:48:41 selection_ready reader='word_selection' hwnd=197598 text_len=1
 2026-06-12 07:48:48 drag_spelling_selection_stale age='6.575' max_age=3.0 target_mode='word_selection' hwnd=197598
 2026-06-12 07:49:01 drag_spelling_selection_missing has_target=False target_mode='' input_len=0
+2026-06-12 08:24:24 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 08:24:24 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 08:24:24 word_focus_restore_after_overlay hwnd=197598 restored=True
+2026-06-12 08:24:27 selection_ready reader='word_selection' hwnd=197598 text_len=14
+2026-06-12 08:24:28 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 08:24:32 apply_pressed has_target=True input_len=25 retry=False snapshot=True
+2026-06-12 08:24:32 immediate_selection_capture_success reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 08:24:32 selection_ready reader='word_selection' hwnd=197598 text_len=25
+2026-06-12 08:24:32 apply_preflight_word_capture captured=True
+2026-06-12 08:24:32 inspect_result can_replace=True reason=''
+2026-06-12 08:24:46 apply_success reader='word_selection' hwnd=197598 text_len=30
+2026-06-12 08:24:46 selection_ready reader='word_selection' hwnd=197598 text_len=25

@@ -185,3 +185,11 @@
 {"ts": "2026-06-12T07:48:52.588", "event": "ai_request_completed", "feature": "title", "model": "gpt-5-nano", "duration_ms": 4238, "output_len": 28, "response_status": "completed", "text_len": 69, "text_lines": 21, "text_hash": "fe5671d32e8130ea"}
 {"ts": "2026-06-12T07:49:01.668", "event": "ai_request_started", "feature": "title", "model": "gpt-5-nano", "text_len": 69, "text_lines": 21, "text_hash": "fe5671d32e8130ea"}
 {"ts": "2026-06-12T07:49:01.668", "event": "ai_cache_hit", "feature": "title", "model": "gpt-5-nano", "duration_ms": 0, "text_len": 69, "text_lines": 21, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T08:24:27.930", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 14, "text_lines": 3, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T08:24:27.940", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 10, "text_len": 14, "text_lines": 3, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T08:24:28.468", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:28.469", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:32.199", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:32.199", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:46.752", "event": "ai_request_started", "feature": "correction", "model": "gpt-5-mini", "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:46.753", "event": "ai_cache_hit", "feature": "correction", "model": "gpt-5-mini", "duration_ms": 0, "text_len": 25, "text_lines": 4, "text_hash": "f64bd0c511231b8e"}

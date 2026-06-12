@@ -27,8 +27,8 @@ class AIClient:
             "corrections": data.get("corrections") or [],
         }
 
-    def summarize(self, text):
-        data = self._post("/summary-public", {"text": text})
+    def summarize(self, text, style="brief"):
+        data = self._post("/summary-public", {"text": text, "style": style or "brief"})
         if not data.get("summary"):
             raise RuntimeError("요약 응답이 비어 있습니다.")
         return data["summary"]

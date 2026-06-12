@@ -192,3 +192,11 @@
 {"ts": "2026-06-12T07:48:52.591", "event": "client_ai_request_completed", "path": "/title-public", "status_code": 200, "duration_ms": 4258, "text_len": 69, "text_hash": "fe5671d32e8130ea"}
 {"ts": "2026-06-12T07:49:01.664", "event": "client_ai_request_started", "path": "/title-public", "text_len": 69, "text_hash": "fe5671d32e8130ea"}
 {"ts": "2026-06-12T07:49:01.671", "event": "client_ai_request_completed", "path": "/title-public", "status_code": 200, "duration_ms": 7, "text_len": 69, "text_hash": "fe5671d32e8130ea"}
+{"ts": "2026-06-12T08:24:27.687", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 14, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T08:24:27.968", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 282, "text_len": 14, "text_hash": "9bafc67bfc601a8c"}
+{"ts": "2026-06-12T08:24:28.464", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:28.472", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:32.195", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:32.202", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 6, "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:46.748", "event": "client_ai_request_started", "path": "/correct-public", "text_len": 25, "text_hash": "f64bd0c511231b8e"}
+{"ts": "2026-06-12T08:24:46.755", "event": "client_ai_request_completed", "path": "/correct-public", "status_code": 200, "duration_ms": 7, "text_len": 25, "text_hash": "f64bd0c511231b8e"}

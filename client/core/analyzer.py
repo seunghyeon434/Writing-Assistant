@@ -15,13 +15,14 @@ class TextAnalyzer:
 
     def analyze_spelling(self, text):
         result = self.ai.correct_spelling(text)
+        result["source_text"] = str(text or "")
         self.last_spelling_result = result
         self.last_spelling_corrections = self._normalize_corrections(result.get("corrections"))
         self.last_spelling_feedback = self._spelling_feedback_summary(result)
         return self.format_spell_check(result)
 
-    def analyze_summary(self, text):
-        result = self.ai.summarize(text)
+    def analyze_summary(self, text, style="brief"):
+        result = self.ai.summarize(text, style)
         return self.format_summary(result)
 
     def analyze_evaluation(self, text):
@@ -46,6 +47,7 @@ class TextAnalyzer:
             raise RuntimeError("맞춤법 검사 결과에 교정문이 없습니다.")
         corrections = self._normalize_corrections(result.get("corrections"))
         feedback = str(result.get("issues") or "").strip()
+        source_text = str(result.get("source_text") or "").strip()
         sections = ["맞춤법 검사 결과:", ""]
         if feedback:
             sections.extend(["전체 의견:", feedback, ""])
@@ -66,6 +68,8 @@ class TextAnalyzer:
             sections.append("")
         else:
             sections.extend(["교정 정보:", "뚜렷한 오류 정보가 발견되지 않았습니다.", ""])
+        if source_text:
+            sections.extend(["원문/교정본 비교:", "", "원문:", source_text, "", "교정본:", corrected, ""])
         sections.extend(["교정문:", "", corrected])
         return "\n".join(sections).rstrip()
 

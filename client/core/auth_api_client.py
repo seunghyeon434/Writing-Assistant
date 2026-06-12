@@ -109,6 +109,15 @@ class AuthAPIClient:
             params["feature_type"] = feature_type
         return self._authorized_request("get", "/logs", params=params)
 
+    def delete_log(self, log_id):
+        return self._authorized_request("delete", f"/logs/{int(log_id)}")
+
+    def delete_logs(self, feature_type=None):
+        params = {}
+        if feature_type is not None:
+            params["feature_type"] = feature_type
+        return self._authorized_request("delete", "/logs", params=params)
+
     def get_settings(self):
         return self._authorized_request("get", "/settings")
 

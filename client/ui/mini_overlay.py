@@ -9,6 +9,8 @@ import time
 from PyQt5.QtGui import QColor, QCursor, QFont, QIcon, QPainter
 from PyQt5.QtWidgets import QApplication, QBoxLayout, QFrame, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
+from client.core.tone_presets import DEFAULT_TONE_PRESET, TONE_PRESETS, normalize_tone_preset
+
 try:
     import win32gui
 except Exception:  # pragma: no cover - optional Windows dependency
@@ -67,9 +69,11 @@ class TonePrompt(QWidget):
             | Qt.WindowStaysOnTopHint
         )
         self.setAttribute(Qt.WA_TranslucentBackground)
-        self._default_size = (390, 156)
+        self._default_size = (462, 226)
         self._favorite_size = (585, 234)
         self.setFixedSize(*self._default_size)
+        self._selected_tone = DEFAULT_TONE_PRESET
+        self.tone_preset_buttons = []
         self._favorites = []
         self._favorite_delete_mode = False
         self._favorites_enabled = False
@@ -100,14 +104,6 @@ class TonePrompt(QWidget):
                 color: #4a382f;
                 font-size: 12px;
             }
-            QLineEdit#tonePromptInput {
-                background: #fffaf4;
-                border: 1px solid #dccbbb;
-                border-radius: 12px;
-                padding: 7px 10px;
-                color: #2f241f;
-                selection-background-color: #d8a27a;
-            }
             QPushButton {
                 border: 0;
                 border-radius: 13px;
@@ -119,11 +115,20 @@ class TonePrompt(QWidget):
             QPushButton:hover {
                 background: #dcc1a7;
             }
-            QPushButton#tonePromptSubmit {
+            QPushButton#tonePresetButton {
+                background: #fffaf4;
+                border: 1px solid #dccbbb;
+                color: #2f241f;
+                min-height: 30px;
+                font-size: 12px;
+            }
+            QPushButton#tonePresetButton:hover {
+                background: #ecd8c5;
+            }
+            QPushButton#tonePresetButton:checked {
                 background: #b86a3c;
+                border: 1px solid #b86a3c;
                 color: #fff8f2;
-                min-width: 38px;
-                max-width: 38px;
             }
             QPushButton#tonePromptClose {
                 min-width: 26px;
@@ -202,7 +207,7 @@ class TonePrompt(QWidget):
         layout.setSpacing(10)
 
         top = QHBoxLayout()
-        self.title_label = QLabel("\ubb38\uccb4 \uc785\ub825")
+        self.title_label = QLabel("\ubb38\uccb4 \uc120\ud0dd")
         self.title_label.setObjectName("tonePromptTitle")
         self.close_btn = QPushButton("X")
         self.close_btn.setObjectName("tonePromptClose")
@@ -219,34 +224,29 @@ class TonePrompt(QWidget):
         else:
             self.favorite_btn.setText("*")
         top.addWidget(self.title_label, 1)
-        top.addWidget(self.favorite_btn, 0, Qt.AlignRight)
+        self.favorite_btn.hide()
         top.addWidget(self.close_btn, 0, Qt.AlignRight)
         layout.addLayout(top)
 
-        guide = QLabel("\uc6d0\ud558\ub294 \ubb38\uccb4/\ub9d0\ud22c\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694.")
+        guide = QLabel("\uc6d0\ud558\ub294 \ubb38\uccb4/\ub9d0\ud22c\ub97c \uc120\ud0dd\ud574 \uc8fc\uc138\uc694.")
         guide.setObjectName("tonePromptGuide")
         layout.addWidget(guide)
 
-        row = QHBoxLayout()
-        row.setSpacing(8)
-        self.input = QLineEdit()
-        self.input.setObjectName("tonePromptInput")
-        self.input.setPlaceholderText("\uc608: \ubd80\ub4dc\ub7fd\uace0 \uc815\uc911\ud558\uac8c")
-        self.submit_btn = QPushButton("")
-        self.submit_btn.setObjectName("tonePromptSubmit")
-        self.submit_btn.setToolTip("\ubb38\uccb4 \ubcc0\uacbd \uc801\uc6a9")
-        forward_icon_path = Path(__file__).resolve().parent.parent / "icon" / "forward.png"
-        if forward_icon_path.exists():
-            self.submit_btn.setIcon(QIcon(str(forward_icon_path)))
-            self.submit_btn.setIconSize(QSize(16, 16))
-        row.addWidget(self.input, 1)
-        row.addWidget(self.submit_btn, 0)
-        layout.addLayout(row)
+        preset_grid = QGridLayout()
+        preset_grid.setSpacing(7)
+        for index, tone in enumerate(TONE_PRESETS):
+            button = QPushButton(tone)
+            button.setObjectName("tonePresetButton")
+            button.setCheckable(True)
+            button.setToolTip(tone)
+            button.clicked.connect(lambda _checked=False, value=tone: self._select_preset(value))
+            self.tone_preset_buttons.append(button)
+            preset_grid.addWidget(button, index // 2, index % 2)
+        layout.addLayout(preset_grid)
+        self.set_selected_tone(self._selected_tone)
 
         self.close_btn.clicked.connect(self.hide)
         self.favorite_btn.clicked.connect(self.request_favorites)
-        self.submit_btn.clicked.connect(self._submit)
-        self.input.returnPressed.connect(self._submit)
         self._build_favorite_cover()
 
     def _build_favorite_cover(self):
@@ -376,10 +376,20 @@ class TonePrompt(QWidget):
         tone = str(self._favorites[index].get("tone") or "").strip()
         if not tone:
             return
-        self.input.setText(tone)
         self.hide()
         QApplication.processEvents()
         self.submitted.emit(tone)
+
+    def set_selected_tone(self, tone):
+        self._selected_tone = normalize_tone_preset(tone)
+        for button in self.tone_preset_buttons:
+            button.setChecked(button.text() == self._selected_tone)
+
+    def _select_preset(self, tone):
+        self.set_selected_tone(tone)
+        self.hide()
+        QApplication.processEvents()
+        self.submitted.emit(self._selected_tone)
 
     def _delete_favorite(self, index):
         if index >= len(self._favorites):
@@ -393,12 +403,11 @@ class TonePrompt(QWidget):
         self.hide_favorites()
         self.setFixedSize(*self._default_size)
         self._last_window_handle = window_handle
+        self.set_selected_tone(self._selected_tone)
         self._move_to_target_center(window_handle)
-        self.input.selectAll()
         self.show()
         self.raise_()
         self.activateWindow()
-        self.input.setFocus(Qt.OtherFocusReason)
 
     def _move_to_target_center(self, window_handle=None):
         rect = self._target_rect(window_handle)
@@ -429,13 +438,9 @@ class TonePrompt(QWidget):
             self.favorite_cover.setGeometry(self.card.rect())
 
     def _submit(self):
-        value = self.input.text().strip()
-        if not value:
-            self.input.setFocus(Qt.OtherFocusReason)
-            return
         self.hide()
         QApplication.processEvents()
-        self.submitted.emit(value)
+        self.submitted.emit(self._selected_tone)
 
     def _target_rect(self, window_handle):
         if win32gui is None or not window_handle:

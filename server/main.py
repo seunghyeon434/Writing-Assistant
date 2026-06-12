@@ -6,7 +6,18 @@ from fastapi import FastAPI, Depends, HTTPException, Header
 from sqlalchemy.orm import Session
 
 from database import SessionLocal, engine, Base
-from models import User, UsageLog, UserSetting, ToneFavorite
+from models import (
+    User,
+    UsageLog,
+    UserSetting,
+    ToneFavorite,
+    AnalysisRequest,
+    SpellingResult,
+    SummaryResult,
+    ToneResult,
+    EvaluationResult,
+    TitleResult,
+)
 from schemas import (
     SignupRequest,
     LoginRequest,
@@ -23,6 +34,7 @@ from schemas import (
     ToneResponse,
     UsageLogCreateRequest,
     UsageLogResponse,
+    HistoryRequestResponse,
     UserSettingsRequest,
     UserSettingsResponse,
     ToneFavoriteCreateRequest,
@@ -114,6 +126,216 @@ FEATURE_LABELS = {
 
 def feature_label_for(feature_type):
     return FEATURE_LABELS.get(int(feature_type or 0), "\uae30\ub85d")
+
+
+def get_or_create_request(db: Session, user_id: int, input_text: str) -> AnalysisRequest:
+    normalized = str(input_text or "").strip()
+    request_row = (
+        db.query(AnalysisRequest)
+        .filter(AnalysisRequest.user_id == user_id, AnalysisRequest.input_text == normalized)
+        .order_by(AnalysisRequest.created_at.desc())
+        .first()
+    )
+    if request_row is not None:
+        return request_row
+    request_row = AnalysisRequest(user_id=user_id, input_text=normalized)
+    db.add(request_row)
+    db.flush()
+    return request_row
+
+
+def encode_log_id(feature_type: int, row_id: int) -> int:
+    return int(feature_type) * 1_000_000 + int(row_id)
+
+
+def decode_log_id(log_id: int) -> tuple[int | None, int]:
+    value = int(log_id)
+    feature_type = value // 1_000_000
+    row_id = value % 1_000_000
+    if feature_type in (1, 2, 3, 4, 5) and row_id > 0:
+        return feature_type, row_id
+    return None, value
+
+
+def serialize_spelling_result(row: SpellingResult) -> UsageLogResponse:
+    return UsageLogResponse(
+        id=encode_log_id(2, row.id),
+        feature_type=2,
+        feature_label=feature_label_for(2),
+        input_text=row.request.input_text if row.request else "",
+        request_id=row.request_id,
+        output_text=row.corrected_text or "",
+        spelling_feedback=row.spelling_feedback,
+        created_at=row.created_at,
+    )
+
+
+def serialize_summary_result(row: SummaryResult) -> UsageLogResponse:
+    return UsageLogResponse(
+        id=encode_log_id(3, row.id),
+        feature_type=3,
+        feature_label=feature_label_for(3),
+        input_text=row.request.input_text if row.request else "",
+        request_id=row.request_id,
+        output_text=row.summary_text or "",
+        created_at=row.created_at,
+    )
+
+
+def serialize_tone_result(row: ToneResult) -> UsageLogResponse:
+    return UsageLogResponse(
+        id=encode_log_id(4, row.id),
+        feature_type=4,
+        feature_label=feature_label_for(4),
+        input_text=row.request.input_text if row.request else "",
+        request_id=row.request_id,
+        output_text=row.changed_text or "",
+        tone=row.requested_tone,
+        created_at=row.created_at,
+    )
+
+
+def serialize_evaluation_result(row: EvaluationResult) -> UsageLogResponse:
+    return UsageLogResponse(
+        id=encode_log_id(5, row.id),
+        feature_type=1,
+        feature_label=feature_label_for(1),
+        input_text=row.request.input_text if row.request else "",
+        request_id=row.request_id,
+        output_text=row.score_text or "",
+        score=row.score,
+        evaluation_reason=row.evaluation_reason,
+        created_at=row.created_at,
+    )
+
+
+def serialize_title_result(row: TitleResult) -> UsageLogResponse:
+    return UsageLogResponse(
+        id=encode_log_id(1, row.id),
+        feature_type=1,
+        feature_label=feature_label_for(1),
+        input_text=row.request.input_text if row.request else "",
+        request_id=row.request_id,
+        output_text=row.title_text or "",
+        title=row.title_text or "",
+        created_at=row.created_at,
+    )
+
+
+def serialize_history_request(request_row: AnalysisRequest) -> HistoryRequestResponse:
+    spelling_row = max(request_row.spelling_results, key=lambda row: row.created_at) if request_row.spelling_results else None
+    summary_row = max(request_row.summary_results, key=lambda row: row.created_at) if request_row.summary_results else None
+    tone_row = max(request_row.tone_results, key=lambda row: row.created_at) if request_row.tone_results else None
+    evaluation_row = max(request_row.evaluation_results, key=lambda row: row.created_at) if request_row.evaluation_results else None
+    title_row = max(request_row.title_results, key=lambda row: row.created_at) if request_row.title_results else None
+    return HistoryRequestResponse(
+        request_id=request_row.id,
+        input_text=request_row.input_text,
+        created_at=request_row.created_at,
+        spelling=(
+            {
+                "corrected_text": spelling_row.corrected_text,
+                "spelling_feedback": spelling_row.spelling_feedback,
+                "created_at": spelling_row.created_at.isoformat(),
+            }
+            if spelling_row
+            else None
+        ),
+        summary=(
+            {
+                "summary_text": summary_row.summary_text,
+                "created_at": summary_row.created_at.isoformat(),
+            }
+            if summary_row
+            else None
+        ),
+        tone=(
+            {
+                "requested_tone": tone_row.requested_tone,
+                "changed_text": tone_row.changed_text,
+                "created_at": tone_row.created_at.isoformat(),
+            }
+            if tone_row
+            else None
+        ),
+        evaluation=(
+            {
+                "score": evaluation_row.score,
+                "score_text": evaluation_row.score_text,
+                "evaluation_reason": evaluation_row.evaluation_reason,
+                "created_at": evaluation_row.created_at.isoformat(),
+            }
+            if evaluation_row
+            else None
+        ),
+        title=(
+            {
+                "title_text": title_row.title_text,
+                "created_at": title_row.created_at.isoformat(),
+            }
+            if title_row
+            else None
+        ),
+    )
+
+
+def migrate_legacy_usage_logs():
+    db = SessionLocal()
+    try:
+        for log in db.query(UsageLog).order_by(UsageLog.created_at.asc()).all():
+            if not str(log.input_text or "").strip():
+                continue
+            request_row = get_or_create_request(db, log.user_id, log.input_text)
+            if log.feature_type == 1 and log.title:
+                exists = db.query(TitleResult).filter(TitleResult.request_id == request_row.id, TitleResult.title_text == log.title).first()
+                if not exists:
+                    db.add(TitleResult(request_id=request_row.id, title_text=log.title, created_at=log.created_at))
+            elif log.feature_type == 1:
+                exists = db.query(EvaluationResult).filter(EvaluationResult.request_id == request_row.id, EvaluationResult.score_text == (log.output_text or "")).first()
+                if not exists:
+                    db.add(
+                        EvaluationResult(
+                            request_id=request_row.id,
+                            score=log.score,
+                            score_text=log.output_text or (f"{log.score}점" if log.score is not None else ""),
+                            evaluation_reason=log.evaluation_reason,
+                            created_at=log.created_at,
+                        )
+                    )
+            elif log.feature_type == 2:
+                exists = db.query(SpellingResult).filter(SpellingResult.request_id == request_row.id, SpellingResult.corrected_text == (log.output_text or "")).first()
+                if not exists:
+                    db.add(
+                        SpellingResult(
+                            request_id=request_row.id,
+                            corrected_text=log.output_text or "",
+                            spelling_feedback=log.spelling_feedback,
+                            created_at=log.created_at,
+                        )
+                    )
+            elif log.feature_type == 3:
+                exists = db.query(SummaryResult).filter(SummaryResult.request_id == request_row.id, SummaryResult.summary_text == (log.output_text or "")).first()
+                if not exists:
+                    db.add(SummaryResult(request_id=request_row.id, summary_text=log.output_text or "", created_at=log.created_at))
+            elif log.feature_type == 4:
+                exists = db.query(ToneResult).filter(ToneResult.request_id == request_row.id, ToneResult.changed_text == (log.output_text or "")).first()
+                if not exists:
+                    db.add(
+                        ToneResult(
+                            request_id=request_row.id,
+                            requested_tone=log.tone,
+                            changed_text=log.output_text or "",
+                            created_at=log.created_at,
+                        )
+                    )
+        db.commit()
+    except Exception:
+        db.rollback()
+    finally:
+        db.close()
+
+
+migrate_legacy_usage_logs()
 
 
 def get_db():
@@ -258,6 +480,7 @@ def delete_account(
     db: Session = Depends(get_db),
 ):
     db.query(UsageLog).filter(UsageLog.user_id == current_user.id).delete()
+    db.query(AnalysisRequest).filter(AnalysisRequest.user_id == current_user.id).delete()
     db.query(UserSetting).filter(UserSetting.user_id == current_user.id).delete()
     db.query(ToneFavorite).filter(ToneFavorite.user_id == current_user.id).delete()
     db.delete(current_user)
@@ -309,7 +532,7 @@ def correct_text_public(data: CorrectRequest):
 
 @app.post("/summary-public", response_model=SummaryResponse)
 def summarize_text_public(data: SummaryRequest):
-    result = run_ai_feature("summary", lambda: ai_service.summarize_text(data.text))
+    result = run_ai_feature("summary", lambda: ai_service.summarize_text(data.text, data.style))
     return SummaryResponse(summary=result["summary"])
 
 
@@ -354,53 +577,127 @@ def create_usage_log(
 ):
     if data.feature_type not in (1, 2, 3, 4):
         raise HTTPException(status_code=400, detail="Unsupported feature_type.")
-    if not data.input_text.strip():
+    if data.request_id is None and not data.input_text.strip():
         raise HTTPException(status_code=400, detail="input_text is required.")
     if data.score is not None and not 0 <= int(data.score) <= 100:
         raise HTTPException(status_code=400, detail="score must be between 0 and 100.")
 
-    feature_label = data.feature_label or feature_label_for(data.feature_type)
-
-    if data.feature_type == 1:
-        existing_log = (
-            db.query(UsageLog)
-            .filter(
-                UsageLog.user_id == current_user.id,
-                UsageLog.feature_type == 1,
-                UsageLog.input_text == data.input_text,
-            )
-            .order_by(UsageLog.created_at.desc())
+    request_row = None
+    if data.request_id is not None:
+        request_row = (
+            db.query(AnalysisRequest)
+            .filter(AnalysisRequest.id == data.request_id, AnalysisRequest.user_id == current_user.id)
             .first()
         )
-        if existing_log:
-            existing_log.feature_label = feature_label
-            if data.title is not None:
-                existing_log.title = data.title
-            if data.score is not None:
-                existing_log.score = data.score
-            if data.evaluation_reason is not None:
-                existing_log.evaluation_reason = data.evaluation_reason
-            existing_log.output_text = data.output_text or existing_log.output_text or ""
-            db.commit()
-            db.refresh(existing_log)
-            return existing_log
+        if request_row is None:
+            raise HTTPException(status_code=404, detail="request_id not found.")
 
-    log = UsageLog(
-        user_id=current_user.id,
-        input_text=data.input_text,
-        output_text=data.output_text or "",
-        feature_type=data.feature_type,
-        feature_label=feature_label,
-        title=data.title,
-        score=data.score,
-        tone=data.tone,
-        spelling_feedback=data.spelling_feedback,
-        evaluation_reason=data.evaluation_reason,
-    )
-    db.add(log)
-    db.commit()
-    db.refresh(log)
-    return log
+    if request_row is None:
+        request_row = get_or_create_request(db, current_user.id, data.input_text)
+
+    if data.feature_type == 1 and data.title:
+        row = (
+            db.query(TitleResult)
+            .filter(TitleResult.request_id == request_row.id)
+            .order_by(TitleResult.created_at.desc())
+            .first()
+        )
+        if row is None:
+            row = TitleResult(request_id=request_row.id, title_text=data.title)
+            db.add(row)
+        else:
+            row.title_text = data.title
+            row.created_at = datetime.now().replace(tzinfo=None)
+        db.commit()
+        db.refresh(row)
+        return serialize_title_result(row)
+
+    if data.feature_type == 1:
+        row = (
+            db.query(EvaluationResult)
+            .filter(EvaluationResult.request_id == request_row.id)
+            .order_by(EvaluationResult.created_at.desc())
+            .first()
+        )
+        if row is None:
+            row = EvaluationResult(
+                request_id=request_row.id,
+                score=int(data.score) if data.score is not None else None,
+                score_text=data.output_text or (f"{int(data.score)}점" if data.score is not None else ""),
+                evaluation_reason=data.evaluation_reason,
+            )
+            db.add(row)
+        else:
+            row.score = int(data.score) if data.score is not None else row.score
+            row.score_text = data.output_text or (f"{int(data.score)}점" if data.score is not None else row.score_text)
+            row.evaluation_reason = data.evaluation_reason or row.evaluation_reason
+            row.created_at = datetime.now().replace(tzinfo=None)
+        db.commit()
+        db.refresh(row)
+        return serialize_evaluation_result(row)
+
+    if data.feature_type == 2:
+        row = (
+            db.query(SpellingResult)
+            .filter(SpellingResult.request_id == request_row.id)
+            .order_by(SpellingResult.created_at.desc())
+            .first()
+        )
+        if row is None:
+            row = SpellingResult(
+                request_id=request_row.id,
+                corrected_text=data.output_text or "",
+                spelling_feedback=data.spelling_feedback,
+            )
+            db.add(row)
+        else:
+            row.corrected_text = data.output_text or ""
+            row.spelling_feedback = data.spelling_feedback
+            row.created_at = datetime.now().replace(tzinfo=None)
+        db.commit()
+        db.refresh(row)
+        return serialize_spelling_result(row)
+
+    if data.feature_type == 3:
+        row = (
+            db.query(SummaryResult)
+            .filter(SummaryResult.request_id == request_row.id)
+            .order_by(SummaryResult.created_at.desc())
+            .first()
+        )
+        if row is None:
+            row = SummaryResult(request_id=request_row.id, summary_text=data.output_text or "")
+            db.add(row)
+        else:
+            row.summary_text = data.output_text or ""
+            row.created_at = datetime.now().replace(tzinfo=None)
+        db.commit()
+        db.refresh(row)
+        return serialize_summary_result(row)
+
+    if data.feature_type == 4:
+        row = (
+            db.query(ToneResult)
+            .filter(ToneResult.request_id == request_row.id)
+            .order_by(ToneResult.created_at.desc())
+            .first()
+        )
+        if row is None:
+            row = ToneResult(
+                request_id=request_row.id,
+                requested_tone=data.tone,
+                changed_text=data.output_text or "",
+            )
+            db.add(row)
+        else:
+            row.requested_tone = data.tone
+            row.changed_text = data.output_text or ""
+            row.created_at = datetime.now().replace(tzinfo=None)
+        db.commit()
+        db.refresh(row)
+        return serialize_tone_result(row)
+
+    raise HTTPException(status_code=400, detail="Unsupported feature_type.")
 
 
 @app.get("/logs", response_model=list[UsageLogResponse])
@@ -409,10 +706,134 @@ def list_usage_logs(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    query = db.query(UsageLog).filter(UsageLog.user_id == current_user.id)
-    if feature_type is not None:
-        query = query.filter(UsageLog.feature_type == feature_type)
-    return query.order_by(UsageLog.created_at.desc()).all()
+    rows = []
+    if feature_type in (None, 0, 2):
+        rows.extend(
+            serialize_spelling_result(row)
+            for row in db.query(SpellingResult)
+            .join(AnalysisRequest, SpellingResult.request_id == AnalysisRequest.id)
+            .filter(AnalysisRequest.user_id == current_user.id)
+            .all()
+        )
+    if feature_type in (None, 0, 3):
+        rows.extend(
+            serialize_summary_result(row)
+            for row in db.query(SummaryResult)
+            .join(AnalysisRequest, SummaryResult.request_id == AnalysisRequest.id)
+            .filter(AnalysisRequest.user_id == current_user.id)
+            .all()
+        )
+    if feature_type in (None, 0, 4):
+        rows.extend(
+            serialize_tone_result(row)
+            for row in db.query(ToneResult)
+            .join(AnalysisRequest, ToneResult.request_id == AnalysisRequest.id)
+            .filter(AnalysisRequest.user_id == current_user.id)
+            .all()
+        )
+    if feature_type in (None, 0, 1):
+        rows.extend(
+            serialize_evaluation_result(row)
+            for row in db.query(EvaluationResult)
+            .join(AnalysisRequest, EvaluationResult.request_id == AnalysisRequest.id)
+            .filter(AnalysisRequest.user_id == current_user.id)
+            .all()
+        )
+        rows.extend(
+            serialize_title_result(row)
+            for row in db.query(TitleResult)
+            .join(AnalysisRequest, TitleResult.request_id == AnalysisRequest.id)
+            .filter(AnalysisRequest.user_id == current_user.id)
+            .all()
+        )
+    return sorted(rows, key=lambda item: item.created_at, reverse=True)
+
+
+@app.delete("/logs/{log_id}")
+def delete_usage_log(
+    log_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    encoded_feature, row_id = decode_log_id(log_id)
+    models = {
+        1: (EvaluationResult,),
+        2: (SpellingResult,),
+        3: (SummaryResult,),
+        4: (ToneResult,),
+        5: (TitleResult,),
+        None: (SpellingResult, SummaryResult, ToneResult, EvaluationResult, TitleResult),
+    }.get(encoded_feature, (SpellingResult, SummaryResult, ToneResult, EvaluationResult, TitleResult))
+    deleted = False
+    for model in models:
+        row = (
+            db.query(model)
+            .join(AnalysisRequest, model.request_id == AnalysisRequest.id)
+            .filter(model.id == row_id, AnalysisRequest.user_id == current_user.id)
+            .first()
+        )
+        if row:
+            db.delete(row)
+            deleted = True
+            break
+    if not deleted:
+        raise HTTPException(status_code=404, detail="삭제할 기록을 찾을 수 없습니다.")
+    db.commit()
+    return {"success": True}
+
+
+@app.delete("/logs")
+def delete_usage_logs(
+    feature_type: int | None = None,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    request_ids = [row[0] for row in db.query(AnalysisRequest.id).filter(AnalysisRequest.user_id == current_user.id).all()]
+    deleted = 0
+    if request_ids:
+        if feature_type in (None, 0, 2):
+            deleted += db.query(SpellingResult).filter(SpellingResult.request_id.in_(request_ids)).delete(synchronize_session=False)
+        if feature_type in (None, 0, 3):
+            deleted += db.query(SummaryResult).filter(SummaryResult.request_id.in_(request_ids)).delete(synchronize_session=False)
+        if feature_type in (None, 0, 4):
+            deleted += db.query(ToneResult).filter(ToneResult.request_id.in_(request_ids)).delete(synchronize_session=False)
+        if feature_type in (None, 0, 1):
+            deleted += db.query(EvaluationResult).filter(EvaluationResult.request_id.in_(request_ids)).delete(synchronize_session=False)
+            deleted += db.query(TitleResult).filter(TitleResult.request_id.in_(request_ids)).delete(synchronize_session=False)
+    db.commit()
+    return {"success": True, "deleted_count": int(deleted or 0)}
+
+
+@app.get("/history/requests", response_model=list[HistoryRequestResponse])
+def list_history_requests(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    request_rows = (
+        db.query(AnalysisRequest)
+        .filter(AnalysisRequest.user_id == current_user.id)
+        .order_by(AnalysisRequest.created_at.desc())
+        .all()
+    )
+    return [serialize_history_request(row) for row in request_rows]
+
+
+@app.delete("/history/requests/{request_id}")
+def delete_history_request(
+    request_id: int,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    request_row = (
+        db.query(AnalysisRequest)
+        .filter(AnalysisRequest.id == request_id, AnalysisRequest.user_id == current_user.id)
+        .first()
+    )
+    if not request_row:
+        raise HTTPException(status_code=404, detail="삭제할 기록을 찾을 수 없습니다.")
+    db.delete(request_row)
+    db.commit()
+    return {"success": True}
 
 
 @app.get("/tone-favorites", response_model=list[ToneFavoriteResponse])

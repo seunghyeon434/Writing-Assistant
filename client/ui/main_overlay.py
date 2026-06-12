@@ -135,7 +135,7 @@ class EvaluationReasonOverlay(QWidget):
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setAttribute(Qt.WA_ShowWithoutActivating)
-        self.setFixedSize(270, 142)
+        self.setFixedSize(420, 230)
         self.setStyleSheet(
             """
             QFrame#reasonCard {
@@ -148,7 +148,7 @@ class EvaluationReasonOverlay(QWidget):
                 font-size: 14px;
                 font-weight: 900;
             }
-            QLabel#reasonText {
+            QTextEdit#reasonText {
                 background: #fffaf4;
                 border: 1px solid #dccbbb;
                 border-radius: 10px;
@@ -156,6 +156,25 @@ class EvaluationReasonOverlay(QWidget):
                 padding: 10px;
                 font-size: 13px;
                 font-weight: 700;
+            }
+            QTextEdit#reasonText QScrollBar:vertical {
+                background: transparent;
+                width: 8px;
+                margin: 8px 2px 8px 0;
+            }
+            QTextEdit#reasonText QScrollBar::handle:vertical {
+                background: #c7a98c;
+                border-radius: 4px;
+                min-height: 22px;
+            }
+            QTextEdit#reasonText QScrollBar::add-line:vertical,
+            QTextEdit#reasonText QScrollBar::sub-line:vertical {
+                height: 0;
+                width: 0;
+            }
+            QTextEdit#reasonText QScrollBar::add-page:vertical,
+            QTextEdit#reasonText QScrollBar::sub-page:vertical {
+                background: transparent;
             }
             QPushButton#closeOverlayButton {
                 min-width: 26px;
@@ -174,7 +193,7 @@ class EvaluationReasonOverlay(QWidget):
         )
         card = QFrame(self)
         card.setObjectName("reasonCard")
-        card.setGeometry(0, 0, 270, 142)
+        card.setGeometry(0, 0, 420, 230)
         layout = QVBoxLayout(card)
         layout.setContentsMargins(14, 10, 14, 14)
         layout.setSpacing(8)
@@ -187,15 +206,16 @@ class EvaluationReasonOverlay(QWidget):
         top.addWidget(self.title_label, 1)
         top.addWidget(close_btn, 0, Qt.AlignRight)
         layout.addLayout(top)
-        self.reason_label = QLabel("\uac4d")
+        self.reason_label = QTextEdit()
         self.reason_label.setObjectName("reasonText")
-        self.reason_label.setWordWrap(True)
-        self.reason_label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+        self.reason_label.setReadOnly(True)
+        self.reason_label.setAcceptRichText(False)
+        self.reason_label.setFrameShape(QFrame.NoFrame)
         layout.addWidget(self.reason_label, 1)
 
     def show_for_window(self, window_handle, reason, title=None):
         self.title_label.setText(str(title or "\ud3c9\uac00 \uc774\uc720"))
-        self.reason_label.setText(str(reason or ""))
+        self.reason_label.setPlainText(str(reason or ""))
         rect = self._target_rect(window_handle)
         if rect is None:
             screen = QApplication.primaryScreen()
@@ -657,6 +677,7 @@ class MainOverlay(QWidget):
     redo_requested = pyqtSignal()
     evaluate_requested = pyqtSignal()
     evaluation_reason_requested = pyqtSignal()
+    spelling_feedback_requested = pyqtSignal()
     title_requested = pyqtSignal()
     title_insert_requested = pyqtSignal(str)
     correction_requested = pyqtSignal()
@@ -706,6 +727,7 @@ class MainOverlay(QWidget):
         self.summary_overlay.close_requested.connect(self.hide_summary_result)
         self.title_overlay.accepted.connect(self.title_insert_requested.emit)
         self._evaluation_reason = ""
+        self._spelling_feedback_available = False
         self._score_visible = False
         self._summary_visible = False
         self._notifications = []
@@ -805,6 +827,16 @@ class MainOverlay(QWidget):
                 font-weight: 900;
             }
             QPushButton#hideOverlayButton:hover { background: #dcc1a7; }
+            QPushButton#floatingReasonButton {
+                border: 0;
+                border-radius: 12px;
+                padding: 5px 11px;
+                background: #ead7cf;
+                color: #3f2f26;
+                font-size: 11px;
+                font-weight: 900;
+            }
+            QPushButton#floatingReasonButton:hover { background: #dcc1a7; }
             QPushButton#collapsedHelperButton {
                 border-radius: 20px;
                 padding: 0;
@@ -942,6 +974,12 @@ class MainOverlay(QWidget):
         self.dark_btn = self._icon_button("\ub2e4\ud06c \ubaa8\ub4dc", ("brightness.png", "brightness.svg"))
         self.dark_btn.setParent(self)
         self.dark_btn.clicked.connect(self.dark_mode_requested.emit)
+        self.dark_btn.hide()
+        self.spelling_reason_btn = QPushButton("\uc218\uc815 \uc774\uc720", self)
+        self.spelling_reason_btn.setObjectName("floatingReasonButton")
+        self.spelling_reason_btn.setToolTip("\ub9de\ucda4\ubc95 \uc218\uc815 \uc774\uc720")
+        self.spelling_reason_btn.clicked.connect(self.spelling_feedback_requested.emit)
+        self.spelling_reason_btn.hide()
 
         self.collapsed_btn = QPushButton("도우미\n키기", self.card)
         self.collapsed_btn.setObjectName("collapsedHelperButton")
@@ -1162,6 +1200,11 @@ class MainOverlay(QWidget):
         if hasattr(self, "spelling_btn"):
             self.spelling_btn.setEnabled(bool(enabled))
 
+    def set_spelling_feedback_available(self, available: bool):
+        self._spelling_feedback_available = bool(available)
+        if hasattr(self, "spelling_reason_btn"):
+            self.spelling_reason_btn.setVisible(self._spelling_feedback_available and not self._collapsed)
+
     def set_undo_available(self, available):
         if hasattr(self, "undo_btn"):
             self.undo_btn.setEnabled(bool(available))
@@ -1318,7 +1361,7 @@ class MainOverlay(QWidget):
             self.open_btn,
             self.settings_btn,
             self.notification_btn,
-            self.dark_btn,
+            self.spelling_reason_btn,
             self.hide_btn,
         ):
             widget.hide()
@@ -1347,10 +1390,11 @@ class MainOverlay(QWidget):
         self.open_btn.show()
         self.settings_btn.show()
         self.notification_btn.show()
-        self.dark_btn.show()
+        self.dark_btn.hide()
         for child in self.card.findChildren(QWidget):
             if child is not self.settings_cover and child is not self.collapsed_btn:
                 child.show()
+        self.set_spelling_feedback_available(self._spelling_feedback_available)
         self.close_settings_cover()
         self._show_for_window(self._last_window_handle)
 
@@ -1384,7 +1428,6 @@ class MainOverlay(QWidget):
             self.open_btn,
             self.settings_btn,
             self.notification_btn,
-            self.dark_btn,
             self.hide_btn,
         ]
         x = self.width() - 30
@@ -1392,6 +1435,9 @@ class MainOverlay(QWidget):
             button.setGeometry(x, top_button_y, 30, 30)
             x -= 36
             button.raise_()
+        self.spelling_reason_btn.setGeometry(0, max(0, self.height() - 30), 78, 28)
+        self.spelling_reason_btn.raise_()
+        self.spelling_reason_btn.setVisible(bool(self._spelling_feedback_available) and not self._collapsed)
 
     def _ensure_collapsed_size(self):
         if hasattr(self, "root_layout"):
@@ -1515,7 +1561,7 @@ class MainOverlay(QWidget):
         self.reason_overlay.show_for_window(
             window_handle or self._last_window_handle,
             feedback or "\uad50\uc815 \ud3c9\uac00\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.",
-            "\uad50\uc815 \ud3c9\uac00",
+            "\uc218\uc815 \uc774\uc720",
         )
 
     def _should_delegate_reason_to_panel(self):

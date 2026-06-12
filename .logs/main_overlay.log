@@ -2010,3 +2010,7 @@
 2026-06-12 07:49:14 hide_called reason='show_panel' state=('word_selection', 197598, 'drag', 'expanded') last_hwnd=197598 fg_hwnd=264282 fg_class='Qt5152QWindowToolSaveBits' fg_title='Writing Assistant Main Overlay'
 2026-06-12 07:49:30 hide_called reason='assistant_window_foreground' state=('word_selection', 197598, 'drag', 'expanded') last_hwnd=197598 fg_hwnd=526252 fg_class='Qt5152QWindowIcon' fg_title='Writing Assistant'
 2026-06-12 07:49:32 hide_called reason='main_window_hide_call' state=None last_hwnd=197598 fg_hwnd=526252 fg_class='Qt5152QWindowIcon' fg_title='Writing Assistant'
+2026-06-12 08:19:47 hide_called reason='main_window_hide_call' state=None last_hwnd=None fg_hwnd=18679236 fg_class='Chrome_WidgetWin_1' fg_title='인수인계서.md - writing-assistant(0.3.0) - Visual Studio Code'
+2026-06-12 08:19:47 hide_called reason='main_window_hide_call' state=None last_hwnd=None fg_hwnd=18679236 fg_class='Chrome_WidgetWin_1' fg_title='인수인계서.md - writing-assistant(0.3.0) - Visual Studio Code'
+2026-06-12 08:24:52 hide_called reason='main_overlay_no_target' state=('word_selection', 197598, 'drag', 'expanded') last_hwnd=197598 fg_hwnd=18679236 fg_class='Chrome_WidgetWin_1' fg_title='인수인계서.md - writing-assistant(0.3.0) - Visual Studio Code'
+2026-06-12 08:27:12 hide_called reason='main_window_hide_call' state=None last_hwnd=197598 fg_hwnd=395992 fg_class='Qt5152QWindowIcon' fg_title='Writing Assistant'

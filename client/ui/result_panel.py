@@ -2,7 +2,7 @@ from pathlib import Path
 from datetime import datetime
 from difflib import SequenceMatcher
 
-from PyQt5.QtCore import QPoint, QRectF, QSize, Qt, QVariantAnimation, QTimer
+from PyQt5.QtCore import QPoint, QRectF, QSize, Qt, QVariantAnimation, QTimer, pyqtSignal
 from PyQt5.QtGui import QColor, QIcon, QPainter, QPainterPath, QPen, QPixmap
 from PyQt5.QtWidgets import (
     QApplication,
@@ -28,6 +28,7 @@ from PyQt5.QtWidgets import (
 
 
 class ResultPanel(QWidget):
+    history_delete_requested = pyqtSignal(int)
     LIGHT_THEME = {
         "window_bg": "#00000000",
         "card_bg": "#f7efe5",
@@ -198,7 +199,14 @@ class ResultPanel(QWidget):
         header_layout.addStretch()
 
         self.login_btn = QPushButton("로그인")
-        self.login_btn.setObjectName("secondaryButton")
+        self.login_btn.setObjectName("iconButton")
+        self.login_btn.setFixedSize(40, 40)
+        self.login_btn.setToolTip("계정")
+        login_icon_path = self._find_asset_path(("accounts.png", "accounts.svg", "person.png", "person.svg"))
+        if login_icon_path:
+            self.login_btn.setText("")
+            self.login_btn.setIcon(QIcon(str(login_icon_path)))
+            self.login_btn.setIconSize(QSize(18, 18))
 
         self.settings_btn = QPushButton("설정")
         self.settings_btn.setObjectName("iconButton")
@@ -216,6 +224,7 @@ class ResultPanel(QWidget):
         self.dark_mode_btn.setCheckable(True)
         self.dark_mode_btn.setIconSize(QSize(18, 18))
         self.dark_mode_btn.clicked.connect(self.toggle_theme)
+        self.dark_mode_btn.hide()
 
         self.hide_btn = QPushButton("숨기기")
         self.hide_btn.setObjectName("ghostButton")
@@ -223,7 +232,6 @@ class ResultPanel(QWidget):
 
         header_layout.addWidget(self.login_btn)
         header_layout.addWidget(self.settings_btn)
-        header_layout.addWidget(self.dark_mode_btn)
         header_layout.addWidget(self.hide_btn)
 
         self.tabs = QTabWidget()
@@ -273,6 +281,20 @@ class ResultPanel(QWidget):
             button.setCheckable(True)
             self.spell_scope_group.addButton(button)
             self.spell_scope_buttons[scope] = button
+        self.summary_style_group = QButtonGroup(self)
+        self.summary_style_group.setExclusive(True)
+        self.summary_style_buttons = {}
+        for style, label in (
+            ("brief", "짧게"),
+            ("bullet", "핵심 bullet"),
+            ("detailed", "자세히"),
+        ):
+            button = QPushButton(label)
+            button.setObjectName("scopeButton")
+            button.setCheckable(True)
+            self.summary_style_group.addButton(button)
+            self.summary_style_buttons[style] = button
+        self.summary_style_buttons["brief"].setChecked(True)
         self.run_summary_btn = QPushButton("글 요약")
         self.run_summary_btn.setObjectName("secondaryButton")
         self.summary_history_btn = self._create_history_button()
@@ -374,7 +396,7 @@ class ResultPanel(QWidget):
         self.tone_input.setObjectName("toneInput")
         self.tone_input.setPlaceholderText("원하는 문체")
 
-        self.default_dark_mode_checkbox = QCheckBox("기본 다크 모드")
+        self.default_dark_mode_checkbox = QCheckBox("화면 모드: 다크 모드 사용")
         self.default_dark_mode_checkbox.setObjectName("settingsCheck")
         self.clipboard_mode_checkbox = QCheckBox("클립보드 인식 사용")
         self.clipboard_mode_checkbox.setObjectName("settingsCheck")
@@ -408,7 +430,7 @@ class ResultPanel(QWidget):
 
         self.tabs.addTab(self._create_text_tab(), "텍스트")
         self.tabs.addTab(self._create_spell_tab(), "교정")
-        self.tabs.addTab(self._create_action_tab(self.summary_box, self.run_summary_btn), "요약")
+        self.tabs.addTab(self._create_summary_tab(), "요약")
         self.tabs.addTab(self._create_tone_tab(), "문체")
         self.tabs.currentChanged.connect(self.update_copy_button_label)
 
@@ -818,6 +840,33 @@ class ResultPanel(QWidget):
         layout.addLayout(button_row)
         return page
 
+    def _create_summary_tab(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+        layout.setContentsMargins(14, 14, 14, 14)
+        layout.setSpacing(12)
+
+        style_row = QHBoxLayout()
+        style_row.setContentsMargins(0, 0, 0, 0)
+        style_row.setSpacing(8)
+        style_label = QLabel("요약 방식")
+        style_label.setObjectName("historyFieldLabel")
+        style_row.addWidget(style_label)
+        for style in ("brief", "bullet", "detailed"):
+            style_row.addWidget(self.summary_style_buttons[style])
+        style_row.addStretch()
+        layout.addLayout(style_row)
+
+        layout.addWidget(self.summary_box, 1)
+
+        button_row = QHBoxLayout()
+        button_row.setContentsMargins(0, 0, 8, 0)
+        button_row.addStretch()
+        button_row.addWidget(self.run_summary_btn)
+        button_row.addWidget(self.summary_history_btn)
+        layout.addLayout(button_row)
+        return page
+
     def _create_tone_tab(self):
         page = QWidget()
         layout = QVBoxLayout(page)
@@ -1179,6 +1228,15 @@ class ResultPanel(QWidget):
                 value_label.setWordWrap(True)
                 value_label.setObjectName("historyShortValue")
                 layout.addWidget(value_label)
+        log_id = log.get("id")
+        if log_id is not None:
+            delete_row = QHBoxLayout()
+            delete_row.addStretch()
+            delete_btn = QPushButton("삭제")
+            delete_btn.setObjectName("dangerButton")
+            delete_btn.clicked.connect(lambda _checked=False, item_id=int(log_id): self.history_delete_requested.emit(item_id))
+            delete_row.addWidget(delete_btn)
+            layout.addLayout(delete_row)
         layout.addStretch()
         self.history_scroll.setWidget(content)
 
@@ -2295,9 +2353,10 @@ class ResultPanel(QWidget):
         self.text_box.clear()
         self.text_box.setHtml(
             '<div style="color: #9b8a7f;">'
-            '<div>복사한 텍스트가 여기에 뜹니다.</div>'
+            '<div>원문 입력 후 버튼을 누르세요.</div>'
             "</div>"
         )
+        self.update_copy_button_label()
 
     def show_text_unavailable_placeholder(self):
         muted_color = self._blended_colors()["muted"]
@@ -2320,6 +2379,7 @@ class ResultPanel(QWidget):
         self._showing_placeholder = False
         self.last_original_text = text
         self._render_original_text(previous_text=previous_text)
+        self.update_copy_button_label()
         self.clear_summary_result()
         self.clear_evaluation_score()
         self.clear_title_recommendation()
@@ -2361,40 +2421,50 @@ class ResultPanel(QWidget):
         self.spell_box.clear()
         self.spell_box.setHtml(
             '<div style="color: #9b8a7f;">'
-            '<div>교정 결과가 여기에 뜹니다.</div>'
+            '<div>원문 입력 후 맞춤법 버튼을 누르세요.</div>'
             "</div>"
         )
+        self.update_copy_button_label()
 
     def clear_summary_result(self):
         self.summary_box.clear()
         self.summary_box.setHtml(
             '<div style="color: #9b8a7f;">'
-            '<div>글을 요약한 게 여기에 뜹니다.</div>'
+            '<div>원문 입력 후 요약 버튼을 누르세요.</div>'
             "</div>"
         )
+        self.update_copy_button_label()
 
     def clear_tone_result(self):
         self.tone_box.clear()
         self.tone_box.setHtml(
             '<div style="color: #9b8a7f;">'
-            '<div>문체 변경 결과가 여기에 뜹니다.</div>'
+            '<div>원문 입력 후 문체 버튼을 누르세요.</div>'
             "</div>"
         )
+        self.update_copy_button_label()
 
     def set_spell_result(self, text):
         self.spell_box.setPlainText(text)
+        self.update_copy_button_label()
 
     def set_summary_result(self, text):
         self.summary_box.setPlainText(text)
+        self.update_copy_button_label()
 
     def set_tone_result(self, text):
         self.tone_box.setPlainText(text)
+        self.update_copy_button_label()
 
     def update_login_state(self, is_logged_in, username="", history_enabled=False):
         self._is_logged_in = bool(is_logged_in)
         self._login_username = username or ""
         self._history_enabled = bool(history_enabled)
-        self.login_btn.setText("로그아웃" if is_logged_in else "로그인")
+        if self.login_btn.icon().isNull():
+            self.login_btn.setText("계정")
+        else:
+            self.login_btn.setText("")
+        self.login_btn.setToolTip("로그아웃" if is_logged_in else "로그인")
         display = getattr(self, "_account_display_name", "") or self._login_username
         if is_logged_in and display:
             self.user_identity_label.setText(f"{display} 님")
@@ -2425,6 +2495,24 @@ class ResultPanel(QWidget):
     def update_copy_button_label(self, index=None):
         current_tab = self.tabs.currentIndex() if index is None else index
         self.copy_btn.setText("원본 복사" if current_tab == 0 else "결과 복사")
+        self.copy_btn.setEnabled(self._current_copy_available(current_tab))
+
+    def _current_copy_available(self, current_tab=None):
+        current_tab = self.tabs.currentIndex() if current_tab is None else current_tab
+        if current_tab == 0:
+            return bool(self.last_original_text.strip()) and not self._showing_placeholder
+        if current_tab == 1:
+            return self._has_result_text(self.spell_box, "맞춤법 버튼")
+        if current_tab == 2:
+            return self._has_result_text(self.summary_box, "요약 버튼")
+        if current_tab == 3:
+            return self._has_result_text(self.tone_box, "문체 버튼")
+        return False
+
+    @staticmethod
+    def _has_result_text(box, placeholder_hint):
+        text = str(box.toPlainText() or "").strip()
+        return bool(text) and placeholder_hint not in text
 
     def get_current_text(self):
         current_tab = self.tabs.currentIndex()
@@ -2437,3 +2525,9 @@ class ResultPanel(QWidget):
         if current_tab == 3:
             return self.tone_box.toPlainText()
         return ""
+
+    def get_summary_style(self):
+        for style, button in self.summary_style_buttons.items():
+            if button.isChecked():
+                return style
+        return "brief"
